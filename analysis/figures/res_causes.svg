@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" role="img" font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" aria-label="Primary root cause of failed runs. Benchmark defects are 31.5% of gemma English failures, 22.5% of gemma Bangla failures and 8.9% of gpt-oss English failures; gpt-oss English is dominated by no-valid-action failures at 50.0%; language-specific causes are 15.6% of gemma Bangla failures.">
+<rect width="860" height="340" fill="#ffffff"/>
+<rect x="20" y="20" width="14" height="14" rx="0" fill="#d97706"/>
+<text x="40" y="32" font-size="12.5" text-anchor="start" fill="#1b2330">Benchmark defect</text>
+<rect x="300" y="20" width="14" height="14" rx="0" fill="#2d5a9b"/>
+<text x="320" y="32" font-size="12.5" text-anchor="start" fill="#1b2330">Wrong content or task misread</text>
+<rect x="580" y="20" width="14" height="14" rx="0" fill="#8a93a3"/>
+<text x="600" y="32" font-size="12.5" text-anchor="start" fill="#1b2330">Out of steps or output loops</text>
+<rect x="20" y="42" width="14" height="14" rx="0" fill="#7a5ea8"/>
+<text x="40" y="54" font-size="12.5" text-anchor="start" fill="#1b2330">No valid action, gave up</text>
+<rect x="300" y="42" width="14" height="14" rx="0" fill="#1f8a8a"/>
+<text x="320" y="54" font-size="12.5" text-anchor="start" fill="#1b2330">Language-specific (Bangla)</text>
+<rect x="580" y="42" width="14" height="14" rx="0" fill="#dcdfe5"/>
+<text x="600" y="54" font-size="12.5" text-anchor="start" fill="#1b2330">Other or infrastructure</text>
+<text x="178" y="112" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">gemma4:31b English</text>
+<text x="178" y="129" font-size="11.5" text-anchor="end" fill="#5e6675">149 failures</text>
+<rect x="190" y="92" width="192.416" height="36" rx="0" fill="#d97706" stroke="#ffffff" stroke-width="1"/>
+<text x="286.208" y="114" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">47</text>
+<rect x="382.416" y="92" width="176.04" height="36" rx="0" fill="#2d5a9b" stroke="#ffffff" stroke-width="1"/>
+<text x="470.436" y="114" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">43</text>
+<rect x="558.456" y="92" width="171.946" height="36" rx="0" fill="#8a93a3" stroke="#ffffff" stroke-width="1"/>
+<text x="644.43" y="114" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">42</text>
+<rect x="730.403" y="92" width="49.1275" height="36" rx="0" fill="#7a5ea8" stroke="#ffffff" stroke-width="1"/>
+<text x="754.966" y="114" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">12</text>
+<rect x="779.53" y="92" width="20.4698" height="36" rx="0" fill="#dcdfe5" stroke="#ffffff" stroke-width="1"/>
+<text x="178" y="174" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">gemma4:31b Bangla</text>
+<text x="178" y="191" font-size="11.5" text-anchor="end" fill="#5e6675">173 failures</text>
+<rect x="190" y="154" width="137.514" height="36" rx="0" fill="#d97706" stroke="#ffffff" stroke-width="1"/>
+<text x="258.757" y="176" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">39</text>
+<rect x="327.514" y="154" width="190.405" height="36" rx="0" fill="#2d5a9b" stroke="#ffffff" stroke-width="1"/>
+<text x="422.717" y="176" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">54</text>
+<rect x="517.919" y="154" width="116.358" height="36" rx="0" fill="#8a93a3" stroke="#ffffff" stroke-width="1"/>
+<text x="576.098" y="176" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">33</text>
+<rect x="634.277" y="154" width="52.8902" height="36" rx="0" fill="#7a5ea8" stroke="#ffffff" stroke-width="1"/>
+<text x="660.723" y="176" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">15</text>
+<rect x="687.168" y="154" width="95.2023" height="36" rx="0" fill="#1f8a8a" stroke="#ffffff" stroke-width="1"/>
+<text x="734.769" y="176" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">27</text>
+<rect x="782.37" y="154" width="17.6301" height="36" rx="0" fill="#dcdfe5" stroke="#ffffff" stroke-width="1"/>
+<text x="178" y="236" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">gpt-oss:20b English</text>
+<text x="178" y="253" font-size="11.5" text-anchor="end" fill="#5e6675">214 failures</text>
+<rect x="190" y="216" width="54.1589" height="36" rx="0" fill="#d97706" stroke="#ffffff" stroke-width="1"/>
+<text x="217.079" y="238" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">19</text>
+<rect x="244.159" y="216" width="139.673" height="36" rx="0" fill="#2d5a9b" stroke="#ffffff" stroke-width="1"/>
+<text x="313.995" y="238" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">49</text>
+<rect x="383.832" y="216" width="68.4112" height="36" rx="0" fill="#8a93a3" stroke="#ffffff" stroke-width="1"/>
+<text x="418.037" y="238" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">24</text>
+<rect x="452.243" y="216" width="305" height="36" rx="0" fill="#7a5ea8" stroke="#ffffff" stroke-width="1"/>
+<text x="604.743" y="238" font-size="13" text-anchor="middle" fill="#ffffff" font-weight="700">107</text>
+<rect x="757.243" y="216" width="42.757" height="36" rx="0" fill="#dcdfe5" stroke="#ffffff" stroke-width="1"/>
+<text x="778.621" y="238" font-size="13" text-anchor="middle" fill="#1b2330" font-weight="700">15</text>
+<text x="20" y="296" font-size="12" text-anchor="start" fill="#5e6675">Counts inside segments; widths are shares of each run’s failures (primary root cause from the trace-by-trace classification).</text>
+<text x="20" y="314" font-size="12" text-anchor="start" fill="#5e6675">gpt-oss English fails mostly because it cannot produce a valid action in the benchmark’s format (54 failures coded FMT).</text>
+<text x="20" y="332" font-size="12" text-anchor="start" fill="#5e6675">gpt-oss Bangla is not shown: only 21 of its 194 failures have a root-cause code (see the behaviour signals in Figure 7).</text>
+</svg>

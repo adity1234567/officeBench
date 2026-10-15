@@ -1,0 +1,775 @@
+% ACL long paper. Numbers: analysis/acl_rewrite_stats.py (OfficeBench, computed from run logs)
+% and the four failure-analysis reports (tau2-bench, WorkBench, TheAgentCompany).
+\documentclass[11pt]{article}
+\usepackage[review]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{url}
+
+% ---- verification notes: set \showverifyfalse to hide every note ----
+\newif\ifshowverify
+\showverifytrue
+\newcommand{\verify}[1]{\ifshowverify{\color{red}\,[VERIFY: #1]}\fi}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\gemma}{\texttt{gemma4-31b}}
+\newcommand{\gptoss}{\texttt{gpt-oss-20b}}
+\newcommand{\OB}{OfficeBench}
+\newcommand{\WB}{WorkBench}
+\newcommand{\TAU}{$\tau^2$-bench}
+\newcommand{\TAC}{TheAgentCompany}
+
+\title{Is It the Agent or the Pipeline?\\
+Attributing English--Bangla Failures of LLM Agents across Four Benchmarks}
+
+\author{Anonymous ACL submission}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+LLM agents are evaluated mostly in English. When they are evaluated in another language, a lower
+score is usually read as a weaker agent. But the score is produced by a pipeline: a translated
+task, sometimes a simulated user, tools and an automatic grader. We run two open-weight agents,
+\gemma{} and \gptoss{}, on paired English and Bangla versions of four benchmarks
+(\OB{}, \WB{}, \TAU{} and \TAC{}) and trace every task that passes in English but fails in
+Bangla. The Bangla gap depends on model and benchmark: after Holm correction, \gemma{} loses
+8.0 points on \OB{} and 11.5 on \TAU{}; no other comparison is significant. Of 163
+English-pass/Bangla-fail cases, the largest group, 74 (45.4\%), traces to evaluation components:
+a Bangla-speaking simulated user, English-only checkers, translation or the environment. Between
+14.7\% and 54.6\% of cases can be Bangla-specific agent failures, depending on how unclear and
+shared failures are counted. Crediting answers rejected only for their script cuts \gemma{}'s
+\OB{} gap from 8.0 to 3.0 points. The genuine failures on \OB{} share one pattern: the agent
+keeps the meaning but writes the wrong form. Raw cross-lingual agent scores can overstate
+language-specific deficits.
+\end{abstract}
+
+\section{Introduction}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_overview.pdf}
+\caption{Evaluation protocol. (a) Each task runs once in English and once in Bangla; only
+natural-language text changes. (b) The agent loop. (c) The benchmark's grader scores each run, and
+the two runs of a task form one paired outcome. (d) Every English-pass/Bangla-fail case is traced
+and assigned the first cause whose check fails (codes in Table~\ref{tab:attribution} and
+Appendix~\ref{app:codebook}).}
+\label{fig:overview}
+\end{figure*}
+
+LLM agents plan over many steps, call tools and change files, databases and conversations
+\citep{yao2023react,liu2023agentbench,zhou2024webarena}. Their benchmarks are almost all in
+English \citep{jimenez2024swebench,xie2024osworld,mialon2024gaia}. Recent work translates agent
+benchmarks into other languages and reports lower scores
+\citep{hofman2026maps,wang2025xwebagentbench,li2026polyworkbench}. The usual reading is that the
+agent is weaker in that language.
+
+That reading assumes the score measures only the agent. It does not. A score is produced by a
+pipeline: a translated task, sometimes a simulated user or simulated coworkers, tools, and an
+automatic grader. Any of these can fail in the new language. Two examples from our runs show
+this. On \OB{}, \gemma{} answers a Bangla question with the correct number written in Bengali
+digits; the checker searches for the ASCII string ``40'' and marks the run as failed. On \TAU{},
+the agent asks the Bangla-speaking simulated customer to confirm a cancellation; the customer
+confirms and ends the conversation in the same message, so the agent never performs the
+cancellation. Both runs count as Bangla failures. Neither is a failure of the agent.
+
+We therefore ask where English--Bangla failures come from. We run two open-weight agents,
+\gemma{} and \gptoss{}, on paired English and Bangla versions of four benchmarks that route the
+outcome through different components (Figure~\ref{fig:overview}). For every task that passes in
+English but fails in Bangla, we compare the two trajectories and assign the failure to one cause.
+We address three questions:
+
+\begin{itemize}[noitemsep,topsep=2pt,leftmargin=*]
+\item \textbf{RQ1.} How large is the English--Bangla gap, and does it depend on the model and the
+benchmark?
+\item \textbf{RQ2.} Where in the trajectory do Bangla-only failures first occur?
+\item \textbf{RQ3.} Which pipeline component is responsible for each Bangla-only failure?
+\end{itemize}
+
+\noindent Our contributions are:
+\begin{itemize}[noitemsep,topsep=2pt,leftmargin=*]
+\item A paired English--Bangla evaluation of two agents on four benchmarks, with discordant
+counts, exact tests and bootstrap intervals for every comparison (\S\ref{sec:rq1}).
+\item A case-level attribution protocol with operational definitions and a fixed decision order,
+applied to all 163 English-pass/Bangla-fail cases (\S\ref{sec:attribution}, \S\ref{sec:rq3}).
+\item Evidence that the Bangla gap is model- and benchmark-specific, that the largest group of
+Bangla-only failures traces to evaluation components, and that correcting the grading removes
+most of one significant gap (\S\ref{sec:rq3}).
+\item Concrete recommendations for builders of multilingual agent benchmarks (\S\ref{sec:discussion}).
+\end{itemize}
+
+\section{Related Work}
+
+\paragraph{Agent benchmarks.} Interactive benchmarks evaluate LLMs as agents
+\citep{liu2023agentbench,zhou2024webarena,xie2024osworld,jimenez2024swebench,mialon2024gaia}.
+We use four with different outcome paths: \OB{} grades files produced across office applications
+\citep{wang2024officebench}; \WB{} grades the final database after a single request
+\citep{styles2024workbench}; \TAU{} adds an LLM-simulated user \citep{barres2025tau2}, extending
+$\tau$-bench \citep{yao2024taubench}; and \TAC{} runs long company tasks with simulated coworkers
+in an OpenHands harness \citep{xu2024theagentcompany,wang2025openhands}.
+
+\paragraph{Multilingual evaluation of LLMs and agents.} Static multilingual benchmarks show an
+English advantage that grows for lower-resource languages
+\citep{conneau2018xnli,ahuja2023mega,shi2023mgsm,bandarkar2024belebele,huang2023notall,zhang2023dont,etxaniz2024multilingual}.
+Recent agent benchmarks translate tasks and measure the gap: MAPS covers four agent suites in
+eleven languages \citep{hofman2026maps}, and X-WebAgentBench, OmnilingualGAIA2, PolyWorkBench,
+SEATauBench and MASSIVE-Agents cover web, assistant, workplace, conversational and
+function-calling tasks
+\citep{wang2025xwebagentbench,caciolai2026omnilingualgaia2,li2026polyworkbench,nguyen2026seataubench,kulkarni2025massiveagents}.
+These works quantify the size of the gap. We ask which component of the pipeline produces it.
+
+\paragraph{Multilingual tool use.} Agents must emit well-formed calls
+\citep{schick2023toolformer,qin2024toolllm,patil2024gorilla}. In multilingual settings, models
+often write argument values in the user's language instead of the form the tool expects
+\citep{luo2026lost,chauhan2026api}. These studies isolate argument-language errors in tool
+calling. We find a related form error inside full agent runs, and we separate it from errors of
+the checker and the simulated user.
+
+\paragraph{Validity and failure attribution.} The Agentic Benchmark Checklist
+\citep{zhu2025abc} and protocol-validity audits \citep{shao2026protocol} show that setup and
+grading flaws can change conclusions. Failure taxonomies \citep{cemri2025mast} and diagnostic
+tools \citep{barke2026agentrx} analyse trajectories, and automatic attribution of the decisive
+step remains unreliable (53.5\% agent-level and 14.2\% step-level accuracy;
+\citealp{zhang2025whichagent}). We apply manual, evidence-based attribution to cross-lingual
+failures and rule out evaluation causes before attributing a failure to the agent.
+
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Benchmarks and sampling}
+Table~\ref{tab:benchmarks} summarises the four benchmarks. We use \OB{} in full (300 tasks).
+For \WB{} we draw 15 tasks from each of its six domains with a fixed seed (90 of 690 tasks)
+\verify{seed value}. For \TAU{} we select tasks from each domain in their original order and drop
+every task whose English or Bangla run ended in an infrastructure or quota error. This leaves 218
+paired tasks for \gemma{} and 149 for \gptoss{}; 149 tasks are gradeable in all four cells
+\verify{the draft's Table~1 gives 149 tasks for \TAU{}; the number of tasks sampled before
+exclusions is not recorded in the sources}. For \TAC{} we run 23 English--Bangla task pairs over 21
+unique tasks; two tasks appear in both of our two task sets, and two further sampled tasks ran only
+in English and are excluded.
+
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{L{2.1cm}L{3.2cm}L{3.2cm}L{3.2cm}L{3.2cm}}
+\toprule
+ & \OB{} & \WB{} & \TAU{} & \TAC{} \\
+\midrule
+Interaction & multi-step & single-turn & dialogue & long-horizon \\
+Simulated & -- & -- & customer & coworkers \\
+Grading & file checks & DB state & DB state, actions, device & checkpoints \\
+Sample & full & 15 per domain & ordered, per domain & subset \\
+Paired $n$ & 300 & 90 & 218 / 149 & 23 (21 tasks) \\
+Models & both & both & both & \gemma{} \\
+\midrule
+In Bangla & system prompt, task & system prompt, task, reply & scenario, policy, agent prompt & task, coworker replies \\
+Kept English & tools, IDs, files, graders & tools, IDs, dates & IDs, product names, enums & apps, files, URLs \\
+\bottomrule
+\end{tabular}
+\caption{Benchmarks. Paired $n$: tasks run and graded in both languages (\TAU{}: \gemma{} /
+\gptoss{}). The localization rows describe what was translated in each benchmark
+\verify{the draft states that policies stay in English; the \TAU{} report lists the policy as
+translated}.}
+\label{tab:benchmarks}
+\end{table*}
+
+\subsection{Bangla localization}
+\label{sec:localization}
+In every benchmark the natural-language task is in Bangla, and everything the environment
+executes stays in English: tool names, argument keys, identifiers and the grader
+(Table~\ref{tab:benchmarks}). This keeps every action executable. It does not make language the
+only difference between the two runs. The translation itself can change a task, and on two
+benchmarks a simulated user or coworkers speak Bangla. We treat both as part of the Bangla
+condition and measure their effect in \S\ref{sec:rq3}.
+
+Translations were LLM-assisted. The intended rules were: keep names, URLs and file paths in Latin
+script; keep strings matched by a grader in English; write all other content, including numbers
+and dates, as a Bangla speaker would \verify{the draft states that an independent review checked
+meaning; reviewer and coverage are not recorded}. Writing numbers in Bangla style and letting the
+agent answer in Bangla are part of the treatment, and both can cause English graders to reject
+correct work. For \OB{}, the instructions were machine-translated by \gemma{} and cached, so both
+agents saw the same string. An audit of the 298 translated instructions shows that the rules were
+applied unevenly: person names stayed in Latin script in 43 of 103 mentions, 44 instructions use
+Bengali digits and 50 use ASCII digits (14 use both), and 1 of 262 file names was altered.
+
+\subsection{Experimental setup}
+Both models were served through an Ollama endpoint with temperature 0 (Appendix~\ref{app:repro}).
+Each benchmark runs with its own harness and limits: \OB{} allows 20 steps per task, \WB{} uses
+single-turn function calling, \TAU{} pairs the agent with a simulated customer played by the same
+model, and \TAC{} runs an OpenHands agent \verify{100-iteration cap stated in the draft; not in
+the sources}. Each task is run once per language with identical settings, so every comparison is
+paired at the task level; on \TAC{}, 13 Bangla tasks were also rerun, and we use the latest run.
+We log every instruction, model output, tool call, tool result, error and final answer.
+
+For \OB{} we repaired three defects in the shipped scorer: email checks now read the run's own
+files, mailbox lookup tries the exact account name first, and text files are read as UTF-8. No
+check was relaxed. The repairs raise the pass counts from 132, 103, 80 and 97 to 151, 127, 86 and
+106 (\gemma{} English and Bangla, \gptoss{} English and Bangla) and turn no pass into a fail.
+
+\subsection{Measuring the gap}
+Let EN and BN be the success rates in English and Bangla. We report the absolute gap
+$\Delta = \mathrm{EN} - \mathrm{BN}$ and the multilingual effectiveness loss rate,
+$\mathrm{MELR} = (\mathrm{EN}-\mathrm{BN})/\mathrm{EN}$, the share of English successes lost in
+Bangla. MELR is unstable when EN or the number of differing tasks is small, so we always report it
+with $n$. A \emph{discordant pair} is a task with different outcomes in the two languages: an
+\emph{EN-pass/BN-fail} (EN-only) or a \emph{BN-pass/EN-fail} (BN-only) task. We test each gap
+with McNemar's exact test on the discordant pairs \citep{mcnemar1947}, apply Holm correction
+across the seven model--benchmark comparisons \citep{holm1979}, and report 95\% paired bootstrap
+intervals (4{,}000 resamples of tasks). Subgroup tests are Holm-corrected within their family.
+Per-task-type rates (\S\ref{sec:tasktypes}) are descriptive.
+
+\subsection{Attribution of Bangla-only failures}
+\label{sec:attribution}
+For every EN-pass/BN-fail case we read both trajectories side by side. We record the \emph{first
+failure point}, the earliest step that, corrected alone, would most likely have produced a pass,
+and assign exactly one cause by checking, in order: (0) whether the Bangla output is already
+correct for the task as written; (1) whether the translation is valid; (2) whether the simulated
+user or coworker behaved correctly; (3--5) whether the agent understood the task and chose the
+right tool and arguments; (6) whether the environment executed a valid action; and (7) whether the
+agent verified its result and did not give up early (Figure~\ref{fig:overview}d). The first check
+that fails decides the cause:
+
+\begin{itemize}[noitemsep,topsep=1pt,leftmargin=*]
+\item \textbf{Checker} (C5): the output is correct for the task as written but the grader rejects
+it, or the check asks for something the task does not.
+\item \textbf{Translation} (C3): the Bangla text changed the task or a literal.
+\item \textbf{Simulated user} (C2): the Bangla simulated user or coworker broke the interaction.
+\item \textbf{Tool / environment} (C4): a harness or tool fault blocked a valid action.
+\item \textbf{Genuine Bangla failure} (C1): an agent error that the English run does not show.
+\item \textbf{General weakness} (C6): an agent error whose mechanism also appears in an English
+failure of the same model, cited by task.
+\item \textbf{Unclear} (C7): no visible mechanism, or Bangla reruns of the task disagree.
+\end{itemize}
+
+\noindent \textbf{Checker--agent boundary.} A difference only in script or numerals (Bengali
+digits, a Bangla word for a requested English keyword) is a checker artefact. A value changed into a
+different English form (``curd'' for \emph{yogurt}, ``08:00 AM'' for \emph{8:00}) is an agent
+failure. One \TAC{} case labelled translation (coworkers reply in Bangla and a checkpoint needs the
+English word ``helpful'') is a checker artefact under this rule; moving it would change the
+translation count from 9 to 8 and the checker count from 22 to 23, with the evaluation-side total
+unchanged.
+
+\paragraph{Reliability.} Labels follow a written codebook (Appendix~\ref{app:codebook}). A
+second annotator reviewed all \WB{} cases, 46 of 66 \TAU{} cases and 16 \OB{} cases; agreement on
+the fine cause ranges from fair ($\kappa=0.39$) to substantial ($\kappa=0.78$); details with $n$ are
+in Appendix~\ref{app:codebook}.
+
+\section{Results}
+
+\subsection{Size of the Bangla Gap}
+\label{sec:rq1}
+
+\noindent\textbf{RQ1:} \emph{How large is the English--Bangla gap, and does it depend on the model and the benchmark?}
+
+\noindent\textbf{Finding.} The Bangla gap depends on both the model and the benchmark. Only
+\gemma{} loses significantly after correction, on \OB{} (8.0 points) and \TAU{} (11.5 points);
+\gptoss{} is higher in Bangla on \OB{}, and neither model changes on \WB{}.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{llrrrcrrr}
+\toprule
+ & Model & $n$ & EN & BN & $\Delta$ [95\% CI] & MELR & $b$/$c$ & $p_{\mathrm{H}}$ \\
+\midrule
+OB  & gemma   & 300 & 50.3 & 42.3 & $+8.0$ [3.0, 13.0]        & 15.9   & 42/18 & \textbf{.016} \\
+    & gpt-oss & 300 & 28.7 & 35.3 & $-6.7$ [$-$12.0, $-$1.3]  & $-$23.3 & 25/45 & .112 \\
+WB  & gemma   & 90  & 81.1 & 82.2 & $-1.1$ [$-$10.0, 7.8]     & $-$1.4 & 7/8   & 1.00 \\
+    & gpt-oss & 90  & 58.9 & 53.3 & $+5.6$ [$-$5.6, 16.7]     & 9.4    & 15/10 & 1.00 \\
+$\tau^2$ & gemma & 218 & 49.5 & 38.1 & $+11.5$ [5.0, 17.4]   & 23.1   & 40/15 & \textbf{.007} \\
+    & gpt-oss & 149 & 38.9 & 39.6 & $-0.7$ [$-$10.7, 8.7]     & $-$1.7 & 26/27 & 1.00 \\
+TAC & gemma   & 23  & 39.1 & 26.1 & $+13.0$ [0.0, 26.1]       & 33.3   & 3/0   & 1.00 \\
+\bottomrule
+\end{tabular}
+\caption{Success rates (\%) in English and Bangla on \OB{} (OB), \WB{} (WB), \TAU{} ($\tau^2$)
+and \TAC{} (TAC). Positive $\Delta$ and MELR mean Bangla is worse. $b$/$c$: EN-only/BN-only tasks.
+$p_{\mathrm{H}}$: exact McNemar test, Holm-corrected across the seven comparisons; bold:
+$p_{\mathrm{H}}<.05$.}
+\label{tab:rq1}
+\end{table*}
+
+Table~\ref{tab:rq1} gives every comparison. The two \gemma{} losses rest on 42 EN-only against
+18 BN-only tasks on \OB{} ($50.3\%\to42.3\%$) and 40 against 15 on \TAU{} ($49.5\%\to38.1\%$).
+\gptoss{}'s \OB{} gain ($28.7\%\to35.3\%$, 25 against 45 tasks) is significant before correction
+($p=.022$) but not after. On \TAC{}, \gemma{} drops from 39.1\% to 26.1\%,
+but this rests on three discordant tasks, so its MELR of 33.3\% is not informative; over the 21
+unique tasks the gap is 9.5 points (2 against 0 tasks).
+
+The two models also differ from each other. On \OB{}, \gemma{}'s gap exceeds \gptoss{}'s by
+14.7 points (95\% CI [7.7, 22.3]). On the 149 \TAU{} tasks gradeable in all four cells, the gaps
+are $+13.4$ and $-0.7$ points, a difference of 14.1 (95\% CI [2.0, 26.2]). The model gap itself
+depends on the language. On \OB{} in English, \gemma{} solves 82 tasks that \gptoss{} fails and
+\gptoss{} 17 that \gemma{} fails ($p<10^{-10}$); in Bangla the counts are 48 and 27 ($p=.020$).
+
+\gptoss{}'s Bangla gain should not be read as better understanding. Its invalid actions fall
+from 1{,}671 in English to 955 in Bangla over 299 runs each (Table~\ref{tab:trajectory}): the
+Bangla prompt changes how well it follows \OB{}'s action format.
+
+On \OB{}, \gemma{}'s gap is concentrated in short tasks: 16.1 points on single-app tasks (18
+against 3 discordant tasks, Holm-adjusted $p=.004$), 9.5 on two-app tasks (16 against 7,
+$p=.186$) and 0.0 on three-app tasks (8 against 8). Three-app tasks fail in both languages for
+the same reasons, so they carry little language signal.
+
+\subsection{Where Bangla Runs Break}
+\label{sec:rq2}
+
+\noindent\textbf{RQ2:} \emph{Where in the trajectory do Bangla-only failures first occur?}
+
+\noindent\textbf{Finding.} Each benchmark breaks at a different point: Bangla-only failures start
+at the final answer on \OB{}, in the dialogue on \TAU{}, at tool arguments on \WB{}, and at
+verification and stopping on \TAC{}.
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{L{2.75cm}rrrrrrr}
+\toprule
+ & \multicolumn{2}{c}{OB} & \multicolumn{2}{c}{$\tau^2$} & \multicolumn{2}{c}{WB} & TAC \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-8}
+First failure point & g & o & g & o & g & o & g \\
+\midrule
+Understanding, grounding, planning & 18 & 13 & 17 & 16 & 5 & 2  & 2 \\
+Tool choice, arguments, execution & 6  & 3  & 10 & 3  & 2 & 12 & 2 \\
+Verification, early stop & 3  & 6  & 12 & 4  & 0 & 1  & 3 \\
+Final response only                     & 15 & 3  & 1  & 0  & 0 & 0  & 0 \\
+Unclear                                 & 0  & 0  & 0  & 3  & 0 & 0  & 1 \\
+\midrule
+Cases                                   & 42 & 25 & 40 & 26 & 7 & 15 & 8 \\
+\bottomrule
+\end{tabular}
+\caption{First failure point of the analysed cases (g: \gemma{}, o: \gptoss{}). The \TAC{}
+cases include Bangla reruns that disagree and both-fail tasks with different partial scores.
+On $\tau^2$, 10 of \gemma{}'s 11 early terminations were caused by the simulated customer.}
+\label{tab:rq2}
+\end{table}
+
+Table~\ref{tab:rq2} gives the counts. On \OB{}, 15 of
+\gemma{}'s 42 Bangla-only failures break only at the final response: the content is correct, but
+it is written in Bangla script or digits, which the checker rejects. On \TAU{}, failures start
+in grounding, planning and termination; 10 of \gemma{}'s 11 early terminations come from the
+simulated customer ending the dialogue, not from the agent. On \WB{}, 11 of \gptoss{}'s 15
+cases start at tool arguments: missing filters, wrong thresholds or invented argument names.
+On \TAC{}, the analysed cases break at verification and stopping. No Bangla-only \TAU{} failure
+starts with malformed tool syntax, and none of the 641 \WB{} tool-call arguments we inspected
+contains Bangla script.
+
+\subsection{Causes of Bangla-Only Failures}
+\label{sec:rq3}
+
+\noindent\textbf{RQ3:} \emph{Which pipeline component is responsible for each Bangla-only failure?}
+
+\noindent\textbf{Finding.} The largest group of Bangla-only failures, 74 of 163 cases (45.4\%),
+traces to evaluation components rather than the agent, and only 14.7--54.6\% can be
+Bangla-specific agent failures. Correcting the grading cuts \gemma{}'s \OB{} gap from 8.0 to 3.0
+points.
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Cause & OB & $\tau^2$ & WB & TAC & All (\%) \\
+\midrule
+\multicolumn{6}{l}{\emph{Evaluation side}} \\
+Simulated user (C2) & 0 & 35 & 0 & 0 & 35 (21.5) \\
+Checker (C5)        & 21 & 0 & 1 & 0 & 22 (13.5) \\
+Translation (C3)    & 6 & 1 & 1 & 1 & 9 (5.5) \\
+Tool / env. (C4)    & 7 & 0 & 0 & 1 & 8 (4.9) \\
+\multicolumn{6}{l}{\emph{Agent side}} \\
+Genuine Bangla (C1) & 13 & 8 & 3 & 0 & 24 (14.7) \\
+General (C6)        & 4 & 21 & 17 & 3 & 45 (27.6) \\
+Unclear (C7)        & 16 & 1 & 0 & 3 & 20 (12.3) \\
+\midrule
+Cases               & 67 & 66 & 22 & 8 & 163 \\
+\bottomrule
+\end{tabular}
+\caption{Cause of every analysed EN-pass/BN-fail case, both models pooled per benchmark.
+Evaluation-side causes account for 74 cases (45.4\%), agent causes for 69 (42.3\%) and unclear
+cases for 20 (12.3\%).}
+\label{tab:attribution}
+\end{table}
+
+Table~\ref{tab:attribution} attributes all 163 analysed cases. These are cases, not shares of the
+gap: we did not apply the same codebook to every BN-pass/EN-fail task, so the table does not say
+how much of each gap is artefactual. The evaluation-side cases come from the simulated user
+(35, all on \TAU{}), checkers that reject correct answers (22,
+almost all on \OB{}), translation (9) and tools or the environment (8). Agent causes account for
+69 cases (42.3\%) and 20 are unclear. The Bangla-specific share is 14.7\% as labelled, 27.0\%
+with the unclear cases and 54.6\% with the 45 general-weakness cases, whose label rests on one
+English analogue per case that single runs cannot confirm.
+
+The dominant cause follows the benchmark design: English-only checkers on \OB{}, the simulated
+customer on \TAU{} and general weakness on \WB{}, where no simulated user is involved and the
+grader compares database state. \TAC{} has too few cases for a dominant cause (3 general, 3
+unclear, of which 2 are Bangla reruns that disagree).
+
+\paragraph{Corrected grading and confound removal.} Table~\ref{tab:corrected} recomputes the gaps
+under two corrections. Crediting answers that fail only on script or digits (on \OB{}, the 15
+\gemma{} answers with correct content) cuts \gemma{}'s \OB{} gap from 8.0 to 3.0 points, and its
+interval then includes zero. Removing evaluation-side cases moves \gemma{}'s \TAU{} gap from 11.5
+to 5.8 points when dialogues that the simulated user ended before the agent acted are dropped in
+\emph{both} languages. The corrections that touch only the Bangla side push the remaining gaps
+down by construction, so we mark which ones are symmetric.
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{llrrr}
+\toprule
+ & Model & As scored & Grading corr. & Confounds removed \\
+\midrule
+OB & gemma   & $+8.0$  & $+3.0$ [$-$1.3, 7.3]  & $+1.9$ [$-$1.9, 5.6]$^{s}$ \\
+   & gpt-oss & $-6.7$  & $-8.7$ [$-$13.7, $-$3.3] & $-3.3$ [$-$7.7, 1.5]$^{s\dagger}$ \\
+WB & gemma   & $-1.1$  & $-2.2$ [$-$10.1, 5.6]$^{s}$ & $-3.4$ [$-$11.4, 4.5]$^{s}$ \\
+   & gpt-oss & $+5.6$  & $+6.7$ [$-$3.4, 18.0]$^{s}$ & $+8.0$ [$-$2.3, 18.2]$^{s}$ \\
+$\tau^2$ & gemma & $+11.5$ & $+10.6$ [4.1, 17.0] & $+5.8$ [$-$1.9, 12.8]$^{s}$ \\
+   & gpt-oss & $-0.7$  & $-0.7$ [$-$10.7, 8.7] & $-0.7$ [$-$10.5, 9.1]$^{s}$ \\
+TAC & gemma  & $+13.0$ & $+8.7$ [0.0, 21.7]    & $0.0$ [0.0, 0.0]$^{s}$ \\
+\bottomrule
+\end{tabular}
+\caption{Gap (points, 95\% CI) under corrected grading (OB, TAC: credit Bangla answers labelled
+checker, C5; $\tau^2$: credit answers written with Bengali digits; WB: drop the ambiguous task) and after
+removing evaluation-side cases. $^{s}$: applied to both languages (on OB, the English side covers
+seven environment traps). $^{\dagger}$: also drops 19 BN-pass tasks whose English run failed on
+action format.}
+\label{tab:corrected}
+\end{table*}
+
+\paragraph{Two genuine Bangla mechanisms.} On \OB{}, all 13 genuine Bangla cases follow two
+mechanisms, and both appear in both models. In \emph{entity grounding}, a name that appears only
+in Bangla script has no letter case; the agent writes it in lower case for a case-sensitive mailbox
+or calendar lookup, receives an empty result and accepts it (3 \gemma{} and 6 \gptoss{} cases;
+the same two tasks fail for both models). In \emph{re-rendering}, the agent turns a value from
+the Bangla task into a different English form: ``Trip'' for \emph{travelling} (both models),
+``curd'' for \emph{yogurt}, and ``08:00 AM'' for \emph{8:00}. The same pattern appears once on
+\WB{}, where ``last week'' is grounded as a rolling seven-day window. In each case the meaning
+survives and the form the environment requires does not. The eight genuine \TAU{} cases are more
+varied: grounding of names and identifiers, calls to user-side device tools in telecom, and policy
+checks the English run performed.
+
+\subsection{Quantified trajectory observations}
+\label{sec:trajectory}
+
+\begin{table}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{L{2.9cm}rrrr}
+\toprule
+ & \multicolumn{2}{c}{gemma} & \multicolumn{2}{c}{gpt-oss} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Measure (\OB{}) & EN & BN & EN & BN \\
+\midrule
+Invalid actions (299 runs)        & 273 & 194 & 1{,}671 & 955 \\
+Runs with $\geq$3 identical rejected actions in a row & 9 & 9 & 60 & 12 \\
+Failed step repeated identically  & 11\% & 16\% & 17\% & 7\% \\
+Writing runs that read back output & 3/180 & 4/178 & 20/112 & 19/155 \\
+Out-of-step failures on 3-app tasks & 38/46 & 30/39 & 49/81 & 37/58 \\
+\quad of which no step was rejected & 13/46 & 21/39 & 0/81 & 1/58 \\
+\quad of which $\geq$half the steps were rejected & 9/46 & 10/39 & 44/81 & 9/58 \\
+Bangla-script final answer        & -- & 46/173 & -- & 7/194 \\
+\bottomrule
+\end{tabular}
+\caption{Trajectory measurements on \OB{}, computed from the run logs. Failed step repeated:
+share of rejected or erroring steps followed by an identical action (284, 213, 1{,}640 and 949
+failed steps). Read back: a written file is read again, or a created event is followed by
+listing the calendar. Last row: share of Bangla failures.}
+\label{tab:trajectory}
+\end{table}
+
+We measure step-level behaviour on \OB{}, the one benchmark where it is defined identically for
+both models and not shaped by a simulated user: every step is a parsed text action, so a rejected
+action is a logged event, and both models share a 20-step budget over the largest paired sample
+(1{,}200 runs). Table~\ref{tab:trajectory} reports the measures; stage counts cover all failures.
+
+\paragraph{The two models fail at different stages.} An agent step moves from understanding to
+planning, action encoding, execution, verification and completion. \gptoss{} often fails at
+action encoding: 107 of its 214 English \OB{} failures produce no valid action or give up (54
+coded as action format), against 12 of \gemma{}'s 149. On \WB{}, where function calling handles
+the format, its failures move to the arguments: 40 of its 79 failed runs are wrong tool arguments,
+against 11 of \gemma{}'s 33. \gemma{} usually reaches execution and fails later, on content (43 of
+149 English failures), the step budget (42 of 149) and, in Bangla, the script of its answer.
+The model gap follows the same line: of the 82 English tasks that \gemma{} solves and \gptoss{}
+does not, 80 \gptoss{} runs contain a rejected action, 33 are coded action format, and 42 end
+stuck or at the step limit.
+
+\paragraph{Running out of steps means different things.} Out-of-step failures are mostly a
+three-app problem (38 of 46 for \gemma{} in English). For \gemma{}, 13 of these 46 runs have no
+rejected step at all: valid progress was too slow. For \gptoss{}, none of 81 is of this kind, and in
+44 at least half of the steps were rejected, so the budget was spent on invalid actions.
+
+\paragraph{Verification and repetition.} The agents rarely check what they wrote: \gemma{} reads
+back its output in under 3\% of writing runs, \gptoss{} in 12--18\%. \gptoss{}'s English runs
+contain 1{,}671 invalid actions and 60 runs with three or more identical rejected actions in a row;
+both fall sharply in Bangla. One common claim is \emph{not} supported: most failed steps are not
+followed by an identical action (7--17\% are), so repetition is concentrated in a minority of runs.
+Whether missing verification \emph{causes} failures is a hypothesis (\S\ref{sec:discussion}).
+
+\paragraph{Other benchmarks.} These measures do not transfer: on \WB{} one invalid call fails the
+run outright, on \TAU{} the simulated user co-produces the trajectory, and \TAC{} has 23 task pairs
+for one model. We therefore report run-level signals. On \TAU{}, apart from early stops by the
+simulated customer, the most frequent signal is a required write that is never made (\gemma{}:
+39/110 English and 37/135 Bangla failures; \gptoss{}: 34/91 and 43/90), then writes with wrong
+arguments (19--25 per cell); dialogues almost never reach the step limit (one run), and Bangla runs
+use fewer tool calls ($7.69\to6.64$; $7.26\to6.44$). On \WB{}, Bangla runs are also shorter
+($3.96\to3.17$ and $3.30\to2.93$ tool calls per task), and \gptoss{} crashes runs by inventing
+argument names (2 English, 5 Bangla). The eight traced \TAC{} cases show early stops and unchecked
+success claims but are too few to count.
+
+\subsection{Evaluation-setup failures in both languages}
+\label{sec:setup}
+
+RQ3 counts only EN-pass/BN-fail cases. The evaluation setup also fails on tasks that fail in
+both languages, which lowers both scores and can hide or mimic agent errors.
+
+\paragraph{Scorer and benchmark defects (\OB{}).} The three scorer defects repaired in
+\S\ref{sec:method} turned 19 English and 24 Bangla runs of \gemma{} (6 and 9 of \gptoss{}) from fail
+to pass; the shipped scorer therefore understates both languages, Bangla slightly more. Beyond the
+scorer, some checks ask for something the task does not: a benchmark defect is the primary cause of
+47 of \gemma{}'s 149 English failures (31.5\%) and 39 of the 131 tasks that fail in both languages,
+and it decides at least one of the three fully coded runs on 57 tasks. In task 1-2/0, all four runs
+give the correct free time slot and all four fail, because two of the four checks require a
+calendar event the task never asks for. Defects do not make a task uninformative: inside
+defect-broken tasks the agents still make independent errors, so dropping these tasks would also
+remove evidence about the agents.
+
+\paragraph{Simulated users (\TAU{}).} A heuristic detector flags 46 \gemma{} Bangla dialogues and
+26 English ones in which the simulated customer ended the chat before the agent acted (a hand check
+of six random flags found about three true early stops). In 33 \gemma{} and 54 \gptoss{} Bangla
+dialogues, the simulated customer wrote mostly in English, a fidelity problem the agent cannot fix.
+
+\paragraph{Harness and environment limits.} On \OB{}, the in-container LLM helper answers in at most
+50 tokens; for \gptoss{}, whose hidden reasoning uses that budget, all 14 helper calls in two Bangla
+runs returned empty strings. The reply-length cap rejected 14 and 15 consecutive long writes in two
+\gemma{} Bangla runs (Appendix~\ref{app:chains}), and two runs ended after empty model replies. On
+\TAC{}, cloud-drive authentication errors and an administrator password prompt blocked valid actions
+in both languages. Provider errors do not drive the gaps: dropping every \WB{} task with a
+provider error on either side leaves \gptoss{}'s gap at $+7.1$ points ($n=85$).
+
+\section{Analysis by Task Type}
+\label{sec:tasktypes}
+
+We assigned every task of \WB{}, \TAU{} and \TAC{} to one of nine types (Appendix~\ref{app:tasktypes},
+Table~\ref{tab:percat}) \verify{who assigned types and how}. The results are descriptive: several
+types have fewer than ten tasks, and we did not test per type. Three patterns hold for types with
+at least ten tasks. First, failure rates differ more between types than between languages: on
+\TAU{}, multi-target operations fail 73--93\% of the time in every cell ($n=44$ and 27). Second,
+the largest increases are on \TAU{}, where the simulated customer speaks Bangla: single-target
+tasks for \gemma{} ($35\%\to62\%$, $n=34$), entity creation for \gptoss{} ($55\%\to82\%$, $n=11$)
+and conditional decisions for \gemma{} ($27\%\to43\%$, $n=37$). On \WB{}, \gemma{}'s failure
+count differs by at most two tasks per type. Third, the two models can move in opposite directions
+within a type: conditional decisions on \TAU{} change by $+16$ points for \gemma{} and $-10$ for
+\gptoss{} ($n=37$ and 30), and system setup and troubleshooting by $+6$ and $-11$ ($n=87$ and
+46). The opposite movement of the two models in \S\ref{sec:rq1} therefore persists inside task
+types and is not only a product of task mix.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Implications for benchmark builders.} Our results suggest five practices.
+(1) Separate checks of artefact state from checks of answer text, and accept the task language
+or normalise numerals in answer checks; otherwise correct Bangla answers fail. (2) Constrain
+simulated users: forbid confirming and ending a dialogue in the same turn, and require device
+actions to be tool calls. (3) Protect names, literals and identifiers in translation, and audit
+the result automatically. (4) Report discordant counts, corrected-grading gaps and per-case
+attribution alongside raw scores. (5) Report results by benchmark and model; a pooled ``Bangla
+penalty'' hides opposite effects.
+
+\paragraph{Implications for agent builders.} Untested scaffold changes follow from the same
+failures: map common tool aliases, re-prompt after a rejected action, allow bulk spreadsheet edits,
+require a read-back before finishing, keep a checklist of sub-goals, and copy literals verbatim.
+
+\paragraph{Hypotheses for future work.} Five explanations fit our data but are not demonstrated
+by it; each names the experiment that would test it. (H1) \emph{Missing verification causes
+failures}: require a read-back before finishing. (H2) \emph{Long tasks fail by error
+accumulation}: vary the step budget on three-app tasks. (H3) \emph{Scores measure model--scaffold
+compatibility}: rerun \gptoss{} with native function calling in both languages. (H4) \emph{Script
+and tool-format errors share one cause}, a correct intent in a rejected form: use a probe set with
+protected names and literals. (H5) \emph{Early errors are rarely recovered}: prompt a retry after an
+empty result and measure recovery.
+
+\section{Conclusion}
+We ran paired English and Bangla evaluations of two open-weight agents on four benchmarks. The
+Bangla gap depends on model and benchmark: only two of seven comparisons are significant after
+correction. Among the 163 tasks that fail only in Bangla, the largest group traces to evaluation
+components, and correcting the grading removes most of one significant gap. The genuine failures
+on \OB{} keep the meaning of the task but get its form wrong. Cross-lingual agent scores should be
+read together with an attribution of their failures.
+
+\section*{Limitations}
+
+\paragraph{Case-level attribution.} We attribute cases, not gaps. On \OB{} and \TAU{} the
+BN-pass/EN-fail tasks were not coded with the same codebook (\WB{} is the exception), so the
+corrected gaps that drop cases only on the Bangla side are biased toward zero.
+
+\paragraph{Single runs.} Each task ran once per language at temperature 0. Served inference is
+not bit-deterministic: rerunning 13 Bangla \TAC{} tasks changed full completion for one and the
+checkpoint score for three. The
+general-weakness label assumes that one English analogue reflects a stable weakness.
+
+\paragraph{Trajectory measures.} Step-level measures (rejected actions, repetition, read-back,
+use of the step budget) come from \OB{} only, for the reasons given in \S\ref{sec:trajectory}. The
+other benchmarks are described by run-level signals, so the two kinds of evidence are not directly
+comparable, and our step-level findings may not generalise to dialogue or function-calling
+harnesses.
+
+\paragraph{Annotation.} Causes were assigned by one annotator per benchmark, with second review on
+\WB{} (all cases), \TAU{} (46 of 66) and a 16-case check on \OB{}. Agreement on the fine cause is
+fair to substantial. Some annotators were LLMs, which may share biases with the evaluated agents.
+
+\paragraph{Translation.} Bangla tasks were machine-translated with LLM assistance. On \OB{}, the
+translation rules were applied unevenly (\S\ref{sec:localization}), so some failures we attribute
+to the agent may partly reflect translation. Native-speaker review of the translations is
+incomplete.
+
+\paragraph{Scope.} We study one language, two models and pilot-sized samples of \WB{} (90 tasks)
+and \TAC{} (23 task pairs). On \TAU{} the two models have different task sets after infrastructure
+exclusions, and the simulated user is played by the same model as the agent.
+
+\section*{Ethical Considerations}
+We evaluate public open-weight models on public benchmarks in sandboxed environments; no human
+subjects or private data are involved. English-only graders can penalise an agent for answering in
+the user's language, which understates agent quality for non-English users. We release task IDs,
+trajectories, attribution labels and analysis scripts so that this bias can be measured. The
+Bangla tasks were machine-translated and are not a curated Bangla language resource.
+
+\bibliography{refs}
+
+\appendix
+
+\section{Attribution codebook}
+\label{app:codebook}
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{L{1.5cm}L{5.25cm}}
+\toprule
+Code & Operational definition \\
+\midrule
+C5 Checker & The Bangla output is correct for the task as written; the grader rejects it, or the check
+requires something the task does not ask for. Includes script- or numeral-only differences. \\
+C3 Translation & The Bangla task text differs from the English task in an operation, a constraint or a
+literal (e.g., a quoted string translated; ``sum'' rendered as ``add''). \\
+C2 Simulated user & The simulated user or coworker ends the interaction early, gives a wrong value,
+replies in the wrong language, or narrates an action instead of performing it. \\
+C4 Tool / env. & A tool, harness or infrastructure fault blocks an action that is valid (e.g., an
+empty model reply recorded as malformed; a reply cap that rejects a long valid action). \\
+C1 Genuine Bangla & The agent errs in a way the English run does not, and no check above fails
+(e.g., a changed English value, a lower-cased name from Bangla script). \\
+C6 General & The agent error's mechanism also appears in an English failure of the same model, cited
+by task ID. \\
+C7 Unclear & No visible mechanism, or Bangla reruns of the same task disagree. \\
+\bottomrule
+\end{tabular}
+\caption{Causes, checked in the order C5, C3, C2, then agent understanding, tool choice and
+arguments, C4, and verification (Figure~\ref{fig:overview}d). The first check that fails decides
+the cause. Each case also records the first failure point, the decisive action and a trace quote.}
+\label{tab:codebook}
+\end{table}
+
+\paragraph{Agreement.} On \WB{}, a blind second annotator labelled every case and
+disagreements were adjudicated (cause $\kappa=0.59$, $n=7$, \gemma{}; $\kappa=0.77$, $n=15$,
+\gptoss{}). On \TAU{}, 46 of 66 cases were double-coded and adjudicated ($\kappa=0.39$ on the
+fine cause, fair agreement on the scale of \citealp{landis1977}; $\kappa=0.71$, substantial, on
+evaluation versus agent). On \OB{}, the codebook was checked on 16 double-coded cases
+($\kappa=0.78$); the remaining cases and all \TAC{} cases have one annotator. The \WB{} and
+\TAC{} annotators were LLMs \verify{annotator identity for \OB{} and \TAU{}; the draft's
+$\kappa$ range 0.39--0.63 includes a value not found in the sources}.
+
+\section{Reproducibility details}
+\label{app:repro}
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{L{1.8cm}L{4.75cm}}
+\toprule
+Item & Value \\
+\midrule
+Model tags & \texttt{gemma4:31b}, \texttt{gpt-oss:20b} \\
+Serving & Ollama, OpenAI-compatible endpoint \verify{Ollama version, quantization, num\_ctx} \\
+Decoding & temperature 0, top-$p$ 1 (\OB{} harness); \gptoss{} reasoning effort not set (default) \\
+Reply cap (\OB{}) & 512 tokens (\gemma{}), 2{,}048 (\gptoss{}) \verify{per-model caps as stated in the \OB{} report} \\
+Step budgets & \OB{} 20 steps; \TAC{} \verify{iteration cap}; \WB{}, \TAU{} \verify{limits} \\
+Simulated users & \TAU{}: same model as the agent; \TAC{} coworkers \verify{model} \\
+Translation & \OB{}: \gemma{}, cached; system prompt written in Bangla; others LLM-assisted \verify{tool and review} \\
+\OB{} scorer & three repairs (\S\ref{sec:method}); scripts \texttt{analysis/fa\_rescore.py} \\
+Statistics & exact McNemar, Holm, paired bootstrap (4{,}000 resamples, seed 7) \\
+Annotation & codebook in Appendix~\ref{app:codebook}; LLM annotators on \WB{} and \TAC{} \verify{\OB{}, \TAU{}} \\
+\bottomrule
+\end{tabular}
+\caption{Configuration. Fill in every value that the run logs and reports do not record before submission.}
+\label{tab:repro}
+\end{table}
+
+\section{Task types}
+\label{app:tasktypes}
+
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l rr rr rr rr rr}
+\toprule
+ & \multicolumn{2}{c}{WB gemma} & \multicolumn{2}{c}{WB gpt-oss} & \multicolumn{2}{c}{$\tau^2$ gemma}
+ & \multicolumn{2}{c}{$\tau^2$ gpt-oss} & \multicolumn{2}{c}{TAC gemma} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+Task type & EN/BN & $n$ & EN/BN & $n$ & EN/BN & $n$ & EN/BN & $n$ & EN/BN & $n$ \\
+\midrule
+Entity creation          & 0/0   & 8  & 38/25 & 8  & 67/73 & 15 & 55/82 & 11 & 50/75   & 4 \\
+Single-target            & 0/0   & 23 & 13/26 & 23 & 35/62 & 34 & 71/74 & 34 & 100/100 & 3 \\
+Multi-target and batch   & 24/16 & 25 & 56/48 & 25 & 73/80 & 44 & 81/93 & 27 & -- & \\
+Temporal reasoning       & 40/40 & 5  & 60/80 & 5  & -- & & -- & & 100/100 & 1 \\
+Data analysis and QA     & 0/14  & 7  & 14/57 & 7  & 0/100 & 1  & 0/0   & 1  & 100/100 & 4 \\
+Conditional decisions    & 42/42 & 19 & 63/68 & 19 & 27/43 & 37 & 37/27 & 30 & 100/100 & 2 \\
+Cross-tool composition   & 33/33 & 3  & 33/33 & 3  & -- & & -- & & -- & \\
+Interpersonal coord.     & -- & & -- & & -- & & -- & & 40/60 & 5 \\
+System setup and troubl. & -- & & -- & & 53/59 & 87 & 61/50 & 46 & 0/25 & 4 \\
+\midrule
+All tasks                & 19/18 & 90 & 41/47 & 90 & 50/62 & 218 & 61/60 & 149 & 61/74 & 23 \\
+\bottomrule
+\end{tabular}
+\caption{Failure rate (\%) in English/Bangla per task type, with the number of tasks. Descriptive:
+with fewer than ten tasks one task moves a rate by 10--100 points.}
+\label{tab:percat}
+\end{table*}
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{L{2.0cm}L{4.8cm}}
+\toprule
+Type & What the task asks \\
+\midrule
+Entity creation & Make one new record from details in the request \\
+Single-target & Find the one record the request points to, then change it \\
+Multi-target & Select every matching record, or make several changes \\
+Temporal & Work out free slots, relative dates or time shifts \\
+Data analysis & Compute, chart or look up an answer from data \\
+Conditional & Check a condition or policy first; act only if it holds \\
+Cross-tool & Use a value from one tool as input to another \\
+Interpersonal & Obtain information or agreement from coworkers \\
+System setup & Install software or walk a user through a fix \\
+\bottomrule
+\end{tabular}
+\caption{The nine task types.}
+\label{tab:types}
+\end{table}
+
+\section{Example failure chains}
+\label{app:chains}
+
+\begin{figure*}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_chains.pdf}
+\caption{Four traced Bangla runs whose English counterpart passes, from the first divergence to
+the final failure. These are illustrations; the counts are in Tables~\ref{tab:attribution}
+and~\ref{tab:trajectory}.}
+\label{fig:chains}
+\end{figure*}
+
+\end{document}

@@ -8,28 +8,68 @@ import pytz
 from utils.helper import build_docker
 from utils.env import OfficeAgentEnv
 from utils.policies import LLMPolicy
+from utils.llm import load_env_file, safe_model_name
 
 from intercode.envs.ic_env import ACTION_EXEC
+
+
+def push_llm_config(container_name, model_name=None):
+    """Copy the agent's model endpoint into the container as /llm_config.json so the
+    in-container `llm` app uses the same provider/model as the agent (e.g. gpt-oss:20b via
+    Ollama) rather than OpenAI. The api key lives only in this ephemeral file, never in the repo."""
+    import subprocess
+    import tempfile
+    env = load_env_file()
+    # For a locally served agent model the container cannot reach the host's 127.0.0.1, so the
+    # runner passes OFFICEBENCH_LLM_BASE_URL (e.g. http://host.docker.internal:11434/v1) to keep
+    # the in-container llm app on the same model as the agent.
+    cfg = {'base_url': os.environ.get('OFFICEBENCH_LLM_BASE_URL', env.get('base_url', '')),
+           'api_key': os.environ.get('OFFICEBENCH_LLM_API_KEY', env.get('api_key', '')),
+           'model': model_name or env.get('model', 'gpt-3.5-turbo-0125')}
+    if not cfg['base_url'] or not cfg['api_key']:
+        return  # nothing configured; llm app falls back to /openai_key.txt
+    fd, path = tempfile.mkstemp(suffix='.json')
+    try:
+        with os.fdopen(fd, 'w') as f:
+            json.dump(cfg, f)
+        r = subprocess.run(['docker', 'cp', path, f'{container_name}:/llm_config.json'],
+                           capture_output=True, text=True)
+        if r.returncode != 0:
+            print(f"Warning: failed to push llm_config to container: {r.stderr}")
+    finally:
+        os.remove(path)
+
 
 def main(docker_name='officebench',
          container_name='officebench-debug',
          dockerfile_path='./docker/Dockerfile',
-         model_name='gpt-4o-2024-05-13',
+         model_name=None,
          task_dir='tasks/1-1',
          config_file='tasks/1-1/subtasks/0.json',
          task=None,
          tag=None,
          max_iter=20,
-         mode='default'):
+         mode='default',
+         lang='en'):
+    if model_name is None:
+        model_name = load_env_file().get('model', 'gpt-4o-2024-05-13')
     build_docker(docker_name, dockerfile_path)
 
     config = json.load(open(config_file))
     task = config.get('task', task)
+    if lang == 'bn':
+        # Bangla experiment: feed the model the Bangla task text (from the translation cache
+        # built earlier); the English run and its config files are untouched.
+        try:
+            cache = json.load(open('analysis/bn_cache.json', encoding='utf-8'))
+            task = cache.get((task or '').strip(), task)
+        except Exception as e:
+            print(f"Warning: could not load Bangla task from cache: {e}")
     subtask_id = config_file.split('/')[-1].split('.')[0]
     if tag is None:
         timezone = pytz.timezone('America/Los_Angeles')
         tag = datetime.now(timezone).strftime('%Y%m%d%H%M%S')
-    output_dir = f'{task_dir}/outputs/{subtask_id}/{model_name.replace("/", "_")}_{tag}'
+    output_dir = f'{task_dir}/outputs/{subtask_id}/{safe_model_name(model_name)}_{tag}'
     
     assert mode in ['force_new', 'use_llm_cache', 'default']
     if mode == 'force_new':
@@ -68,9 +108,10 @@ def main(docker_name='officebench',
         testbed_dir=f'{task_dir}/testbed/',
         app_dir=f'apps/',
     )
+    push_llm_config(container_name, model_name)
     env.cache_docker_status(local_cache_dir=f'{task_dir}/cache/{subtask_id}/')
 
-    if 'gpt' in model_name:
+    if 'gpt' in model_name and 'oss' not in model_name:
         api_key = open('openai_key.txt').read().strip()
     elif 'gemini' in model_name:
         api_key = open('gemini_key.txt').read().strip()
@@ -84,6 +125,7 @@ def main(docker_name='officebench',
         config=config,
         llm_cache=llm_cache,
         debug_mode=True,
+        lang=lang,
     )
     try:
         obs = env.observation

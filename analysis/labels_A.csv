@@ -1,0 +1,17 @@
+id,run_tag,primary,decisive_step,tags,rationale
+1-2/0,first10,A-INTENT,3,C-AMBIG,Found free slot 14:30-15:30 but ended with a text answer; no meeting event created in either calendar.
+1-2/1,first10,A-STATE,5,C-HARNESS,Saw both existing dinners at 18:30-19:30 and booked the same slot; overlap check fails. Step 0 empty reply was a tool-call parsing artefact.
+1-2/2,first10,A-INTENT,3,C-AMBIG,Same as 1-2/0: answered with the time and saved no shopping event.
+1-2/4,first10,A-REASON,3,C-WEAKCHECK,Counted sleeping and nap as commitments (5 vs 5); expected Tom; passed only because answer contains 'Tom'.
+1-9/1,probe,A-REASON,8,C-LLMAPP,llm app failed; agent computed itself and chose Sam 85; true average 80.05 so Alice 78 is closest.
+3-82/0,probe,EVAL-CRASH,,C-LLMAPP;C-HARNESS,list.docx holds the correct 5 names and none of the excluded ones; both content checks open the docx as xlsx and crash.
+1-3/4,next20,EVAL-MISMATCH,,,Moved docx pdf jpg as asked; check also requires file3.xlsx which the task does not mention.
+1-4/2,next20,A-INTENT,4,C-AMBIG,Added 50000 to the existing bonus row instead of adding a new 'annual bonus' row.
+1-4/3,next20,A-DEVIATION,4,,Task names the item 'utilities fee'; agent wrote 'utilities'.
+1-5/1,next20,ENV-TOOL,,,Agent wrote 1 (half of 2); excel_set_cell blanks the value 1 (1 == True) so the saved cell is empty.
+1-5/2,next20,A-INTENT,5,,Ignored 'for each day': averaged the 3 rows (133333) instead of dividing the total by 365 (1095).
+1-5/3,next20,A-REASON,5,,Wrote 2662013; correct total (2051000) x 1.1^3 = 2729881.
+1-6/0,next20,ENV-TOOL,,,Agent wrote classes 1-5; excel_set_cell blanked the 1 so row 2 is empty and the comparator fails.
+1-6/2,next20,EVAL-FORM,,,Wrote 08:00..08:40; check wants 8:00..8:40; same times.
+1-6/3,next20,EVAL-MISMATCH,,,Task says salary file and agent updated it correctly; check reads company_budget.xlsx.
+1-6/4,next20,EVAL-FORM,,,Wrote 5% / -10% / 10%; check wants 5 / 10 / 10; -10% fails only on the sign convention for 'reduce'.

@@ -1,0 +1,851 @@
+<title>OfficeBench Method Figures</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* layout: one column of full-bleed figures, the interactive teaser first, each with its claim underneath */
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --ink: #1b2330;
+  --muted: #5e6675;
+  --rule: #e2ded7;
+  --accent: #b4650a;
+  --ok: #1a7f4b;
+  --bad: #b3391f;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "IBM Plex Sans", "Noto Sans Bengali", ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14171c; --surface: #1b1f26; --ink: #e8e6e1; --muted: #9aa2ae;
+    --rule: #2e343d; --accent: #f0a93b; --ok: #4cb37c; --bad: #e07a5f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171c; --surface: #1b1f26; --ink: #e8e6e1; --muted: #9aa2ae;
+  --rule: #2e343d; --accent: #f0a93b; --ok: #4cb37c; --bad: #e07a5f; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 56px;
+        display: flex; flex-direction: column; gap: 40px; }
+header { display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--rule); padding-bottom: 22px; }
+h1 { font-family: var(--serif); font-size: clamp(26px, 4vw, 34px); font-weight: 600; line-height: 1.15;
+     margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+.standfirst { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; max-width: 66ch; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.plate { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px;
+         padding: 18px; overflow-x: auto; }
+.plate svg { display: block; width: 100%; min-width: 760px; height: auto;
+             color: var(--ink); font-family: var(--sans); }
+#teaser svg { min-width: 940px; }
+#steps svg { min-width: 980px; }
+/* the drawn files carry literal hues so they stand alone; the page maps them onto its tokens */
+.plate svg [fill="#d97706"] { fill: var(--accent); }
+.plate svg [stroke="#d97706"] { stroke: var(--accent); }
+.plate svg [fill="#1a7f4b"] { fill: var(--ok); }
+.plate svg [stroke="#1a7f4b"] { stroke: var(--ok); }
+.plate svg [fill="#b3391f"] { fill: var(--bad); }
+.plate svg [stroke="#b3391f"] { stroke: var(--bad); }
+figcaption { font-family: var(--serif); font-size: 15.5px; line-height: 1.55; max-width: 72ch; color: var(--ink); }
+figcaption b { font-weight: 600; }
+figcaption span { color: var(--muted); }
+
+/* --- interactive teaser --- */
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.controls .sep { flex: 1 1 12px; }
+button { font: inherit; font-size: 12.5px; color: var(--ink); background: var(--surface);
+         border: 1px solid var(--rule); border-radius: 999px; padding: 5px 13px; cursor: pointer;
+         transition: background .12s, border-color .12s, color .12s; }
+button:hover { border-color: var(--accent); }
+button[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 16%, transparent);
+                              border-color: var(--accent); color: var(--accent); font-weight: 600; }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.t0-stage { transition: opacity .18s; cursor: pointer; }
+.t0-stage.dim { opacity: .18; }
+.s-step, .s-arrow { transition: opacity .18s; }
+.s-step { cursor: pointer; }
+.s-step.dim, .s-arrow.dim { opacity: .16; }
+.s-step.on .s-card { stroke: var(--accent); stroke-opacity: .9; stroke-width: 1.8; }
+.s-arrow.on { stroke: var(--accent); stroke-opacity: 1; stroke-width: 2.4; }
+.s-out { cursor: help; }
+.t0-hot { pointer-events: all; cursor: help; }
+.t0-hot:hover { stroke-opacity: 1; }
+.readout { display: flex; gap: 10px; align-items: baseline; min-height: 40px;
+           border-left: 3px solid var(--accent); padding: 8px 0 8px 12px; font-size: 13px;
+           line-height: 1.5; color: var(--ink); }
+.readout .tag { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+                font-weight: 600; flex: none; padding-top: 2px; }
+.readout .val { min-width: 0; }
+@media (prefers-reduced-motion: reduce) { .t0-stage, .s-step, .s-arrow, button { transition: none; } }
+
+.note { border-top: 1px solid var(--rule); padding-top: 20px; display: flex; flex-direction: column; gap: 10px;
+        font-size: 13.5px; line-height: 1.6; color: var(--muted); max-width: 80ch; }
+.note h2 { font-family: var(--sans); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+           color: var(--ink); margin: 0 0 2px; font-weight: 600; }
+code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 12.5px;
+       background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; padding: 1px 5px; }
+@media (max-width: 640px) { .plate { padding: 12px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">OfficeBench &middot; method figures</div>
+    <h1>Where the runs come from, and how their failures are named</h1>
+    <p class="standfirst">Four figures for the paper. The first is the general pipeline, step by step; the second walks one real
+      subtask through it; the last two are the apparatus and the coding instrument in detail. Every number and
+      every quoted string is from the runs themselves, as of 2026-10-04.</p>
+  </header>
+
+  <figure>
+    <div class="controls">
+      <span class="eyebrow" style="margin-right:4px">Steps</span>
+      <button id="s-play" type="button">&#9654; Play</button>
+      <button data-sstep="all" aria-pressed="true">All</button>
+      <button data-sstep="1" aria-pressed="false">1 &middot; Collect</button>
+      <button data-sstep="2" aria-pressed="false">2 &middot; Run</button>
+      <button data-sstep="3" aria-pressed="false">3 &middot; Score</button>
+      <button data-sstep="4" aria-pressed="false">4 &middot; Characterize</button>
+      <button data-sstep="5" aria-pressed="false">5 &middot; Compare</button>
+    </div>
+    <div class="plate" id="steps"><svg viewBox="0 0 1160 470" role="img" color="#1b2330"
+     font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif"
+     aria-label="The pipeline in five steps. Collect tasks, run agents, score runs, characterize failures, compare and report. Each step takes the previous step's output: tasks and start files, then a trace and final files, then pass or fail per run, then one root-cause code per failure, then findings and fixes.">
+  <defs><marker id="sparrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+    <text x="12" y="32" font-size="17" fill="currentColor" font-weight="700" pointer-events="none">How the study works, step by step</text>
+    <text x="12" y="52" font-size="11.5" fill="currentColor" fill-opacity=".65" pointer-events="none">each step hands its output to the next</text>
+  <g id="s-1" class="s-step" data-step="1" transform="translate(12,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">1</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Collect tasks</text>
+    <rect x="30" y="56" width="32" height="44" rx="3" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <line x1="36" y1="68" x2="56" y2="68" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="36" y1="77" x2="56" y2="77" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="36" y1="86" x2="56" y2="86" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <rect x="70" y="62" width="32" height="44" rx="3" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <line x1="76" y1="74" x2="96" y2="74" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="76" y1="83" x2="96" y2="83" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="76" y1="92" x2="96" y2="92" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <rect x="110" y="56" width="32" height="44" rx="3" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <line x1="116" y1="68" x2="136" y2="68" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="116" y1="77" x2="136" y2="77" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="116" y1="86" x2="136" y2="86" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Office tasks that need one</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">or more apps</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">A fixed benchmark of subtasks</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">in calendar, Excel, Word, PDF,</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">email, OCR and shell.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="The agent is always given the same tasks, so runs can be compared."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">tasks + start files</text>
+  </g>
+  <line id="s-a1" class="s-arrow" x1="215" y1="240" x2="243" y2="240" stroke="currentColor" stroke-opacity=".55" stroke-width="1.8" marker-end="url(#sparrow)"/>
+  <g id="s-2" class="s-step" data-step="2" transform="translate(246,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">2</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Run agents</text>
+    <rect x="24" y="62" width="48" height="26" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="48" y="79" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">prompt</text>
+    <line x1="73" y1="75" x2="79" y2="75" stroke="currentColor" stroke-opacity=".7" stroke-width="1.3" marker-end="url(#sparrow)"/>
+    <rect x="80" y="62" width="48" height="26" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="104" y="79" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">action</text>
+    <line x1="129" y1="75" x2="135" y2="75" stroke="currentColor" stroke-opacity=".7" stroke-width="1.3" marker-end="url(#sparrow)"/>
+    <rect x="136" y="62" width="48" height="26" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="160" y="79" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">result</text>
+    <path d="M140 90 V 104 H 48 V 92" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2" marker-end="url(#sparrow)"/>
+    <text x="94" y="118" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6" pointer-events="none">repeat</text>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">A model works the task</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">inside a container</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">Loop: read prompt, write a</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">thought and one JSON action,</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">app executes it. Up to 20 steps.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="Models and prompt languages are the only thing that changes between runs."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">trace + final files</text>
+  </g>
+  <line id="s-a2" class="s-arrow" x1="449" y1="240" x2="477" y2="240" stroke="currentColor" stroke-opacity=".55" stroke-width="1.8" marker-end="url(#sparrow)"/>
+  <g id="s-3" class="s-step" data-step="3" transform="translate(480,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">3</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Score runs</text>
+    <rect x="24" y="60" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/>
+    <text x="41" y="84" font-size="17" fill="currentColor" font-weight="700" text-anchor="middle" fill-opacity=".75" pointer-events="none">✓</text>
+    <rect x="66" y="60" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/>
+    <text x="83" y="84" font-size="17" fill="currentColor" font-weight="700" text-anchor="middle" fill-opacity=".75" pointer-events="none">✓</text>
+    <rect x="108" y="60" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/>
+    <text x="125" y="84" font-size="17" fill="#d97706" font-weight="700" text-anchor="middle" fill-opacity=".9" pointer-events="none">✗</text>
+    <rect x="150" y="60" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/>
+    <text x="167" y="84" font-size="17" fill="currentColor" font-weight="700" text-anchor="middle" fill-opacity=".75" pointer-events="none">✓</text>
+    <text x="96" y="114" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6" pointer-events="none">one check per file</text>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Decide pass or fail for</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">every run</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">Run the benchmark’s own checks</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">on the final files, after fixing</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">defects in the scoring code.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="Scoring is repaired first so a failure means the same thing in every run."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">pass / fail per run</text>
+  </g>
+  <line id="s-a3" class="s-arrow" x1="683" y1="240" x2="711" y2="240" stroke="currentColor" stroke-opacity=".55" stroke-width="1.8" marker-end="url(#sparrow)"/>
+  <g id="s-4" class="s-step" data-step="4" transform="translate(714,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">4</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Characterize failures</text>
+    <rect x="24" y="56" width="56" height="42" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="52" y="72" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">trace</text>
+    <line x1="32" y1="82" x2="72" y2="82" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="32" y1="90" x2="72" y2="90" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="84" y1="77" x2="104" y2="77" stroke="currentColor" stroke-opacity=".7" stroke-width="1.3" marker-end="url(#sparrow)"/>
+    <rect x="108" y="62" width="56" height="30" rx="15" fill="#d97706" fill-opacity=".14" stroke="currentColor" stroke-opacity=".9" stroke-width="1.2"/>
+    <text x="136" y="82" font-size="10" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">one code</text>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Find why each failed run</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">failed</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">Read the trace against the task,</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">ask if the output was right, then</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">assign one primary root cause.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="Two annotators coded a sample independently to check the codes are reliable."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">one code per failure</text>
+  </g>
+  <line id="s-a4" class="s-arrow" x1="917" y1="240" x2="945" y2="240" stroke="currentColor" stroke-opacity=".55" stroke-width="1.8" marker-end="url(#sparrow)"/>
+  <g id="s-5" class="s-step" data-step="5" transform="translate(948,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">5</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Compare and report</text>
+    <rect x="30" y="78" width="20" height="20" rx="2" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="58" y="60" width="20" height="38" rx="2" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="86" y="70" width="20" height="28" rx="2" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="114" y="54" width="20" height="44" rx="2" fill="currentColor" fill-opacity=".28" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="142" y="82" width="20" height="16" rx="2" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="114" y="54" width="20" height="44" rx="2" fill="#d97706" fill-opacity=".22" stroke="currentColor" stroke-opacity=".95" stroke-width="1.2"/>
+    <line x1="24" y1="98" x2="168" y2="98" stroke="currentColor" stroke-opacity=".35"/>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">See what repeats across</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">runs</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">Line up codes by subtask, model</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">and language to separate shared</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">causes from model-specific ones.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="The comparison says whether to fix the benchmark or the agent first."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">findings + fixes</text>
+  </g>
+</svg></div>
+    <p class="readout"><span class="tag">Detail</span><span class="val" id="s-readout"></span></p>
+    <figcaption><b>Figure 1. The pipeline, step by step.</b> <span>Tasks go in; each step turns the previous
+      step&rsquo;s output into the next: a trace and final files, a pass or fail per run, one root-cause code per
+      failure, and finally findings that say what to fix first.</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="controls">
+      <span class="eyebrow" style="margin-right:4px">Isolate a stage</span>
+      <button data-stage="all" aria-pressed="true">All</button>
+      <button data-stage="1" aria-pressed="false">1 &middot; Task</button>
+      <button data-stage="2" aria-pressed="false">2 &middot; Run</button>
+      <button data-stage="3" aria-pressed="false">3 &middot; Scoring</button>
+      <button data-stage="4" aria-pressed="false">4 &middot; Code</button>
+      <span class="sep"></span>
+      <span class="eyebrow" style="margin-right:4px">Prompt language</span>
+      <button data-lang="en" aria-pressed="true">English</button>
+      <button data-lang="bn" aria-pressed="false" lang="bn">&#2476;&#2494;&#2434;&#2482;&#2494;</button>
+    </div>
+    <div class="plate" id="teaser"><svg viewBox="0 0 1160 848" role="img" color="#1b2330"
+     font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Noto Sans Bengali, Helvetica, Arial, sans-serif"
+     aria-label="One OfficeBench subtask carried through the study: the agent reads both calendars and answers that 14:30 to 15:30 is free, which is correct; two of the four checks nonetheless require a calendar event named meeting that the task never asks anyone to create, so the run is scored FAIL and coded as a benchmark defect in all four cells.">
+  <defs>
+    <marker id="t0arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker>
+    <marker id="t0acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d97706"/></marker>
+  </defs>
+  <text x="24" y="30" font-size="17" fill="currentColor" font-weight="700">One subtask, four cells, four failures — and the answer was right</text>
+  <text x="24" y="50" font-size="11.5" fill="currentColor" fill-opacity=".7">subtask 1-2/0, single-app calendar task, run under both models in both languages</text>
+  <rect x="16" y="64" width="1128" height="348" rx="10" fill="currentColor" stroke="currentColor" stroke-opacity=".18" stroke-width="1" fill-opacity=".035"/>
+  <text x="1128" y="88" font-size="14" fill="currentColor" font-weight="700" text-anchor="end" fill-opacity=".45">What the benchmark does</text>
+  <g id="t0-stage1" class="t0-stage" data-stage="1">
+  <rect x="36" y="78" width="85.8" height="20" rx="10" fill="#d97706" fill-opacity=".14" stroke="#d97706" stroke-opacity=".5"/>
+  <text x="78.9" y="92" font-size="11" fill="#d97706" font-weight="700" text-anchor="middle">1 · The task</text>
+  <rect x="36" y="106" width="250" height="128" rx="6" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1" id="t0-taskbox"/>
+  <text id="t0-task" x="50" y="130" font-size="11.5" fill="currentColor"><tspan x="50" dy="0">Find a common time for Bob and Tom to have</tspan><tspan x="50" dy="17">an one hour zoom meeting on 5/1/2024</tspan><tspan x="50" dy="17"></tspan></text>
+  <text x="50" y="196" font-size="10.5" fill="currentColor" fill-opacity=".7">It says find. It does not say</text>
+  <text x="50" y="210" font-size="10.5" fill="currentColor" fill-opacity=".7">add anything to a calendar.</text>
+  <g id="t0-lang" class="t0-toggle">
+    <rect id="t0-en" class="t0-chip t0-on" x="36" y="244" width="46" height="22" rx="11" fill="#d97706" fill-opacity=".16" stroke="#d97706" stroke-opacity=".6" data-lang="en"/>
+  <text x="59" y="259" font-size="11" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">EN</text>
+    <rect id="t0-bn" class="t0-chip" x="90" y="244" width="64" height="22" rx="11" fill="none" stroke="currentColor" stroke-opacity=".35" data-lang="bn"/>
+  <text x="122" y="260" font-size="11" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">বাংলা</text>
+  </g>
+  <text x="36" y="288" font-size="10" fill="currentColor" fill-opacity=".6">the same subtask runs in all four cells</text>
+  </g>
+  <line x1="294" y1="170" x2="326" y2="170" stroke="currentColor" stroke-opacity=".75" stroke-width="1.5" marker-end="url(#t0arrow)"/>
+  <g id="t0-stage2" class="t0-stage" data-stage="2">
+  <rect x="336" y="78" width="258.6" height="20" rx="10" fill="#d97706" fill-opacity=".14" stroke="#d97706" stroke-opacity=".5"/>
+  <text x="465.3" y="92" font-size="11" fill="#d97706" font-weight="700" text-anchor="middle">2 · The run — 4 steps of the 20 allowed</text>
+  <rect x="336" y="106" width="170" height="54" rx="6" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1" class="t0-hot" data-detail="{&quot;app&quot;:&quot;system&quot;,&quot;action&quot;:&quot;switch_app&quot;,&quot;target_app&quot;:&quot;calendar&quot;}"/>
+  <text x="421" y="128" font-size="12" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">switch_app</text>
+  <text x="421" y="146" font-size="10.5" fill="currentColor" text-anchor="middle" fill-opacity=".78" pointer-events="none">to calendar</text>
+  <line x1="508" y1="133" x2="526" y2="133" stroke="currentColor" stroke-opacity=".75" stroke-width="1.5" marker-end="url(#t0arrow)"/>
+  <rect x="530" y="106" width="170" height="54" rx="6" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1" class="t0-hot" data-detail="{&quot;app&quot;:&quot;calendar&quot;,&quot;action&quot;:&quot;list_events&quot;,&quot;username&quot;:&quot;Bob&quot;} → 5 events returned"/>
+  <text x="615" y="128" font-size="12" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">list_events</text>
+  <text x="615" y="146" font-size="10.5" fill="currentColor" text-anchor="middle" fill-opacity=".78" pointer-events="none">username: Bob</text>
+  <line x1="702" y1="133" x2="720" y2="133" stroke="currentColor" stroke-opacity=".75" stroke-width="1.5" marker-end="url(#t0arrow)"/>
+  <rect x="724" y="106" width="170" height="54" rx="6" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1" class="t0-hot" data-detail="{&quot;app&quot;:&quot;calendar&quot;,&quot;action&quot;:&quot;list_events&quot;,&quot;username&quot;:&quot;Tom&quot;} → 5 events returned"/>
+  <text x="809" y="128" font-size="12" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">list_events</text>
+  <text x="809" y="146" font-size="10.5" fill="currentColor" text-anchor="middle" fill-opacity=".78" pointer-events="none">username: Tom</text>
+  <line x1="896" y1="133" x2="914" y2="133" stroke="currentColor" stroke-opacity=".75" stroke-width="1.5" marker-end="url(#t0arrow)"/>
+  <rect x="918" y="106" width="170" height="54" rx="6" fill="none" stroke="#d97706" stroke-opacity=".9" stroke-width="1.4" class="t0-hot" data-detail="The agent never writes a file. It answers, which is what the task asked for."/>
+  <text x="1003" y="128" font-size="12" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">finish_task</text>
+  <text x="1003" y="146" font-size="10.5" fill="currentColor" text-anchor="middle" fill-opacity=".78" pointer-events="none">answer: 14:30–15:30</text>
+  <rect x="744" y="196" width="56" height="96" rx="4" fill="#d97706" stroke="#d97706" stroke-opacity=".9" stroke-width="1.4" fill-opacity=".14"/>
+  <text x="772" y="190" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle">free for both — 14:30–15:30</text>
+  <text x="372" y="226" font-size="11.5" fill="currentColor" font-weight="700" text-anchor="end">Bob</text>
+  <line x1="380" y1="220" x2="1052" y2="220" stroke="currentColor" stroke-opacity=".18"/>
+  <rect x="380" y="204" width="168" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Bob busy 08:00–11:00 — sleeping"/>
+  <text x="464" y="225" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">sleeping</text>
+  <rect x="604" y="204" width="56" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Bob busy 12:00–13:00 — lunch"/>
+  <rect x="660" y="204" width="56" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Bob busy 13:00–14:00 — nap"/>
+  <rect x="828" y="204" width="112" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Bob busy 16:00–18:00 — class"/>
+  <text x="884" y="225" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">class</text>
+  <rect x="968" y="204" width="56" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Bob busy 18:30–19:30 — dinner"/>
+  <text x="372" y="270" font-size="11.5" fill="currentColor" font-weight="700" text-anchor="end">Tom</text>
+  <line x1="380" y1="264" x2="1052" y2="264" stroke="currentColor" stroke-opacity=".18"/>
+  <rect x="380" y="248" width="214.648" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Tom busy 08:00–11:50 — class"/>
+  <text x="487.324" y="269" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">class</text>
+  <rect x="632" y="248" width="56" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Tom busy 12:30–13:30 — lunch with David"/>
+  <rect x="716" y="248" width="28" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Tom busy 14:00–14:30 — report to Charlie"/>
+  <rect x="828" y="248" width="112" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Tom busy 16:00–18:00 — class"/>
+  <text x="884" y="269" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">class</text>
+  <rect x="968" y="248" width="56" height="32" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".14" class="t0-hot" data-detail="Tom busy 18:30–19:30 — dinner"/>
+  <line x1="380" y1="296" x2="1052" y2="296" stroke="currentColor" stroke-opacity=".3"/>
+  <line x1="380" y1="296" x2="380" y2="300" stroke="currentColor" stroke-opacity=".3"/>
+  <text x="380" y="312" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6">08:00</text>
+  <line x1="492" y1="296" x2="492" y2="300" stroke="currentColor" stroke-opacity=".3"/>
+  <text x="492" y="312" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6">10:00</text>
+  <line x1="604" y1="296" x2="604" y2="300" stroke="currentColor" stroke-opacity=".3"/>
+  <text x="604" y="312" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6">12:00</text>
+  <line x1="716" y1="296" x2="716" y2="300" stroke="currentColor" stroke-opacity=".3"/>
+  <text x="716" y="312" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6">14:00</text>
+  <line x1="828" y1="296" x2="828" y2="300" stroke="currentColor" stroke-opacity=".3"/>
+  <text x="828" y="312" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6">16:00</text>
+  <line x1="940" y1="296" x2="940" y2="300" stroke="currentColor" stroke-opacity=".3"/>
+  <text x="940" y="312" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6">18:00</text>
+  <line x1="1052" y1="296" x2="1052" y2="300" stroke="currentColor" stroke-opacity=".3"/>
+  <text x="1052" y="312" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6">20:00</text>
+  <rect x="336" y="326" width="752" height="70" rx="6" fill="#1a7f4b" stroke="#1a7f4b" stroke-opacity=".65" stroke-width="1" fill-opacity=".06"/>
+  <text x="352" y="348" font-size="12" fill="#1a7f4b" font-weight="700">The agent answers — and the answer is right</text>
+  <text id="t0-answer" x="352" y="368" font-size="11" fill="currentColor" fill-opacity=".9">“A common time for Bob and Tom to have a one-hour zoom meeting on 5/1/2024 is from 14:30 to 15:30.”</text>
+  <text id="t0-answernote" x="352" y="386" font-size="10.5" fill="currentColor" fill-opacity=".65">Bob is free 14:00–16:00, Tom from 14:30 — 14:30–15:30 is the only common hour.</text>
+  </g>
+  <rect x="16" y="428" width="1128" height="404" rx="10" fill="#d97706" stroke="#d97706" stroke-opacity=".25" stroke-width="1" fill-opacity=".05"/>
+  <text x="1128" y="452" font-size="14" fill="#d97706" font-weight="700" text-anchor="end" fill-opacity=".75">What we do</text>
+  <g id="t0-stage3" class="t0-stage" data-stage="3">
+  <rect x="36" y="442" width="297" height="20" rx="10" fill="#d97706" fill-opacity=".14" stroke="#d97706" stroke-opacity=".5"/>
+  <text x="184.5" y="456" font-size="11" fill="#d97706" font-weight="700" text-anchor="middle">3 · Scoring — the benchmark’s own four checks</text>
+  <rect x="36" y="476" width="520" height="32" rx="4" fill="#b3391f" stroke="#b3391f" stroke-opacity=".55" stroke-width="1" fill-opacity=".07" class="t0-hot" data-detail="Requires a calendar event named &quot;meeting&quot; in Bob.ics. The task never asks for one to be created."/>
+  <text x="54" y="497" font-size="14" fill="#b3391f" font-weight="700" text-anchor="middle" pointer-events="none">✗</text>
+  <text x="70" y="497" font-size="11" fill="currentColor" font-weight="700" font-family="ui-monospace, Consolas, monospace" pointer-events="none">evaluate_contain</text>
+  <text x="306" y="497" font-size="10.5" fill="currentColor" fill-opacity=".78" font-family="ui-monospace, Consolas, monospace" pointer-events="none">./calendar/Bob.ics  keywords: [&quot;meeting&quot;]</text>
+  <rect x="36" y="514" width="520" height="32" rx="4" fill="#b3391f" stroke="#b3391f" stroke-opacity=".55" stroke-width="1" fill-opacity=".07" class="t0-hot" data-detail="Same requirement on Tom.ics. These two checks alone decide the run."/>
+  <text x="54" y="535" font-size="14" fill="#b3391f" font-weight="700" text-anchor="middle" pointer-events="none">✗</text>
+  <text x="70" y="535" font-size="11" fill="currentColor" font-weight="700" font-family="ui-monospace, Consolas, monospace" pointer-events="none">evaluate_contain</text>
+  <text x="306" y="535" font-size="10.5" fill="currentColor" fill-opacity=".78" font-family="ui-monospace, Consolas, monospace" pointer-events="none">./calendar/Tom.ics  keywords: [&quot;meeting&quot;]</text>
+  <rect x="36" y="552" width="520" height="32" rx="4" fill="#1a7f4b" stroke="#1a7f4b" stroke-opacity=".55" stroke-width="1" fill-opacity=".07" class="t0-hot" data-detail="Passes: the agent changed nothing, so nothing overlaps."/>
+  <text x="54" y="573" font-size="14" fill="#1a7f4b" font-weight="700" text-anchor="middle" pointer-events="none">✓</text>
+  <text x="70" y="573" font-size="11" fill="currentColor" font-weight="700" font-family="ui-monospace, Consolas, monospace" pointer-events="none">evaluate_calendar_no_overlap</text>
+  <text x="306" y="573" font-size="10.5" fill="currentColor" fill-opacity=".78" font-family="ui-monospace, Consolas, monospace" pointer-events="none">username: Bob</text>
+  <rect x="36" y="590" width="520" height="32" rx="4" fill="#1a7f4b" stroke="#1a7f4b" stroke-opacity=".55" stroke-width="1" fill-opacity=".07" class="t0-hot" data-detail="Passes: the agent changed nothing, so nothing overlaps."/>
+  <text x="54" y="611" font-size="14" fill="#1a7f4b" font-weight="700" text-anchor="middle" pointer-events="none">✓</text>
+  <text x="70" y="611" font-size="11" fill="currentColor" font-weight="700" font-family="ui-monospace, Consolas, monospace" pointer-events="none">evaluate_calendar_no_overlap</text>
+  <text x="306" y="611" font-size="10.5" fill="currentColor" fill-opacity=".78" font-family="ui-monospace, Consolas, monospace" pointer-events="none">username: Tom</text>
+  <rect x="36" y="636" width="520" height="62" rx="6" fill="none" stroke="#d97706" stroke-opacity=".7" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="52" y="658" font-size="11.5" fill="#d97706" font-weight="700">Two of the four checks require a calendar event named “meeting”.</text>
+  <text x="52" y="678" font-size="10.5" fill="currentColor" fill-opacity=".8">The task asked the agent to find a time, not to create one. Nothing it could</text>
+  <text x="52" y="692" font-size="10.5" fill="currentColor" fill-opacity=".8">have written would satisfy the task and the check at the same time.</text>
+  <rect x="36" y="714" width="150" height="40" rx="6" fill="#b3391f" stroke="#b3391f" stroke-opacity=".8" stroke-width="1.4" fill-opacity=".1"/>
+  <text x="111" y="740" font-size="14" fill="#b3391f" font-weight="700" text-anchor="middle">scored FAIL</text>
+  <text x="200" y="731" font-size="10.5" fill="currentColor" fill-opacity=".7">official score and corrected</text>
+  <text x="200" y="745" font-size="10.5" fill="currentColor" fill-opacity=".7">score agree here — 2 of 4 checks false</text>
+  </g>
+  <line x1="570" y1="560" x2="602" y2="560" stroke="#d97706" stroke-opacity=".9" stroke-width="1.5" marker-end="url(#t0acc)"/>
+  <g id="t0-stage4" class="t0-stage" data-stage="4">
+  <rect x="606" y="442" width="85.8" height="20" rx="10" fill="#d97706" fill-opacity=".14" stroke="#d97706" stroke-opacity=".5"/>
+  <text x="648.9" y="456" font-size="11" fill="#d97706" font-weight="700" text-anchor="middle">4 · The code</text>
+  <rect x="606" y="476" width="300" height="76" rx="6" fill="none" stroke="#d97706" stroke-opacity=".8" stroke-width="1.4"/>
+  <text x="756" y="500" font-size="12" fill="currentColor" font-weight="700" text-anchor="middle">Is the output correct for</text>
+  <text x="756" y="518" font-size="12" fill="currentColor" font-weight="700" text-anchor="middle">the task as written?</text>
+  <text x="756" y="540" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".65">meaning, not surface form</text>
+  <line x1="756" y1="554" x2="756" y2="580" stroke="#d97706" stroke-opacity=".9" stroke-width="1.5" marker-end="url(#t0acc)"/>
+  <rect x="606" y="584" width="300" height="54" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1"/>
+  <text x="756" y="606" font-size="12" fill="#1a7f4b" font-weight="700" text-anchor="middle">Yes — and it still scored FAIL</text>
+  <text x="756" y="626" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".75">so the run indicts the benchmark, not the agent</text>
+  <line x1="756" y1="640" x2="756" y2="666" stroke="#d97706" stroke-opacity=".9" stroke-width="1.5" marker-end="url(#t0acc)"/>
+  <rect x="606" y="670" width="300" height="84" rx="6" fill="#d97706" stroke="#d97706" stroke-opacity=".9" stroke-width="1.6" fill-opacity=".12"/>
+  <text x="648" y="706" font-size="26" fill="#d97706" font-weight="700" text-anchor="middle">BM</text>
+  <text x="686" y="694" font-size="12" fill="currentColor" font-weight="700">benchmark defect</text>
+  <text x="686" y="712" font-size="10.5" fill="currentColor" fill-opacity=".8">the check asks for what</text>
+  <text x="686" y="726" font-size="10.5" fill="currentColor" fill-opacity=".8">the task does not</text>
+  <text x="686" y="744" font-size="10.5" fill="currentColor" font-weight="700" fill-opacity=".9">+ tag C-AMBIG</text>
+  </g>
+  <g id="t0-stage5" class="t0-stage" data-stage="5">
+  <rect x="930" y="442" width="92.2" height="20" rx="10" fill="#d97706" fill-opacity=".14" stroke="#d97706" stroke-opacity=".5"/>
+  <text x="976.1" y="456" font-size="11" fill="#d97706" font-weight="700" text-anchor="middle">Not a one-off</text>
+  <text x="930" y="506" font-size="24" fill="#d97706" font-weight="700">47</text>
+  <text x="930" y="524" font-size="10" fill="currentColor" fill-opacity=".8">of gemma4:31b’s 149 English</text>
+  <text x="930" y="537" font-size="10" fill="currentColor" fill-opacity=".8">failures are benchmark defects</text>
+  <text x="930" y="576" font-size="24" fill="#d97706" font-weight="700">4 / 4</text>
+  <text x="930" y="594" font-size="10" fill="currentColor" fill-opacity=".8">cells fail this subtask,</text>
+  <text x="930" y="607" font-size="10" fill="currentColor" fill-opacity=".8">all coded BM</text>
+  <text x="930" y="646" font-size="24" fill="#d97706" font-weight="700">44</text>
+  <text x="930" y="664" font-size="10" fill="currentColor" fill-opacity=".8">subtasks fail for the</text>
+  <text x="930" y="677" font-size="10" fill="currentColor" fill-opacity=".8">identical cause everywhere</text>
+  <text x="930" y="716" font-size="24" fill="#d97706" font-weight="700">57</text>
+  <text x="930" y="734" font-size="10" fill="currentColor" fill-opacity=".8">subtasks where a defect</text>
+  <text x="930" y="747" font-size="10" fill="currentColor" fill-opacity=".8">decides at least one run</text>
+  </g>
+</svg></div>
+    <p class="readout"><span class="tag">Detail</span><span class="val" id="readout"></span></p>
+    <figcaption><b>Figure 2. One subtask, four cells, four failures &mdash; and the answer was right.</b>
+      <span>The agent lists both calendars, finds the only hour both are free and says so. Two of the four
+      checks nonetheless require a calendar event named &ldquo;meeting&rdquo; that the task never asks anyone
+      to create, so the run is scored FAIL. Nothing the agent could write would satisfy the task and the check
+      at once, which is what the code BM records. This subtask fails in all four cells for exactly this reason.
+      The Bangla run reaches the same hour and writes it in Bangla script &mdash; here that never gets to
+      matter, because the check that decides the run never reads the answer.</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="plate"><svg viewBox="0 0 1080 660" role="img" color="#1b2330"
+     font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif"
+     aria-label="How the study works: 300 OfficeBench subtasks are run under two models crossed with English and Bangla prompts; each run is a twenty-step thought-action-observation loop inside a Docker container of eight apps; the per-step trace and final files are scored with three corrected checks, giving 394 passes and 557 failed runs that feed the failure coding.">
+  <defs>
+    <marker id="f1arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+    </marker>
+    <marker id="f1acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <!-- band 1: design -->
+  <text x="20" y="34" fill="currentColor" font-size="13" font-weight="700">1 &#183; Design &#8212; the same 300 subtasks in every cell</text>
+
+  <rect x="20" y="82" width="200" height="96" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="120" y="108" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">OfficeBench</text>
+  <text x="120" y="128" fill="currentColor" font-size="12" text-anchor="middle">300 subtasks</text>
+  <text x="120" y="148" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">93 single-app &#183; 95 two-app</text>
+  <text x="120" y="164" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">112 three-app</text>
+  <line x1="222" y1="130" x2="242" y2="130" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <text x="515" y="46" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">English prompt</text>
+  <text x="755" y="46" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">Bangla prompt</text>
+  <text x="390" y="95" fill="currentColor" font-size="12" font-weight="700" text-anchor="end">gemma4:31b</text>
+  <text x="390" y="173" fill="currentColor" font-size="12" font-weight="700" text-anchor="end">gpt-oss:20b</text>
+
+  <rect x="400" y="56" width="230" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="515" y="78" fill="currentColor" font-size="11" font-family="ui-monospace, Consolas, monospace" text-anchor="middle">gemma4_31b_think</text>
+  <text x="515" y="97" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">300 subtasks</text>
+  <text x="515" y="116" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">151 pass &#183; 50.3%</text>
+
+  <rect x="640" y="56" width="230" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="755" y="78" fill="currentColor" font-size="11" font-family="ui-monospace, Consolas, monospace" text-anchor="middle">gemma4_31b_bn</text>
+  <text x="755" y="97" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">300 subtasks</text>
+  <text x="755" y="116" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">127 pass &#183; 42.3%</text>
+
+  <rect x="400" y="134" width="230" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="515" y="156" fill="currentColor" font-size="11" font-family="ui-monospace, Consolas, monospace" text-anchor="middle">gpt-oss_20b_en</text>
+  <text x="515" y="175" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">300 subtasks</text>
+  <text x="515" y="194" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">86 pass &#183; 28.7%</text>
+
+  <rect x="640" y="134" width="230" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="755" y="156" fill="currentColor" font-size="11" font-family="ui-monospace, Consolas, monospace" text-anchor="middle">gpt-oss_20b_bn</text>
+  <text x="755" y="175" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">51 of 300 &#183; in progress</text>
+  <text x="755" y="194" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">30 pass</text>
+
+  <text x="890" y="78" fill="currentColor" font-size="12" font-weight="700">951 scored runs</text>
+  <text x="890" y="98" fill="currentColor" font-size="11" fill-opacity=".75">temperature 0</text>
+  <text x="890" y="115" fill="currentColor" font-size="11" fill-opacity=".75">one run per subtask</text>
+  <text x="890" y="132" fill="currentColor" font-size="11" fill-opacity=".75">and per cell</text>
+
+  <text x="250" y="230" fill="currentColor" font-size="11" fill-opacity=".75">Bangla cells: system prompt, task text and app instructions machine-translated by gemma4:31b.</text>
+  <text x="250" y="246" fill="currentColor" font-size="11" fill-opacity=".75">JSON actions, app names and all file contents stay English; nothing tells the agent which language to answer in.</text>
+
+  <!-- band 2: one run -->
+  <text x="20" y="282" fill="currentColor" font-size="13" font-weight="700">2 &#183; One run &#8212; at most 20 steps inside the container</text>
+
+  <rect x="56" y="300" width="688" height="200" rx="8" fill="none" stroke="currentColor" stroke-opacity=".3" stroke-dasharray="5 4"/>
+  <text x="72" y="322" fill="currentColor" font-size="11" fill-opacity=".7">Docker container &#183; apps: calendar, excel, ocr, pdf, shell, word, email, llm</text>
+
+  <rect x="80" y="340" width="180" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="170" y="364" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">Prompt for this step</text>
+  <text x="170" y="382" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">task + past actions/results</text>
+  <text x="170" y="398" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">+ current app instructions</text>
+
+  <line x1="262" y1="375" x2="296" y2="375" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <rect x="300" y="340" width="180" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="390" y="364" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">Model replies</text>
+  <text x="390" y="383" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle" font-family="ui-monospace, Consolas, monospace">##Thought: &#8230;</text>
+  <text x="390" y="399" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle" font-family="ui-monospace, Consolas, monospace">##Command: {json}</text>
+
+  <line x1="482" y1="375" x2="516" y2="375" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <rect x="520" y="340" width="180" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="610" y="364" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">App executes it</text>
+  <text x="610" y="382" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">observation returned,</text>
+  <text x="610" y="398" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">files on disk change</text>
+
+  <path d="M610 412 V 446 H 170 V 414" fill="none" stroke="currentColor" stroke-width="1.4" stroke-opacity=".7" marker-end="url(#f1arrow)"/>
+  <text x="390" y="466" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">the action/result history grows &#8212; but earlier thoughts are never carried forward</text>
+
+  <rect x="800" y="300" width="256" height="200" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="816" y="326" fill="currentColor" font-size="12" font-weight="700">A run ends at</text>
+  <text x="816" y="345" fill="currentColor" font-size="11" fill-opacity=".85">finish_task &#183; 20 steps &#183; stuck</text>
+  <text x="816" y="361" fill="currentColor" font-size="11" fill-opacity=".7">(repeated invalid actions)</text>
+  <text x="816" y="389" fill="currentColor" font-size="12" font-weight="700">Limits that shape the failures</text>
+  <text x="816" y="408" fill="currentColor" font-size="11" fill-opacity=".85">reply cap 512 tok (gemma),</text>
+  <text x="816" y="424" fill="currentColor" font-size="11" fill-opacity=".85">2048 tok (gpt-oss)</text>
+  <text x="816" y="443" fill="currentColor" font-size="11" fill-opacity=".85">excel writes one cell per action</text>
+  <text x="816" y="462" fill="currentColor" font-size="11" fill-opacity=".85">llm app answers in 50 tokens</text>
+  <text x="816" y="481" fill="currentColor" font-size="11" fill-opacity=".85">shell starts at / , wraps in bash -c</text>
+
+  <!-- band 3: scoring -->
+  <text x="20" y="528" fill="currentColor" font-size="13" font-weight="700">3 &#183; Scoring &#8212; the benchmark&#8217;s own checks, three defects fixed first</text>
+
+  <rect x="56" y="548" width="200" height="40" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="156" y="573" fill="currentColor" font-size="11" text-anchor="middle" font-family="ui-monospace, Consolas, monospace">env_history.json</text>
+  <rect x="56" y="600" width="200" height="40" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="156" y="625" fill="currentColor" font-size="12" text-anchor="middle">final testbed files</text>
+  <line x1="258" y1="568" x2="294" y2="572" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+  <line x1="258" y1="620" x2="294" y2="614" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <rect x="298" y="548" width="282" height="92" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="314" y="570" fill="currentColor" font-size="12" font-weight="700">Checks re-run with 3 fixes</text>
+  <text x="314" y="590" fill="currentColor" font-size="11" fill-opacity=".85">email path read from the run&#8217;s testbed</text>
+  <text x="314" y="608" fill="currentColor" font-size="11" fill-opacity=".85">exact mailbox name matched first</text>
+  <text x="314" y="626" fill="currentColor" font-size="11" fill-opacity=".85">task files read as UTF-8</text>
+
+  <line x1="582" y1="594" x2="616" y2="594" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <rect x="620" y="548" width="200" height="92" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="720" y="572" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">pass / fail per run</text>
+  <text x="720" y="594" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">official &#8594; corrected</text>
+  <text x="720" y="612" fill="currentColor" font-size="11" fill-opacity=".85" text-anchor="middle">132&#8594;151 &#183; 103&#8594;127</text>
+  <text x="720" y="630" fill="currentColor" font-size="11" fill-opacity=".85" text-anchor="middle">80&#8594;86</text>
+
+  <line x1="822" y1="594" x2="856" y2="594" stroke="#d97706" stroke-width="1.6" marker-end="url(#f1acc)"/>
+
+  <rect x="860" y="548" width="196" height="92" rx="6" fill="none" stroke="#d97706" stroke-width="1.4"/>
+  <text x="958" y="578" fill="#d97706" font-size="15" font-weight="700" text-anchor="middle">557 failed runs</text>
+  <text x="958" y="600" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">(394 pass of 951)</text>
+  <text x="958" y="625" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">&#8594; Figure 2</text>
+</svg></div>
+    <figcaption><b>Figure 3. How the study works.</b> <span>The same 300 subtasks are run in four cells &mdash; two
+      models crossed with an English and a machine-translated Bangla prompt &mdash; as a 20-step loop inside the
+      benchmark&rsquo;s container. The agent sees what it did and what came back, never what it thought. Three
+      scoring defects in the repository are repaired before anything is counted, which moves every run&rsquo;s
+      score. Of 951 scored runs, 394 pass and 557 fail and need explaining.</span></figcaption>
+  </figure>
+
+  <figure>
+    <div class="plate"><svg viewBox="0 0 1080 716" role="img" color="#1b2330"
+     font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif"
+     aria-label="How failures are characterized: for each failed run the evidence is the task, the initial and final files and the step-by-step trace; one question decides whether the output is correct as the task is written, routing the case either to the benchmark side or to a decisive agent step; each run receives exactly one primary code from six families plus contributing tags; the codebook was double-coded on sixteen cases with Cohen's kappa 0.78 and then applied to all 557 failed runs.">
+  <defs>
+    <marker id="f2arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+    </marker>
+    <marker id="f2acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <!-- evidence -->
+  <rect x="30" y="60" width="220" height="170" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="46" y="86" fill="currentColor" font-size="12" font-weight="700">Evidence, one failed run</text>
+  <text x="46" y="110" fill="currentColor" font-size="11" fill-opacity=".85">the task text, as written</text>
+  <text x="46" y="130" fill="currentColor" font-size="11" fill-opacity=".85">the initial files</text>
+  <text x="46" y="150" fill="currentColor" font-size="11" fill-opacity=".85">every step of the trace:</text>
+  <text x="56" y="167" fill="currentColor" font-size="11" fill-opacity=".7">thought &#8594; action &#8594; observation</text>
+  <text x="46" y="190" fill="currentColor" font-size="11" fill-opacity=".85">the final files</text>
+  <text x="46" y="210" fill="currentColor" font-size="11" fill-opacity=".85">the result of each check</text>
+
+  <path d="M252 145 H 288 V 95 H 324" fill="none" stroke="currentColor" stroke-width="1.4" marker-end="url(#f2arrow)"/>
+
+  <!-- the question -->
+  <rect x="330" y="60" width="280" height="70" rx="6" fill="none" stroke="#d97706" stroke-width="1.6"/>
+  <text x="470" y="88" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">Is the final output correct</text>
+  <text x="470" y="108" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">for the task as written?</text>
+  <text x="470" y="124" fill="currentColor" font-size="10" fill-opacity=".7" text-anchor="middle">meaning, not surface form</text>
+
+  <path d="M470 132 V 160 H 320 V 192" fill="none" stroke="currentColor" stroke-width="1.4" marker-end="url(#f2arrow)"/>
+  <path d="M470 132 V 160 H 700 V 192" fill="none" stroke="currentColor" stroke-width="1.4" marker-end="url(#f2arrow)"/>
+  <text x="330" y="180" fill="currentColor" font-size="11" font-weight="700">yes &#8212; but it was scored FAIL</text>
+  <text x="710" y="180" fill="currentColor" font-size="11" font-weight="700">no</text>
+
+  <!-- benchmark side -->
+  <rect x="180" y="196" width="280" height="80" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="320" y="220" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">Benchmark side</text>
+  <text x="320" y="240" fill="currentColor" font-size="11" fill-opacity=".85" text-anchor="middle">the check, the reference file</text>
+  <text x="320" y="256" fill="currentColor" font-size="11" fill-opacity=".85" text-anchor="middle">or the app itself is wrong</text>
+
+  <!-- agent side -->
+  <rect x="560" y="196" width="280" height="80" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="700" y="220" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">Find the decisive step</text>
+  <text x="700" y="240" fill="currentColor" font-size="11" fill-opacity=".85" text-anchor="middle">the earliest step that, corrected</text>
+  <text x="700" y="256" fill="currentColor" font-size="11" fill-opacity=".85" text-anchor="middle">alone, would most likely have passed</text>
+
+  <line x1="700" y1="278" x2="700" y2="306" stroke="currentColor" stroke-width="1.4" marker-end="url(#f2arrow)"/>
+
+  <rect x="560" y="310" width="280" height="66" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="700" y="336" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">Agent side</text>
+  <text x="700" y="356" fill="currentColor" font-size="11" fill-opacity=".85" text-anchor="middle">that one step carries the code</text>
+
+  <!-- tie-break rule -->
+  <rect x="870" y="196" width="190" height="180" rx="6" fill="none" stroke="#d97706" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="886" y="222" fill="#d97706" font-size="12" font-weight="700">Tie-break</text>
+  <text x="886" y="246" fill="currentColor" font-size="11" fill-opacity=".9">A benchmark defect is</text>
+  <text x="886" y="263" fill="currentColor" font-size="11" fill-opacity=".9">primary only when the</text>
+  <text x="886" y="280" fill="currentColor" font-size="11" fill-opacity=".9">agent&#8217;s own work would</text>
+  <text x="886" y="297" fill="currentColor" font-size="11" fill-opacity=".9">otherwise have passed.</text>
+  <text x="886" y="322" fill="currentColor" font-size="11" fill-opacity=".9">Otherwise it is kept as a</text>
+  <text x="886" y="339" fill="currentColor" font-size="11" fill-opacity=".9">contributing tag, and the</text>
+  <text x="886" y="356" fill="currentColor" font-size="11" fill-opacity=".9">agent step stays primary.</text>
+
+  <line x1="320" y1="278" x2="320" y2="416" stroke="currentColor" stroke-width="1.4" marker-end="url(#f2arrow)"/>
+  <line x1="700" y1="378" x2="700" y2="416" stroke="currentColor" stroke-width="1.4" marker-end="url(#f2arrow)"/>
+
+  <!-- the label -->
+  <rect x="180" y="420" width="660" height="62" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="510" y="446" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">Exactly one primary code per failed run, plus any number of contributing tags</text>
+  <text x="510" y="468" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">C-AMBIG (task admits two readings) &#183; C-WEAKCHECK (a wrong answer would pass) &#183; C-HARNESS &#183; C-LLMAPP</text>
+
+  <line x1="510" y1="484" x2="510" y2="506" stroke="#d97706" stroke-width="1.6" marker-end="url(#f2acc)"/>
+  <text x="522" y="500" fill="#d97706" font-size="11" font-weight="700">the primary code is one of six families</text>
+
+  <!-- taxonomy -->
+  <rect x="30" y="512" width="160" height="88" rx="6" fill="none" stroke="#d97706" stroke-width="1.4"/>
+  <text x="44" y="534" fill="#d97706" font-size="12" font-weight="700">Benchmark defect</text>
+  <text x="44" y="551" fill="currentColor" font-size="11" font-weight="700" font-family="ui-monospace, Consolas, monospace">BM</text>
+  <text x="44" y="569" fill="currentColor" font-size="10" fill-opacity=".8">check asks what the task</text>
+  <text x="44" y="582" fill="currentColor" font-size="10" fill-opacity=".8">does not; wrong reference</text>
+  <text x="44" y="595" fill="currentColor" font-size="10" fill-opacity=".8">file; app corrupts output</text>
+
+  <rect x="204" y="512" width="160" height="88" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="218" y="534" fill="currentColor" font-size="12" font-weight="700">Wrong content</text>
+  <text x="218" y="551" fill="currentColor" font-size="11" font-weight="700" font-family="ui-monospace, Consolas, monospace">WC &#183; TR</text>
+  <text x="218" y="569" fill="currentColor" font-size="10" fill-opacity=".8">value wrong, OCR misread</text>
+  <text x="218" y="582" fill="currentColor" font-size="10" fill-opacity=".8">copied, label dropped; or a</text>
+  <text x="218" y="595" fill="currentColor" font-size="10" fill-opacity=".8">different operation done</text>
+
+  <rect x="378" y="512" width="160" height="88" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="392" y="534" fill="currentColor" font-size="12" font-weight="700">Out of budget</text>
+  <text x="392" y="551" fill="currentColor" font-size="11" font-weight="700" font-family="ui-monospace, Consolas, monospace">SB &#183; TL &#183; DL</text>
+  <text x="392" y="569" fill="currentColor" font-size="10" fill-opacity=".8">20 steps used up; output</text>
+  <text x="392" y="582" fill="currentColor" font-size="10" fill-opacity=".8">cut at the reply cap and</text>
+  <text x="392" y="595" fill="currentColor" font-size="10" fill-opacity=".8">retried; reasoning loops</text>
+
+  <rect x="552" y="512" width="160" height="88" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="566" y="534" fill="currentColor" font-size="12" font-weight="700">No action / gave up</text>
+  <text x="566" y="551" fill="currentColor" font-size="11" font-weight="700" font-family="ui-monospace, Consolas, monospace">FMT &#183; ER &#183; PF &#183; CAP</text>
+  <text x="566" y="569" fill="currentColor" font-size="10" fill-opacity=".8">invented tools; empty reply</text>
+  <text x="566" y="582" fill="currentColor" font-size="10" fill-opacity=".8">read as &#8220;nothing exists&#8221;;</text>
+  <text x="566" y="595" fill="currentColor" font-size="10" fill-opacity=".8">finished early; refused</text>
+
+  <rect x="726" y="512" width="160" height="88" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="740" y="534" fill="currentColor" font-size="12" font-weight="700">Answer language</text>
+  <text x="740" y="551" fill="currentColor" font-size="11" font-weight="700" font-family="ui-monospace, Consolas, monospace">AL &#183; NC &#183; WD &#183; TX</text>
+  <text x="740" y="569" fill="currentColor" font-size="10" fill-opacity=".8">right answer in Bangla</text>
+  <text x="740" y="582" fill="currentColor" font-size="10" fill-opacity=".8">script; name case; word</text>
+  <text x="740" y="595" fill="currentColor" font-size="10" fill-opacity=".8">choice; translation shift</text>
+
+  <rect x="900" y="512" width="160" height="88" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="914" y="534" fill="currentColor" font-size="12" font-weight="700">Other</text>
+  <text x="914" y="551" fill="currentColor" font-size="11" font-weight="700" font-family="ui-monospace, Consolas, monospace">OTH &#183; INF</text>
+  <text x="914" y="569" fill="currentColor" font-size="10" fill-opacity=".8">crashed runs and empty</text>
+  <text x="914" y="582" fill="currentColor" font-size="10" fill-opacity=".8">API replies, counted as</text>
+  <text x="914" y="595" fill="currentColor" font-size="10" fill-opacity=".8">failures</text>
+
+  <text x="726" y="614" fill="currentColor" font-size="10" fill-opacity=".7">Bangla cells only &#8593;</text>
+
+  <!-- reliability and scale -->
+  <rect x="30" y="628" width="500" height="76" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="46" y="652" fill="currentColor" font-size="12" font-weight="700">Is the coding reliable?</text>
+  <text x="46" y="672" fill="currentColor" font-size="11" fill-opacity=".85">16 cases coded independently by two annotators, then reconciled</text>
+  <text x="46" y="692" fill="currentColor" font-size="11" fill-opacity=".85">against the codebook &#8212; Cohen&#8217;s &#954; = 0.78 primary code, 0.64 side</text>
+
+  <rect x="560" y="628" width="500" height="76" rx="6" fill="none" stroke="#d97706" stroke-width="1.4"/>
+  <text x="576" y="652" fill="#d97706" font-size="12" font-weight="700">Then applied to all 557 failed runs</text>
+  <text x="576" y="672" fill="currentColor" font-size="11" fill-opacity=".85">one code per failed subtask per cell, so cells can be compared: 119 subtasks</text>
+  <text x="576" y="692" fill="currentColor" font-size="11" fill-opacity=".85">fail in all three full runs, 44 for the identical cause, 55 pass in all three</text>
+</svg></div>
+    <figcaption><b>Figure 4. How we characterize failures.</b> <span>One question decides the branch: whether the
+      final output is right for the task <i>as written</i>. A run that is right and still scored FAIL indicts the
+      benchmark; a run that is wrong is traced to its decisive step. The tie-break keeps a benchmark defect from
+      excusing an agent that would have failed anyway. Each run leaves with one primary code from six families
+      and any number of contributing tags. The codebook was checked on a double-coded sample before it was
+      applied at scale.</span></figcaption>
+  </figure>
+
+  <div class="note">
+    <div>
+      <h2>Using these in the paper</h2>
+      The drawings are vector files, not screenshots: <code>analysis/figures/fig0_teaser.svg</code>,
+      <code>fig1_study_design.svg</code> and <code>fig2_failure_coding.svg</code>. All three use
+      <code>currentColor</code> for every line and label, so they print black on white without edits; the amber
+      elements mark the path the paper argues about. The teaser is static and complete on its own &mdash; the
+      interaction above is page JavaScript bound to ids inside it, so the file drops straight into LaTeX.
+      Rebuild with <code>make_fig0_teaser.py</code>, then <code>build_figures_page.py</code>.
+    </div>
+    <div>
+      <h2>Where the numbers come from</h2>
+      The worked example is subtask <code>1-2/0</code>: task and checks from <code>tasks/1-2/subtasks/0.json</code>,
+      busy blocks from the two <code>.ics</code> files in <code>tasks/1-2/testbed/calendar/</code>, the four steps
+      and both answers from <code>tasks/1-2/outputs/0/gemma4_31b_{think,bn}/env_history.json</code>. Pass counts and
+      root-cause totals: <code>analysis/failure_codes_all_runs.json</code> (557 coded failures: 149 gemma English,
+      173 gemma Bangla, 214 gpt-oss English, 21 gpt-oss Bangla). Agreement: <code>analysis/agreement.py</code> over
+      <code>labels_A.csv</code> and <code>labels_B.csv</code>, &kappa;&nbsp;=&nbsp;0.78 on the primary code and 0.64
+      on the benchmark-versus-agent split, n&nbsp;=&nbsp;16. Coding rules: <code>analysis/codebook.md</code>. The
+      gpt-oss Bangla cell is 51 of 300 subtasks and is still running.
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var plate = document.getElementById('teaser');
+  var readout = document.getElementById('readout');
+  var REST = 'Hover a step, a calendar block or a check to see what it actually was.';
+
+  var TEXT = {
+    en: {
+      task: ['Find a common time for Bob and Tom to have', 'an one hour zoom meeting on 5/1/2024', ''],
+      answer: '\u201cA common time for Bob and Tom to have a one-hour zoom meeting on 5/1/2024 is from 14:30 to 15:30.\u201d',
+      note: 'Bob is free 14:00\u201316:00, Tom from 14:30 \u2014 14:30\u201315:30 is the only common hour.'
+    },
+    bn: {
+      task: ['\u09ab\u09be\u0987\u09a8\u09cd\u09a1 \u0995\u09b0\u09c1\u09a8: \u09eb/\u09e7/\u09e8\u09e6\u09e8\u09ea \u09a4\u09be\u09b0\u09bf\u0996\u09c7 \u09ac\u09ac \u098f\u09ac\u0982 \u099f\u09ae\u09c7\u09b0 \u099c\u09a8\u09cd\u09af',
+             '\u098f\u0995 \u0998\u09a3\u09cd\u099f\u09be\u09b0 \u098f\u0995\u099f\u09bf \u099c\u09c1\u09ae \u09ae\u09bf\u099f\u09bf\u0982 \u0995\u09b0\u09be\u09b0 \u099c\u09a8\u09cd\u09af',
+             '\u098f\u0995\u099f\u09bf \u09b8\u09be\u09a7\u09be\u09b0\u09a3 \u09b8\u09ae\u09df \u0996\u09c1\u0981\u099c\u09c7 \u09ac\u09c7\u09b0 \u0995\u09b0\u09c1\u09a8\u0964'],
+      answer: '\u201c\u09ac\u09ac \u098f\u09ac\u0982 \u099f\u09ae\u09c7\u09b0 \u099c\u09a8\u09cd\u09af \u09eb/\u09e7/\u09e8\u09e6\u09e8\u09ea \u09a4\u09be\u09b0\u09bf\u0996\u09c7 \u098f\u0995\u099f\u09bf \u09b8\u09be\u09a7\u09be\u09b0\u09a3 \u09b8\u09ae\u09df \u09b9\u09b2\u09cb \u09a6\u09c1\u09aa\u09c1\u09b0 \u09e7\u09ea:\u09e9\u09e6 \u09a5\u09c7\u0995\u09c7 \u09e7\u09eb:\u09e9\u09e6 \u09aa\u09b0\u09cd\u09af\u09a8\u09cd\u09a4\u0964\u201d',
+      note: 'The same hour, written in Bangla script and digits. Here it never matters: the check that decides this run never reads the answer.'
+    }
+  };
+
+  function setLang(lang) {
+    var t = TEXT[lang] || TEXT.en;
+    var task = document.getElementById('t0-task');
+    if (task) {
+      var lines = task.querySelectorAll('tspan');
+      for (var i = 0; i < lines.length; i++) lines[i].textContent = t.task[i] || '';
+    }
+    var a = document.getElementById('t0-answer'), n = document.getElementById('t0-answernote');
+    if (a) a.textContent = t.answer;
+    if (n) n.textContent = t.note;
+    ['en', 'bn'].forEach(function (k) {
+      var c = document.getElementById('t0-' + k);
+      if (!c) return;
+      var on = k === lang;
+      c.setAttribute('fill', on ? 'currentColor' : 'none');
+      c.setAttribute('fill-opacity', on ? '.12' : '0');
+      c.setAttribute('stroke-opacity', on ? '.85' : '.3');
+      c.setAttribute('stroke-width', on ? '1.5' : '1');
+    });
+    document.querySelectorAll('button[data-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+  }
+
+  function setStage(stage) {
+    plate.querySelectorAll('.t0-stage').forEach(function (g) {
+      g.classList.toggle('dim', stage !== 'all' && g.dataset.stage !== stage &&
+                                 !(stage === '4' && g.dataset.stage === '5'));
+    });
+    document.querySelectorAll('button[data-stage]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.stage === stage));
+    });
+  }
+
+  document.querySelectorAll('button[data-stage]').forEach(function (b) {
+    b.addEventListener('click', function () { setStage(b.dataset.stage); });
+  });
+  document.querySelectorAll('button[data-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.dataset.lang); });
+  });
+
+  plate.addEventListener('click', function (e) {
+    var c = e.target.closest('.t0-chip');
+    if (c) { setLang(c.dataset.lang); return; }
+    var g = e.target.closest('.t0-stage');
+    if (g) setStage(g.dataset.stage === '5' ? '4' : g.dataset.stage);
+  });
+  plate.addEventListener('pointerover', function (e) {
+    var h = e.target.closest('.t0-hot');
+    if (h) readout.textContent = h.getAttribute('data-detail');
+  });
+  plate.addEventListener('pointerleave', function () { readout.textContent = REST; });
+
+  readout.textContent = REST;
+  setLang('en');
+  setStage('all');
+})();
+(function () {
+  var box = document.getElementById('steps');
+  var out = document.getElementById('s-readout');
+  var play = document.getElementById('s-play');
+  var REST = 'Click a step to isolate it, hover an output pill for why it matters, or press Play.';
+  var timer = null, cur = 0;
+  function show(step) {
+    var n = step === 'all' ? 0 : +step;
+    box.querySelectorAll('.s-step').forEach(function (g) {
+      var on = +g.dataset.step === n;
+      g.classList.toggle('dim', n !== 0 && !on);
+      g.classList.toggle('on', on);
+    });
+    box.querySelectorAll('.s-arrow').forEach(function (a) {
+      var i = +a.id.slice(3);
+      var hit = n !== 0 && (i === n - 1 || i === n);
+      a.classList.toggle('dim', n !== 0 && !hit);
+      a.classList.toggle('on', hit);
+    });
+    document.querySelectorAll('button[data-sstep]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.sstep === String(step)));
+    });
+  }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } play.innerHTML = '&#9654; Play'; }
+  function start() {
+    cur = 0; play.innerHTML = '&#9632; Stop';
+    var tick = function () { cur += 1; if (cur > 5) { stop(); show('all'); return; } show(cur); };
+    tick(); timer = setInterval(tick, 1600);
+  }
+  play.addEventListener('click', function () { if (timer) { stop(); show('all'); } else start(); });
+  document.querySelectorAll('button[data-sstep]').forEach(function (b) {
+    b.addEventListener('click', function () { stop(); show(b.dataset.sstep); });
+  });
+  box.addEventListener('click', function (e) {
+    var g = e.target.closest('.s-step');
+    if (g) { stop(); show(g.dataset.step); }
+  });
+  box.addEventListener('pointerover', function (e) {
+    var h = e.target.closest('.s-out');
+    if (h) out.textContent = h.getAttribute('data-detail');
+  });
+  box.addEventListener('pointerleave', function () { out.textContent = REST; });
+  out.textContent = REST; show('all');
+})();
+</script>

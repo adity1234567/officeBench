@@ -1,0 +1,34 @@
+{
+ "qwen2.5:3b": {
+  "format": true,
+  "runs": [
+   {
+    "task": "1-1/0",
+    "ok": true,
+    "passed": false,
+    "steps": 8,
+    "malformed": 7,
+    "end": "STUCK",
+    "secs": 127
+   },
+   {
+    "task": "1-1/1",
+    "ok": true,
+    "passed": true,
+    "steps": 20,
+    "malformed": 10,
+    "end": "maxsteps",
+    "secs": 461
+   },
+   {
+    "task": "1-7/2",
+    "ok": true,
+    "passed": false,
+    "steps": 7,
+    "malformed": 4,
+    "end": "STUCK",
+    "secs": 183
+   }
+  ]
+ }
+}

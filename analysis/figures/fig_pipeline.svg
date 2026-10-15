@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 800" role="img" color="#1b2330"
+     font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif"
+     aria-label="The whole pipeline in six stages: the 300-subtask benchmark; four cells of two models by two prompt languages; one 20-step run inside a container; scoring with three defects repaired, giving 394 passes and 557 failures; coding each failure with one primary root cause; and comparing codes across cells to find what fails everywhere.">
+  <defs><marker id="pparrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+    <text x="20" y="34" font-size="17" fill="currentColor" font-weight="700" pointer-events="none">The whole pipeline: 300 subtasks in, one root cause per failure out</text>
+    <text x="20" y="54" font-size="11.5" fill="currentColor" fill-opacity=".65" pointer-events="none">click a stage, hover any detail, or press Play</text>
+  <path id="p-c1" class="p-conn" d="M380 233 H 400" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.6" marker-end="url(#pparrow)"/>
+  <path id="p-c2" class="p-conn" d="M760 233 H 780" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.6" marker-end="url(#pparrow)"/>
+  <path id="p-c3" class="p-conn" d="M960 388 V 414 H 200 V 440" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.6" marker-end="url(#pparrow)"/>
+  <path id="p-c4" class="p-conn" d="M380 595 H 400" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.6" marker-end="url(#pparrow)"/>
+  <path id="p-c5" class="p-conn" d="M760 595 H 780" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.6" marker-end="url(#pparrow)"/>
+  <g id="p-s1" class="p-stage" data-stage="1" transform="translate(20,78)">
+    <rect x="0" y="0" width="360" height="310" rx="8" fill="currentColor" stroke="currentColor" stroke-opacity=".3" stroke-width="1" fill-opacity=".035"/>
+    <rect class="p-head" x="0" y="0" width="360" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="360" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="22" cy="17" r="11" fill="#d97706"/>
+    <text x="22" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">1</text>
+    <text x="42" y="22" font-size="14" fill="currentColor" font-weight="700" pointer-events="none">Benchmark</text>
+    <text x="346" y="22" font-size="10.5" fill="currentColor" text-anchor="end" fill-opacity=".65" pointer-events="none">what is asked</text>
+    <text x="20" y="66" font-size="22" fill="#d97706" font-weight="700" pointer-events="none">300 subtasks</text>
+    <text x="20" y="84" font-size="10.5" fill="currentColor" fill-opacity=".7" pointer-events="none">each ends in checks on the final files</text>
+    <rect x="20" y="104" width="97.2" height="34" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".55" stroke-width="1" fill-opacity="0.08" class="p-hot" data-detail="93 single-app subtasks (31% of 300)"/>
+    <text x="68.6" y="126" font-size="14" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">93</text>
+    <text x="68.6" y="154" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".7" pointer-events="none">single-app</text>
+    <rect x="119.2" y="104" width="99.3333" height="34" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".55" stroke-width="1" fill-opacity="0.15000000000000002" class="p-hot" data-detail="95 two-app subtasks (32% of 300)"/>
+    <text x="168.867" y="126" font-size="14" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">95</text>
+    <text x="168.867" y="154" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".7" pointer-events="none">two-app</text>
+    <rect x="220.533" y="104" width="117.467" height="34" rx="3" fill="currentColor" stroke="currentColor" stroke-opacity=".55" stroke-width="1" fill-opacity="0.22000000000000003" class="p-hot" data-detail="112 three-app subtasks (37% of 300)"/>
+    <text x="279.267" y="126" font-size="14" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">112</text>
+    <text x="279.267" y="154" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".7" pointer-events="none">three-app</text>
+    <text x="20" y="192" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Eight apps in a Docker container</text>
+    <rect x="20" y="204" width="76" height="24" rx="12" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1" class="p-hot" data-detail="the calendar app: the agent switches to it, then issues its actions"/>
+    <text x="58" y="220" font-size="10.5" fill="currentColor" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" pointer-events="none">calendar</text>
+    <rect x="102" y="204" width="76" height="24" rx="12" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1" class="p-hot" data-detail="the excel app: the agent switches to it, then issues its actions"/>
+    <text x="140" y="220" font-size="10.5" fill="currentColor" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" pointer-events="none">excel</text>
+    <rect x="184" y="204" width="76" height="24" rx="12" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1" class="p-hot" data-detail="the ocr app: the agent switches to it, then issues its actions"/>
+    <text x="222" y="220" font-size="10.5" fill="currentColor" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" pointer-events="none">ocr</text>
+    <rect x="266" y="204" width="76" height="24" rx="12" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1" class="p-hot" data-detail="the pdf app: the agent switches to it, then issues its actions"/>
+    <text x="304" y="220" font-size="10.5" fill="currentColor" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" pointer-events="none">pdf</text>
+    <rect x="20" y="236" width="76" height="24" rx="12" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1" class="p-hot" data-detail="the shell app: the agent switches to it, then issues its actions"/>
+    <text x="58" y="252" font-size="10.5" fill="currentColor" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" pointer-events="none">shell</text>
+    <rect x="102" y="236" width="76" height="24" rx="12" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1" class="p-hot" data-detail="the word app: the agent switches to it, then issues its actions"/>
+    <text x="140" y="252" font-size="10.5" fill="currentColor" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" pointer-events="none">word</text>
+    <rect x="184" y="236" width="76" height="24" rx="12" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1" class="p-hot" data-detail="the email app: the agent switches to it, then issues its actions"/>
+    <text x="222" y="252" font-size="10.5" fill="currentColor" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" pointer-events="none">email</text>
+    <rect x="266" y="236" width="76" height="24" rx="12" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1" class="p-hot" data-detail="the llm app: the agent switches to it, then issues its actions"/>
+    <text x="304" y="252" font-size="10.5" fill="currentColor" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" pointer-events="none">llm</text>
+    <text x="20" y="292" font-size="10" fill="currentColor" fill-opacity=".65" pointer-events="none">A task such as: “Find a common time for Bob and Tom”</text>
+  </g>
+  <g id="p-s2" class="p-stage" data-stage="2" transform="translate(400,78)">
+    <rect x="0" y="0" width="360" height="310" rx="8" fill="currentColor" stroke="currentColor" stroke-opacity=".3" stroke-width="1" fill-opacity=".035"/>
+    <rect class="p-head" x="0" y="0" width="360" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="360" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="22" cy="17" r="11" fill="#d97706"/>
+    <text x="22" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">2</text>
+    <text x="42" y="22" font-size="14" fill="currentColor" font-weight="700" pointer-events="none">Four cells</text>
+    <text x="346" y="22" font-size="10.5" fill="currentColor" text-anchor="end" fill-opacity=".65" pointer-events="none">who is asked, in what language</text>
+    <text x="20" y="62" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">2 models × 2 prompt languages</text>
+    <text x="20" y="80" font-size="10.5" fill="currentColor" fill-opacity=".7" pointer-events="none">same 300 subtasks, temperature 0, one run each</text>
+    <text x="223" y="108" font-size="11" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">English</text>
+    <text x="309" y="108" font-size="11" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">Bangla</text>
+    <text x="20" y="156" font-size="11.5" fill="currentColor" font-weight="700" pointer-events="none">gemma4:31b</text>
+    <rect x="182" y="118" width="80" height="70" rx="5" fill="currentColor" stroke="#d97706" stroke-opacity=".8" stroke-width="1" fill-opacity=".05" class="p-hot" data-detail="gemma4:31b, English prompt: 151 pass (50.3%)"/>
+    <text x="222" y="152" font-size="22" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">151</text>
+    <text x="222" y="172" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".7" pointer-events="none">50.3%</text>
+    <rect x="268" y="118" width="80" height="70" rx="5" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".05" class="p-hot" data-detail="gemma4:31b, Bangla prompt: 127 pass (42.3%)"/>
+    <text x="308" y="152" font-size="22" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">127</text>
+    <text x="308" y="172" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".7" pointer-events="none">42.3%</text>
+    <text x="20" y="240" font-size="11.5" fill="currentColor" font-weight="700" pointer-events="none">gpt-oss:20b</text>
+    <rect x="182" y="202" width="80" height="70" rx="5" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".05" class="p-hot" data-detail="gpt-oss:20b, English prompt: 86 pass (28.7%)"/>
+    <text x="222" y="236" font-size="22" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">86</text>
+    <text x="222" y="256" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".7" pointer-events="none">28.7%</text>
+    <rect x="268" y="202" width="80" height="70" rx="5" fill="currentColor" stroke="currentColor" stroke-opacity=".45" stroke-width="1" fill-opacity=".05" stroke-dasharray="4 3" class="p-hot" data-detail="gpt-oss:20b, Bangla prompt: 30 pass (51 of 300) — run still in progress"/>
+    <text x="308" y="236" font-size="22" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">30</text>
+    <text x="308" y="256" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".7" pointer-events="none">51 of 300</text>
+    <text x="20" y="292" font-size="10" fill="currentColor" fill-opacity=".65" pointer-events="none">Bangla: prompt and task machine-translated; files and JSON stay English</text>
+  </g>
+  <g id="p-s3" class="p-stage" data-stage="3" transform="translate(780,78)">
+    <rect x="0" y="0" width="360" height="310" rx="8" fill="currentColor" stroke="currentColor" stroke-opacity=".3" stroke-width="1" fill-opacity=".035"/>
+    <rect class="p-head" x="0" y="0" width="360" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="360" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="22" cy="17" r="11" fill="#d97706"/>
+    <text x="22" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">3</text>
+    <text x="42" y="22" font-size="14" fill="currentColor" font-weight="700" pointer-events="none">One run</text>
+    <text x="346" y="22" font-size="10.5" fill="currentColor" text-anchor="end" fill-opacity=".65" pointer-events="none">what the agent does</text>
+    <text x="20" y="62" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">At most 20 steps</text>
+    <rect x="20" y="78" width="90" height="40" rx="5" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1" class="p-hot" data-detail="Task, past actions and results, and the current app’s instructions — earlier thoughts are not included"/>
+    <text x="65" y="103" font-size="11" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">Prompt</text>
+    <rect x="130" y="78" width="120" height="40" rx="5" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1" class="p-hot" data-detail="##Thought: … then ##Command: {json}, capped at 512 tokens (gemma) or 2048 (gpt-oss)"/>
+    <text x="190" y="103" font-size="11" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">Thought + JSON</text>
+    <rect x="262" y="78" width="90" height="40" rx="5" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1" class="p-hot" data-detail="The app executes the action; the observation comes back and files on disk change"/>
+    <text x="307" y="103" font-size="11" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">App acts</text>
+    <line x1="112" y1="98" x2="128" y2="98" stroke="currentColor" stroke-opacity=".7" stroke-width="1.4" marker-end="url(#pparrow)"/>
+    <line x1="252" y1="98" x2="260" y2="98" stroke="currentColor" stroke-opacity=".7" stroke-width="1.4" marker-end="url(#pparrow)"/>
+    <path d="M307 120 V 140 H 65 V 122" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.3" marker-end="url(#pparrow)"/>
+    <text x="186" y="156" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".7" pointer-events="none">history grows, thoughts do not</text>
+    <text x="20" y="190" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Step budget</text>
+    <rect x="20" y="200" width="13" height="22" rx="2" fill="#d97706" stroke="#d97706" stroke-opacity=".9" stroke-width="1" fill-opacity=".35" class="p-hot" data-detail="step 1 — subtask 1-2/0 used four steps and finished"/>
+    <rect x="36.5" y="200" width="13" height="22" rx="2" fill="#d97706" stroke="#d97706" stroke-opacity=".9" stroke-width="1" fill-opacity=".35" class="p-hot" data-detail="step 2 — subtask 1-2/0 used four steps and finished"/>
+    <rect x="53" y="200" width="13" height="22" rx="2" fill="#d97706" stroke="#d97706" stroke-opacity=".9" stroke-width="1" fill-opacity=".35" class="p-hot" data-detail="step 3 — subtask 1-2/0 used four steps and finished"/>
+    <rect x="69.5" y="200" width="13" height="22" rx="2" fill="#d97706" stroke="#d97706" stroke-opacity=".9" stroke-width="1" fill-opacity=".35" class="p-hot" data-detail="step 4 — subtask 1-2/0 used four steps and finished"/>
+    <rect x="86" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 5"/>
+    <rect x="102.5" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 6"/>
+    <rect x="119" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 7"/>
+    <rect x="135.5" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 8"/>
+    <rect x="152" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 9"/>
+    <rect x="168.5" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 10"/>
+    <rect x="185" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 11"/>
+    <rect x="201.5" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 12"/>
+    <rect x="218" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 13"/>
+    <rect x="234.5" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 14"/>
+    <rect x="251" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 15"/>
+    <rect x="267.5" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 16"/>
+    <rect x="284" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 17"/>
+    <rect x="300.5" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 18"/>
+    <rect x="317" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 19"/>
+    <rect x="333.5" y="200" width="13" height="22" rx="2" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1" class="p-hot" data-detail="step 20"/>
+    <text x="20" y="244" font-size="10.5" fill="currentColor" fill-opacity=".75" pointer-events="none">Ends at finish_task, step 20, or when stuck</text>
+    <text x="20" y="262" font-size="10.5" fill="currentColor" font-weight="700" pointer-events="none">Limits that cause failures:</text>
+    <text x="20" y="278" font-size="10" fill="currentColor" fill-opacity=".75" pointer-events="none">one Excel cell per action  ·  50-token llm app</text>
+    <text x="20" y="292" font-size="10" fill="currentColor" fill-opacity=".75" pointer-events="none">shell wraps commands in bash -c</text>
+  </g>
+  <g id="p-s4" class="p-stage" data-stage="4" transform="translate(20,440)">
+    <rect x="0" y="0" width="360" height="310" rx="8" fill="currentColor" stroke="currentColor" stroke-opacity=".3" stroke-width="1" fill-opacity=".035"/>
+    <rect class="p-head" x="0" y="0" width="360" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="360" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="22" cy="17" r="11" fill="#d97706"/>
+    <text x="22" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">4</text>
+    <text x="42" y="22" font-size="14" fill="currentColor" font-weight="700" pointer-events="none">Score</text>
+    <text x="346" y="22" font-size="10.5" fill="currentColor" text-anchor="end" fill-opacity=".65" pointer-events="none">did it pass</text>
+    <text x="20" y="62" font-size="22" fill="#d97706" font-weight="700" pointer-events="none">951 scored runs</text>
+    <rect x="20" y="80" width="130.576" height="40" rx="3" fill="#1a7f4b" stroke="#1a7f4b" stroke-opacity=".7" stroke-width="1" fill-opacity=".12" class="p-hot" data-detail="394 runs pass (151 + 127 + 86 + 30)"/>
+    <rect x="152.576" y="80" width="187.424" height="40" rx="3" fill="#b3391f" stroke="#b3391f" stroke-opacity=".7" stroke-width="1" fill-opacity=".12" class="p-hot" data-detail="557 runs fail: 149 + 173 + 214 + 21 — these need explaining"/>
+    <text x="86.2881" y="106" font-size="13" fill="#1a7f4b" font-weight="700" text-anchor="middle" pointer-events="none">394 pass</text>
+    <text x="246.288" y="106" font-size="13" fill="#b3391f" font-weight="700" text-anchor="middle" pointer-events="none">557 fail</text>
+    <text x="20" y="148" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Three scoring defects repaired first</text>
+    <rect x="20" y="160" width="320" height="32" rx="4" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1" class="p-hot" data-detail="read the run’s own testbed, not a path that only exists in the container"/>
+    <text x="32" y="181" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Email check</text>
+    <text x="142" y="181" font-size="10" fill="currentColor" fill-opacity=".55" pointer-events="none">hover for the fix</text>
+    <rect x="20" y="198" width="320" height="32" rx="4" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1" class="p-hot" data-detail="exact name first, so an empty look-alike folder is not read"/>
+    <text x="32" y="219" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Mailbox match</text>
+    <text x="142" y="219" font-size="10" fill="currentColor" fill-opacity=".55" pointer-events="none">hover for the fix</text>
+    <rect x="20" y="236" width="320" height="32" rx="4" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1" class="p-hot" data-detail="task files read as UTF-8, not the Windows default"/>
+    <text x="32" y="257" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Text encoding</text>
+    <text x="142" y="257" font-size="10" fill="currentColor" fill-opacity=".55" pointer-events="none">hover for the fix</text>
+    <text x="20" y="292" font-size="10" fill="currentColor" fill-opacity=".7" font-family="ui-monospace, Consolas, monospace" pointer-events="none">official → corrected:  132→151 · 103→127 · 80→+6</text>
+  </g>
+  <g id="p-s5" class="p-stage" data-stage="5" transform="translate(400,440)">
+    <rect x="0" y="0" width="360" height="310" rx="8" fill="currentColor" stroke="currentColor" stroke-opacity=".3" stroke-width="1" fill-opacity=".035"/>
+    <rect class="p-head" x="0" y="0" width="360" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="360" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="22" cy="17" r="11" fill="#d97706"/>
+    <text x="22" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">5</text>
+    <text x="42" y="22" font-size="14" fill="currentColor" font-weight="700" pointer-events="none">Code</text>
+    <text x="346" y="22" font-size="10.5" fill="currentColor" text-anchor="end" fill-opacity=".65" pointer-events="none">why it failed</text>
+    <text x="20" y="62" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">One question per failed run</text>
+    <rect x="20" y="74" width="320" height="52" rx="5" fill="none" stroke="#d97706" stroke-opacity=".8" stroke-width="1.4" class="p-hot" data-detail="Is the final output correct for the task as written? Meaning, not surface form."/>
+    <text x="180" y="96" font-size="11.5" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">Is the output correct for</text>
+    <text x="180" y="112" font-size="11.5" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">the task as written?</text>
+    <line x1="100" y1="128" x2="100" y2="148" stroke="currentColor" stroke-opacity=".7" stroke-width="1.4" marker-end="url(#pparrow)"/>
+    <line x1="260" y1="128" x2="260" y2="148" stroke="currentColor" stroke-opacity=".7" stroke-width="1.4" marker-end="url(#pparrow)"/>
+    <text x="108" y="142" font-size="9.5" fill="currentColor" fill-opacity=".7" pointer-events="none">yes, still FAIL</text>
+    <text x="268" y="142" font-size="9.5" fill="currentColor" fill-opacity=".7" pointer-events="none">no</text>
+    <rect x="20" y="152" width="160" height="54" rx="5" fill="#d97706" stroke="#d97706" stroke-opacity=".8" stroke-width="1" fill-opacity=".12" class="p-hot" data-detail="Benchmark defect (BM): the check, a reference file or a tool is wrong. 47 of gemma English’s 149 failures."/>
+    <text x="100" y="175" font-size="20" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">BM</text>
+    <text x="100" y="195" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">benchmark defect</text>
+    <rect x="190" y="152" width="150" height="54" rx="5" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1" class="p-hot" data-detail="Find the decisive step: the earliest step that, corrected alone, would most likely have passed. Then code that step."/>
+    <text x="265" y="175" font-size="12" fill="currentColor" font-weight="700" text-anchor="middle" pointer-events="none">decisive step</text>
+    <text x="265" y="195" font-size="10" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">the agent’s own error</text>
+    <text x="20" y="228" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">One primary code + any tags</text>
+    <text x="20" y="244" font-size="10" fill="currentColor" fill-opacity=".75" font-family="ui-monospace, Consolas, monospace" pointer-events="none">C-AMBIG · C-WEAKCHECK · C-HARNESS · C-LLMAPP</text>
+    <rect x="20" y="256" width="320" height="40" rx="4" fill="#1a7f4b" stroke="#1a7f4b" stroke-opacity=".55" stroke-width="1" fill-opacity=".07" class="p-hot" data-detail="Two annotators coded 16 cases independently: kappa 0.78 on the primary code, 0.64 on benchmark-versus-agent."/>
+    <text x="180" y="273" font-size="10.5" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">agreement on 16 double-coded cases</text>
+    <text x="180" y="288" font-size="13" fill="#1a7f4b" font-weight="700" text-anchor="middle" pointer-events="none">κ = 0.78</text>
+  </g>
+  <g id="p-s6" class="p-stage" data-stage="6" transform="translate(780,440)">
+    <rect x="0" y="0" width="360" height="310" rx="8" fill="currentColor" stroke="currentColor" stroke-opacity=".3" stroke-width="1" fill-opacity=".035"/>
+    <rect class="p-head" x="0" y="0" width="360" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="360" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="22" cy="17" r="11" fill="#d97706"/>
+    <text x="22" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">6</text>
+    <text x="42" y="22" font-size="14" fill="currentColor" font-weight="700" pointer-events="none">Compare</text>
+    <text x="346" y="22" font-size="10.5" fill="currentColor" text-anchor="end" fill-opacity=".65" pointer-events="none">what repeats</text>
+    <text x="20" y="62" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Same subtask, three runs</text>
+    <text x="20" y="80" font-size="10.5" fill="currentColor" fill-opacity=".7" pointer-events="none">gemma English, gemma Bangla, gpt-oss English</text>
+    <rect x="20" y="98" width="320" height="40" rx="4" fill="#b3391f" stroke="#b3391f" stroke-opacity=".55" stroke-width="1" fill-opacity=".06" class="p-hot" data-detail="119 of 300 subtasks fail in every full run"/>
+    <text x="60" y="126" font-size="22" fill="#b3391f" font-weight="700" text-anchor="middle" pointer-events="none">119</text>
+    <text x="92" y="116" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">fail in all three</text>
+    <text x="92" y="130" font-size="10" fill="currentColor" fill-opacity=".75" pointer-events="none">the shared core</text>
+    <rect x="20" y="144" width="320" height="40" rx="4" fill="#b3391f" stroke="#b3391f" stroke-opacity=".55" stroke-width="1" fill-opacity=".06" class="p-hot" data-detail="44 subtasks fail for exactly the same coded cause in all three runs"/>
+    <text x="60" y="172" font-size="22" fill="#b3391f" font-weight="700" text-anchor="middle" pointer-events="none">44</text>
+    <text x="92" y="162" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">fail for the identical cause</text>
+    <text x="92" y="176" font-size="10" fill="currentColor" fill-opacity=".75" pointer-events="none">in all three</text>
+    <rect x="20" y="190" width="320" height="40" rx="4" fill="#1a7f4b" stroke="#1a7f4b" stroke-opacity=".55" stroke-width="1" fill-opacity=".06" class="p-hot" data-detail="55 subtasks pass in every full run"/>
+    <text x="60" y="218" font-size="22" fill="#1a7f4b" font-weight="700" text-anchor="middle" pointer-events="none">55</text>
+    <text x="92" y="208" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">pass in all three</text>
+    <text x="92" y="222" font-size="10" fill="currentColor" fill-opacity=".75" pointer-events="none">the easy subtasks</text>
+    <rect x="20" y="236" width="320" height="40" rx="4" fill="#d97706" stroke="#d97706" stroke-opacity=".55" stroke-width="1" fill-opacity=".06" class="p-hot" data-detail="A benchmark defect decides at least one run on 57 subtasks — the fixes that pay off most"/>
+    <text x="60" y="264" font-size="22" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">57</text>
+    <text x="92" y="254" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">a benchmark defect decides</text>
+    <text x="92" y="268" font-size="10" fill="currentColor" fill-opacity=".75" pointer-events="none">at least one run</text>
+    <text x="20" y="292" font-size="10" fill="currentColor" fill-opacity=".65" pointer-events="none">what fails everywhere vs what is specific to a model</text>
+  </g>
+</svg>

@@ -9,3 +9,7 @@ outputs*/
 cache/
 results/
 docs/
+
+.venv/
+logs/
+$null

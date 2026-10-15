@@ -1,4 +1,5 @@
 FROM ubuntu:latest
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
 # Install required dependencies
 RUN apt-get update && \

@@ -1,0 +1,66 @@
+T03.v1 | Send an email to Carlos saying 'Can we move our call to Friday?' and title it 'Call reschedule' 
+      | Carlos-কে একটা ইমেইল পাঠাও, তাতে লেখা থাকবে 'Can we move our call to Friday?', আর সাবজেক্ট দিও 'Call reschedule'
+T03.v2 | I need to send an email to Carlos saying 'Can we move our call to Friday?' and title it 'Call reschedule'. Can you do that? 
+      | Carlos-কে একটা ইমেইল পাঠানো দরকার, যেখানে লেখা থাকবে 'Can we move our call to Friday?' আর সাবজেক্ট হবে 'Call reschedule'। তুমি কি এটা করে দিতে পারবে?
+T03.v3 | please send an email to Carlos saying 'Can we move our call to Friday?' and title it 'Call reschedule' 
+      | দয়া করে Carlos-কে একটা ইমেইল পাঠিয়ে দাও, তাতে লিখবে 'Can we move our call to Friday?' আর সাবজেক্ট রাখবে 'Call reschedule'
+T10.v1 | Cancel my first meeting on May 16 
+      | 16 মে তারিখে আমার প্রথম মিটিংটা বাতিল করো
+T10.v2 | Delete my first meeting on May 16 
+      | 16 মে তারিখের আমার প্রথম মিটিংটা ডিলিট করো
+T10.v3 | can you cancel my first meeting on May 16 
+      | 16 মে তারিখে আমার প্রথম মিটিংটা বাতিল করে দিতে পারবে
+T13.v1 | Cancel the next Team sync meeting 
+      | পরের Team sync মিটিংটা বাতিল করো
+T13.v2 | Can you cancel the next Team sync meeting 
+      | পরের Team sync মিটিংটা বাতিল করে দিতে পারবে
+T13.v3 | Delete the next Team sync meeting 
+      | পরের Team sync মিটিংটা ডিলিট করো
+T15.v1 | Cancel my next meeting with Dana 
+      | Dana-এর সাথে আমার পরের মিটিংটা বাতিল করো
+T15.v2 | I need to cancel my next meeting with Dana. Can you do that for me please? 
+      | Dana-এর সাথে আমার পরের মিটিংটা বাতিল করতে হবে। তুমি কি এটা করে দিতে পারবে, প্লিজ?
+T15.v3 | Dana is off sick. Can you cancel my next meeting with them? 
+      | Dana অসুস্থতার জন্য ছুটিতে আছে। ওর সাথে আমার পরের মিটিংটা বাতিল করে দিতে পারবে?
+T16.v1 | If I haven't met with Carlos in the last 14 days, schedule a 30-minute meeting called 'catch-up' for my first free slot from tomorrow 
+      | গত 14 দিনে যদি Carlos-এর সাথে আমার দেখা না হয়ে থাকে, তাহলে আগামীকাল থেকে আমার প্রথম ফাঁকা স্লটে 'catch-up' নামে একটা 30 মিনিটের মিটিং শিডিউল করো
+T16.v2 | I think I might need to catch up with Carlos. Can you check if I've met with them in the last 14 days? If not, schedule a 30-minute meeting for my first free slot from tomorrow 
+      | মনে হচ্ছে Carlos-এর সাথে একবার কথা বলা দরকার। একটু দেখো তো, গত 14 দিনে ওর সাথে আমার দেখা হয়েছে কি না? না হয়ে থাকলে আগামীকাল থেকে আমার প্রথম ফাঁকা স্লটে একটা 30 মিনিটের মিটিং শিডিউল করো
+T16.v3 | have I met with Carlos in the last 14 days? If not, schedule a 30-minute meeting called 'catch-up' for my first free slot from tomorrow 
+      | গত 14 দিনে কি Carlos-এর সাথে আমার দেখা হয়েছে? না হলে আগামীকাল থেকে আমার প্রথম ফাঁকা স্লটে 'catch-up' নামে 30 মিনিটের একটা মিটিং শিডিউল করো
+T17.v1 | Cancel my meetings on Thursday after 14:00 
+      | বৃহস্পতিবার 14:00টার পরে আমার মিটিংগুলো বাতিল করো
+T17.v2 | Delete my meetings on Thursday after 14:00 
+      | বৃহস্পতিবার 14:00টার পরে আমার যে মিটিংগুলো আছে, সেগুলো ডিলিট করো
+T17.v3 | something came up. Can you cancel my meetings on Thursday after 14:00? 
+      | হঠাৎ একটা কাজ পড়ে গেছে। বৃহস্পতিবার 14:00টার পরে আমার মিটিংগুলো বাতিল করে দিতে পারবে?
+T18.v1 | Cancel all future meetings with Lee 
+      | Lee-এর সাথে ভবিষ্যতের সব মিটিং বাতিল করো
+T18.v2 | I need to cancel all future meetings with Lee. Can you do that for me please? 
+      | Lee-এর সাথে সামনে যত মিটিং আছে, সবগুলো বাতিল করতে হবে। তুমি কি এটা করে দিতে পারবে, প্লিজ?
+T18.v3 | Lee is leaving the company. Can you cancel all future meetings with them? 
+      | Lee কোম্পানি ছেড়ে চলে যাচ্ছে। ওর সাথে ভবিষ্যতের সব মিটিং বাতিল করে দিতে পারবে?
+T19.v1 | Cancel future Team sync meetings 
+      | ভবিষ্যতের Team sync মিটিংগুলো বাতিল করো
+T19.v2 | Delete all the future Team sync meetings 
+      | ভবিষ্যতের সব Team sync মিটিং ডিলিট করো
+T19.v3 | We've decided we don't need any any more Team sync meetings. Can you cancel all future ones? 
+      | আমরা ঠিক করেছি, Team sync মিটিং আর লাগবে না। সামনে যতগুলো আছে, সব বাতিল করে দিতে পারবে?
+T20.v1 | Create a 1.5 hour event called Roadmap review on May 22 at 14:00 with Dana 
+      | 22 মে 14:00টায় Dana-এর সাথে Roadmap review নামে একটা ইভেন্ট তৈরি করো, সময়কাল 1.5 ঘণ্টা
+T20.v2 | I haven't met with Dana in a while. Can you schedule a 1.5 hour event called Roadmap review on May 22 at 14:00? 
+      | অনেকদিন Dana-এর সাথে দেখা হয়নি। 22 মে 14:00টায় Roadmap review নামে 1.5 ঘণ্টা সময়ের একটা ইভেন্ট শিডিউল করে দিতে পারবে?
+T20.v3 | I need to catch up with Dana. can you schedule a 1.5 hour event called Roadmap review on May 22 at 14:00? 
+      | Dana-এর সাথে একটু বসা দরকার। 22 মে 14:00টায় Roadmap review নামে একটা ইভেন্ট শিডিউল করে দিতে পারবে? ইভেন্টটা 1.5 ঘণ্টা ধরে চলবে।
+T54.v1 | If I haven't met with Priya in the past 7 days, send them an email titled 'Catch up soon?' saying 'We haven't caught up in a while - can you send some availability over next week?' 
+      | গত 7 দিনে যদি Priya-এর সাথে আমার কোনো মিটিং না হয়ে থাকে, তাহলে তাকে “Catch up soon?” টাইটেল দিয়ে একটা ইমেইল পাঠাও, তাতে লেখো “We haven't caught up in a while - can you send some availability over next week?”
+T54.v2 | I haven't met with Priya in a while. if it's been longer than 7 days can you send them an email titled 'Catch up soon?' saying 'We haven't caught up in a while - can you send some availability over next week?' 
+      | Priya-এর সাথে অনেকদিন মিটিং হয়নি। যদি 7 দিনের বেশি হয়ে থাকে, তাহলে তাকে একটা ইমেইল পাঠাতে পারবে? টাইটেল হবে “Catch up soon?”, আর লেখা থাকবে “We haven't caught up in a while - can you send some availability over next week?”
+T54.v3 | can't remember the last time I met with Priya. Can you check if it's been over 7 days? If so, send them an email titled 'Catch up soon?' saying 'We haven't caught up in a while - can you send some availability over next week?' 
+      | শেষ কবে Priya-এর সাথে মিটিং করেছি, মনে পড়ছে না। একটু দেখবে, 7 দিনের বেশি হয়ে গেছে কিনা? হয়ে থাকলে তাকে “Catch up soon?” টাইটেল দিয়ে একটা ইমেইল পাঠাও, তাতে লেখো “We haven't caught up in a while - can you send some availability over next week?”
+T55.v1 | If I don't have any meetings scheduled with Priya in the next 7 days, send them an email titled 'Catch up soon?' saying 'We have not caught up in a while - can you send some availability over next week?' 
+      | আগামী 7 দিনে যদি Priya-এর সাথে আমার কোনো মিটিং শিডিউল করা না থাকে, তাহলে তাকে 'Catch up soon?' টাইটেল দিয়ে একটা ইমেইল পাঠাও, তাতে লেখো 'We have not caught up in a while - can you send some availability over next week?'
+T55.v2 | Did I already schedule a meeting with Priya in the next 7 days? If not, send them an email titled 'Catch up soon?' saying 'We have not caught up in a while - can you send some availability over next week?' 
+      | আগামী 7 দিনের মধ্যে Priya-এর সাথে আমি কি আগেই কোনো মিটিং শিডিউল করে রেখেছি? না করে থাকলে, তাকে 'Catch up soon?' টাইটেল দিয়ে একটা ইমেইল পাঠাও, তাতে লেখো 'We have not caught up in a while - can you send some availability over next week?'
+T55.v3 | I need to check if I have any meetings scheduled with Priya in the next 7 days. If not, send them an email titled 'Catch up soon?' saying 'We have not caught up in a while - can you send some availability over next week?' 
+      | আগামী 7 দিনে Priya-এর সাথে আমার কোনো মিটিং শিডিউল করা আছে কিনা, দেখতে হবে। না থাকলে, তাকে 'Catch up soon?' টাইটেল দিয়ে একটা ইমেইল পাঠাও, যেখানে লেখা থাকবে 'We have not caught up in a while - can you send some availability over next week?'

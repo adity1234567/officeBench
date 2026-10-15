@@ -1,0 +1,6890 @@
+[
+ {
+  "id": "1-1/0",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-1/1",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 5,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-1/2",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-1/3",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 4,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-1/4",
+  "apps": 1,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-2/0",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 4,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 4,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-2/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "1-2/2",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-2/3",
+  "apps": 1,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 9,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 2,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-2/4",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 7,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-3/0",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 6,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-3/1",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 4,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-3/2",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 4,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-3/3",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-3/4",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 6,
+   "builtin": 3,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 4,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-4/0",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 14,
+   "malformed": 10,
+   "empty": 4,
+   "builtin": 4,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-4/1",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 13,
+   "malformed": 9,
+   "empty": 4,
+   "builtin": 3,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-4/2",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-4/3",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-5/0",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 3,
+   "builtin": 10,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-5/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 3,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-5/2",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-5/3",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-6/0",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 2,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-6/1",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 13,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-6/2",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 0,
+   "builtin": 9,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-6/3",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 1,
+   "builtin": 12,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-6/4",
+  "apps": 1,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 14,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-6/5",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 6,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-7/0",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-7/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 7,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-7/2",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 11,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 15,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-7/3",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 10,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-7/4",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-7/5",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-8/0",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 17,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 19,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "1-8/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 3,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 14,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "1-8/2",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 16,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-8/3",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 15,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 18,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-8/4",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 12,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-9/0",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-9/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 2,
+   "builtin": 10,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-9/2",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 11,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-9/3",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-9/4",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-9/5",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "CAP",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 3,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-10/0",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-10/1",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-10/2",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 3,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-10/3",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 2,
+   "builtin": 9,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-10/4",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 9,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-11/0",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-11/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-11/2",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 7,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-11/3",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-12/0",
+  "apps": 1,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 6,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-12/1",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-12/2",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 9,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 4,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-13/0",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 4,
+   "builtin": 9,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-13/1",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 6,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-13/2",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-14/0",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-14/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 18,
+   "malformed": 2,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 6,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-14/2",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-14/3",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-14/4",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-15/0",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 10,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-15/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "TL",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-15/2",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 4,
+   "empty": 4,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-16/0",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 18,
+   "empty": 4,
+   "builtin": 13,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 1,
+   "builtin": 4,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-16/1",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 4,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-18/0",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 10,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-18/1",
+  "apps": 1,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 13,
+   "malformed": 5,
+   "empty": 2,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-19/0",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-19/1",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 13,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-19/2",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 4,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-19/3",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-19/4",
+  "apps": 1,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-20/0",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 4,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-20/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 11,
+   "empty": 0,
+   "builtin": 8,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-20/2",
+  "apps": 1,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 6,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 3,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-20/3",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 7,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 4,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-20/4",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 0,
+   "builtin": 11,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 0,
+   "builtin": 11,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-21/0",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-21/1",
+  "apps": 1,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-21/2",
+  "apps": 1,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "1-22/0",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 2,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-22/1",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 16,
+   "malformed": 13,
+   "empty": 0,
+   "builtin": 12,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 14,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-22/2",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 4,
+   "empty": 4,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-22/3",
+  "apps": 1,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-22/4",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "1-23/0",
+  "apps": 1,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 11,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "1-23/1",
+  "apps": 1,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 3,
+   "builtin": 7,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-1/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "CAP",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 1,
+   "builtin": 2,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-1/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 18,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-1/2",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 2,
+   "builtin": 4,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-1/3",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 0,
+   "builtin": 2,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 16,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-2/0",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 13,
+   "malformed": 5,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-2/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 9,
+   "empty": 4,
+   "builtin": 4,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 14,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-3/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-5/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 14,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 4,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 15,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-6/0",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 4,
+   "builtin": 9,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 16,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-7/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 0,
+   "builtin": 12,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-8/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 3,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "2-8/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 16,
+   "malformed": 10,
+   "empty": 4,
+   "builtin": 4,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-10/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 15,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-10/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 19,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-11/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-11/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-12/0",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-13/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 18,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 15,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-13/1",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-14/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-15/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 20,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 18,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-16/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 19,
+   "malformed": 12,
+   "empty": 4,
+   "builtin": 5,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-17/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 6,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-18/0",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 6,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-18/1",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-18/2",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 15,
+   "malformed": 7,
+   "empty": 1,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-19/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-20/0",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-20/1",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 14,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 5,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-20/2",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 18,
+   "malformed": 10,
+   "empty": 3,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-21/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 13,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 4,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 14,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-21/1",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 13,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-21/2",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-21/3",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 12,
+   "malformed": 9,
+   "empty": 4,
+   "builtin": 2,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-21/4",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-21/5",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 4,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-22/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "2-22/1",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 15,
+   "empty": 0,
+   "builtin": 9,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-23/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 5,
+   "empty": 1,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-23/1",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 16,
+   "malformed": 10,
+   "empty": 4,
+   "builtin": 5,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 14,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-24/0",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-25/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-26/0",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-26/1",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 4,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-26/2",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 4,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-26/3",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 2,
+   "builtin": 10,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-27/0",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 15,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-29/0",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "CAP",
+  "sig_en": {
+   "steps": 9,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-30/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-31/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 9,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-31/1",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 9,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-31/2",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-31/3",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 6,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-31/4",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-32/0",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 10,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-32/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 9,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-33/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 0,
+   "builtin": 12,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 2,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-33/1",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 10,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-34/0",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "2-34/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 1,
+   "builtin": 11,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 15,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-35/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-35/2",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 9,
+   "empty": 1,
+   "builtin": 4,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-36/0",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 14,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-36/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 4,
+   "end": "stuck"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-36/2",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-36/3",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 9,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "2-37/1",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-37/2",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 4,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-37/3",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 9,
+   "malformed": 3,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-38/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 3,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-38/1",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-38/2",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 9,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-39/0",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 20,
+   "malformed": 9,
+   "empty": 0,
+   "builtin": 5,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 9,
+   "empty": 2,
+   "builtin": 5,
+   "end": "stuck"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "2-39/1",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 12,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-39/2",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-39/3",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 8,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-39/4",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 16,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 5,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-40/0",
+  "apps": 2,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-40/1",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 5,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-40/2",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "2-40/3",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "INF",
+  "sig_en": null,
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-41/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 5,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 9,
+   "empty": 1,
+   "builtin": 6,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-41/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 13,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 6,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-41/2",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 5,
+   "empty": 1,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 18,
+   "malformed": 7,
+   "empty": 1,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-42/0",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 12,
+   "empty": 1,
+   "builtin": 10,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-43/0",
+  "apps": 2,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 1,
+   "builtin": 11,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "2-43/1",
+  "apps": 2,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-44/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 1,
+   "builtin": 10,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-45/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "2-45/1",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 15,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 4,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-45/2",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-46/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 2,
+   "builtin": 7,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-48/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 0,
+   "builtin": 11,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 17,
+   "empty": 2,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "2-49/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 19,
+   "malformed": 9,
+   "empty": 0,
+   "builtin": 6,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "2-50/0",
+  "apps": 2,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 0,
+   "builtin": 9,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-1/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 6,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-2/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 2,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-3/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-4/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-5/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 2,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-6/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 13,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 18,
+   "malformed": 1,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-6/1",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 16,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 3,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-7/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 14,
+   "malformed": 10,
+   "empty": 0,
+   "builtin": 8,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-8/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 2,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-8/1",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 18,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 19,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-8/2",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 5,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-8/3",
+  "apps": 3,
+  "en": false,
+  "bn": true,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 17,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-8/4",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 16,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-8/5",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 6,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-8/6",
+  "apps": 3,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 16,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 3,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-8/7",
+  "apps": 3,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 14,
+   "malformed": 6,
+   "empty": 1,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-9/0",
+  "apps": 3,
+  "en": false,
+  "bn": true,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 14,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 4,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "3-9/1",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 14,
+   "malformed": 12,
+   "empty": 0,
+   "builtin": 11,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-10/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 7,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 4,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-11/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "CAP",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 4,
+   "builtin": 6,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-12/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "DL",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 9,
+   "empty": 2,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-12/1",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 14,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-12/2",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 17,
+   "empty": 0,
+   "builtin": 14,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-13/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "DL",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 10,
+   "empty": 2,
+   "builtin": 3,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-13/1",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 19,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-14/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-14/1",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-15/0",
+  "apps": 3,
+  "en": false,
+  "bn": true,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 6,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "3-16/0",
+  "apps": 3,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 19,
+   "malformed": 10,
+   "empty": 5,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-17/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 0,
+   "builtin": 5,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "3-18/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 10,
+   "empty": 4,
+   "builtin": 3,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 19,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-19/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 11,
+   "empty": 0,
+   "builtin": 4,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 10,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-20/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-21/0",
+  "apps": 3,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "3-22/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 14,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-23/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 11,
+   "empty": 0,
+   "builtin": 5,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-24/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TL",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 19,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-25/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 16,
+   "empty": 0,
+   "builtin": 15,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-26/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TL",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 10,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 15,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "3-27/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-28/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-29/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 9,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-30/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 2,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-32/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TL",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 11,
+   "empty": 2,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 1,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-33/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-34/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 1,
+   "builtin": 5,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 19,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-35/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 10,
+   "empty": 0,
+   "builtin": 7,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 9,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-36/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-37/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-38/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-39/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-40/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-41/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-42/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-43/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 17,
+   "malformed": 5,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-44/0",
+  "apps": 3,
+  "en": false,
+  "bn": true,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-45/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 13,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-46/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 6,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": null,
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-47/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 15,
+   "empty": 0,
+   "builtin": 11,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 8,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-48/0",
+  "apps": 3,
+  "en": false,
+  "bn": true,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 14,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-49/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 14,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 14,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-50/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-51/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 3,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-52/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 14,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-53/0",
+  "apps": 3,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-54/0",
+  "apps": 3,
+  "en": false,
+  "bn": true,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 16,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 16,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-55/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 1,
+   "builtin": 6,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "3-56/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 8,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "3-57/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 7,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-58/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 16,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 4,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-59/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 9,
+   "empty": 2,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 14,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "3-60/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TL",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 15,
+   "empty": 4,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 16,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-61/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 10,
+   "empty": 0,
+   "builtin": 6,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "3-62/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 14,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-63/0",
+  "apps": 3,
+  "en": false,
+  "bn": true,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 5,
+   "builtin": 7,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-64/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 14,
+   "empty": 2,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "3-65/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 18,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "3-66/0",
+  "apps": 3,
+  "en": false,
+  "bn": true,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 5,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-67/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 12,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-68/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 7,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "3-69/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 6,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-70/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "3-71/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 13,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 4,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-72/0",
+  "apps": 3,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 20,
+   "malformed": 10,
+   "empty": 6,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-73/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-74/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-75/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 16,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 5,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-76/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 9,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-77/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 2,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-78/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 17,
+   "empty": 0,
+   "builtin": 15,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-79/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 15,
+   "empty": 2,
+   "builtin": 12,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-80/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 2,
+   "builtin": 10,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 13,
+   "malformed": 6,
+   "empty": 4,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-81/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 18,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "stuck"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-82/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 8,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-83/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "BM",
+  "sig_en": {
+   "steps": 13,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 4,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-84/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "CAP",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 1,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-85/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 9,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 2,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 11,
+   "empty": 2,
+   "builtin": 7,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-86/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "PF",
+  "sig_en": {
+   "steps": 12,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 3,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 12,
+   "empty": 3,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-87/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 13,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 12,
+   "malformed": 4,
+   "empty": 2,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": false
+ },
+ {
+  "id": "3-88/0",
+  "apps": 3,
+  "en": false,
+  "bn": true,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 0,
+   "builtin": 5,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 9,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-89/0",
+  "apps": 3,
+  "en": true,
+  "bn": false,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 12,
+   "malformed": 7,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "3-90/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 9,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-91/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 9,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 7,
+   "malformed": 0,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-92/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "FMT",
+  "sig_en": {
+   "steps": 10,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 4,
+   "end": "stuck"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 0,
+   "builtin": 9,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": true
+ },
+ {
+  "id": "3-93/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 12,
+   "malformed": 3,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 8,
+   "empty": 2,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": true,
+  "gem_bn": true
+ },
+ {
+  "id": "3-94/0",
+  "apps": 3,
+  "en": true,
+  "bn": true,
+  "cat_en": null,
+  "sig_en": {
+   "steps": 15,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 16,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-95/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "ER",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 11,
+   "empty": 0,
+   "builtin": 7,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 5,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-96/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "TR",
+  "sig_en": {
+   "steps": 15,
+   "malformed": 4,
+   "empty": 1,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 17,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-97/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "WC",
+  "sig_en": {
+   "steps": 18,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 6,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-98/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "OTH",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 13,
+   "empty": 2,
+   "builtin": 8,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 10,
+   "malformed": 4,
+   "empty": 1,
+   "builtin": 1,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-99/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 7,
+   "empty": 0,
+   "builtin": 2,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 11,
+   "malformed": 2,
+   "empty": 0,
+   "builtin": 0,
+   "end": "finish"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ },
+ {
+  "id": "3-100/0",
+  "apps": 3,
+  "en": false,
+  "bn": false,
+  "cat_en": "SB",
+  "sig_en": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 1,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "sig_bn": {
+   "steps": 20,
+   "malformed": 4,
+   "empty": 0,
+   "builtin": 0,
+   "end": "budget"
+  },
+  "gem_en": false,
+  "gem_bn": false
+ }
+]

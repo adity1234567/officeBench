@@ -1,0 +1,2 @@
+{"variant": "T10.v1", "lang": "en", "model": "gemma4:31b", "tag": "pilot", "pass": false, "reasons": ["unexpected event ('vendor call', '2024-05-16 09:00', '2024-05-16 09:30')"], "steps": 4, "seconds": 7.4, "error": null, "task": "Cancel my first meeting on May 16"}
+{"variant": "T10.v1", "lang": "bn", "model": "gemma4:31b", "tag": "pilot", "pass": false, "reasons": ["unexpected event ('vendor call', '2024-05-16 09:00', '2024-05-16 09:30')"], "steps": 4, "seconds": 7.8, "error": null, "task": "16 মে তারিখে আমার প্রথম মিটিংটা বাতিল করো"}

@@ -1,0 +1,5132 @@
+[
+ {
+  "id": "1-2/0",
+  "run_tag": "first10",
+  "task": "Find a common time for Bob and Tom to have an one hour zoom meeting on 5/1/2024",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_contain",
+    "args": {
+     "doc_type": "ics",
+     "file": "./calendar/Bob.ics",
+     "keywords": [
+      "meeting"
+     ]
+    },
+    "result": false
+   },
+   {
+    "function": "evaluate_contain",
+    "args": {
+     "doc_type": "ics",
+     "file": "./calendar/Tom.ics",
+     "keywords": [
+      "meeting"
+     ]
+    },
+    "result": false
+   },
+   {
+    "function": "evaluate_calendar_no_overlap",
+    "args": {
+     "username": "Bob"
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_calendar_no_overlap",
+    "args": {
+     "username": "Tom"
+    },
+    "result": true
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'calendar'}",
+    "observation": "Successfully switched to app: calendar"
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'list_events', 'username': 'Bob'}",
+    "observation": "Successfully list events for Bob:\nSummary: class\nStart Time: 2024-05-01 16:00:00\nEnd Time: 2024-05-01 18:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: nap\nStart Time: 2024-05-01 13:00:00\nEnd Time: 2024-05-01 14:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: lunch\nStart Time: 2024-05-01 12:00:00"
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'list_events', 'username': 'Tom'}",
+    "observation": "Successfully list events for Tom:\nSummary: lunch with David\nStart Time: 2024-05-01 12:30:00\nEnd Time: 2024-05-01 13:30:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: class\nStart Time: 2024-05-01 16:00:00\nEnd Time: 2024-05-01 18:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: class\nStart Time: 2024-0"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'A common time for Bob and Tom to have a one-hour zoom meeting on 5/1/2024 is from 14:30 to 15:30.'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "calendar/Bob.ics": [
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "nap 2024-05-01 13:00:00+00:00–2024-05-01 14:00:00+00:00",
+    "lunch 2024-05-01 12:00:00+00:00–2024-05-01 13:00:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00",
+    "sleeping 2024-05-01 08:00:00+00:00–2024-05-01 11:00:00+00:00"
+   ],
+   "calendar/Tom.ics": [
+    "lunch with David 2024-05-01 12:30:00+00:00–2024-05-01 13:30:00+00:00",
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "class 2024-05-01 08:00:00+00:00–2024-05-01 11:50:00+00:00",
+    "report to Charlie 2024-05-01 14:00:00+00:00–2024-05-01 14:30:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00"
+   ]
+  },
+  "final_state": {
+   "calendar/Bob.ics": [
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "nap 2024-05-01 13:00:00+00:00–2024-05-01 14:00:00+00:00",
+    "lunch 2024-05-01 12:00:00+00:00–2024-05-01 13:00:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00",
+    "sleeping 2024-05-01 08:00:00+00:00–2024-05-01 11:00:00+00:00"
+   ],
+   "calendar/Tom.ics": [
+    "lunch with David 2024-05-01 12:30:00+00:00–2024-05-01 13:30:00+00:00",
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "class 2024-05-01 08:00:00+00:00–2024-05-01 11:50:00+00:00",
+    "report to Charlie 2024-05-01 14:00:00+00:00–2024-05-01 14:30:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00"
+   ],
+   "data/answer.txt": "A common time for Bob and Tom to have a one-hour zoom meeting on 5/1/2024 is from 14:30 to 15:30.\n"
+  }
+ },
+ {
+  "id": "1-2/1",
+  "run_tag": "first10",
+  "task": "Can Bob and Tom have dinner together at 5/1/2024? Add a common time on their calendar.",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_contain",
+    "args": {
+     "doc_type": "ics",
+     "file": "./calendar/Bob.ics",
+     "keywords": [
+      "dinner"
+     ]
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_contain",
+    "args": {
+     "doc_type": "ics",
+     "file": "./calendar/Tom.ics",
+     "keywords": [
+      "dinner"
+     ]
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_calendar_no_overlap",
+    "args": {
+     "username": "Bob"
+    },
+    "result": false
+   },
+   {
+    "function": "evaluate_calendar_no_overlap",
+    "args": {
+     "username": "Tom"
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "",
+    "observation": "Malformed action! You must follow the given action format! Try a different action."
+   },
+   {
+    "action": "{\"app\": \"calendar\", \"action\": \"get_events\", \"date\": \"2024-05-01\"}",
+    "observation": "Malformed action! You must follow the given action format! Try a different action."
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'calendar'}",
+    "observation": "Successfully switched to app: calendar"
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'list_events', 'username': 'Bob'}",
+    "observation": "Successfully list events for Bob:\nSummary: class\nStart Time: 2024-05-01 16:00:00\nEnd Time: 2024-05-01 18:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: nap\nStart Time: 2024-05-01 13:00:00\nEnd Time: 2024-05-01 14:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: lunch\nStart Time: 2024-05-01 12:00:00"
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'list_events', 'username': 'Tom'}",
+    "observation": "Successfully list events for Tom:\nSummary: lunch with David\nStart Time: 2024-05-01 12:30:00\nEnd Time: 2024-05-01 13:30:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: class\nStart Time: 2024-05-01 16:00:00\nEnd Time: 2024-05-01 18:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: class\nStart Time: 2024-0"
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'create_event', 'user': 'Bob', 'summary': 'Dinner with Tom', 'time_start': '2024-05-01 18:30:00', 'time_end': '2024-05-01 19:30:00'}",
+    "observation": "Successfully create a new event to Bob's calendar."
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'create_event', 'user': 'Tom', 'summary': 'Dinner with Bob', 'time_start': '2024-05-01 18:30:00', 'time_end': '2024-05-01 19:30:00'}",
+    "observation": "Successfully create a new event to Tom's calendar."
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'Yes, Bob and Tom can have dinner together at 18:30 on 2024-05-01. I have added the event to both of their calendars.'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "calendar/Bob.ics": [
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "nap 2024-05-01 13:00:00+00:00–2024-05-01 14:00:00+00:00",
+    "lunch 2024-05-01 12:00:00+00:00–2024-05-01 13:00:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00",
+    "sleeping 2024-05-01 08:00:00+00:00–2024-05-01 11:00:00+00:00"
+   ],
+   "calendar/Tom.ics": [
+    "lunch with David 2024-05-01 12:30:00+00:00–2024-05-01 13:30:00+00:00",
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "class 2024-05-01 08:00:00+00:00–2024-05-01 11:50:00+00:00",
+    "report to Charlie 2024-05-01 14:00:00+00:00–2024-05-01 14:30:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00"
+   ]
+  },
+  "final_state": {
+   "calendar/Bob.ics": [
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "nap 2024-05-01 13:00:00+00:00–2024-05-01 14:00:00+00:00",
+    "lunch 2024-05-01 12:00:00+00:00–2024-05-01 13:00:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00",
+    "sleeping 2024-05-01 08:00:00+00:00–2024-05-01 11:00:00+00:00",
+    "Dinner with Tom 2024-05-01 18:30:00–2024-05-01 19:30:00"
+   ],
+   "calendar/Tom.ics": [
+    "lunch with David 2024-05-01 12:30:00+00:00–2024-05-01 13:30:00+00:00",
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "class 2024-05-01 08:00:00+00:00–2024-05-01 11:50:00+00:00",
+    "report to Charlie 2024-05-01 14:00:00+00:00–2024-05-01 14:30:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00",
+    "Dinner with Bob 2024-05-01 18:30:00–2024-05-01 19:30:00"
+   ],
+   "data/answer.txt": "Yes, Bob and Tom can have dinner together at 18:30 on 2024-05-01. I have added the event to both of their calendars.\n"
+  }
+ },
+ {
+  "id": "1-2/2",
+  "run_tag": "first10",
+  "task": "Bob and Tom need to shopping, help they find one hour at 5/1/2024",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_contain",
+    "args": {
+     "doc_type": "ics",
+     "file": "./calendar/Bob.ics",
+     "keywords": [
+      "shopping"
+     ]
+    },
+    "result": false
+   },
+   {
+    "function": "evaluate_contain",
+    "args": {
+     "doc_type": "ics",
+     "file": "./calendar/Tom.ics",
+     "keywords": [
+      "shopping"
+     ]
+    },
+    "result": false
+   },
+   {
+    "function": "evaluate_calendar_no_overlap",
+    "args": {
+     "username": "Bob"
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_calendar_no_overlap",
+    "args": {
+     "username": "Tom"
+    },
+    "result": true
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'calendar'}",
+    "observation": "Successfully switched to app: calendar"
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'list_events', 'username': 'Bob'}",
+    "observation": "Successfully list events for Bob:\nSummary: class\nStart Time: 2024-05-01 16:00:00\nEnd Time: 2024-05-01 18:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: nap\nStart Time: 2024-05-01 13:00:00\nEnd Time: 2024-05-01 14:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: lunch\nStart Time: 2024-05-01 12:00:00"
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'list_events', 'username': 'Tom'}",
+    "observation": "Successfully list events for Tom:\nSummary: lunch with David\nStart Time: 2024-05-01 12:30:00\nEnd Time: 2024-05-01 13:30:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: class\nStart Time: 2024-05-01 16:00:00\nEnd Time: 2024-05-01 18:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: class\nStart Time: 2024-0"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'Bob and Tom are both free from 14:30 to 16:00 on 2024-05-01. They can go shopping for one hour between 14:30 and 15:30.'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "calendar/Bob.ics": [
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "nap 2024-05-01 13:00:00+00:00–2024-05-01 14:00:00+00:00",
+    "lunch 2024-05-01 12:00:00+00:00–2024-05-01 13:00:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00",
+    "sleeping 2024-05-01 08:00:00+00:00–2024-05-01 11:00:00+00:00"
+   ],
+   "calendar/Tom.ics": [
+    "lunch with David 2024-05-01 12:30:00+00:00–2024-05-01 13:30:00+00:00",
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "class 2024-05-01 08:00:00+00:00–2024-05-01 11:50:00+00:00",
+    "report to Charlie 2024-05-01 14:00:00+00:00–2024-05-01 14:30:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00"
+   ]
+  },
+  "final_state": {
+   "calendar/Bob.ics": [
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "nap 2024-05-01 13:00:00+00:00–2024-05-01 14:00:00+00:00",
+    "lunch 2024-05-01 12:00:00+00:00–2024-05-01 13:00:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00",
+    "sleeping 2024-05-01 08:00:00+00:00–2024-05-01 11:00:00+00:00"
+   ],
+   "calendar/Tom.ics": [
+    "lunch with David 2024-05-01 12:30:00+00:00–2024-05-01 13:30:00+00:00",
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "class 2024-05-01 08:00:00+00:00–2024-05-01 11:50:00+00:00",
+    "report to Charlie 2024-05-01 14:00:00+00:00–2024-05-01 14:30:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00"
+   ],
+   "data/answer.txt": "Bob and Tom are both free from 14:30 to 16:00 on 2024-05-01. They can go shopping for one hour between 14:30 and 15:30.\n"
+  }
+ },
+ {
+  "id": "1-2/4",
+  "run_tag": "first10",
+  "task": "who has more commitments on 5/1/2024? Tom or Bob",
+  "scored": "pass",
+  "checks": [
+   {
+    "function": "evaluate_contain",
+    "args": {
+     "doc_type": "ics",
+     "file": "./data/answer.txt",
+     "keywords": [
+      "Tom"
+     ]
+    },
+    "result": true
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'calendar'}",
+    "observation": "Successfully switched to app: calendar"
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'list_events', 'username': 'Bob'}",
+    "observation": "Successfully list events for Bob:\nSummary: class\nStart Time: 2024-05-01 16:00:00\nEnd Time: 2024-05-01 18:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: nap\nStart Time: 2024-05-01 13:00:00\nEnd Time: 2024-05-01 14:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: lunch\nStart Time: 2024-05-01 12:00:00"
+   },
+   {
+    "action": "{'app': 'calendar', 'action': 'list_events', 'username': 'Tom'}",
+    "observation": "Successfully list events for Tom:\nSummary: lunch with David\nStart Time: 2024-05-01 12:30:00\nEnd Time: 2024-05-01 13:30:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: class\nStart Time: 2024-05-01 16:00:00\nEnd Time: 2024-05-01 18:00:00\nDescription: None\nLocation: None\n--------------------------------------------------\nSummary: class\nStart Time: 2024-0"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'Both Bob and Tom have 5 commitments on 5/1/2024.'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "calendar/Bob.ics": [
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "nap 2024-05-01 13:00:00+00:00–2024-05-01 14:00:00+00:00",
+    "lunch 2024-05-01 12:00:00+00:00–2024-05-01 13:00:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00",
+    "sleeping 2024-05-01 08:00:00+00:00–2024-05-01 11:00:00+00:00"
+   ],
+   "calendar/Tom.ics": [
+    "lunch with David 2024-05-01 12:30:00+00:00–2024-05-01 13:30:00+00:00",
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "class 2024-05-01 08:00:00+00:00–2024-05-01 11:50:00+00:00",
+    "report to Charlie 2024-05-01 14:00:00+00:00–2024-05-01 14:30:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00"
+   ]
+  },
+  "final_state": {
+   "calendar/Bob.ics": [
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "nap 2024-05-01 13:00:00+00:00–2024-05-01 14:00:00+00:00",
+    "lunch 2024-05-01 12:00:00+00:00–2024-05-01 13:00:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00",
+    "sleeping 2024-05-01 08:00:00+00:00–2024-05-01 11:00:00+00:00"
+   ],
+   "calendar/Tom.ics": [
+    "lunch with David 2024-05-01 12:30:00+00:00–2024-05-01 13:30:00+00:00",
+    "class 2024-05-01 16:00:00+00:00–2024-05-01 18:00:00+00:00",
+    "class 2024-05-01 08:00:00+00:00–2024-05-01 11:50:00+00:00",
+    "report to Charlie 2024-05-01 14:00:00+00:00–2024-05-01 14:30:00+00:00",
+    "dinner 2024-05-01 18:30:00+00:00–2024-05-01 19:30:00+00:00"
+   ],
+   "data/answer.txt": "Both Bob and Tom have 5 commitments on 5/1/2024.\n"
+  }
+ },
+ {
+  "id": "1-9/1",
+  "run_tag": "probe",
+  "task": "find the student whose midterm1 score is closest to the average in score excel file, duplicate the line at bottom",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/score.xlsx",
+     "matches": [
+      {
+       "row": "22",
+       "col": "1",
+       "value": "Alice"
+      },
+      {
+       "row": "22",
+       "col": "2",
+       "value": "78"
+      },
+      {
+       "row": "22",
+       "col": "3",
+       "value": "75"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "class_member.xlsx\ncompany_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/score.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t(1, 2): midterm1\t(1, 3): midterm2\t\n(2, 1): Liam\t(2, 2): 74\t(2, 3): 72\t\n(3, 1): Ivy\t(3, 2): 64\t(3, 3): 90\t\n(4, 1): Alice\t(4, 2): 78\t(4, 3): 75\t\n(5, 1): Alice\t(5, 2): 93\t(5, 3): 79\t\n(6, 1): Jack\t(6, 2): 71\t(6, 3): 73\t\n(7, 1): Peter\t(7, 2): 60\t(7, 3): 66\t\n(8, 1): Kate\t(8, 2): 64\t(8, 3): 95\t\n(9, 1): Sam\t(9, 2): 99\t(9, 3): 70\t\n(10, 1): Noah\t("
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'llm'}",
+    "observation": "Successfully switched to app: llm"
+   },
+   {
+    "action": "{'app': 'llm', 'action': 'complete_text', 'prompt': 'Based on the following data from a score excel file, find the student whose midterm1 score is closest to the average of all midterm1 scores. \\n\\nData:\\nLiam: 74\\nIvy: 64\\nAlice: 78\\nAlice: 93\\nJack: 71\\nPeter: 60\\nKate: 64\\nSam: 99\\nNoah: 65\\nDavid: 95\\nBob: 97\\nFrank: 77\\nAlice: 89\\nSam: 85\\nTina: 100\\nPeter: 66\\nRachel: 100\\nFrank: 67\\nEmma: 6",
+    "observation": "Error: No API key provided. You can set your API key in code using 'openai.api_key = <API-KEY>', or you can set the environment variable OPENAI_API_KEY=<API-KEY>). If your API key is stored in a file, you can point the openai module at it with 'openai.api_key_path = <PATH>'. You can generate API keys in the OpenAI web interface. See https://platform.openai.com/account/api-keys for details."
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "Since the LLM app failed due to an API key error, I will calculate the average and find the closest score manually using the data already retrieved in Step 3.\n\n**Data (midterm1):**\nLiam: 74, Ivy: 64, Alice: 78, Alice: 93, Jack: 71, Peter: 60, Kate: 64, Sam: 99, Noah: 65, David: 95, Bob: 97, Frank: 77, Alice: 89, Sam: 85, Tina: 100, Peter: 66, Rachel: 100, Frank: 67, Emma: 60, Carol: 97.\n\n**Calcula",
+    "observation": "Malformed action! You must follow the given action format! Try a different action."
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/score.xlsx', 'row_idx': 22, 'column_idx': 1, 'text': 'Sam'}",
+    "observation": "Successfully write text to /testbed/data/score.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/score.xlsx', 'row_idx': 22, 'column_idx': 2, 'text': '85'}",
+    "observation": "Successfully write text to /testbed/data/score.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/score.xlsx', 'row_idx': 22, 'column_idx': 3, 'text': '74'}",
+    "observation": "Successfully write text to /testbed/data/score.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/class_member.xlsx": [
+    [
+     "Name",
+     "Class"
+    ],
+    [
+     "Noah",
+     1
+    ],
+    [
+     "Carol",
+     3
+    ],
+    [
+     "Jack",
+     3
+    ],
+    [
+     "Mia",
+     2
+    ],
+    [
+     "Noah",
+     5
+    ],
+    [
+     "Jack",
+     1
+    ],
+    [
+     "Sam",
+     3
+    ],
+    [
+     "Tina",
+     3
+    ],
+    [
+     "Olivia",
+     1
+    ],
+    [
+     "Alice",
+     3
+    ],
+    [
+     "Grace",
+     1
+    ],
+    [
+     "Grace",
+     4
+    ],
+    [
+     "Kate",
+     1
+    ],
+    [
+     "Tina",
+     5
+    ],
+    [
+     "Olivia",
+     2
+    ],
+    [
+     "Tina",
+     3
+    ],
+    [
+     "Olivia",
+     2
+    ],
+    [
+     "Henry",
+     5
+    ],
+    [
+     "Peter",
+     5
+    ],
+    [
+     "Olivia",
+     1
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/class_member.xlsx": [
+    [
+     "Name",
+     "Class"
+    ],
+    [
+     "Noah",
+     1
+    ],
+    [
+     "Carol",
+     3
+    ],
+    [
+     "Jack",
+     3
+    ],
+    [
+     "Mia",
+     2
+    ],
+    [
+     "Noah",
+     5
+    ],
+    [
+     "Jack",
+     1
+    ],
+    [
+     "Sam",
+     3
+    ],
+    [
+     "Tina",
+     3
+    ],
+    [
+     "Olivia",
+     1
+    ],
+    [
+     "Alice",
+     3
+    ],
+    [
+     "Grace",
+     1
+    ],
+    [
+     "Grace",
+     4
+    ],
+    [
+     "Kate",
+     1
+    ],
+    [
+     "Tina",
+     5
+    ],
+    [
+     "Olivia",
+     2
+    ],
+    [
+     "Tina",
+     3
+    ],
+    [
+     "Olivia",
+     2
+    ],
+    [
+     "Henry",
+     5
+    ],
+    [
+     "Peter",
+     5
+    ],
+    [
+     "Olivia",
+     1
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "id": "3-82/0",
+  "run_tag": "probe",
+  "task": "Check student grade in midterm1, write top-5 students' names in list.docx",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_file_exist",
+    "args": {
+     "file": "data/list.docx"
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_contain",
+    "args": {
+     "doc_type": "xlsx",
+     "file": "data/list.docx",
+     "keywords": [
+      "Rachel",
+      "Tina",
+      "Sam",
+      "Bob",
+      "Carol"
+     ]
+    },
+    "result": "ERROR: openpyxl does not support .docx file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm"
+   },
+   {
+    "function": "evaluate_not_contain",
+    "args": {
+     "doc_type": "xlsx",
+     "file": "data/list.docx",
+     "keywords": [
+      "David",
+      "Alice",
+      "LIam"
+     ]
+    },
+    "result": "ERROR: openpyxl does not support .docx file format, please check you can open it with Excel first. Supported formats are: .xlsx,.xlsm,.xltx,.xltm"
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "score.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/score.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t(1, 2): midterm1\t(1, 3): midterm2\t\n(2, 1): Liam\t(2, 2): 74\t(2, 3): 72\t\n(3, 1): Ivy\t(3, 2): 64\t(3, 3): 90\t\n(4, 1): Alice\t(4, 2): 78\t(4, 3): 75\t\n(5, 1): Alice\t(5, 2): 93\t(5, 3): 79\t\n(6, 1): Jack\t(6, 2): 71\t(6, 3): 73\t\n(7, 1): Peter\t(7, 2): 60\t(7, 3): 66\t\n(8, 1): Kate\t(8, 2): 64\t(8, 3): 95\t\n(9, 1): Sam\t(9, 2): 99\t(9, 3): 70\t\n(10, 1): Noah\t("
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'llm'}",
+    "observation": "Successfully switched to app: llm"
+   },
+   {
+    "action": "{'app': 'llm', 'action': 'complete_text', 'prompt': 'Based on the following student scores for midterm1, identify the top 5 students with the highest scores. Provide only their names as a list.\\n\\nLiam: 74\\nIvy: 64\\nAlice: 78\\nAlice: 93\\nJack: 71\\nPeter: 60\\nKate: 64\\nSam: 99\\nNoah: 65\\nDavid: 95\\nBob: 97\\nFrank: 77\\nAlice: 89\\nSam: 85\\nTina: 100\\nPeter: 66\\nRachel: 100\\nFrank: 67\\nEmma: 60\\nCarol",
+    "observation": "Error: No API key provided. You can set your API key in code using 'openai.api_key = <API-KEY>', or you can set the environment variable OPENAI_API_KEY=<API-KEY>). If your API key is stored in a file, you can point the openai module at it with 'openai.api_key_path = <PATH>'. You can generate API keys in the OpenAI web interface. See https://platform.openai.com/account/api-keys for details."
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'word'}",
+    "observation": "Successfully switched to app: word"
+   },
+   {
+    "action": "",
+    "observation": "Malformed action! You must follow the given action format! Try a different action."
+   },
+   {
+    "action": "{'app': 'word', 'action': 'write_to_file', 'file_path': '/testbed/data/list.docx', 'contents': 'Tina, Rachel, Sam, Bob, Carol'}",
+    "observation": "The file /testbed/data/list.docx does not exist. Failed to write to the file."
+   },
+   {
+    "action": "{'app': 'word', 'action': 'create_new_file', 'file_path': '/testbed/data/list.docx'}",
+    "observation": "Successfully create new file /testbed/data/list.docx"
+   },
+   {
+    "action": "{'app': 'word', 'action': 'write_to_file', 'file_path': '/testbed/data/list.docx', 'contents': 'Tina, Rachel, Sam, Bob, Carol'}",
+    "observation": "Successfully write contents to /testbed/data/list.docx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/list.docx": "TinaRachelSamBobCarol",
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ]
+  }
+ },
+ {
+  "id": "1-3/4",
+  "run_tag": "next20",
+  "task": "move all docx, pdf, and image files to a new subdirectory named new_dir, create this directory if does not exist",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_file_exist",
+    "args": {
+     "file": "./data/new_dir/file1.docx"
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_file_exist",
+    "args": {
+     "file": "./data/new_dir/file2.pdf"
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_file_exist",
+    "args": {
+     "file": "./data/new_dir/file3.xlsx"
+    },
+    "result": false
+   },
+   {
+    "function": "evaluate_file_exist",
+    "args": {
+     "file": "./data/new_dir/file4.jpg"
+    },
+    "result": true
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'mkdir -p new_dir && mv *.docx *.pdf *.jpg *.jpeg *.png *.gif new_dir/'}",
+    "observation": "mv: cannot stat '*.docx': No such file or directory\nmv: cannot stat '*.pdf': No such file or directory\nmv: cannot stat '*.jpg': No such file or directory\nmv: cannot stat '*.jpeg': No such file or directory\nmv: cannot stat '*.png': No such file or directory\nmv: cannot stat '*.gif': No such file or directory"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls -R /testbed/data'}",
+    "observation": "/testbed/data:\nfile1.docx\nfile2.pdf\nfile3.xlsx\nfile4.jpg"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'cd /testbed/data && mkdir -p new_dir && mv *.docx *.pdf *.jpg *.jpeg *.png *.gif new_dir/'}",
+    "observation": "mv: cannot stat '*.jpeg': No such file or directory\nmv: cannot stat '*.png': No such file or directory\nmv: cannot stat '*.gif': No such file or directory"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/file1.docx": "PDF test file 2",
+   "data/file2.pdf": "(file present)",
+   "data/file3.xlsx": [
+    [
+     "excel test file3"
+    ]
+   ],
+   "data/file4.jpg": "(file present)"
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/file3.xlsx": [
+    [
+     "excel test file3"
+    ]
+   ],
+   "data/new_dir/file1.docx": "PDF test file 2",
+   "data/new_dir/file2.pdf": "(file present)",
+   "data/new_dir/file4.jpg": "(file present)"
+  }
+ },
+ {
+  "id": "1-4/2",
+  "run_tag": "next20",
+  "task": "add annual bonus $50000 to salary excel file",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/salary.xlsx",
+     "matches": [
+      {
+       "row": "5",
+       "col": "1",
+       "value": "annual bonus"
+      },
+      {
+       "row": "5",
+       "col": "2",
+       "value": "50000"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "company_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/salary.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t(1, 2): amount\t\n(2, 1): base\t(2, 2): 200000\t\n(3, 1): stock\t(3, 2): 100000\t\n(4, 1): bonus\t(4, 2): 100000"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/salary.xlsx', 'row_idx': 4, 'column_idx': 2, 'text': '150000'}",
+    "observation": "Successfully write text to /testbed/data/salary.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     150000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "id": "1-4/3",
+  "run_tag": "next20",
+  "task": "add utilities fee $300 to budget excel file",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/company_budget.xlsx",
+     "matches": [
+      {
+       "row": "5",
+       "col": "1",
+       "value": "utilities fee"
+      },
+      {
+       "row": "5",
+       "col": "2",
+       "value": "300"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "company_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/company_budget.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t(1, 2): amount\t\n(2, 1): salary\t(2, 2): 2000000\t\n(3, 1): computer\t(3, 2): 50000\t\n(4, 1): entertain\t(4, 2): 1000"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/company_budget.xlsx', 'row_idx': 5, 'column_idx': 1, 'text': 'utilities'}",
+    "observation": "Successfully write text to /testbed/data/company_budget.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/company_budget.xlsx', 'row_idx': 5, 'column_idx': 2, 'text': '300'}",
+    "observation": "Successfully write text to /testbed/data/company_budget.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ],
+    [
+     "utilities",
+     300
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "id": "1-5/1",
+  "run_tag": "next20",
+  "task": "reduce half amount of apple in shopping list excel file",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/shopping_list.xlsx",
+     "matches": [
+      {
+       "row": "2",
+       "col": "2",
+       "value": "1"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "company_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/shopping_list.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t(1, 2): amount\t\n(2, 1): apple\t(2, 2): 2\t\n(3, 1): cabbage\t(3, 2): 2\t\n(4, 1): onion\t(4, 2): 2"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/shopping_list.xlsx', 'row_idx': 2, 'column_idx': 2, 'text': '1'}",
+    "observation": "Successfully write text to /testbed/data/shopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     null
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "id": "1-5/2",
+  "run_tag": "next20",
+  "task": "add 'average salary' for each day to the last row in salary excel file, round down with no decimal",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/salary.xlsx",
+     "matches": [
+      {
+       "row": "5",
+       "col": "1",
+       "value": "average salary"
+      },
+      {
+       "row": "5",
+       "col": "2",
+       "value": "1095"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "company_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/salary.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t(1, 2): amount\t\n(2, 1): base\t(2, 2): 200000\t\n(3, 1): stock\t(3, 2): 100000\t\n(4, 1): bonus\t(4, 2): 100000"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/salary.xlsx', 'row_idx': 5, 'column_idx': 1, 'text': 'average salary'}",
+    "observation": "Successfully write text to /testbed/data/salary.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/salary.xlsx', 'row_idx': 5, 'column_idx': 2, 'text': '133333'}",
+    "observation": "Successfully write text to /testbed/data/salary.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ],
+    [
+     "average salary",
+     133333
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "id": "1-5/3",
+  "run_tag": "next20",
+  "task": "if budget grow 10% per year, add 'predicted budget' for 3 years later to the last row in budget excel file",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/company_budget.xlsx",
+     "matches": [
+      {
+       "row": "5",
+       "col": "1",
+       "value": "predicted budget"
+      },
+      {
+       "row": "5",
+       "col": "2",
+       "value": "2729881"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "company_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/company_budget.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t(1, 2): amount\t\n(2, 1): salary\t(2, 2): 2000000\t\n(3, 1): computer\t(3, 2): 50000\t\n(4, 1): entertain\t(4, 2): 1000"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'column_idx': 1, 'file_path': '/testbed/data/company_budget.xlsx', 'row_idx': 5, 'text': 'predicted budget'}",
+    "observation": "Successfully write text to /testbed/data/company_budget.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'column_idx': 2, 'file_path': '/testbed/data/company_budget.xlsx', 'row_idx': 5, 'text': '2662013'}",
+    "observation": "Successfully write text to /testbed/data/company_budget.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ],
+    [
+     "predicted budget",
+     2662013
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "id": "1-6/0",
+  "run_tag": "next20",
+  "task": "add a new header Class, randomly assign each student to class 1 to class 5 in class member excel file",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/class_member.xlsx",
+     "matches": [
+      {
+       "row": "1",
+       "col": "2",
+       "value": "Class"
+      }
+     ]
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_excel_cell_comparator",
+    "args": {
+     "file": "./data/class_member.xlsx",
+     "matches": [
+      {
+       "row": "2",
+       "col": "2",
+       "comparator": "lambda x: x in ['1', '2', '3', '4', '5']"
+      },
+      {
+       "row": "3",
+       "col": "2",
+       "comparator": "lambda x: x in ['1', '2', '3', '4', '5']"
+      },
+      {
+       "row": "4",
+       "col": "2",
+       "comparator": "lambda x: x in ['1', '2', '3', '4', '5']"
+      },
+      {
+       "row": "5",
+       "col": "2",
+       "comparator": "lambda x: x in ['1', '2', '3', '4', '5']"
+      },
+      {
+       "row": "6",
+       "col": "2",
+       "comparator": "lambda x: x in ['1', '2', '3', '4', '5']"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "class_member.xlsx\ncompany_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/class_member.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t\n(2, 1): Noah\t\n(3, 1): Carol\t\n(4, 1): Jack\t\n(5, 1): Mia\t\n(6, 1): Noah"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 1, 'column_idx': 2, 'text': 'Class'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 2, 'column_idx': 2, 'text': '1'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 3, 'column_idx': 2, 'text': '2'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 4, 'column_idx': 2, 'text': '3'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 5, 'column_idx': 2, 'text': '4'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 6, 'column_idx': 2, 'text': '5'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/class_member.xlsx": [
+    [
+     "Name"
+    ],
+    [
+     "Noah"
+    ],
+    [
+     "Carol"
+    ],
+    [
+     "Jack"
+    ],
+    [
+     "Mia"
+    ],
+    [
+     "Noah"
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/class_member.xlsx": [
+    [
+     "Name",
+     "Class"
+    ],
+    [
+     "Noah",
+     null
+    ],
+    [
+     "Carol",
+     2
+    ],
+    [
+     "Jack",
+     3
+    ],
+    [
+     "Mia",
+     4
+    ],
+    [
+     "Noah",
+     5
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "id": "1-6/2",
+  "run_tag": "next20",
+  "task": "assign each students in Class 1 10 min to have a meeting with doctor in a row, start from 8:00, record the start time under new header 'Meeting' in class_member.xlsx excel file",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/class_member.xlsx",
+     "matches": [
+      {
+       "row": "1",
+       "col": "2",
+       "value": "Meeting"
+      }
+     ]
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/class_member.xlsx",
+     "matches": [
+      {
+       "row": "2",
+       "col": "2",
+       "value": "8:00"
+      },
+      {
+       "row": "3",
+       "col": "2",
+       "value": "8:10"
+      },
+      {
+       "row": "4",
+       "col": "2",
+       "value": "8:20"
+      },
+      {
+       "row": "5",
+       "col": "2",
+       "value": "8:30"
+      },
+      {
+       "row": "6",
+       "col": "2",
+       "value": "8:40"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "class_member.xlsx\ncompany_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/class_member.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t\n(2, 1): Noah\t\n(3, 1): Carol\t\n(4, 1): Jack\t\n(5, 1): Mia\t\n(6, 1): Noah"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 1, 'column_idx': 2, 'text': 'Meeting'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 2, 'column_idx': 2, 'text': '08:00'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 3, 'column_idx': 2, 'text': '08:10'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 4, 'column_idx': 2, 'text': '08:20'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 5, 'column_idx': 2, 'text': '08:30'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/class_member.xlsx', 'row_idx': 6, 'column_idx': 2, 'text': '08:40'}",
+    "observation": "Successfully write text to /testbed/data/class_member.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/class_member.xlsx": [
+    [
+     "Name"
+    ],
+    [
+     "Noah"
+    ],
+    [
+     "Carol"
+    ],
+    [
+     "Jack"
+    ],
+    [
+     "Mia"
+    ],
+    [
+     "Noah"
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/class_member.xlsx": [
+    [
+     "Name",
+     "Meeting"
+    ],
+    [
+     "Noah",
+     "08:00"
+    ],
+    [
+     "Carol",
+     "08:10"
+    ],
+    [
+     "Jack",
+     "08:20"
+    ],
+    [
+     "Mia",
+     "08:30"
+    ],
+    [
+     "Noah",
+     "08:40"
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "id": "1-6/3",
+  "run_tag": "next20",
+  "task": "company increases base by 5%/yr, stock by 10%/yr, bonus by 10%/yr, show this in salary excel file with new header 'amount after 1 year'",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/company_budget.xlsx",
+     "matches": [
+      {
+       "row": "1",
+       "col": "3",
+       "value": "amount after 1 year"
+      }
+     ]
+    },
+    "result": false
+   },
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/company_budget.xlsx",
+     "matches": [
+      {
+       "row": "2",
+       "col": "3",
+       "value": "2,100,000"
+      },
+      {
+       "row": "3",
+       "col": "3",
+       "value": "55,000"
+      },
+      {
+       "row": "4",
+       "col": "3",
+       "value": "1,100"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "class_member.xlsx\ncompany_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/salary.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t(1, 2): amount\t\n(2, 1): base\t(2, 2): 200000\t\n(3, 1): stock\t(3, 2): 100000\t\n(4, 1): bonus\t(4, 2): 100000"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/salary.xlsx', 'row_idx': 1, 'column_idx': 3, 'text': 'amount after 1 year'}",
+    "observation": "Successfully write text to /testbed/data/salary.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/salary.xlsx', 'row_idx': 2, 'column_idx': 3, 'text': '210000'}",
+    "observation": "Successfully write text to /testbed/data/salary.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/salary.xlsx', 'row_idx': 3, 'column_idx': 3, 'text': '110000'}",
+    "observation": "Successfully write text to /testbed/data/salary.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/salary.xlsx', 'row_idx': 4, 'column_idx': 3, 'text': '110000'}",
+    "observation": "Successfully write text to /testbed/data/salary.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/class_member.xlsx": [
+    [
+     "Name"
+    ],
+    [
+     "Noah"
+    ],
+    [
+     "Carol"
+    ],
+    [
+     "Jack"
+    ],
+    [
+     "Mia"
+    ],
+    [
+     "Noah"
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/class_member.xlsx": [
+    [
+     "Name"
+    ],
+    [
+     "Noah"
+    ],
+    [
+     "Carol"
+    ],
+    [
+     "Jack"
+    ],
+    [
+     "Mia"
+    ],
+    [
+     "Noah"
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount",
+     "amount after 1 year"
+    ],
+    [
+     "base",
+     200000,
+     210000
+    ],
+    [
+     "stock",
+     100000,
+     110000
+    ],
+    [
+     "bonus",
+     100000,
+     110000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ },
+ {
+  "id": "1-6/4",
+  "run_tag": "next20",
+  "task": "Update the company budget Excel file to include a new header 'Increase Percentage Per Year', increase base salaries by 5%/yr, reduce computer expenses 10%/yr, and increase entertainment expenses 10%/yr.",
+  "scored": "fail",
+  "checks": [
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/company_budget.xlsx",
+     "matches": [
+      {
+       "row": "1",
+       "col": "3",
+       "value": "Increase Percentage Per Year"
+      }
+     ]
+    },
+    "result": true
+   },
+   {
+    "function": "evaluate_excel_cell_value",
+    "args": {
+     "file": "./data/company_budget.xlsx",
+     "matches": [
+      {
+       "row": "2",
+       "col": "3",
+       "value": "5"
+      },
+      {
+       "row": "3",
+       "col": "3",
+       "value": "10"
+      },
+      {
+       "row": "4",
+       "col": "3",
+       "value": "10"
+      }
+     ]
+    },
+    "result": false
+   }
+  ],
+  "steps": [
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'shell'}",
+    "observation": "Successfully switched to app: shell"
+   },
+   {
+    "action": "{'app': 'shell', 'action': 'command', 'command': 'ls /testbed/data'}",
+    "observation": "class_member.xlsx\ncompany_budget.xlsx\nsalary.xlsx\nscore.xlsx\nshopping_list.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'switch_app', 'target_app': 'excel'}",
+    "observation": "Successfully switched to app: excel"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'read_file', 'file_path': '/testbed/data/company_budget.xlsx'}",
+    "observation": "The following is the table from the excel file:\n(1, 1): Name\t(1, 2): amount\t\n(2, 1): salary\t(2, 2): 2000000\t\n(3, 1): computer\t(3, 2): 50000\t\n(4, 1): entertain\t(4, 2): 1000"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/company_budget.xlsx', 'row_idx': 1, 'column_idx': 3, 'text': 'Increase Percentage Per Year'}",
+    "observation": "Successfully write text to /testbed/data/company_budget.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/company_budget.xlsx', 'row_idx': 2, 'column_idx': 3, 'text': '5%'}",
+    "observation": "Successfully write text to /testbed/data/company_budget.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/company_budget.xlsx', 'row_idx': 3, 'column_idx': 3, 'text': '-10%'}",
+    "observation": "Successfully write text to /testbed/data/company_budget.xlsx"
+   },
+   {
+    "action": "{'app': 'excel', 'action': 'set_cell', 'file_path': '/testbed/data/company_budget.xlsx', 'row_idx': 4, 'column_idx': 3, 'text': '10%'}",
+    "observation": "Successfully write text to /testbed/data/company_budget.xlsx"
+   },
+   {
+    "action": "{'app': 'system', 'action': 'finish_task', 'answer': 'None'}",
+    "observation": "Task finished"
+   }
+  ],
+  "initial_state": {
+   "data/class_member.xlsx": [
+    [
+     "Name"
+    ],
+    [
+     "Noah"
+    ],
+    [
+     "Carol"
+    ],
+    [
+     "Jack"
+    ],
+    [
+     "Mia"
+    ],
+    [
+     "Noah"
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "salary",
+     2000000
+    ],
+    [
+     "computer",
+     50000
+    ],
+    [
+     "entertain",
+     1000
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  },
+  "final_state": {
+   "data/answer.txt": "None\n",
+   "data/class_member.xlsx": [
+    [
+     "Name"
+    ],
+    [
+     "Noah"
+    ],
+    [
+     "Carol"
+    ],
+    [
+     "Jack"
+    ],
+    [
+     "Mia"
+    ],
+    [
+     "Noah"
+    ]
+   ],
+   "data/company_budget.xlsx": [
+    [
+     "Name",
+     "amount",
+     "Increase Percentage Per Year"
+    ],
+    [
+     "salary",
+     2000000,
+     "5%"
+    ],
+    [
+     "computer",
+     50000,
+     "-10%"
+    ],
+    [
+     "entertain",
+     1000,
+     "10%"
+    ]
+   ],
+   "data/salary.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "base",
+     200000
+    ],
+    [
+     "stock",
+     100000
+    ],
+    [
+     "bonus",
+     100000
+    ]
+   ],
+   "data/score.xlsx": [
+    [
+     "Name",
+     "midterm1",
+     "midterm2"
+    ],
+    [
+     "Liam",
+     74,
+     72
+    ],
+    [
+     "Ivy",
+     64,
+     90
+    ],
+    [
+     "Alice",
+     78,
+     75
+    ],
+    [
+     "Alice",
+     93,
+     79
+    ],
+    [
+     "Jack",
+     71,
+     73
+    ],
+    [
+     "Peter",
+     60,
+     66
+    ],
+    [
+     "Kate",
+     64,
+     95
+    ],
+    [
+     "Sam",
+     99,
+     70
+    ],
+    [
+     "Noah",
+     65,
+     66
+    ],
+    [
+     "David",
+     95,
+     87
+    ],
+    [
+     "Bob",
+     97,
+     72
+    ],
+    [
+     "Frank",
+     77,
+     82
+    ],
+    [
+     "Alice",
+     89,
+     82
+    ],
+    [
+     "Sam",
+     85,
+     74
+    ],
+    [
+     "Tina",
+     100,
+     67
+    ],
+    [
+     "Peter",
+     66,
+     89
+    ],
+    [
+     "Rachel",
+     100,
+     71
+    ],
+    [
+     "Frank",
+     67,
+     63
+    ],
+    [
+     "Emma",
+     60,
+     93
+    ],
+    [
+     "Carol",
+     97,
+     100
+    ]
+   ],
+   "data/shopping_list.xlsx": [
+    [
+     "Name",
+     "amount"
+    ],
+    [
+     "apple",
+     2
+    ],
+    [
+     "cabbage",
+     2
+    ],
+    [
+     "onion",
+     2
+    ]
+   ]
+  }
+ }
+]

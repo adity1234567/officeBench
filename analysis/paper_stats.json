@@ -1,0 +1,132 @@
+{
+ "stats": {
+  "gemma-EN": {
+   "n": 300,
+   "npass": 132,
+   "nfail": 168,
+   "malformed": 53,
+   "stuck": 3,
+   "maxsteps": 46,
+   "finished_fail": 118,
+   "nosave": 1,
+   "avg_steps": 10.89,
+   "bengali_answer": 0
+  },
+  "gemma-BN": {
+   "n": 300,
+   "npass": 103,
+   "nfail": 197,
+   "malformed": 23,
+   "stuck": 5,
+   "maxsteps": 39,
+   "finished_fail": 152,
+   "nosave": 1,
+   "avg_steps": 10.52,
+   "bengali_answer": 51
+  },
+  "gptoss-EN": {
+   "n": 300,
+   "npass": 80,
+   "nfail": 220,
+   "malformed": 212,
+   "stuck": 30,
+   "maxsteps": 81,
+   "finished_fail": 108,
+   "nosave": 1,
+   "avg_steps": 13.32,
+   "bengali_answer": 0
+  },
+  "gptoss-BN": {
+   "n": 300,
+   "npass": 97,
+   "nfail": 203,
+   "malformed": 186,
+   "stuck": 14,
+   "maxsteps": 58,
+   "finished_fail": 130,
+   "nosave": 1,
+   "avg_steps": 12.09,
+   "bengali_answer": 7
+  }
+ },
+ "mcnemar": {
+  "gemma-EN vs gemma-BN": {
+   "only_first": 41,
+   "only_second": 12,
+   "p": 8.171334999262925e-05
+  },
+  "gptoss-EN vs gptoss-BN": {
+   "only_first": 23,
+   "only_second": 40,
+   "p": 0.04295654552438921
+  },
+  "gemma-EN vs gptoss-EN": {
+   "only_first": 67,
+   "only_second": 15,
+   "p": 5.257316976900643e-09
+  },
+  "gemma-BN vs gptoss-BN": {
+   "only_first": 33,
+   "only_second": 27,
+   "p": 0.5189580031896518
+  }
+ },
+ "pass_by_app": {
+  "gemma-EN": {
+   "1": [
+    62,
+    93
+   ],
+   "2": [
+    52,
+    95
+   ],
+   "3": [
+    18,
+    112
+   ]
+  },
+  "gemma-BN": {
+   "1": [
+    42,
+    93
+   ],
+   "2": [
+    43,
+    95
+   ],
+   "3": [
+    18,
+    112
+   ]
+  },
+  "gptoss-EN": {
+   "1": [
+    41,
+    93
+   ],
+   "2": [
+    33,
+    95
+   ],
+   "3": [
+    6,
+    112
+   ]
+  },
+  "gptoss-BN": {
+   "1": [
+    50,
+    93
+   ],
+   "2": [
+    37,
+    95
+   ],
+   "3": [
+    10,
+    112
+   ]
+  }
+ }
+}

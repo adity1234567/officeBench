@@ -1,0 +1,499 @@
+% ACL 2027 submission
+% Does Language Matter? Evaluating LLM-Agent Performance Across Languages
+\documentclass[11pt]{article}
+\usepackage[review]{acl}   % use [review] for anonymous submission; drop it for camera-ready
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{url}
+
+\newcommand{\dn}[1]{\textcolor{red!70!black}{#1}}
+\newcommand{\up}[1]{\textcolor{green!45!black}{#1}}
+
+\title{Does Language Matter? \\ Evaluating LLM-Agent Performance Across Languages}
+
+\author{Anonymous ACL submission}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+LLM agents are increasingly deployed to carry out multi-step, tool-using work, yet they are
+evaluated almost exclusively in English. We ask a simple question with a non-obvious answer:
+when the \emph{same} task is expressed in a different language, does the agent behave
+differently, and if so, \emph{where} in its pipeline?
+We build a paired bilingual (English/Bangla) version of \textsc{OfficeBench}, holding the
+environment, the tool schema and the checkers fixed while varying only the language of the
+system prompt and the task instruction, and we run two open-weight models (31B and 20B
+parameters) over 300 subtasks in each condition---1{,}200 agent executions in total.
+We find that the effect of language is \textbf{model-dependent in direction}: the 31B model
+loses $9.7$ points in Bangla ($p{<}0.001$, exact McNemar) while the 20B model \emph{gains}
+$5.6$ points ($p{=}0.043$). As a consequence, model ranking is language-dependent: a gap that
+is overwhelming in English ($p{=}5{\times}10^{-9}$) becomes statistically indistinguishable in
+Bangla ($p{=}0.52$).
+A failure-mode analysis explains the divergence. The 31B model's failures are
+\emph{content-bound} and degrade when the instruction language changes; the 20B model's
+failures are \emph{action-format-bound}---$96\%$ of its English failures involve a malformed
+action---and the language shift reduces the prose leakage that causes them.
+Finally, we show that a substantial share of the measured Bangla penalty is
+\emph{evaluator-induced}: $26\%$ of the 31B model's Bangla failures are answers written in
+Bangla script and rejected by English keyword checkers. Crediting them would raise its Bangla
+score above its English score. We argue that multilingual agent evaluation requires
+language-aware verification, and we release code, traces and failure codes.
+\end{abstract}
+
+\section{Introduction}
+
+Language-model agents now plan over many steps, call tools, and edit real artefacts---
+spreadsheets, calendars, documents, email \citep{yao2023react,liu2023agentbench,zhou2024webarena}.
+The benchmarks that measure them, however, are written almost entirely in English
+\citep{jimenez2024swebench,xie2024osworld,mialon2024gaia}. This is a consequential gap. Most
+of the world does not work in English, and an agent that edits a payroll spreadsheet is
+supposed to be usable by the person who owns the spreadsheet, in that person's language.
+
+The usual assumption is that moving a task into a lower-resource language degrades performance,
+because multilingual capability lags English in knowledge and reasoning benchmarks
+\citep{ahuja2023mega,shi2023mgsm,bandarkar2024belebele,huang2023notall}. For \emph{agents} this
+assumption has not been tested carefully, and it hides a more interesting question. An agentic
+episode is not one forward pass. It is a loop of reading state, reasoning, emitting a
+structured action, and consuming the result. Language could in principle perturb any of these
+stages, and a benchmark score collapses all of them into a single bit of success.
+
+We therefore ask three questions.
+\textbf{RQ1:} Does expressing an equivalent task in a different language change end-to-end
+agent success, and in which direction?
+\textbf{RQ2:} Where does the change act---on task understanding and content, or on the
+mechanics of tool interaction?
+\textbf{RQ3:} How much of an apparent cross-lingual gap is a property of the \emph{agent}, and
+how much is a property of the \emph{evaluation harness}?
+
+To answer these we construct a strictly paired bilingual protocol over \textsc{OfficeBench}
+\citep{wang2024officebench}, a benchmark of 300 office subtasks requiring one, two or three
+applications. We translate only the system prompt and the task instruction into Bangla---a
+language with roughly 240M speakers that is nevertheless under-represented in LLM training
+data \citep{joshi2020state}---while holding the Docker environment, the file state, the tool
+schema and the automatic checkers byte-identical across conditions. We evaluate two
+open-weight models of comparable but distinct scale and lineage, and we code every failure.
+
+Our findings overturn the simple ``lower-resource is worse'' expectation:
+
+\begin{itemize}[noitemsep,topsep=2pt]
+\item \textbf{Direction is model-dependent.} \texttt{gemma4:31b} falls from $44.0\%$ to
+$34.3\%$ in Bangla ($p{<}0.001$); \texttt{gpt-oss:20b} \emph{rises} from $26.7\%$ to $32.3\%$
+($p{=}0.043$). Aggregate ``multilingual degradation'' is not a property of the language.
+\item \textbf{Rankings do not transfer.} The English gap between the two models is enormous
+($p{=}5{\times}10^{-9}$); in Bangla it disappears ($p{=}0.52$). A leaderboard built in English
+does not predict the ordering in another language.
+\item \textbf{Failure mode predicts direction.} The models fail for different reasons. When
+failures are format-bound, a language shift can help; when they are content-bound, it hurts.
+\item \textbf{Evaluators are part of the measurement.} $26\%$ of the 31B model's Bangla
+failures are Bangla-script answers rejected by English keyword checks. The measured language
+penalty is, in large part, a property of the checker.
+\end{itemize}
+
+\section{Related Work}
+
+\paragraph{Agent benchmarks.} Interactive benchmarks evaluate LLMs as decision makers rather
+than text producers: \textsc{AgentBench} \citep{liu2023agentbench}, \textsc{WebArena}
+\citep{zhou2024webarena}, \textsc{OSWorld} \citep{xie2024osworld}, \textsc{SWE-bench}
+\citep{jimenez2024swebench} and \textsc{GAIA} \citep{mialon2024gaia}. \textsc{OfficeBench}
+\citep{wang2024officebench} is the setting we adopt: it requires switching between office
+applications and grounding actions in a real file system, and it scores outcomes with
+execution-based checks rather than string overlap. All of these are English-only.
+
+\paragraph{Multilingual evaluation.} Cross-lingual evaluation of LLMs is well developed for
+static tasks---\textsc{XNLI} \citep{conneau2018xnli}, \textsc{MEGA} \citep{ahuja2023mega},
+\textsc{MGSM} \citep{shi2023mgsm}, \textsc{Belebele} \citep{bandarkar2024belebele}---and
+consistently reports an English advantage, with the gap widening for lower-resource languages
+\citep{huang2023notall,zhang2023dont}. \citet{etxaniz2024multilingual} show that models often
+perform better when a prompt is first translated into English, implying an English-centric
+internal pivot. These studies evaluate single-turn outputs; we ask what happens when the output
+must be a \emph{valid action in a loop}.
+
+\paragraph{Tool use and structured output.} Agents must emit well-formed, schema-conforming
+calls \citep{schick2023toolformer,qin2024toolllm,patil2024gorilla}. Format adherence is itself a
+capability, and it is known to be brittle. Our analysis shows that this brittleness, rather than
+comprehension, dominates one of our two models and determines the sign of its language effect.
+
+\paragraph{Failure analysis.} Rather than reporting a single score, a growing line of work
+dissects \emph{how} systems fail \citep{bang2023multitask}. We follow that approach: we code
+every failed episode and treat the code distribution, not the aggregate, as the object of study.
+
+\section{Study Design}
+
+\subsection{Benchmark and environment}
+\textsc{OfficeBench} provides 300 subtasks spanning eight applications (calendar, excel, ocr,
+pdf, shell, word, email, and an in-container \texttt{llm} helper). Tasks are stratified by the
+number of applications required: 93 one-app, 95 two-app and 112 three-app subtasks. Each
+subtask ships a seeded file system and a set of execution-based checks (cell values, file
+existence, calendar overlap, keyword containment). A subtask passes only if \emph{all} of its
+checks pass. Every episode runs in a fresh Docker container reset from a pinned image.
+
+\subsection{The paired bilingual protocol}
+Our central design requirement is that language be the \emph{only} variable. Concretely, across
+the two conditions we hold fixed: the container image and seeded files; the available
+applications; the tool schema (action names and argument keys); the step budget; the decoding
+parameters; and the checkers. We vary:
+
+\begin{enumerate}[noitemsep,topsep=2pt]
+\item \textbf{The system prompt}, authored natively in Bangla, including the role description,
+the application descriptions and the response-format instruction.
+\item \textbf{The task instruction}, machine-translated into Bangla and cached so that every
+model sees an identical string for a given subtask.
+\end{enumerate}
+
+Crucially, the \textbf{tool schema remains in English}. Action identifiers such as
+\texttt{switch\_app} and argument keys such as \texttt{file\_path} are API symbols that the
+executor matches literally; translating them would change the environment rather than the
+language of the task, and would make the two conditions incomparable. We therefore present the
+schema in English in both conditions and attach a Bangla gloss describing what each tool does.
+This isolates \emph{instruction language} from \emph{interface language}, and it mirrors
+deployment reality, where an interface is typically English while the user is not.
+
+\subsection{Agent scaffold}
+We use a ReAct-style loop \citep{yao2023react}. At each step the model receives the system
+prompt, the task, the history of previous (action, observation) pairs, and the actions
+available in the current application. It must reply with a short reasoning segment followed by
+exactly one JSON action:
+
+\begin{quote}\small\ttfamily
+\#\#Thought: \textless reasoning\textgreater \\
+\#\#Command: \{"app": ..., "action": ..., ...\}
+\end{quote}
+
+The harness parses the JSON after the last \texttt{\#\#Command:} marker, so reasoning may not
+corrupt the action. An episode terminates when the agent emits \texttt{finish\_task}, repeats an
+identical action five times (recorded as \emph{stuck}), or reaches the 20-step budget. We log the
+full trajectory---prompt, reasoning, action, observation---for every step.
+
+\subsection{Models}
+We evaluate two open-weight models served through the same API with identical decoding
+($\mathrm{temperature}=0$, $\mathrm{top\_p}=1$): \texttt{gemma4:31b} ($32.7$B parameters) and
+\texttt{gpt-oss:20b} ($20.9$B parameters).\footnote{Served via Ollama; sizes read from the
+served model metadata.} The two are deliberately different in kind: the former is a
+conventional instruction-following model, the latter exposes a separate reasoning channel, and
+this architectural difference turns out to drive our central result. For the reasoning model we
+fold the reasoning channel into the logged \texttt{\#\#Thought} so that both conditions are
+logged identically.
+
+\subsection{Metrics and statistics}
+Our primary metric is the benchmark's own pass rate. Because the design is \emph{paired}---the
+same 300 subtasks in both conditions---we test differences with the exact two-sided McNemar
+test over discordant pairs, which is the appropriate test for paired binary outcomes
+\citep{mcnemar1947}. We report discordant counts ($b$, $c$) alongside each $p$-value so that
+effect size is visible.
+
+\subsection{Failure coding}
+We code every failed episode from its trajectory. Besides a general taxonomy (benchmark defect,
+wrong content, out of steps, premature finish, task read differently, action format), the Bangla
+condition requires codes that cannot occur in English, notably \emph{answer language}: the agent
+produced a semantically reasonable answer in Bangla script which an English keyword check
+rejects. In addition to coding, we extract fully objective signals for all 1{,}200 episodes:
+whether any action was rejected as malformed, whether the episode ended stuck, whether it
+exhausted the step budget, whether it finished and still failed, episode length, and whether the
+final answer contained Bangla script.
+
+\section{Results}
+
+\subsection{RQ1: Language changes success, but not in one direction}
+
+Table~\ref{tab:main} gives the main result. The two models move in \emph{opposite} directions.
+\texttt{gemma4:31b} drops from $44.0\%$ to $34.3\%$, a $9.7$-point loss, with 41 subtasks
+passing only in English against 12 passing only in Bangla (exact McNemar $p=8.2\times10^{-5}$).
+\texttt{gpt-oss:20b} moves the other way, from $26.7\%$ to $32.3\%$, a $5.6$-point gain, with 23
+English-only passes against 40 Bangla-only passes ($p=0.043$).
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{llcccc}
+\toprule
+Model & Lang & 1-app & 2-app & 3-app & All \\
+ & & (93) & (95) & (112) & (300) \\
+\midrule
+\multirow{2}{*}{gemma4:31b}
+ & EN & 66.7 & 54.7 & 16.1 & \textbf{44.0} \\
+ & BN & 45.2 & 45.3 & 16.1 & \dn{34.3} \\
+\midrule
+\multirow{2}{*}{gpt-oss:20b}
+ & EN & 44.1 & 34.7 & 5.4 & 26.7 \\
+ & BN & 53.8 & 38.9 & 8.9 & \up{32.3} \\
+\bottomrule
+\end{tabular}
+\caption{Pass rate (\%) by condition and task complexity. Paired exact McNemar:
+gemma EN\,vs\,BN $p=8.2{\times}10^{-5}$ ($b{=}41$, $c{=}12$);
+gpt-oss EN\,vs\,BN $p=0.043$ ($b{=}23$, $c{=}40$).}
+\label{tab:main}
+\end{table}
+
+The aggregate conclusion is therefore not ``Bangla is harder''. The language manipulation is
+identical; only the model differs. Any claim of the form ``model performance degrades in
+language $L$'' is under-specified unless the model is named.
+
+\paragraph{Rankings do not transfer across languages.}
+This has a direct practical consequence (Table~\ref{tab:rank}). In English, \texttt{gemma4:31b}
+beats \texttt{gpt-oss:20b} decisively: 67 subtasks are solved only by gemma against 15 only by
+gpt-oss ($p=5.3\times10^{-9}$). In Bangla the same comparison yields 33 against 27---
+statistically indistinguishable ($p=0.52$). A practitioner choosing a model from an English
+leaderboard would believe the first model is far better; in Bangla that advantage is not
+measurable.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lccc}
+\toprule
+Comparison & $b$ & $c$ & exact $p$ \\
+\midrule
+gemma vs.\ gpt-oss (EN) & 67 & 15 & $5.3{\times}10^{-9}$ \\
+gemma vs.\ gpt-oss (BN) & 33 & 27 & $0.52$ \\
+\bottomrule
+\end{tabular}
+\caption{The model gap is overwhelming in English and vanishes in Bangla. $b$: solved only by
+gemma; $c$: solved only by gpt-oss.}
+\label{tab:rank}
+\end{table}
+
+\subsection{RQ2: Complexity gates the language effect}
+
+Table~\ref{tab:main} also shows that the language effect is not uniform across difficulty. For
+\texttt{gemma4:31b} the Bangla penalty is largest on one-app tasks ($-21.5$ points) and
+\emph{exactly zero} on three-app tasks ($16.1\%$ in both conditions).
+
+The explanation is a floor effect. Three-app subtasks require long multi-application
+workflows---read an image, OCR it, summarise, split the result, send mail---and both models fail
+the large majority of them regardless of language. Where a model has no competence to lose,
+language cannot take any away. The corollary matters for benchmark design: a cross-lingual
+evaluation run only on hard tasks will under-report the language effect, because the hardest
+items are least sensitive to it.
+
+\subsection{RQ3: Failure mode determines the sign}
+
+Why do the two models move in opposite directions under an identical manipulation? Because they
+fail for different reasons (Table~\ref{tab:modes}).
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{gemma4:31b} & \multicolumn{2}{c}{gpt-oss:20b} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Signal & EN & BN & EN & BN \\
+\midrule
+Failures            & 168 & 197 & 220 & 203 \\
+\;\;malformed action & 53 & 23 & \textbf{212} & \textbf{186} \\
+\;\;ended stuck      & 3 & 5 & 30 & 14 \\
+\;\;out of steps     & 46 & 39 & 81 & 58 \\
+\;\;finished, failed & 118 & 152 & 108 & 130 \\
+\midrule
+Mean steps/episode   & 10.9 & 10.5 & 13.3 & 12.1 \\
+Bangla-script answer & 0 & \textbf{51} & 0 & 7 \\
+\bottomrule
+\end{tabular}
+\caption{Failure composition over all 300 subtasks per condition. The three terminal states
+(stuck / out of steps / finished-but-failed) are mutually exclusive and sum to the failure count
+together with one unsaved episode per condition; \emph{malformed action} is a cross-cutting flag
+counting failures in which at least one action was rejected, so it overlaps the others. gpt-oss
+is dominated by action-format failures; gemma by episodes that finish and still fail.}
+\label{tab:modes}
+\end{table}
+
+\texttt{gpt-oss:20b} is \textbf{format-bound}. $212$ of its $220$ English failures ($96\%$)
+contain at least one action rejected as malformed. Its reasoning lives in a separate channel,
+and in English it frequently spills prose into the action slot, producing a rejected action,
+then another, until the episode is consumed. Under Bangla instructions this leakage falls:
+malformed-action failures drop to $186$, stuck episodes halve ($30\rightarrow14$), budget
+exhaustion falls ($81\rightarrow58$), and episodes shorten ($13.3\rightarrow12.1$ steps). The
+model is not understanding the task better; it is \emph{talking less} into the action channel,
+and it therefore completes more episodes. Its gain in Bangla is a format effect, not a
+comprehension effect.
+
+\texttt{gemma4:31b} is \textbf{content-bound}. It emits valid actions (only $53$ of $168$
+English failures involve a malformed action) and its dominant failure is an episode that runs to
+completion and is then rejected on content---$118$ in English rising to $152$ in Bangla. This is
+the mode that a language change should affect, and it does.
+
+This yields a simple predictive rule, and the central claim of this paper:
+
+\begin{quote}\itshape
+The sign of an agent's cross-lingual effect follows its dominant failure mode. Content-bound
+agents lose under a language shift; format-bound agents may gain, because the shift suppresses
+the verbosity that corrupts their actions.
+\end{quote}
+
+\subsection{RQ4: Much of the measured penalty belongs to the evaluator}
+
+The last row of Table~\ref{tab:modes} isolates a failure mode that \emph{cannot} occur in
+English. In $51$ of its $197$ Bangla failures ($26\%$), \texttt{gemma4:31b} terminated by
+calling \texttt{finish\_task} with an answer written in Bangla script. For $49$ of those
+subtasks the failing check is \texttt{evaluate\_contain}, which tests whether an English keyword
+occurs in the output.
+
+In other words: the agent was asked a question in Bangla, answered in Bangla, and was marked
+wrong because the checker was written in English. This is not an agent capability failure. It is
+a property of the measuring instrument.
+
+Table~\ref{tab:bounds} reports the sensitivity. Under the strict (as-shipped) checkers
+\texttt{gemma4:31b} scores $34.3\%$ in Bangla. If every Bangla-script answer were credited---a
+deliberate upper bound, since we do not verify each one semantically---it would score $51.3\%$,
+which is \emph{above} its own English score of $44.0\%$. The true value lies between the two
+bounds, and we cannot determine it with English-only checkers. The honest conclusion is
+therefore stronger and more useful than the naive one: \textbf{we cannot claim from these
+numbers that Bangla degrades this model's task competence, because the instrument that produced
+the number is itself language-biased.}
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lccc}
+\toprule
+Condition & Strict & Lenient bound & EN reference \\
+\midrule
+gemma4:31b BN  & 34.3 & $\le 51.3$ & 44.0 \\
+gpt-oss:20b BN & 32.3 & $\le 34.7$ & 26.7 \\
+\bottomrule
+\end{tabular}
+\caption{Sensitivity of the Bangla score to evaluator language (\%). The lenient bound credits
+every Bangla-script answer. For gemma the bound brackets---and exceeds---the English score.}
+\label{tab:bounds}
+\end{table}
+
+Notably the confound is itself model-dependent: \texttt{gpt-oss:20b} answered in Bangla only $7$
+times, because it remains English-anchored even under Bangla instructions. A checker bias thus
+penalises precisely the model that adapts to the user's language---exactly the behaviour one
+would want to reward.
+
+\section{Discussion}
+
+\paragraph{``Multilingual degradation'' is not one phenomenon.} Our two models received an
+identical manipulation and moved in opposite directions, with the sign predicted by their
+failure composition. Reporting a single aggregate delta per language hides this. We recommend
+that cross-lingual agent evaluations report failure-mode composition alongside the score; it is
+both more informative and, as we show, necessary to interpret the sign.
+
+\paragraph{Leaderboards are language-scoped artefacts.} The ranking between our two models is
+decisive in English and absent in Bangla. Deployment decisions for non-English users should not
+be read off English leaderboards.
+
+\paragraph{Evaluation harnesses need language-aware verification.} Execution-based checks are
+usually presented as more robust than surface matching. They are---for file state and cell
+values. But a large fraction of office tasks are questions whose answer is checked by keyword,
+and those checks silently encode a language. Multilingual agent benchmarks should either verify
+answers semantically, accept the task language, or separate ``artefact-state'' checks from
+``answer-text'' checks and report them apart. Our Table~\ref{tab:bounds} is the minimum
+diagnostic we would want to see reported.
+
+\paragraph{Interface language versus instruction language.} Keeping the tool schema in English
+was a methodological necessity, but it reflects a real deployment regime and it isolates a
+useful finding: an agent can be instructed in one language while acting through an
+English-symbol API, and the main cost is not symbol confusion but answer-language mismatch at
+the boundary where the agent reports back to the user.
+
+\section{Conclusion}
+
+We built a strictly paired English/Bangla agent evaluation over \textsc{OfficeBench} and ran
+1{,}200 episodes across two open-weight models. Task language changes agent success, but the
+direction depends on the model's dominant failure mode: a content-bound model loses $9.7$
+points, while a format-bound model gains $5.6$. Model rankings that are decisive in English can
+vanish in another language. And a quarter of one model's Bangla failures are artefacts of
+English-only checkers, enough to bracket its true Bangla score above its English score. Language
+matters for LLM agents---but how it matters is a property of the model and of the evaluator, not
+of the language alone.
+
+\section*{Limitations}
+
+\paragraph{One non-English language.} We study Bangla only. Bangla is a useful probe---widely
+spoken yet under-represented---but our directional claim (sign follows failure mode) should be
+tested on typologically different and higher-resource languages before being treated as general.
+
+\paragraph{Machine-translated instructions.} Task instructions were machine-translated and
+cached; the system prompt was authored natively. Translation noise is therefore part of the
+Bangla condition, and some failures we code as content errors may be translation artefacts. We
+mitigated this by using one fixed translation per subtask for both models, so the comparison
+\emph{between} models is unaffected, but the absolute Bangla scores should be read as a lower
+bound on achievable performance.
+
+\paragraph{Two models.} Two models cannot establish a general law. They were chosen to differ in
+kind (conventional versus separate-reasoning-channel), which is what exposes the mechanism, but
+the mechanism now needs replication across more systems. An evaluation of a third model in the
+same size class was in progress at submission time and is not reported here.
+
+\paragraph{Decoding is not perfectly reproducible.} We decode at temperature $0$, but served
+inference is not bit-deterministic: batching and floating-point non-associativity can change an
+argmax when two tokens are near-tied, and a single divergence early in an episode can flip the
+outcome. We did not re-run conditions to estimate this variance directly, so part of the smaller
+effect we report (the $5.6$-point gpt-oss gain, $p=0.043$) may be run-to-run noise. The larger
+gemma effect ($p<0.001$) and the model-gap collapse are well outside plausible noise, but a
+replication study would strengthen the weaker claim. We regard this as the most important
+missing control.
+
+\paragraph{The lenient bound is an upper bound.} We did not semantically verify each of the 51
+Bangla-script answers; the bound credits them all. The true Bangla score lies strictly between
+the two bounds and we do not claim to have located it.
+
+\paragraph{Infrastructure effects.} Episodes ran on a memory-constrained host. A small number of
+episodes (at most one per condition in the reported runs) failed to persist their output and are
+counted as failures, and a per-episode wall-clock cap occasionally terminated a slow episode.
+These affect all conditions approximately equally and are too few to alter any reported
+comparison, but they are not zero.
+
+\section*{Ethics Statement}
+
+This work evaluates publicly available open-weight models on a public benchmark in a sandboxed
+container; no human subjects and no private data are involved. Our main finding has a direct
+equity dimension: evaluation harnesses written in English can penalise an agent for answering in
+the user's language, which systematically understates agent quality for non-English users and
+rewards models that ignore the user's language. We release our bilingual protocol, trajectories
+and failure codes so that this bias can be measured rather than inherited. The translated task
+set was produced by machine translation and may contain errors; it is intended for evaluation
+research, not as a curated Bangla language resource.
+
+\bibliography{refs}
+% acl.sty already sets \bibliographystyle{acl_natbib}; setting it again makes BibTeX error.
+
+\appendix
+
+\section{Reproducibility details}
+\label{app:repro}
+
+Each episode runs in a fresh container reset from a pinned image, with a 20-step budget and a
+single seeded file system per subtask. Decoding is fixed at $\mathrm{temperature}=0$,
+$\mathrm{top\_p}=1$. The harness records, per step, the full prompt, the model reply, the parsed
+action and the environment observation; all analyses in this paper are computed from those logs
+and from the benchmark's own scorer output, not from intermediate summaries.
+
+\section{Failure code book}
+\label{app:codes}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lp{5.1cm}}
+\toprule
+Code & Meaning \\
+\midrule
+BM  & Benchmark defect: a check or reference asks for something the task does not state \\
+WC  & Wrong content: output exists, a value is wrong \\
+SB  & Out of steps: hit the 20-step budget \\
+PF  & Premature finish: declared done with a required output missing \\
+TR  & Task read differently: a different operation from the one asked \\
+FMT & Action format: could not produce a valid action \\
+ER  & Empty result taken as ``nothing exists'' \\
+\midrule
+\multicolumn{2}{l}{\emph{Bangla-condition only}} \\
+AL  & Answer language: correct answer in Bangla script, English check fails \\
+NC  & Name case: a name rewritten from Bangla script with wrong case \\
+WD  & Word choice when translating a literal back to English \\
+TX  & Translation changed the task or a literal \\
+\bottomrule
+\end{tabular}
+\caption{Failure codes. AL--TX cannot occur in the English condition and are the
+language-specific modes discussed in Section~4.4.}
+\label{tab:codebook}
+\end{table}
+
+\end{document}

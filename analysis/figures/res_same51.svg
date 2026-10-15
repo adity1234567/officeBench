@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 270" role="img" font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" aria-label="On the first 51 subtasks, gemma4:31b passes 33 in English and 30 in Bangla, and gpt-oss:20b passes 23 in English and 30 in Bangla.">
+<rect width="860" height="270" fill="#ffffff"/>
+<line x1="230" y1="38" x2="230" y2="196" stroke="#e2ded7" stroke-width="1"/>
+<text x="230" y="214" font-size="12" text-anchor="middle" fill="#5e6675">0</text>
+<line x1="339.804" y1="38" x2="339.804" y2="196" stroke="#e2ded7" stroke-width="1"/>
+<text x="339.804" y="214" font-size="12" text-anchor="middle" fill="#5e6675">10</text>
+<line x1="449.608" y1="38" x2="449.608" y2="196" stroke="#e2ded7" stroke-width="1"/>
+<text x="449.608" y="214" font-size="12" text-anchor="middle" fill="#5e6675">20</text>
+<line x1="559.412" y1="38" x2="559.412" y2="196" stroke="#e2ded7" stroke-width="1"/>
+<text x="559.412" y="214" font-size="12" text-anchor="middle" fill="#5e6675">30</text>
+<line x1="669.216" y1="38" x2="669.216" y2="196" stroke="#e2ded7" stroke-width="1"/>
+<text x="669.216" y="214" font-size="12" text-anchor="middle" fill="#5e6675">40</text>
+<line x1="779.02" y1="38" x2="779.02" y2="196" stroke="#e2ded7" stroke-width="1"/>
+<text x="779.02" y="214" font-size="12" text-anchor="middle" fill="#5e6675">50</text>
+<text x="230" y="232" font-size="12" text-anchor="start" fill="#5e6675">subtasks passed, of the same 51 single-app subtasks</text>
+<text x="218" y="65" font-size="13" text-anchor="end" fill="#1b2330" font-weight="700">gemma4:31b English</text>
+<rect x="230" y="46" width="362.353" height="28" rx="0" fill="#2d5a9b"/>
+<text x="600.353" y="65" font-size="13" text-anchor="start" fill="#1b2330" font-weight="700">33  (64.7%)</text>
+<text x="218" y="103" font-size="13" text-anchor="end" fill="#1b2330" font-weight="700">gemma4:31b Bangla</text>
+<rect x="230" y="84" width="329.412" height="28" rx="0" fill="#d97706"/>
+<text x="567.412" y="103" font-size="13" text-anchor="start" fill="#1b2330" font-weight="700">30  (58.8%)</text>
+<text x="218" y="141" font-size="13" text-anchor="end" fill="#1b2330" font-weight="700">gpt-oss:20b English</text>
+<rect x="230" y="122" width="252.549" height="28" rx="0" fill="#8a93a3"/>
+<text x="490.549" y="141" font-size="13" text-anchor="start" fill="#1b2330" font-weight="700">23  (45.1%)</text>
+<text x="218" y="179" font-size="13" text-anchor="end" fill="#1b2330" font-weight="700">gpt-oss:20b Bangla</text>
+<rect x="230" y="160" width="329.412" height="28" rx="0" fill="#1f8a8a"/>
+<text x="567.412" y="179" font-size="13" text-anchor="start" fill="#1b2330" font-weight="700">30  (58.8%)</text>
+<text x="230" y="22" font-size="12" text-anchor="start" fill="#5e6675">gpt-oss English vs Bangla on these 51: 3 pass only in English, 10 only in Bangla (exact McNemar p = 0.092)</text>
+</svg>

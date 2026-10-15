@@ -1,0 +1,121 @@
+BANGLA TRANSLATION GUIDELINES FOR AGENT BENCHMARK TASKS
+=======================================================
+What to keep in mind when translating task instructions (OfficeBench, WorkBench,
+TheAgentCompany, ...) into Bangla. Based on problems found in our own translations.
+
+Core idea: change the LANGUAGE of the task, never the TASK itself. The agent must be
+able to do exactly the same actions, and the grader must be able to check them.
+
+
+1. DECIDE THE RULES BEFORE YOU START, AND WRITE THEM DOWN
+--------------------------------------------------------
+- Fix the rules (names, digits, literals, quotes) before translating anything.
+- Apply the same rules to every batch and every task. Inconsistency between batches
+  is itself a confound (e.g. 'in progress' quoted in batch_3, ইন প্রোগ্রেস in batch_4).
+- Keep a "notes" column per item explaining any non-obvious choice.
+- If you later describe the rules in a paper, check them against the actual files first.
+
+
+2. KEEP THESE IN LATIN SCRIPT, EXACTLY AS IN ENGLISH
+----------------------------------------------------
+- Person names: Bob stays Bob, NOT বব.
+  (OfficeBench: Bob became বব in 38 of 54 tasks; models then searched for "bob" or
+  never found Bob, and failed tasks they solved in English.)
+- File names and paths: score.xlsx, /testbed/data/welcome.eml
+- Email addresses and URLs.
+- App / service / tool names: Excel, Word, CRM, RocketChat, GitLab.
+- Tool / API identifiers: switch_app, file_path, list_emails, JSON keys.
+- Enum values the system stores: lead, qualified, proposal, lost, in progress,
+  backlog, line / bar / histogram. Pick ONE form (e.g. quoted Latin) and use it everywhere.
+- Copy these character by character. Check for silent "fixes"
+  (bussiness_travel.eml and student_name@mail.com were changed in OfficeBench).
+
+
+3. KEEP GRADER LITERALS IN ENGLISH
+----------------------------------
+Any string the checker matches literally must stay exactly as in English:
+- Email subjects and bodies: 'Remember to attend this event.'
+- Event / task names: 'Catch up with Bob', 'Improve total visits'
+- Reply texts, welcome messages, answer keywords.
+Put them in quotes and do not translate, re-punctuate or "correct" them.
+Before translating, open the grader and list every string it checks.
+
+
+4. NUMBERS, DATES AND TIMES
+---------------------------
+- Choose ONE policy and apply it to all tasks:
+    a) ASCII digits (5/18/2024, 30 মিনিট) - safest when the grader compares numbers; or
+    b) Bengali digits (৫/১৮/২০২৪) - more natural, but then the agent must convert
+       back to ASCII, and that conversion becomes part of what you measure.
+- Never mix both inside one task, and never mix policies across tasks.
+  (OfficeBench: 44 tasks Bengali digits, 50 ASCII, 14 mixed - a confound.)
+- Values the grader checks (durations, amounts, scores like 100) -> keep ASCII.
+- Do not add information: no am/pm if English has none, no year if English has none.
+- Keep date format the same as English (5/17/2024 stays month/day/year).
+
+
+5. MEANING: DO NOT ADD, REMOVE OR RESOLVE
+-----------------------------------------
+- Keep the English ambiguity. If "last email" can mean most recent, keep it ambiguous.
+- Do not make a file sound like it already exists when the task asks to create it.
+  (OfficeBench 3-17: "the welcome image in welcome.eml" made the agent search for a
+  file it was supposed to create.)
+- Do not add steps, hints, chart types or names that are not in the English.
+- Obvious English typos ("of of", "tomorrowif") may be dropped; note it.
+- Keep conditions, order of steps and "if/otherwise" structure intact.
+
+
+6. BANGLA GRAMMAR AROUND LATIN WORDS
+------------------------------------
+- Case markers on Latin words: use a hyphen consistently: Bob-এর, Alice-কে.
+- Check whether your checker/regex accepts the hyphen form (CRM-এ was rejected by one
+  checker; "CRM সিস্টেমে" / "CRM থেকে" was used instead).
+- Slots / placeholders ({name}, {date}): make sure the suffix still reads correctly
+  for every possible value that fills the slot.
+- Apostrophes inside English literals (haven't, let's) can break '...' quote matching;
+  use curly or double quotes around such literals and keep the literal unchanged.
+
+
+7. REGISTER AND STYLE
+---------------------
+- One register for all tasks (e.g. তুমি-form: করো / করে দিতে পারবে?).
+- they/them for a person -> gender-neutral Bangla (ও / তার / তাদের).
+- Use loanwords that Bangla office users actually use (ইমেইল, মিটিং, ফাইল, ডেডলাইন),
+  but do not transliterate words the system has to match (see sections 2 and 3).
+- Natural Bangla is the goal - but correctness for the agent and grader comes first.
+
+
+8. IF YOU USE AN LLM TO TRANSLATE
+---------------------------------
+- Tell it explicitly, with examples:
+    * keep person names in Latin script
+    * keep file names, emails, URLs, identifiers, quoted literals unchanged
+    * use [ASCII / Bengali] digits (state which)
+    * output only the translation
+- Temperature 0, cache the result, and give every model the SAME translated string.
+- Do NOT treat the output as final: review it (section 9). The OfficeBench prompt said
+  "keep numbers exactly" and the model still wrote Bengali digits in many tasks.
+- Translate the system prompt by hand if possible; keep the tool schema in English.
+
+
+9. QUALITY CHECKS BEFORE RUNNING EXPERIMENTS
+--------------------------------------------
+Run automatic checks on every translated task:
+[ ] every file name / email / URL from English appears unchanged in Bangla
+[ ] every person name from English appears in Latin script
+[ ] every grader literal appears unchanged
+[ ] digit policy followed (no mixed ASCII + Bengali digits)
+[ ] no Bengali-script version of a name (বব, অ্যালিস ...) appears
+[ ] same enum / list names spelled the same way everywhere
+[ ] a fluent Bangla speaker has read a sample (at least 10-20%) for meaning
+[ ] one English-speaking and one Bangla-speaking reader agree the task is the same
+
+
+10. THE GRADER IS PART OF THE TRANSLATION
+-----------------------------------------
+- English keyword checkers reject correct answers written in Bangla
+  (26% of gemma4:31b's Bangla failures were Bangla-script answers).
+- Either tell the agent to answer in English, or make the checker accept both,
+  and report which one you did.
+- Report translation-caused failures separately (e.g. codes NC, TX, WD, AL) instead
+  of counting them as model failures.

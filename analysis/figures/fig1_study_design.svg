@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 660" role="img" color="#1b2330"
+     font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif"
+     aria-label="How the study works: 300 OfficeBench subtasks are run under two models crossed with English and Bangla prompts; each run is a twenty-step thought-action-observation loop inside a Docker container of eight apps; the per-step trace and final files are scored with three corrected checks, giving 394 passes and 557 failed runs that feed the failure coding.">
+  <defs>
+    <marker id="f1arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+    </marker>
+    <marker id="f1acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#d97706"/>
+    </marker>
+  </defs>
+
+  <!-- band 1: design -->
+  <text x="20" y="34" fill="currentColor" font-size="13" font-weight="700">1 &#183; Design &#8212; the same 300 subtasks in every cell</text>
+
+  <rect x="20" y="82" width="200" height="96" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="120" y="108" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">OfficeBench</text>
+  <text x="120" y="128" fill="currentColor" font-size="12" text-anchor="middle">300 subtasks</text>
+  <text x="120" y="148" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">93 single-app &#183; 95 two-app</text>
+  <text x="120" y="164" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">112 three-app</text>
+  <line x1="222" y1="130" x2="242" y2="130" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <text x="515" y="46" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">English prompt</text>
+  <text x="755" y="46" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">Bangla prompt</text>
+  <text x="390" y="95" fill="currentColor" font-size="12" font-weight="700" text-anchor="end">gemma4:31b</text>
+  <text x="390" y="173" fill="currentColor" font-size="12" font-weight="700" text-anchor="end">gpt-oss:20b</text>
+
+  <rect x="400" y="56" width="230" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="515" y="78" fill="currentColor" font-size="11" font-family="ui-monospace, Consolas, monospace" text-anchor="middle">gemma4_31b_think</text>
+  <text x="515" y="97" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">300 subtasks</text>
+  <text x="515" y="116" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">151 pass &#183; 50.3%</text>
+
+  <rect x="640" y="56" width="230" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="755" y="78" fill="currentColor" font-size="11" font-family="ui-monospace, Consolas, monospace" text-anchor="middle">gemma4_31b_bn</text>
+  <text x="755" y="97" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">300 subtasks</text>
+  <text x="755" y="116" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">127 pass &#183; 42.3%</text>
+
+  <rect x="400" y="134" width="230" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="515" y="156" fill="currentColor" font-size="11" font-family="ui-monospace, Consolas, monospace" text-anchor="middle">gpt-oss_20b_en</text>
+  <text x="515" y="175" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">300 subtasks</text>
+  <text x="515" y="194" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">86 pass &#183; 28.7%</text>
+
+  <rect x="640" y="134" width="230" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="755" y="156" fill="currentColor" font-size="11" font-family="ui-monospace, Consolas, monospace" text-anchor="middle">gpt-oss_20b_bn</text>
+  <text x="755" y="175" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">51 of 300 &#183; in progress</text>
+  <text x="755" y="194" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">30 pass</text>
+
+  <text x="890" y="78" fill="currentColor" font-size="12" font-weight="700">951 scored runs</text>
+  <text x="890" y="98" fill="currentColor" font-size="11" fill-opacity=".75">temperature 0</text>
+  <text x="890" y="115" fill="currentColor" font-size="11" fill-opacity=".75">one run per subtask</text>
+  <text x="890" y="132" fill="currentColor" font-size="11" fill-opacity=".75">and per cell</text>
+
+  <text x="250" y="230" fill="currentColor" font-size="11" fill-opacity=".75">Bangla cells: system prompt, task text and app instructions machine-translated by gemma4:31b.</text>
+  <text x="250" y="246" fill="currentColor" font-size="11" fill-opacity=".75">JSON actions, app names and all file contents stay English; nothing tells the agent which language to answer in.</text>
+
+  <!-- band 2: one run -->
+  <text x="20" y="282" fill="currentColor" font-size="13" font-weight="700">2 &#183; One run &#8212; at most 20 steps inside the container</text>
+
+  <rect x="56" y="300" width="688" height="200" rx="8" fill="none" stroke="currentColor" stroke-opacity=".3" stroke-dasharray="5 4"/>
+  <text x="72" y="322" fill="currentColor" font-size="11" fill-opacity=".7">Docker container &#183; apps: calendar, excel, ocr, pdf, shell, word, email, llm</text>
+
+  <rect x="80" y="340" width="180" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="170" y="364" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">Prompt for this step</text>
+  <text x="170" y="382" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">task + past actions/results</text>
+  <text x="170" y="398" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">+ current app instructions</text>
+
+  <line x1="262" y1="375" x2="296" y2="375" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <rect x="300" y="340" width="180" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="390" y="364" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">Model replies</text>
+  <text x="390" y="383" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle" font-family="ui-monospace, Consolas, monospace">##Thought: &#8230;</text>
+  <text x="390" y="399" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle" font-family="ui-monospace, Consolas, monospace">##Command: {json}</text>
+
+  <line x1="482" y1="375" x2="516" y2="375" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <rect x="520" y="340" width="180" height="70" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="610" y="364" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">App executes it</text>
+  <text x="610" y="382" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">observation returned,</text>
+  <text x="610" y="398" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">files on disk change</text>
+
+  <path d="M610 412 V 446 H 170 V 414" fill="none" stroke="currentColor" stroke-width="1.4" stroke-opacity=".7" marker-end="url(#f1arrow)"/>
+  <text x="390" y="466" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">the action/result history grows &#8212; but earlier thoughts are never carried forward</text>
+
+  <rect x="800" y="300" width="256" height="200" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="816" y="326" fill="currentColor" font-size="12" font-weight="700">A run ends at</text>
+  <text x="816" y="345" fill="currentColor" font-size="11" fill-opacity=".85">finish_task &#183; 20 steps &#183; stuck</text>
+  <text x="816" y="361" fill="currentColor" font-size="11" fill-opacity=".7">(repeated invalid actions)</text>
+  <text x="816" y="389" fill="currentColor" font-size="12" font-weight="700">Limits that shape the failures</text>
+  <text x="816" y="408" fill="currentColor" font-size="11" fill-opacity=".85">reply cap 512 tok (gemma),</text>
+  <text x="816" y="424" fill="currentColor" font-size="11" fill-opacity=".85">2048 tok (gpt-oss)</text>
+  <text x="816" y="443" fill="currentColor" font-size="11" fill-opacity=".85">excel writes one cell per action</text>
+  <text x="816" y="462" fill="currentColor" font-size="11" fill-opacity=".85">llm app answers in 50 tokens</text>
+  <text x="816" y="481" fill="currentColor" font-size="11" fill-opacity=".85">shell starts at / , wraps in bash -c</text>
+
+  <!-- band 3: scoring -->
+  <text x="20" y="528" fill="currentColor" font-size="13" font-weight="700">3 &#183; Scoring &#8212; the benchmark&#8217;s own checks, three defects fixed first</text>
+
+  <rect x="56" y="548" width="200" height="40" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="156" y="573" fill="currentColor" font-size="11" text-anchor="middle" font-family="ui-monospace, Consolas, monospace">env_history.json</text>
+  <rect x="56" y="600" width="200" height="40" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="156" y="625" fill="currentColor" font-size="12" text-anchor="middle">final testbed files</text>
+  <line x1="258" y1="568" x2="294" y2="572" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+  <line x1="258" y1="620" x2="294" y2="614" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <rect x="298" y="548" width="282" height="92" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="314" y="570" fill="currentColor" font-size="12" font-weight="700">Checks re-run with 3 fixes</text>
+  <text x="314" y="590" fill="currentColor" font-size="11" fill-opacity=".85">email path read from the run&#8217;s testbed</text>
+  <text x="314" y="608" fill="currentColor" font-size="11" fill-opacity=".85">exact mailbox name matched first</text>
+  <text x="314" y="626" fill="currentColor" font-size="11" fill-opacity=".85">task files read as UTF-8</text>
+
+  <line x1="582" y1="594" x2="616" y2="594" stroke="currentColor" stroke-width="1.4" marker-end="url(#f1arrow)"/>
+
+  <rect x="620" y="548" width="200" height="92" rx="6" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+  <text x="720" y="572" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">pass / fail per run</text>
+  <text x="720" y="594" fill="currentColor" font-size="11" fill-opacity=".75" text-anchor="middle">official &#8594; corrected</text>
+  <text x="720" y="612" fill="currentColor" font-size="11" fill-opacity=".85" text-anchor="middle">132&#8594;151 &#183; 103&#8594;127</text>
+  <text x="720" y="630" fill="currentColor" font-size="11" fill-opacity=".85" text-anchor="middle">80&#8594;86</text>
+
+  <line x1="822" y1="594" x2="856" y2="594" stroke="#d97706" stroke-width="1.6" marker-end="url(#f1acc)"/>
+
+  <rect x="860" y="548" width="196" height="92" rx="6" fill="none" stroke="#d97706" stroke-width="1.4"/>
+  <text x="958" y="578" fill="#d97706" font-size="15" font-weight="700" text-anchor="middle">557 failed runs</text>
+  <text x="958" y="600" fill="currentColor" font-size="11" fill-opacity=".8" text-anchor="middle">(394 pass of 951)</text>
+  <text x="958" y="625" fill="currentColor" font-size="12" font-weight="700" text-anchor="middle">&#8594; Figure 2</text>
+</svg>

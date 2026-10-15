@@ -1,0 +1,17 @@
+id,run_tag,primary,decisive_step,tags,rationale,changed_in_reconciliation
+1-2/0,first10,EVAL-MISMATCH,,C-AMBIG,"Reconciled: task only says ""find""; slot 14:30-15:30 is correct; check requires meeting events the task does not ask for (codebook rule 1: judge the task as written).",yes
+1-2/1,first10,A-STATE,5,C-HARNESS,Saw both existing dinners at 18:30-19:30 and booked the same slot; overlap check fails. Step 0 empty reply was a tool-call parsing artefact.,no
+1-2/2,first10,EVAL-MISMATCH,,C-AMBIG,Reconciled: task only asks to find one hour; answer correct; check requires shopping events the task does not ask for.,yes
+1-2/4,first10,EVAL-MISMATCH,,C-AMBIG;C-WEAKCHECK,"Reconciled: both have 5 events so ""both have 5"" is correct by count; expected ""Tom"" needs an unstated definition; passed only via keyword match.",yes
+1-9/1,probe,A-REASON,8,C-LLMAPP,llm app failed; agent computed itself and chose Sam 85; true average 80.05 so Alice 78 is closest.,no
+3-82/0,probe,EVAL-CRASH,,C-LLMAPP;C-HARNESS,list.docx holds the correct 5 names and none of the excluded ones; both content checks open the docx as xlsx and crash.,no
+1-3/4,next20,EVAL-MISMATCH,,,Moved docx pdf jpg as asked; check also requires file3.xlsx which the task does not mention.,no
+1-4/2,next20,A-INTENT,4,C-AMBIG,Added 50000 to the existing bonus row instead of adding a new 'annual bonus' row.,no
+1-4/3,next20,A-DEVIATION,4,,Task names the item 'utilities fee'; agent wrote 'utilities'.,no
+1-5/1,next20,ENV-TOOL,,,Agent wrote 1 (half of 2); excel_set_cell blanks the value 1 (1 == True) so the saved cell is empty.,no
+1-5/2,next20,A-INTENT,5,,Ignored 'for each day': averaged the 3 rows (133333) instead of dividing the total by 365 (1095).,no
+1-5/3,next20,A-REASON,5,,Wrote 2662013; correct total (2051000) x 1.1^3 = 2729881.,no
+1-6/0,next20,ENV-TOOL,,,Agent wrote classes 1-5; excel_set_cell blanked the 1 so row 2 is empty and the comparator fails.,no
+1-6/2,next20,EVAL-FORM,,,Wrote 08:00..08:40; check wants 8:00..8:40; same times.,no
+1-6/3,next20,EVAL-MISMATCH,,,Task says salary file and agent updated it correctly; check reads company_budget.xlsx.,no
+1-6/4,next20,EVAL-FORM,,,Wrote 5% / -10% / 10%; check wants 5 / 10 / 10; -10% fails only on the sign convention for 'reduce'.,no

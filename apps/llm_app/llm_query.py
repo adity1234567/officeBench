@@ -84,10 +84,27 @@ def construct_action(
 def query(prompt):
     """
     Query an LLM model for an answer to a given prompt.
+
+    Routes to the endpoint in /llm_config.json (base_url, api_key, model) when present,
+    so the in-container llm app uses the same provider as the agent (e.g. gemma4:31b via
+    Ollama) instead of OpenAI. Falls back to the legacy OpenAI path if no config is given.
     """
     try:
+        import json
+        import os
+
         model_name = "gpt-3.5-turbo-0125"
-        key = open("/openai_key.txt").read().strip()
+        key = ""
+        if os.path.exists("/llm_config.json"):
+            cfg = json.load(open("/llm_config.json"))
+            model_name = cfg.get("model", model_name)
+            key = cfg.get("api_key", "")
+            if cfg.get("base_url"):
+                openai.api_base = cfg["base_url"].rstrip("/")
+        else:
+            key = open("/openai_key.txt").read().strip()
+
+        openai.api_key = key
         llm = ChatGPT(model_name, key)
         options = llm.get_model_options(
             temperature=0,

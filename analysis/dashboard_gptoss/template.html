@@ -1,0 +1,406 @@
+<title>gemma4:31b OfficeBench Run</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: summary band (progress, score vs leaderboard, failure causes) above a task ledger with a trace inspector beside it */
+:root {
+  --bg: #f3f5f8; --surface: #ffffff; --sunk: #eef1f5; --ink: #18202c; --muted: #5a6476; --line: #dce1e8;
+  --accent: #2d5a9b; --accent-soft: #e3ebf6;
+  --pass: #2b7d47; --pass-soft: #e1f1e6; --fail: #b8392f; --fail-soft: #f8e4e1; --pend: #98a1b0; --warn: #9a6516; --warn-soft: #f6ecd9;
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11151b; --surface: #181e26; --sunk: #141a21; --ink: #e5e9ef; --muted: #98a2b2; --line: #2a323d;
+  --accent: #86aee8; --accent-soft: #1f2c3f;
+  --pass: #63c283; --pass-soft: #1a2e22; --fail: #ee7d73; --fail-soft: #3a1f1c; --pend: #6c7584; --warn: #e0ac5c; --warn-soft: #33281a;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #11151b; --surface: #181e26; --sunk: #141a21; --ink: #e5e9ef; --muted: #98a2b2; --line: #2a323d;
+  --accent: #86aee8; --accent-soft: #1f2c3f;
+  --pass: #63c283; --pass-soft: #1a2e22; --fail: #ee7d73; --fail-soft: #3a1f1c; --pend: #6c7584; --warn: #e0ac5c; --warn-soft: #33281a;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--body); }
+.wrap { max-width: 1320px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; display: grid; gap: 28px; }
+h1, h2 { font-family: var(--display); font-stretch: 85%; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 750; letter-spacing: -0.01em; line-height: 1.1; }
+h2 { font-size: 18px; font-weight: 700; }
+.eyebrow { font: 500 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--mono); }
+.muted { color: var(--muted); }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* header */
+.head { display: grid; gap: 14px; }
+.head-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
+.state { display: inline-flex; align-items: center; gap: 8px; padding: 5px 11px; border-radius: 999px; font: 500 12px/1 var(--mono); background: var(--sunk); border: 1px solid var(--line); }
+.state i { width: 8px; height: 8px; border-radius: 50%; background: var(--pend); }
+.state[data-s="running"] i { background: var(--accent); animation: pulse 1.6s ease-in-out infinite; }
+.state[data-s="finished"] i { background: var(--pass); }
+.state[data-s^="stopped"] i { background: var(--fail); }
+@keyframes pulse { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .state i { animation: none !important; } }
+.bar { display: flex; height: 12px; border-radius: 3px; overflow: hidden; background: var(--sunk); border: 1px solid var(--line); }
+.bar span { display: block; height: 100%; }
+.bar-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; }
+.bar-legend b { font-weight: 600; }
+.key { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+/* summary band */
+.band { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px; }
+@media (max-width: 960px) { .band { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.note { font-size: 12.5px; color: var(--muted); margin: 0; max-width: 70ch; }
+
+.lb { overflow-x: auto; }
+.lb table { width: 100%; border-collapse: collapse; min-width: 520px; }
+.lb th { font: 500 11px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0 10px 8px 0; border-bottom: 1px solid var(--line); }
+.lb td { padding: 7px 10px 7px 0; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.lb tr:last-child td { border-bottom: 0; }
+.lb tr.me td { background: var(--accent-soft); }
+.lb tr.me td:first-child { font-weight: 600; padding-left: 8px; border-radius: 4px 0 0 4px; }
+.lb tr.me td:last-child { border-radius: 0 4px 4px 0; }
+.lb td:first-child { white-space: nowrap; }
+.cell { display: grid; gap: 3px; min-width: 80px; }
+.cell .v { font: 500 13px/1 var(--mono); }
+.cell .t { height: 4px; background: var(--sunk); border-radius: 2px; overflow: hidden; }
+.cell .t span { display: block; height: 100%; background: var(--muted); opacity: .55; }
+.me .cell .t span { background: var(--accent); opacity: 1; }
+.cell .sub { font: 400 10.5px/1 var(--mono); color: var(--muted); }
+
+.causes { display: grid; gap: 16px; }
+.cause-group { display: grid; gap: 7px; }
+.cause-row { display: grid; grid-template-columns: 118px minmax(0, 1fr) 28px; align-items: center; gap: 10px; font-size: 13px; }
+.cause-row code { font: 500 12px var(--mono); }
+.cause-row .t { height: 10px; border-radius: 2px; background: var(--sunk); overflow: hidden; }
+.cause-row .t span { display: block; height: 100%; }
+.cause-row .n { text-align: right; font: 500 12px var(--mono); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ledger + inspector */
+.work { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 1100px) { .work { grid-template-columns: minmax(0, 1fr); } }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.search { flex: 1 1 220px; min-width: 0; padding: 7px 11px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+.seg button { border: 0; background: none; padding: 6px 10px; cursor: pointer; font-size: 12.5px; border-right: 1px solid var(--line); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.ledger { max-height: 760px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.ledger table { width: 100%; border-collapse: collapse; }
+.ledger th { position: sticky; top: 0; background: var(--surface); z-index: 1; text-align: left; font: 500 11px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding: 10px 10px; border-bottom: 1px solid var(--line); }
+.ledger td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.ledger tr[data-id] { cursor: pointer; }
+.ledger tr[data-id]:hover td { background: var(--sunk); }
+.ledger tr[aria-selected="true"] td { background: var(--accent-soft); }
+.ledger td.id { font: 500 12.5px var(--mono); white-space: nowrap; }
+.ledger td.goal { min-width: 0; }
+.goal-text { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pill { display: inline-block; padding: 2px 7px; border-radius: 4px; font: 600 11px/1.4 var(--mono); letter-spacing: .03em; white-space: nowrap; }
+.pill.pass { background: var(--pass-soft); color: var(--pass); }
+.pill.fail { background: var(--fail-soft); color: var(--fail); }
+.pill.pending { background: var(--sunk); color: var(--muted); }
+.tag { display: inline-block; padding: 1px 6px; border-radius: 4px; font: 500 11px/1.5 var(--mono); border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.tag.code { border-color: transparent; background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.tag.sig { border-color: transparent; background: var(--warn-soft); color: var(--warn); }
+.empty-row td { text-align: center; color: var(--muted); padding: 28px; }
+
+.inspector { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 24px); overflow: auto; }
+.inspector .panel { gap: 16px; }
+.close { display: none; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+@media (max-width: 1100px) {
+  .inspector { position: fixed; inset: 0; top: 0; max-height: none; z-index: 10; background: var(--bg); padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px calc(env(safe-area-inset-bottom, 0px) + 16px); }
+  .inspector:not(.open) { display: none; }
+  .close { display: inline-block; }
+}
+.kv { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 6px 12px; font-size: 13px; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.why { background: var(--sunk); border-radius: 6px; padding: 10px 12px; font-size: 13px; }
+.steps { display: grid; gap: 10px; }
+.step { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.step.decisive { border-color: var(--fail); }
+.step-head { display: flex; justify-content: space-between; gap: 10px; padding: 6px 10px; background: var(--sunk); font: 500 12px var(--mono); }
+.step-body { display: grid; }
+.part { padding: 8px 10px; border-top: 1px solid var(--line); display: grid; gap: 4px; }
+.part:first-child { border-top: 0; }
+.part .lbl { font: 600 10.5px/1 var(--mono); letter-spacing: .06em; color: var(--muted); }
+.part pre { margin: 0; font: 12px/1.5 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; max-height: 260px; overflow: auto; }
+.part.act pre { color: var(--accent); }
+.part.bad pre { color: var(--fail); }
+.placeholder { color: var(--muted); padding: 40px 10px; text-align: center; }
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <div class="head-top">
+      <div style="display:grid; gap:8px">
+        <div class="eyebrow">OfficeBench · 300 subtasks · max 20 steps</div>
+        <h1 id="title-h1">OfficeBench Run</h1>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+        <span class="state" id="state"><i></i><span></span></span>
+        <span class="muted mono" style="font-size:12px" id="generated"></span>
+      </div>
+    </div>
+    <div class="bar" id="progress" role="img"></div>
+    <div class="bar-legend num" id="progress-legend"></div>
+  </header>
+
+  <section class="band">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Pass rate against the leaderboard</h2>
+        <span class="eyebrow">% of subtasks passed</span>
+      </div>
+      <div class="lb" id="leaderboard"></div>
+      <p class="note" id="lb-note"></p>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Why tasks failed</h2>
+        <span class="eyebrow" id="coded-count"></span>
+      </div>
+      <div class="causes" id="causes"></div>
+      <p class="note">Codes come from <span class="mono">analysis/labels_final.csv</span> (codebook v1). Uncoded failures show automatic signals from the trace only; they are hints for coding, not codes.</p>
+    </div>
+  </section>
+
+  <section class="work">
+    <div style="display:grid; gap:12px; min-width:0">
+      <div class="panel-head"><h2>Tasks</h2><span class="muted num" id="shown"></span></div>
+      <div class="filters">
+        <input id="q" class="search" type="search" placeholder="Search task id, goal, code or check" aria-label="Search tasks">
+        <div class="seg" id="f-status" role="group" aria-label="Result">
+          <button data-v="all" aria-pressed="true">All</button><button data-v="fail" aria-pressed="false">Failed</button><button data-v="pass" aria-pressed="false">Passed</button><button data-v="pending" aria-pressed="false">Pending</button>
+        </div>
+        <div class="seg" id="f-apps" role="group" aria-label="Apps">
+          <button data-v="all" aria-pressed="true">Any apps</button><button data-v="1" aria-pressed="false">1</button><button data-v="2" aria-pressed="false">2</button><button data-v="3" aria-pressed="false">3</button>
+        </div>
+        <div class="seg" id="f-coded" role="group" aria-label="Coding">
+          <button data-v="all" aria-pressed="true">All</button><button data-v="uncoded" aria-pressed="false">Needs coding</button>
+        </div>
+      </div>
+      <div class="ledger">
+        <table>
+          <thead><tr><th>Task</th><th>Goal</th><th>Result</th><th class="num">Steps</th><th>Code / signals</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </div>
+    <aside class="inspector" id="inspector" aria-label="Task trace">
+      <div class="panel" id="detail"><div class="placeholder">Select a task to read its trace: what the model output, the action it took and what came back, step by step.</div></div>
+    </aside>
+  </section>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const TRACES = /*TRACES*/null;
+
+const LEADERBOARD = [
+  ['GPT-4 Omni (2024-05-13)', 64.52, 60.00, 21.43, 47.00],
+  ['GPT-4 Turbo (2024-04-09)', 56.99, 50.63, 11.61, 38.00],
+  ['Llama 3 70B-Instruct', 39.79, 41.05, 5.36, 27.33],
+  ['Gemini 1.5 Pro (May 2024)', 41.94, 32.63, 7.14, 26.00],
+  ['Qwen 2 72B-Instruct', 30.23, 28.42, 8.04, 21.16],
+  ['Gemini 1.5 Flash (May 2024)', 34.41, 24.21, 0.89, 18.67],
+  ['Gemini 1.0 Pro (Feb 2024)', 24.73, 13.68, 0.89, 12.33],
+  ['GPT-3.5 Turbo (0125)', 8.60, 7.45, 0.89, 5.35],
+];
+const SPLITS = [['Single app', r => r.apps === 1], ['Two apps', r => r.apps === 2], ['Three apps', r => r.apps === 3], ['Overall', () => true]];
+const BENCH = ['ENV-TOOL', 'EVAL-CRASH', 'EVAL-MISMATCH', 'EVAL-FORM'];
+const AGENT = ['A-INTENT', 'A-DEVIATION', 'A-STATE', 'A-REASON', 'A-ACTION'];
+
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (v == null) continue;
+    if (k === 'class') n.className = v; else if (k === 'text') n.textContent = v; else n.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k != null) n.append(k.nodeType ? k : document.createTextNode(k));
+  return n;
+}
+const pct = (a, b) => b ? (100 * a / b) : 0;
+const rows = DATA.rows;
+const done = rows.filter(r => r.status !== 'pending');
+const fails = rows.filter(r => r.status === 'fail');
+
+// header
+document.querySelector('#title-h1').textContent = DATA.model + ' on OfficeBench';
+document.querySelector('#state').dataset.s = DATA.state;
+document.querySelector('#state span').textContent = DATA.state === 'running' ? 'Run in progress' : DATA.state === 'finished' ? 'Run finished' : DATA.state.startsWith('stopped') ? 'Stopped at usage limit' : 'Not running';
+document.querySelector('#generated').textContent = 'Snapshot ' + DATA.generated;
+{
+  const p = rows.filter(r => r.status === 'pass').length, f = fails.length, n = rows.length - p - f;
+  const bar = document.querySelector('#progress');
+  bar.setAttribute('aria-label', `${p} passed, ${f} failed, ${n} pending of ${rows.length}`);
+  bar.append(el('span', { style: `width:${pct(p, rows.length)}%;background:var(--pass)` }),
+             el('span', { style: `width:${pct(f, rows.length)}%;background:var(--fail)` }));
+  document.querySelector('#progress-legend').append(
+    el('span', {}, el('b', { text: `${done.length} of ${rows.length}` }), ' subtasks run'),
+    el('span', {}, el('i', { class: 'key', style: 'background:var(--pass)' }), el('b', { text: p }), ' passed'),
+    el('span', {}, el('i', { class: 'key', style: 'background:var(--fail)' }), el('b', { text: f }), ' failed'),
+    el('span', {}, el('i', { class: 'key', style: 'background:var(--sunk);border:1px solid var(--line)' }), el('b', { text: n }), ' still to run'));
+}
+
+// leaderboard
+{
+  const cell = (v, sub) => el('div', { class: 'cell' },
+    el('span', { class: 'v num', text: v == null ? '—' : v.toFixed(2) }),
+    el('div', { class: 't' }, el('span', { style: `width:${v || 0}%` })),
+    sub ? el('span', { class: 'sub num', text: sub }) : null);
+  const tbody = el('tbody');
+  const mine = el('tr', { class: 'me' }, el('td', { text: DATA.model + ' (this run)' }));
+  let partial = false;
+  for (const [, test] of SPLITS) {
+    const all = rows.filter(test), d = all.filter(r => r.status !== 'pending'), p = d.filter(r => r.status === 'pass').length;
+    if (d.length < all.length) partial = true;
+    mine.append(el('td', {}, cell(d.length ? pct(p, d.length) : null, `${p}/${d.length} run · ${all.length} total`)));
+  }
+  tbody.append(mine);
+  for (const [name, ...vals] of LEADERBOARD) tbody.append(el('tr', {}, el('td', { text: name }), vals.map(v => el('td', {}, cell(v)))));
+  const head = el('tr', {}, el('th', { text: 'Agent' }), SPLITS.map(([n, t]) => el('th', { text: `${n} (${rows.filter(t).length})` })));
+  document.querySelector('#leaderboard').append(el('table', {}, el('thead', {}, head), tbody));
+  document.querySelector('#lb-note').textContent = partial
+    ? DATA.model + ' figures are the pass rate over subtasks run so far, so they are not yet comparable to the leaderboard. Tasks run in order, so early figures lean on the easier single-app tasks. Leaderboard numbers are from the OfficeBench README.'
+    : 'All 300 subtasks have been run. Leaderboard numbers are from the OfficeBench README.';
+}
+
+// failure causes
+{
+  const coded = fails.filter(r => r.label);
+  document.querySelector('#coded-count').textContent = `${coded.length} of ${fails.length} failures coded`;
+  const counts = {};
+  for (const r of coded) counts[r.label.primary] = (counts[r.label.primary] || 0) + 1;
+  const max = Math.max(1, ...Object.values(counts));
+  const group = (title, codes, color) => el('div', { class: 'cause-group' },
+    el('div', { class: 'eyebrow', text: title }),
+    codes.map(c => el('div', { class: 'cause-row' },
+      el('code', { text: c }),
+      el('div', { class: 't' }, el('span', { style: `width:${pct(counts[c] || 0, max)}%;background:${color}` })),
+      el('span', { class: 'n num', text: counts[c] || 0 }))));
+  const box = document.querySelector('#causes');
+  box.append(group('Benchmark side', BENCH, 'var(--warn)'), group('Agent side', AGENT, 'var(--fail)'));
+
+  const un = fails.filter(r => !r.label);
+  const sig = { 'ended stuck': 0, 'hit 20 steps': 0, 'finished, check failed': 0, 'llm app: no key': 0, 'malformed actions': 0, 'evaluator error': 0 };
+  for (const r of un) {
+    sig[r.end === 'stuck' ? 'ended stuck' : r.end === 'max steps' ? 'hit 20 steps' : 'finished, check failed']++;
+    if (r.signals.includes('llm app: no key')) sig['llm app: no key']++;
+    if (r.signals.some(s => s.endsWith('malformed'))) sig['malformed actions']++;
+    if (r.signals.includes('evaluator error')) sig['evaluator error']++;
+  }
+  box.append(el('div', { class: 'cause-group' },
+    el('div', { class: 'eyebrow', text: `Not yet coded · ${un.length} failures` }),
+    el('div', { class: 'chips' }, Object.entries(sig).filter(([, n]) => n).map(([k, n]) => el('span', { class: 'tag sig', text: `${k} · ${n}` })))));
+}
+
+// ledger
+const state = { q: '', status: 'all', apps: 'all', coded: 'all', sel: null };
+try { const s = JSON.parse(localStorage.getItem('ob-filters') || '{}'); Object.assign(state, s, { sel: null }); } catch (e) {}
+const tbody = document.querySelector('#rows');
+
+function matches(r) {
+  if (state.status !== 'all' && r.status !== state.status) return false;
+  if (state.apps !== 'all' && String(r.apps) !== state.apps) return false;
+  if (state.coded === 'uncoded' && !(r.status === 'fail' && !r.label)) return false;
+  if (state.q) {
+    const hay = [r.id, r.goal, r.check, r.label?.primary, ...(r.label?.tags || []), ...(r.signals || [])].join(' ').toLowerCase();
+    if (!hay.includes(state.q.toLowerCase())) return false;
+  }
+  return true;
+}
+function renderRows() {
+  tbody.replaceChildren();
+  const list = rows.filter(matches);
+  document.querySelector('#shown').textContent = `${list.length} shown`;
+  if (!list.length) { tbody.append(el('tr', { class: 'empty-row' }, el('td', { colspan: 5, text: 'No tasks match these filters.' }))); return; }
+  for (const r of list) {
+    const marks = [];
+    if (r.label) { marks.push(el('span', { class: 'tag code', text: r.label.primary })); r.label.tags.forEach(t => marks.push(el('span', { class: 'tag', text: t }))); }
+    else (r.signals || []).forEach(s => marks.push(el('span', { class: 'tag sig', text: s })));
+    if (r.status === 'fail' && r.end === 'stuck' && !r.label) marks.push(el('span', { class: 'tag sig', text: 'stuck' }));
+    const tr = el('tr', { 'data-id': r.id, tabindex: 0, 'aria-selected': String(state.sel === r.id) },
+      el('td', { class: 'id', text: r.id }),
+      el('td', { class: 'goal' }, el('div', { class: 'goal-text', text: r.goal })),
+      el('td', {}, el('span', { class: `pill ${r.status}`, text: r.status.toUpperCase() })),
+      el('td', { class: 'num mono', text: r.steps ?? '' }),
+      el('td', {}, el('div', { class: 'chips' }, marks)));
+    tbody.append(tr);
+  }
+}
+tbody.addEventListener('click', e => { const tr = e.target.closest('tr[data-id]'); if (tr) select(tr.dataset.id); });
+tbody.addEventListener('keydown', e => { const tr = e.target.closest('tr[data-id]'); if (tr && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); select(tr.dataset.id); } });
+
+function bindSeg(id, key) {
+  const g = document.querySelector(id);
+  const sync = () => g.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === state[key])));
+  g.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; state[key] = b.dataset.v; sync(); save(); renderRows(); });
+  sync();
+}
+function save() { try { localStorage.setItem('ob-filters', JSON.stringify({ q: state.q, status: state.status, apps: state.apps, coded: state.coded })); } catch (e) {} }
+bindSeg('#f-status', 'status'); bindSeg('#f-apps', 'apps'); bindSeg('#f-coded', 'coded');
+const q = document.querySelector('#q'); q.value = state.q;
+q.addEventListener('input', () => { state.q = q.value.trim(); save(); renderRows(); });
+
+// inspector
+function select(id) {
+  state.sel = id;
+  tbody.querySelectorAll('tr[data-id]').forEach(tr => tr.setAttribute('aria-selected', String(tr.dataset.id === id)));
+  const r = rows.find(x => x.id === id);
+  const d = document.querySelector('#detail');
+  d.replaceChildren();
+  const closeBtn = el('button', { class: 'close', type: 'button', text: 'Close' });
+  closeBtn.addEventListener('click', () => document.querySelector('#inspector').classList.remove('open'));
+  d.append(el('div', { class: 'panel-head' },
+    el('div', { style: 'display:flex;gap:10px;align-items:center' }, el('h2', { class: 'mono', text: r.id }), el('span', { class: `pill ${r.status}`, text: r.status.toUpperCase() })),
+    closeBtn));
+  d.append(el('p', { style: 'margin:0;font-size:15px', text: r.goal }));
+
+  const kv = el('dl', { class: 'kv' });
+  const add = (k, v, cls) => { if (v != null && v !== '') kv.append(el('dt', { text: k }), el('dd', { class: cls, text: v })); };
+  add('Apps', `${r.apps}`);
+  add('Run tag', r.run ? `gemma4_31b_${r.run}` : 'not run yet', 'mono');
+  if (r.status !== 'pending') add('Ended', { finished: 'agent called finish_task', stuck: 'stuck on a repeated action', 'max steps': 'stopped at 20 steps' }[r.end]);
+  add('Failed check', r.check, 'mono');
+  add('Answer given', r.answer);
+  if (r.signals?.length) add('Signals', r.signals.join(' · '));
+  d.append(kv);
+
+  if (r.label) {
+    d.append(el('div', { class: 'why' },
+      el('div', { class: 'chips', style: 'margin-bottom:6px' }, el('span', { class: 'tag code', text: r.label.primary }), r.label.tags.map(t => el('span', { class: 'tag', text: t })),
+        r.label.step ? el('span', { class: 'tag', text: `decisive step ${r.label.step}` }) : null),
+      r.label.why));
+  }
+
+  const steps = TRACES[String(r.apps)]?.[r.id];
+  if (!steps) { d.append(el('div', { class: 'placeholder', text: 'This subtask has not run yet. Its trace appears in the next snapshot after it finishes.' })); }
+  else {
+    const decisive = r.label?.step !== '' && r.label?.step != null ? Number(r.label.step) : null;
+    d.append(el('div', { class: 'eyebrow', text: `Trace · ${steps.length} steps · step numbers start at 0, as in the codebook` }));
+    d.append(el('div', { class: 'steps' }, steps.map((s, i) => {
+      const bad = /Malformed action|^Error|Task failed|No API key/.test(s.result || '');
+      return el('div', { class: 'step' + (decisive === i ? ' decisive' : '') },
+        el('div', { class: 'step-head' }, el('span', { text: `Step ${i}${decisive === i ? ' · decisive' : ''}` }), el('span', { class: 'muted', text: s.app || '' })),
+        el('div', { class: 'step-body' },
+          s.think ? el('div', { class: 'part' }, el('span', { class: 'lbl', text: 'THINKING' }), el('pre', { text: s.think })) : null,
+          s.act != null ? el('div', { class: 'part act' }, el('span', { class: 'lbl', text: 'ACTION' }), el('pre', { text: s.act })) : null,
+          s.result != null ? el('div', { class: 'part' + (bad ? ' bad' : '') }, el('span', { class: 'lbl', text: 'RESULT' }), el('pre', { text: s.result })) : null));
+    })));
+  }
+  document.querySelector('#inspector').classList.add('open');
+  document.querySelector('#inspector').scrollTop = 0;
+}
+
+renderRows();
+const firstFail = rows.find(r => r.status === 'fail' && r.label) || done[0];
+if (firstFail && window.matchMedia('(min-width: 1101px)').matches) select(firstFail.id);
+</script>

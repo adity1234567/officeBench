@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 382" role="img" font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" aria-label="gpt-oss:20b English minus Bangla success gap with 95 percent intervals under each sensitivity scenario. As scored the gap is -6.7 percentage points.">
+<rect width="860" height="382" fill="#ffffff"/>
+<line x1="400" y1="52" x2="400" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="400" y="322" font-size="12" text-anchor="middle" fill="#5e6675">-20</text>
+<line x1="441" y1="52" x2="441" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="441" y="322" font-size="12" text-anchor="middle" fill="#5e6675">-16</text>
+<line x1="482" y1="52" x2="482" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="482" y="322" font-size="12" text-anchor="middle" fill="#5e6675">-12</text>
+<line x1="523" y1="52" x2="523" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="523" y="322" font-size="12" text-anchor="middle" fill="#5e6675">-8</text>
+<line x1="564" y1="52" x2="564" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="564" y="322" font-size="12" text-anchor="middle" fill="#5e6675">-4</text>
+<line x1="605" y1="52" x2="605" y2="304" stroke="#5e6675" stroke-width="1.6"/>
+<text x="605" y="322" font-size="12" text-anchor="middle" fill="#5e6675">0</text>
+<line x1="646" y1="52" x2="646" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="646" y="322" font-size="12" text-anchor="middle" fill="#5e6675">+4</text>
+<line x1="687" y1="52" x2="687" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="687" y="322" font-size="12" text-anchor="middle" fill="#5e6675">+8</text>
+<line x1="728" y1="52" x2="728" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="728" y="322" font-size="12" text-anchor="middle" fill="#5e6675">+12</text>
+<line x1="769" y1="52" x2="769" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="769" y="322" font-size="12" text-anchor="middle" fill="#5e6675">+16</text>
+<line x1="810" y1="52" x2="810" y2="304" stroke="#e2ded7" stroke-width="1"/>
+<text x="810" y="322" font-size="12" text-anchor="middle" fill="#5e6675">+20</text>
+<text x="605" y="344" font-size="12" text-anchor="middle" fill="#5e6675">English minus Bangla success rate, percentage points (95% bootstrap interval)</text>
+<text x="20" y="36" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">Scenario</text>
+<text x="846" y="36" font-size="12.5" text-anchor="end" fill="#1b2330" font-weight="700">n</text>
+<rect x="10" y="52" width="850" height="36" rx="0" fill="#f6f7f9"/>
+<text x="20" y="75" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">S0  As scored</text>
+<line x1="482" y1="70" x2="591.333" y2="70" stroke="#d97706" stroke-width="2.4"/>
+<line x1="482" y1="63" x2="482" y2="77" stroke="#d97706" stroke-width="2.4"/>
+<line x1="591.333" y1="63" x2="591.333" y2="77" stroke="#d97706" stroke-width="2.4"/>
+<circle cx="536.667" cy="70" r="5.5" fill="#d97706"/>
+<text x="601.333" y="74" font-size="12" text-anchor="start" fill="#1b2330" font-weight="700">-6.7</text>
+<text x="846" y="74" font-size="11.5" text-anchor="end" fill="#5e6675">300</text>
+<text x="20" y="111" font-size="12.5" text-anchor="start" fill="#1b2330">S1  Drop tool/environment cases (C4)</text>
+<line x1="474.295" y1="106" x2="584.362" y2="106" stroke="#d97706" stroke-width="2.4"/>
+<line x1="474.295" y1="99" x2="474.295" y2="113" stroke="#d97706" stroke-width="2.4"/>
+<line x1="584.362" y1="99" x2="584.362" y2="113" stroke="#d97706" stroke-width="2.4"/>
+<circle cx="529.329" cy="106" r="5.5" fill="#d97706"/>
+<text x="594.362" y="110" font-size="12" text-anchor="start" fill="#1b2330" font-weight="700">-7.4</text>
+<text x="846" y="110" font-size="11.5" text-anchor="end" fill="#5e6675">298</text>
+<rect x="10" y="124" width="850" height="36" rx="0" fill="#f6f7f9"/>
+<text x="20" y="147" font-size="12.5" text-anchor="start" fill="#1b2330">S2  Drop answer-language cases (C5)</text>
+<line x1="462.058" y1="142" x2="566.65" y2="142" stroke="#d97706" stroke-width="2.4"/>
+<line x1="462.058" y1="135" x2="462.058" y2="149" stroke="#d97706" stroke-width="2.4"/>
+<line x1="566.65" y1="135" x2="566.65" y2="149" stroke="#d97706" stroke-width="2.4"/>
+<circle cx="514.354" cy="142" r="5.5" fill="#d97706"/>
+<text x="576.65" y="146" font-size="12" text-anchor="start" fill="#1b2330" font-weight="700">-8.8</text>
+<text x="846" y="146" font-size="11.5" text-anchor="end" fill="#5e6675">294</text>
+<text x="20" y="183" font-size="12.5" text-anchor="start" fill="#1b2330">S3  Drop C4 + C5</text>
+<line x1="454.058" y1="178" x2="559.366" y2="178" stroke="#d97706" stroke-width="2.4"/>
+<line x1="454.058" y1="171" x2="454.058" y2="185" stroke="#d97706" stroke-width="2.4"/>
+<line x1="559.366" y1="171" x2="559.366" y2="185" stroke="#d97706" stroke-width="2.4"/>
+<circle cx="506.712" cy="178" r="5.5" fill="#d97706"/>
+<text x="569.366" y="182" font-size="12" text-anchor="start" fill="#1b2330" font-weight="700">-9.6</text>
+<text x="846" y="182" font-size="11.5" text-anchor="end" fill="#5e6675">292</text>
+<rect x="10" y="196" width="850" height="36" rx="0" fill="#f6f7f9"/>
+<text x="20" y="219" font-size="12.5" text-anchor="start" fill="#1b2330">S4  Drop C4 + C5 + C6</text>
+<line x1="450.017" y1="214" x2="555.687" y2="214" stroke="#d97706" stroke-width="2.4"/>
+<line x1="450.017" y1="207" x2="450.017" y2="221" stroke="#d97706" stroke-width="2.4"/>
+<line x1="555.687" y1="207" x2="555.687" y2="221" stroke="#d97706" stroke-width="2.4"/>
+<circle cx="502.852" cy="214" r="5.5" fill="#d97706"/>
+<text x="565.687" y="218" font-size="12" text-anchor="start" fill="#1b2330" font-weight="700">-10.0</text>
+<text x="846" y="218" font-size="11.5" text-anchor="end" fill="#5e6675">291</text>
+<text x="20" y="255" font-size="12.5" text-anchor="start" fill="#1b2330">S5  Credit Bangla answers (C5)</text>
+<line x1="464.917" y1="250" x2="570.833" y2="250" stroke="#d97706" stroke-width="2.4"/>
+<line x1="464.917" y1="243" x2="464.917" y2="257" stroke="#d97706" stroke-width="2.4"/>
+<line x1="570.833" y1="243" x2="570.833" y2="257" stroke="#d97706" stroke-width="2.4"/>
+<circle cx="516.167" cy="250" r="5.5" fill="#d97706"/>
+<text x="580.833" y="254" font-size="12" text-anchor="start" fill="#1b2330" font-weight="700">-8.7</text>
+<text x="846" y="254" font-size="11.5" text-anchor="end" fill="#5e6675">300</text>
+<rect x="10" y="268" width="850" height="36" rx="0" fill="#f6f7f9"/>
+<text x="20" y="291" font-size="12.5" text-anchor="start" fill="#1b2330">S6  S3, plus drop English format-failure subtasks</text>
+<line x1="526.154" y1="286" x2="620.018" y2="286" stroke="#5e6675" stroke-width="2.4"/>
+<line x1="526.154" y1="279" x2="526.154" y2="293" stroke="#5e6675" stroke-width="2.4"/>
+<line x1="620.018" y1="279" x2="620.018" y2="293" stroke="#5e6675" stroke-width="2.4"/>
+<circle cx="571.209" cy="286" r="5.5" fill="#5e6675"/>
+<text x="630.018" y="290" font-size="12" text-anchor="start" fill="#1b2330" font-weight="700">-3.3</text>
+<text x="846" y="290" font-size="11.5" text-anchor="end" fill="#5e6675">273</text>
+</svg>

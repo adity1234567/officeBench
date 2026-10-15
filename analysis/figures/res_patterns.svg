@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 540" role="img" font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" aria-label="How the four complete runs agree. 113 subtasks fail in all four and 48 pass in all four. The remaining 14 patterns each account for 2 to 28 subtasks.">
+<rect width="860" height="540" fill="#ffffff"/>
+<text x="190" y="30" font-size="11.5" text-anchor="middle" fill="#2d5a9b" font-weight="700">gemma</text>
+<text x="190" y="46" font-size="11.5" text-anchor="middle" fill="#2d5a9b">English</text>
+<text x="250" y="30" font-size="11.5" text-anchor="middle" fill="#d97706" font-weight="700">gemma</text>
+<text x="250" y="46" font-size="11.5" text-anchor="middle" fill="#d97706">Bangla</text>
+<text x="320" y="30" font-size="11.5" text-anchor="middle" fill="#2d5a9b" font-weight="700">gpt-oss</text>
+<text x="320" y="46" font-size="11.5" text-anchor="middle" fill="#2d5a9b">English</text>
+<text x="380" y="30" font-size="11.5" text-anchor="middle" fill="#1f8a8a" font-weight="700">gpt-oss</text>
+<text x="380" y="46" font-size="11.5" text-anchor="middle" fill="#1f8a8a">Bangla</text>
+<text x="470" y="40" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">subtasks (of 300)</text>
+<rect x="20" y="60" width="820" height="28" rx="0" fill="#f6f7f9"/>
+<circle cx="190" cy="74" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="250" cy="74" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="320" cy="74" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="380" cy="74" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<rect x="470" y="65" width="140" height="18" rx="0" fill="#d97706"/>
+<text x="618" y="79" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">113</text>
+<text x="664" y="79" font-size="11" text-anchor="start" fill="#5e6675">fail in all four</text>
+<circle cx="190" cy="102" r="7.5" fill="#2d5a9b"/>
+<circle cx="250" cy="102" r="7.5" fill="#d97706"/>
+<circle cx="320" cy="102" r="7.5" fill="#2d5a9b"/>
+<circle cx="380" cy="102" r="7.5" fill="#1f8a8a"/>
+<rect x="470" y="93" width="59.469" height="18" rx="0" fill="#8a93a3"/>
+<text x="537.469" y="107" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">48</text>
+<text x="664" y="107" font-size="11" text-anchor="start" fill="#5e6675">pass in all four</text>
+<rect x="20" y="116" width="820" height="28" rx="0" fill="#f6f7f9"/>
+<circle cx="190" cy="130" r="7.5" fill="#2d5a9b"/>
+<circle cx="250" cy="130" r="7.5" fill="#d97706"/>
+<circle cx="320" cy="130" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="380" cy="130" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<rect x="470" y="121" width="34.6903" height="18" rx="0" fill="#2d5a9b"/>
+<text x="512.69" y="135" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">28</text>
+<text x="664" y="135" font-size="11" text-anchor="start" fill="#5e6675">gemma only, both languages</text>
+<circle cx="190" cy="158" r="7.5" fill="#2d5a9b"/>
+<circle cx="250" cy="158" r="7.5" fill="#d97706"/>
+<circle cx="320" cy="158" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="380" cy="158" r="7.5" fill="#1f8a8a"/>
+<rect x="470" y="149" width="32.2124" height="18" rx="0" fill="#2d5a9b"/>
+<text x="510.212" y="163" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">26</text>
+<text x="664" y="163" font-size="11" text-anchor="start" fill="#5e6675">only gpt-oss English fails</text>
+<rect x="20" y="172" width="820" height="28" rx="0" fill="#f6f7f9"/>
+<circle cx="190" cy="186" r="7.5" fill="#2d5a9b"/>
+<circle cx="250" cy="186" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="320" cy="186" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="380" cy="186" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<rect x="470" y="177" width="22.3009" height="18" rx="0" fill="#2d5a9b"/>
+<text x="500.301" y="191" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">18</text>
+<text x="664" y="191" font-size="11" text-anchor="start" fill="#5e6675">only gemma English passes</text>
+<circle cx="190" cy="214" r="7.5" fill="#2d5a9b"/>
+<circle cx="250" cy="214" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="320" cy="214" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="380" cy="214" r="7.5" fill="#1f8a8a"/>
+<rect x="470" y="205" width="12.3894" height="18" rx="0" fill="#2d5a9b"/>
+<text x="490.389" y="219" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">10</text>
+<rect x="20" y="228" width="820" height="28" rx="0" fill="#f6f7f9"/>
+<circle cx="190" cy="242" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="250" cy="242" r="7.5" fill="#d97706"/>
+<circle cx="320" cy="242" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="380" cy="242" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<rect x="470" y="233" width="12.3894" height="18" rx="0" fill="#2d5a9b"/>
+<text x="490.389" y="247" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">10</text>
+<text x="664" y="247" font-size="11" text-anchor="start" fill="#5e6675">only gemma Bangla passes</text>
+<circle cx="190" cy="270" r="7.5" fill="#2d5a9b"/>
+<circle cx="250" cy="270" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="320" cy="270" r="7.5" fill="#2d5a9b"/>
+<circle cx="380" cy="270" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<rect x="470" y="261" width="9.9115" height="18" rx="0" fill="#2d5a9b"/>
+<text x="487.912" y="275" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">8</text>
+<rect x="20" y="284" width="820" height="28" rx="0" fill="#f6f7f9"/>
+<circle cx="190" cy="298" r="7.5" fill="#2d5a9b"/>
+<circle cx="250" cy="298" r="7.5" fill="#d97706"/>
+<circle cx="320" cy="298" r="7.5" fill="#2d5a9b"/>
+<circle cx="380" cy="298" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<rect x="470" y="289" width="8.67257" height="18" rx="0" fill="#2d5a9b"/>
+<text x="486.673" y="303" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">7</text>
+<circle cx="190" cy="326" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="250" cy="326" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="320" cy="326" r="7.5" fill="#2d5a9b"/>
+<circle cx="380" cy="326" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<rect x="470" y="317" width="8.67257" height="18" rx="0" fill="#2d5a9b"/>
+<text x="486.673" y="331" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">7</text>
+<rect x="20" y="340" width="820" height="28" rx="0" fill="#f6f7f9"/>
+<circle cx="190" cy="354" r="7.5" fill="#2d5a9b"/>
+<circle cx="250" cy="354" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="320" cy="354" r="7.5" fill="#2d5a9b"/>
+<circle cx="380" cy="354" r="7.5" fill="#1f8a8a"/>
+<rect x="470" y="345" width="7.43363" height="18" rx="0" fill="#2d5a9b"/>
+<text x="485.434" y="359" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">6</text>
+<circle cx="190" cy="382" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="250" cy="382" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="320" cy="382" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="380" cy="382" r="7.5" fill="#1f8a8a"/>
+<rect x="470" y="373" width="7.43363" height="18" rx="0" fill="#2d5a9b"/>
+<text x="485.434" y="387" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">6</text>
+<rect x="20" y="396" width="820" height="28" rx="0" fill="#f6f7f9"/>
+<circle cx="190" cy="410" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="250" cy="410" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="320" cy="410" r="7.5" fill="#2d5a9b"/>
+<circle cx="380" cy="410" r="7.5" fill="#1f8a8a"/>
+<rect x="470" y="401" width="6.19469" height="18" rx="0" fill="#2d5a9b"/>
+<text x="484.195" y="415" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">5</text>
+<circle cx="190" cy="438" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="250" cy="438" r="7.5" fill="#d97706"/>
+<circle cx="320" cy="438" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="380" cy="438" r="7.5" fill="#1f8a8a"/>
+<rect x="470" y="429" width="3.71681" height="18" rx="0" fill="#2d5a9b"/>
+<text x="481.717" y="443" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">3</text>
+<rect x="20" y="452" width="820" height="28" rx="0" fill="#f6f7f9"/>
+<circle cx="190" cy="466" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="250" cy="466" r="7.5" fill="#d97706"/>
+<circle cx="320" cy="466" r="7.5" fill="#2d5a9b"/>
+<circle cx="380" cy="466" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<rect x="470" y="457" width="3.71681" height="18" rx="0" fill="#2d5a9b"/>
+<text x="481.717" y="471" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">3</text>
+<circle cx="190" cy="494" r="7.5" fill="#ffffff" stroke="#5e6675" stroke-width="1.3"/>
+<circle cx="250" cy="494" r="7.5" fill="#d97706"/>
+<circle cx="320" cy="494" r="7.5" fill="#2d5a9b"/>
+<circle cx="380" cy="494" r="7.5" fill="#1f8a8a"/>
+<rect x="470" y="485" width="2.47788" height="18" rx="0" fill="#2d5a9b"/>
+<text x="480.478" y="499" font-size="12.5" text-anchor="start" fill="#1b2330" font-weight="700">2</text>
+<text x="20" y="528" font-size="12" text-anchor="start" fill="#5e6675">Filled dot = passes, open dot = fails; rows sorted by number of subtasks.</text>
+</svg>

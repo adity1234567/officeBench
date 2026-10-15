@@ -1,0 +1,167 @@
+{
+ "n_cases": 163,
+ "marginals": {
+  "OB gemma": {
+   "n": 42,
+   "stage": {
+    "exec": 6,
+    "final": 15,
+    "task": 18,
+    "control": 3
+   },
+   "cause": {
+    "C1": 6,
+    "C5": 15,
+    "C7": 7,
+    "C4": 5,
+    "C6": 3,
+    "C3": 6
+   }
+  },
+  "OB gpt-oss": {
+   "n": 25,
+   "stage": {
+    "exec": 3,
+    "control": 6,
+    "task": 13,
+    "final": 3
+   },
+   "cause": {
+    "C1": 7,
+    "C7": 9,
+    "C5": 6,
+    "C4": 2,
+    "C6": 1
+   }
+  },
+  "tau2 gemma": {
+   "n": 40,
+   "stage": {
+    "final": 1,
+    "exec": 10,
+    "task": 17,
+    "control": 12
+   },
+   "cause": {
+    "C3": 1,
+    "C6": 14,
+    "C1": 6,
+    "C2": 19
+   }
+  },
+  "tau2 gpt-oss": {
+   "n": 26,
+   "stage": {
+    "task": 16,
+    "exec": 3,
+    "unclear": 3,
+    "control": 4
+   },
+   "cause": {
+    "C6": 7,
+    "C1": 2,
+    "C7": 1,
+    "C2": 16
+   }
+  },
+  "WB gemma": {
+   "n": 7,
+   "stage": {
+    "exec": 2,
+    "task": 5
+   },
+   "cause": {
+    "C6": 3,
+    "C1": 2,
+    "C5": 1,
+    "C3": 1
+   }
+  },
+  "WB gpt-oss": {
+   "n": 15,
+   "stage": {
+    "control": 1,
+    "task": 2,
+    "exec": 12
+   },
+   "cause": {
+    "C6": 14,
+    "C1": 1
+   }
+  },
+  "TAC gemma": {
+   "n": 8,
+   "stage": {
+    "unclear": 1,
+    "exec": 2,
+    "control": 3,
+    "task": 2
+   },
+   "cause": {
+    "C3": 1,
+    "C7": 3,
+    "C6": 3,
+    "C4": 1
+   }
+  }
+ },
+ "stage_by_cause": {
+  "task": {
+   "C7": 7,
+   "C4": 2,
+   "C1": 16,
+   "C6": 17,
+   "C3": 7,
+   "C5": 4,
+   "C2": 20
+  },
+  "exec": {
+   "C1": 8,
+   "C4": 6,
+   "C6": 22,
+   "C2": 1,
+   "C7": 1
+  },
+  "control": {
+   "C7": 11,
+   "C2": 12,
+   "C6": 6
+  },
+  "final": {
+   "C5": 18,
+   "C3": 1
+  },
+  "unclear": {
+   "C7": 1,
+   "C2": 2,
+   "C3": 1
+  }
+ },
+ "C5_stages": {
+  "OB:Final response only": 18,
+  "OB:Instruction understanding": 2,
+  "OB:Entity or slot grounding": 1,
+  "WB:Planning": 1
+ },
+ "C2_stages": {
+  "tau2:Premature termination": 10,
+  "tau2:Entity or slot grounding": 7,
+  "tau2:Task constraint preservation": 7,
+  "tau2:Planning": 4,
+  "tau2:Tool selection": 1,
+  "tau2:Instruction understanding": 2,
+  "tau2:Unclear": 2,
+  "tau2:Result verification": 2
+ },
+ "final_response_causes": {
+  "OB:C5": 18,
+  "tau2:C3": 1
+ },
+ "premature_termination_causes": {
+  "OB:C7": 3,
+  "tau2:C2": 10,
+  "tau2:C6": 2,
+  "WB:C6": 1,
+  "TAC:C7": 1
+ }
+}

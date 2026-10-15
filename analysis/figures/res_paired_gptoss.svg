@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" role="img" font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" aria-label="Paired outcome of gpt-oss:20b English against Bangla. Overall 61 subtasks pass in both, 25 only in English, 45 only in Bangla and 169 fail in both.">
+<rect width="860" height="330" fill="#ffffff"/>
+<rect x="120" y="14" width="14" height="14" rx="0" fill="#c9d6ea"/>
+<text x="140" y="26" font-size="13" text-anchor="start" fill="#1b2330">both pass</text>
+<rect x="280" y="14" width="14" height="14" rx="0" fill="#d97706"/>
+<text x="300" y="26" font-size="13" text-anchor="start" fill="#1b2330">English only passes</text>
+<rect x="440" y="14" width="14" height="14" rx="0" fill="#1f8a8a"/>
+<text x="460" y="26" font-size="13" text-anchor="start" fill="#1b2330">Bangla only passes</text>
+<rect x="600" y="14" width="14" height="14" rx="0" fill="#dcdfe5"/>
+<text x="620" y="26" font-size="13" text-anchor="start" fill="#1b2330">both fail</text>
+<text x="108" y="80" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">All 300</text>
+<text x="108" y="96" font-size="11" text-anchor="end" fill="#5e6675">n = 300</text>
+<rect x="120" y="56" width="138.267" height="34" rx="0" fill="#c9d6ea"/>
+<text x="189.133" y="78" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">61</text>
+<rect x="258.267" y="56" width="56.6667" height="34" rx="0" fill="#d97706"/>
+<text x="286.6" y="78" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">25</text>
+<rect x="314.933" y="56" width="102" height="34" rx="0" fill="#1f8a8a"/>
+<text x="365.933" y="78" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">45</text>
+<rect x="416.933" y="56" width="383.067" height="34" rx="0" fill="#dcdfe5"/>
+<text x="608.467" y="78" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">169</text>
+<text x="108" y="138" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">Single-app</text>
+<text x="108" y="154" font-size="11" text-anchor="end" fill="#5e6675">n = 93</text>
+<rect x="120" y="114" width="233.978" height="34" rx="0" fill="#c9d6ea"/>
+<text x="236.989" y="136" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">32</text>
+<rect x="353.978" y="114" width="65.8065" height="34" rx="0" fill="#d97706"/>
+<text x="386.882" y="136" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">9</text>
+<rect x="419.785" y="114" width="131.613" height="34" rx="0" fill="#1f8a8a"/>
+<text x="485.591" y="136" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">18</text>
+<rect x="551.398" y="114" width="248.602" height="34" rx="0" fill="#dcdfe5"/>
+<text x="675.699" y="136" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">34</text>
+<text x="108" y="196" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">Two-app</text>
+<text x="108" y="212" font-size="11" text-anchor="end" fill="#5e6675">n = 95</text>
+<rect x="120" y="172" width="164.632" height="34" rx="0" fill="#c9d6ea"/>
+<text x="202.316" y="194" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">23</text>
+<rect x="284.632" y="172" width="100.211" height="34" rx="0" fill="#d97706"/>
+<text x="334.737" y="194" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">14</text>
+<rect x="384.842" y="172" width="128.842" height="34" rx="0" fill="#1f8a8a"/>
+<text x="449.263" y="194" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">18</text>
+<rect x="513.684" y="172" width="286.316" height="34" rx="0" fill="#dcdfe5"/>
+<text x="656.842" y="194" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">40</text>
+<text x="108" y="254" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">Three-app</text>
+<text x="108" y="270" font-size="11" text-anchor="end" fill="#5e6675">n = 112</text>
+<rect x="120" y="230" width="36.4286" height="34" rx="0" fill="#c9d6ea"/>
+<text x="138.214" y="252" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">6</text>
+<rect x="156.429" y="230" width="12.1429" height="34" rx="0" fill="#d97706"/>
+<text x="162.5" y="226" font-size="12" text-anchor="middle" fill="#1b2330" font-weight="700">2</text>
+<rect x="168.571" y="230" width="54.6429" height="34" rx="0" fill="#1f8a8a"/>
+<text x="195.893" y="252" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">9</text>
+<rect x="223.214" y="230" width="576.786" height="34" rx="0" fill="#dcdfe5"/>
+<text x="511.607" y="252" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">95</text>
+<text x="120" y="306" font-size="12" text-anchor="start" fill="#5e6675">Amber is English-only passes, teal is Bangla-only passes: for gpt-oss the teal segment is the larger one at every size.</text>
+</svg>

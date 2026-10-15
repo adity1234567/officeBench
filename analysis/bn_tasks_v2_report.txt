@@ -1,0 +1,6 @@
+Re-translated 298 task instructions with gemma4:31b (guidelines v2).
+Changed vs previous cache: 294
+Passed all automatic checks: 298
+Still with issues: 0
+Bengali digits auto-converted to ASCII: 0
+Needed a retry: 1

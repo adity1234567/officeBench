@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 470" role="img" color="#1b2330"
+     font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif"
+     aria-label="The pipeline in five steps. Collect tasks, run agents, score runs, characterize failures, compare and report. Each step takes the previous step's output: tasks and start files, then a trace and final files, then pass or fail per run, then one root-cause code per failure, then findings and fixes.">
+  <defs><marker id="sparrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+    <text x="12" y="32" font-size="17" fill="currentColor" font-weight="700" pointer-events="none">How the study works, step by step</text>
+    <text x="12" y="52" font-size="11.5" fill="currentColor" fill-opacity=".65" pointer-events="none">each step hands its output to the next</text>
+  <g id="s-1" class="s-step" data-step="1" transform="translate(12,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">1</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Collect tasks</text>
+    <rect x="30" y="56" width="32" height="44" rx="3" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <line x1="36" y1="68" x2="56" y2="68" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="36" y1="77" x2="56" y2="77" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="36" y1="86" x2="56" y2="86" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <rect x="70" y="62" width="32" height="44" rx="3" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <line x1="76" y1="74" x2="96" y2="74" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="76" y1="83" x2="96" y2="83" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="76" y1="92" x2="96" y2="92" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <rect x="110" y="56" width="32" height="44" rx="3" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <line x1="116" y1="68" x2="136" y2="68" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="116" y1="77" x2="136" y2="77" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="116" y1="86" x2="136" y2="86" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Office tasks that need one</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">or more apps</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">A fixed benchmark of subtasks</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">in calendar, Excel, Word, PDF,</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">email, OCR and shell.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="The agent is always given the same tasks, so runs can be compared."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">tasks + start files</text>
+  </g>
+  <line id="s-a1" class="s-arrow" x1="215" y1="240" x2="243" y2="240" stroke="currentColor" stroke-opacity=".55" stroke-width="1.8" marker-end="url(#sparrow)"/>
+  <g id="s-2" class="s-step" data-step="2" transform="translate(246,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">2</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Run agents</text>
+    <rect x="24" y="62" width="48" height="26" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="48" y="79" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">prompt</text>
+    <line x1="73" y1="75" x2="79" y2="75" stroke="currentColor" stroke-opacity=".7" stroke-width="1.3" marker-end="url(#sparrow)"/>
+    <rect x="80" y="62" width="48" height="26" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="104" y="79" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">action</text>
+    <line x1="129" y1="75" x2="135" y2="75" stroke="currentColor" stroke-opacity=".7" stroke-width="1.3" marker-end="url(#sparrow)"/>
+    <rect x="136" y="62" width="48" height="26" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="160" y="79" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">result</text>
+    <path d="M140 90 V 104 H 48 V 92" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2" marker-end="url(#sparrow)"/>
+    <text x="94" y="118" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6" pointer-events="none">repeat</text>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">A model works the task</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">inside a container</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">Loop: read prompt, write a</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">thought and one JSON action,</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">app executes it. Up to 20 steps.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="Models and prompt languages are the only thing that changes between runs."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">trace + final files</text>
+  </g>
+  <line id="s-a2" class="s-arrow" x1="449" y1="240" x2="477" y2="240" stroke="currentColor" stroke-opacity=".55" stroke-width="1.8" marker-end="url(#sparrow)"/>
+  <g id="s-3" class="s-step" data-step="3" transform="translate(480,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">3</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Score runs</text>
+    <rect x="24" y="60" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/>
+    <text x="41" y="84" font-size="17" fill="currentColor" font-weight="700" text-anchor="middle" fill-opacity=".75" pointer-events="none">✓</text>
+    <rect x="66" y="60" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/>
+    <text x="83" y="84" font-size="17" fill="currentColor" font-weight="700" text-anchor="middle" fill-opacity=".75" pointer-events="none">✓</text>
+    <rect x="108" y="60" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/>
+    <text x="125" y="84" font-size="17" fill="#d97706" font-weight="700" text-anchor="middle" fill-opacity=".9" pointer-events="none">✗</text>
+    <rect x="150" y="60" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2"/>
+    <text x="167" y="84" font-size="17" fill="currentColor" font-weight="700" text-anchor="middle" fill-opacity=".75" pointer-events="none">✓</text>
+    <text x="96" y="114" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".6" pointer-events="none">one check per file</text>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Decide pass or fail for</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">every run</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">Run the benchmark’s own checks</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">on the final files, after fixing</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">defects in the scoring code.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="Scoring is repaired first so a failure means the same thing in every run."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">pass / fail per run</text>
+  </g>
+  <line id="s-a3" class="s-arrow" x1="683" y1="240" x2="711" y2="240" stroke="currentColor" stroke-opacity=".55" stroke-width="1.8" marker-end="url(#sparrow)"/>
+  <g id="s-4" class="s-step" data-step="4" transform="translate(714,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">4</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Characterize failures</text>
+    <rect x="24" y="56" width="56" height="42" rx="4" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="52" y="72" font-size="9.5" fill="currentColor" text-anchor="middle" fill-opacity=".8" pointer-events="none">trace</text>
+    <line x1="32" y1="82" x2="72" y2="82" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="32" y1="90" x2="72" y2="90" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="84" y1="77" x2="104" y2="77" stroke="currentColor" stroke-opacity=".7" stroke-width="1.3" marker-end="url(#sparrow)"/>
+    <rect x="108" y="62" width="56" height="30" rx="15" fill="#d97706" fill-opacity=".14" stroke="currentColor" stroke-opacity=".9" stroke-width="1.2"/>
+    <text x="136" y="82" font-size="10" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">one code</text>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">Find why each failed run</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">failed</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">Read the trace against the task,</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">ask if the output was right, then</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">assign one primary root cause.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="Two annotators coded a sample independently to check the codes are reliable."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">one code per failure</text>
+  </g>
+  <line id="s-a4" class="s-arrow" x1="917" y1="240" x2="945" y2="240" stroke="currentColor" stroke-opacity=".55" stroke-width="1.8" marker-end="url(#sparrow)"/>
+  <g id="s-5" class="s-step" data-step="5" transform="translate(948,70)">
+    <rect class="s-card" x="0" y="0" width="200" height="340" rx="8" fill="currentColor" fill-opacity=".035" stroke="currentColor" stroke-opacity=".3"/>
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#d97706" fill-opacity=".16"/>
+    <rect x="0" y="22" width="200" height="12" fill="#d97706" fill-opacity=".16"/>
+    <circle cx="20" cy="17" r="11" fill="#d97706"/>
+    <text x="20" y="21.5" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff" pointer-events="none">5</text>
+    <text x="38" y="22" font-size="13" fill="currentColor" font-weight="700" pointer-events="none">Compare and report</text>
+    <rect x="30" y="78" width="20" height="20" rx="2" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="58" y="60" width="20" height="38" rx="2" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="86" y="70" width="20" height="28" rx="2" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="114" y="54" width="20" height="44" rx="2" fill="currentColor" fill-opacity=".28" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="142" y="82" width="20" height="16" rx="2" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+    <rect x="114" y="54" width="20" height="44" rx="2" fill="#d97706" fill-opacity=".22" stroke="currentColor" stroke-opacity=".95" stroke-width="1.2"/>
+    <line x1="24" y1="98" x2="168" y2="98" stroke="currentColor" stroke-opacity=".35"/>
+    <text x="14" y="150" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">WHAT</text>
+    <text x="14" y="168" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">See what repeats across</text>
+    <text x="14" y="183" font-size="11" fill="currentColor" font-weight="700" pointer-events="none">runs</text>
+    <text x="14" y="214" font-size="9.5" fill="#d97706" font-weight="700" pointer-events="none">HOW</text>
+    <text x="14" y="231" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">Line up codes by subtask, model</text>
+    <text x="14" y="247" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">and language to separate shared</text>
+    <text x="14" y="263" font-size="10.5" fill="currentColor" fill-opacity=".82" pointer-events="none">causes from model-specific ones.</text>
+    <rect class="s-out" x="14" y="286" width="172" height="26" rx="13" fill="#d97706" fill-opacity=".1" stroke="#d97706" stroke-opacity=".5" data-detail="The comparison says whether to fix the benchmark or the agent first."/>
+    <text x="100" y="303" font-size="10.5" fill="#d97706" font-weight="700" text-anchor="middle" pointer-events="none">findings + fixes</text>
+  </g>
+</svg>

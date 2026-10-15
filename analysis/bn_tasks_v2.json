@@ -1,0 +1,1790 @@
+{
+ "Add the sentence \"This is a test sentence for task 1-15-0.\" to the end of house_creak.docx.": {
+  "bn": "house_creak.docx-এর শেষে \"This is a test sentence for task 1-15-0.\" বাক্যটি যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Add a meeting to Bob's calendar at 5/17/2024 10:30 a.m to 11:00 a.m": {
+  "bn": "Bob-এর ক্যালেন্ডারে 5/17/2024 সকাল 10:30 থেকে সকাল 11:00 পর্যন্ত একটি মিটিং যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Analyze Excel data of students' grade and generate a teaching report in teaching.docx, convert to teaching.pdf": {
+  "bn": "ছাত্রদের গ্রেডের Excel ডেটা বিশ্লেষণ করুন এবং teaching.docx-এ একটি টিচিং রিপোর্ট তৈরি করুন, তারপর সেটিকে teaching.pdf-এ কনভার্ট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Analyze Excel data of students' grade and generate a teaching report in teaching.docx": {
+  "bn": "ছাত্রদের গ্রেডের Excel ডাটা বিশ্লেষণ করুন এবং teaching.docx-এ একটি টিচিং রিপোর্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Analyze housing price and print the lowest price in lowest.txt": {
+  "bn": "হাউজিং প্রাইস অ্যানালাইসিস করুন এবং সর্বনিম্ন দামটি lowest.txt-এ প্রিন্ট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Analyze relationship between revenues and sales unit, regions. Save the results in relationship.txt.": {
+  "bn": "revenues এবং sales unit, regions-এর মধ্যে সম্পর্ক বিশ্লেষণ করুন। ফলাফলগুলো relationship.txt-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Analyze relationship between sleeping hours and age, weight, gender from survey result, save report as report.jpg": {
+  "bn": "সার্ভে রেজাল্ট থেকে ঘুমের ঘণ্টা এবং বয়স, ওজন, লিঙ্গের মধ্যে সম্পর্ক বিশ্লেষণ করুন, এবং রিপোর্টটি report.jpg হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Analyze relationship between revenues and sales unit, regions, save your results in the analysis.txt and put it in a folder named report": {
+  "bn": "revenues এবং sales unit, regions-এর মধ্যে সম্পর্ক বিশ্লেষণ করুন, আপনার ফলাফলগুলো analysis.txt-এ সেভ করুন এবং সেটি report নামের একটি ফোল্ডারে রাখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Analyze relationship between sleeping hours and age, weight, gender from survey result, convert report to report.docx file": {
+  "bn": "সার্ভে রেজাল্ট থেকে ঘুমের ঘণ্টা এবং বয়স, ওজন, লিঙ্গের মধ্যে সম্পর্ক বিশ্লেষণ করুন, এবং রিপোর্টটি report.docx ফাইলে রূপান্তর করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Analyze relationship between revenues and sales unit, regions, save as an image post named analyze.jpg": {
+  "bn": "revenues এবং sales unit, regions-এর মধ্যে সম্পর্ক বিশ্লেষণ করুন, এবং analyze.jpg নামে একটি ইমেজ পোস্ট হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Bob and Tom need to shopping, help they find one hour at 5/1/2024": {
+  "bn": "Bob এবং Tom-এর শপিং করা প্রয়োজন, 5/1/2024 তারিখে তাদের জন্য এক ঘণ্টা সময় খুঁজে পেতে সাহায্য করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Bob was invited to party hold by Jane Doe, send an email from Jane to Bob to notify Bob, make a post welcome.jpg for Bob": {
+  "bn": "Jane Doe-এর আয়োজিত পার্টিতে Bob-কে আমন্ত্রণ জানানো হয়েছে, Jane-এর পক্ষ থেকে Bob-কে জানানোর জন্য একটি ইমেইল পাঠান, এবং Bob-এর জন্য একটি welcome.jpg পোস্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Bob has a travelling from 6/19/2024 to 6/23/2024 at Florida, set as a calendar event": {
+  "bn": "Bob-এর 6/19/2024 থেকে 6/23/2024 পর্যন্ত Florida-তে ভ্রমণ আছে, এটি একটি ক্যালেন্ডার ইভেন্ট হিসেবে সেট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Calculate variance of all participants' ages listed in the survey pdf. the answer needs to be saved in a file named var.txt.": {
+  "bn": "সার্ভে PDF-এ তালিকাভুক্ত সকল অংশগ্রহণকারীর বয়সের variance গণনা করুন। উত্তরটি var.txt নামে একটি ফাইলে সেভ করতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Bob was invited to party hold by Jane Doe, send an email party.eml to Bob to notify Bob": {
+  "bn": "Jane Doe-এর আয়োজন করা পার্টিতে Bob-কে আমন্ত্রণ জানানো হয়েছে, Bob-কে জানানোর জন্য party.eml ইমেইলটি Bob-এর কাছে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Check if the submitted fellowship application PDF material satisfies the school policy, write yes or no in result.docx, and email application to officer in application.eml": {
+  "bn": "জমা দেওয়া fellowship application PDF ম্যাটেরিয়ালটি স্কুলের পলিসি মেনে চলে কি না তা যাচাই করুন, result.docx-এ yes অথবা no লিখুন, এবং application.eml-এর মাধ্যমে অফিসারকে অ্যাপ্লিকেশনটি ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Check if the submitted fellowship application PDF material satisfies the school policy, write yes or no in result.docx, and schedule a meeting with officer at 1:00 p.m 5/31/2024, save in meeting.ics": {
+  "bn": "জমা দেওয়া fellowship application PDF ম্যাটেরিয়ালটি স্কুলের পলিসি মেনে চলে কি না তা যাচাই করুন, result.docx-এ yes অথবা no লিখুন, এবং 5/31/2024 দুপুর 1:00 টায় officer-এর সাথে একটি মিটিং শিডিউল করুন, এটি meeting.ics-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Check if the submitted fellowship application PDF material satisfies the school policy, write yes or no in result.docx, save application into folder named application": {
+  "bn": "জমা দেওয়া fellowship application PDF ম্যাটেরিয়ালটি স্কুলের পলিসি মেনে চলে কি না তা যাচাই করুন, result.docx-এ yes অথবা no লিখুন, এবং application-টি application নামের ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Check my emails, what is my score of project2?": {
+  "bn": "আমার ইমেইলগুলো দেখুন, project2-এ আমার স্কোর কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Check satisfying score in the survey. What age has highest score.": {
+  "bn": "সার্ভে-তে satisfying score চেক করুন। কোন বয়সের স্কোর সবচেয়ে বেশি।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Check student grade in midterm1, write top-5 students' names in list.docx": {
+  "bn": "midterm1-এ স্টুডেন্ট গ্রেড চেক করুন, এবং top-5 স্টুডেন্টের নাম list.docx-এ লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Can Bob and Tom have dinner together at 5/1/2024? Add a common time on their calendar.": {
+  "bn": "Bob এবং Tom কি 5/1/2024 তারিখে একসাথে ডিনার করতে পারবেন? তাদের ক্যালেন্ডারে একটি কমন সময় যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Check the emails, and let me know if my rent is due. Yes or no?": {
+  "bn": "ইমেইলগুলো দেখুন, এবং আমাকে জানান আমার ভাড়া বাকি আছে কি না। Yes or no?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Check the emails, and let me know if my scholarship application is approved. Yes or no?": {
+  "bn": "ইমেইলগুলো দেখুন, এবং আমাকে জানান আমার স্কলারশিপ অ্যাপ্লিকেশন অনুমোদিত হয়েছে কি না। Yes or no?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Check the total due in Invoice_2.pdf and save it in costs.xlsx": {
+  "bn": "Invoice_2.pdf-এ মোট বকেয়া (total due) কত তা দেখুন এবং সেটি costs.xlsx-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Collect all contact cards, save their information in contact.xlsx, save in alphabetic order by name, first header is name, save in folder named contacts": {
+  "bn": "সবগুলো কন্টাক্ট কার্ড সংগ্রহ করুন, তাদের তথ্য contact.xlsx-এ সেভ করুন, নামের বর্ণানুক্রমিক ক্রমে সেভ করুন, প্রথম হেডার হবে name, এবং contacts নামের ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Collect all contact cards except Tom's, save their information in contact.xlsx": {
+  "bn": "Tom-এর কার্ডটি বাদে বাকি সব কন্টাক্ট কার্ড সংগ্রহ করুন, এবং তাদের তথ্য contact.xlsx-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Collect all contact cards except Tom's, save their information in contact.xlsx, first header is name, save in alphabetic order by name, send contact.xlsx to Tom via contact.eml for information": {
+  "bn": "Tom-এর কার্ড বাদে বাকি সব কন্টাক্ট কার্ড সংগ্রহ করুন, তাদের তথ্য contact.xlsx-এ সেভ করুন, প্রথম হেডার হবে name, নামের বর্ণানুক্রমিক ক্রমে সেভ করুন, এবং তথ্যের জন্য contact.xlsx ফাইলটি contact.eml-এর মাধ্যমে Tom-কে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Collect car trading records and only organize the information about the car I bought into car_records.xlsx": {
+  "bn": "কার ট্রেডিং রেকর্ডগুলো সংগ্রহ করুন এবং শুধুমাত্র আমার কেনা গাড়িটির তথ্য car_records.xlsx-এ সাজান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Collect car trading records and organize them into car_records.xlsx, schedule a meeting meeting.ics between the first case buyer and seller at 6/1/2024 1:00 p.m": {
+  "bn": "গাড়ির ট্রেডিং রেকর্ডগুলো সংগ্রহ করুন এবং সেগুলো car_records.xlsx-এ গুছিয়ে রাখুন, এবং প্রথম কেসের ক্রেতা ও বিক্রেতার মধ্যে 6/1/2024 দুপুর 1:00 টায় একটি meeting.ics মিটিং শিডিউল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Compare income and expenditure based on company trading record, email a short analysis to manager Alice (Alice@abc.com)": {
+  "bn": "কোম্পানির ট্রেডিং রেকর্ডের ভিত্তিতে আয় এবং ব্যয়ের তুলনা করুন, এবং একটি সংক্ষিপ্ত বিশ্লেষণ ম্যানেজার Alice-এর (Alice@abc.com) কাছে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Compare income and expenditure based on company trading record. Larger or smaller? Answer the question with `larger` or `smaller`": {
+  "bn": "company trading record-এর ভিত্তিতে আয় এবং ব্যয়ের তুলনা করুন। Larger or smaller? প্রশ্নটির উত্তর `larger` অথবা `smaller` দিয়ে দিন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Compare income and expenditure based on company trading record, write a short analysis and save it as trading_record_post.jpg in folder named trading_account": {
+  "bn": "কোম্পানির trading record-এর ভিত্তিতে আয় এবং ব্যয়ের তুলনা করুন, একটি সংক্ষিপ্ত বিশ্লেষণ লিখুন এবং এটি trading_account নামের ফোল্ডারে trading_record_post.jpg হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Convert Excel spreadsheet containing financial data to report.pdf for archival purposes, and save pdf file under folder financial": {
+  "bn": "আর্কাইভ করার উদ্দেশ্যে ফিন্যান্সিয়াল ডেটা সম্বলিত Excel স্প্রেডশিটটিকে report.pdf-এ কনভার্ট করুন, এবং PDF ফাইলটি financial ফোল্ডারের অধীনে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Convert Excel spreadsheet containing project tasks to task.pdf and email Alice.eml containing pdf file for review": {
+  "bn": "প্রজেক্ট টাস্ক সম্বলিত Excel স্প্রেডশিটটিকে task.pdf-এ রূপান্তর করুন এবং রিভিউ করার জন্য pdf ফাইলটিসহ Alice.eml-এ ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Convert PDF invoices to invoices.xlsx, analyze payment trends, and generate a report.docx for financial review": {
+  "bn": "PDF ইনভয়েসগুলোকে invoices.xlsx-এ কনভার্ট করুন, পেমেন্ট ট্রেন্ড বিশ্লেষণ করুন, এবং ফিন্যান্সিয়াল রিভিউয়ের জন্য একটি report.docx তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Convert meeting agenda from calendar into Excel file meeting_agenda.xlsx for further analysis": {
+  "bn": "ক্যালেন্ডার থেকে মিটিং এজেন্ডাটি পরবর্তী বিশ্লেষণের জন্য Excel ফাইল meeting_agenda.xlsx-এ রূপান্তর করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Convert Word document containing employee training manuals to manual.pdf and distribute it to Alice via email Alice.eml": {
+  "bn": "কর্মচারীদের ট্রেনিং ম্যানুয়াল সংবলিত Word ডকুমেন্টটি manual.pdf-এ রূপান্তর করুন এবং ইমেইল Alice.eml-এর মাধ্যমে Alice-এর কাছে পাঠিয়ে দিন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Convert meeting agenda from calendar into Excel file meeting_agenda.xlsx for further analysis, create an image post agenda.jpg": {
+  "bn": "ক্যালেন্ডার থেকে মিটিং এজেন্ডাটি আরও বিশ্লেষণের জন্য Excel ফাইল meeting_agenda.xlsx-এ রূপান্তর করুন, এবং একটি ইমেজ পোস্ট agenda.jpg তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Convert student homework word documents to PDF and rename them into same name with .pdf suffix": {
+  "bn": "ছাত্রদের হোমওয়ার্ক Word ডকুমেন্টগুলোকে PDF-এ রূপান্তর করুন এবং সেগুলোকে একই নামে .pdf সাফিক্স দিয়ে রিনেম করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Convert meeting agenda from calendar into Excel file meeting_agenda.xlsx for further analysis, email it to manager Rena": {
+  "bn": "ক্যালেন্ডার থেকে মিটিং এজেন্ডাটি পরবর্তী বিশ্লেষণের জন্য Excel ফাইল meeting_agenda.xlsx-এ রূপান্তর করুন, এবং এটি ম্যানেজার Rena-কে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Create a new word file called random_paragraph.docx and add the content in random_paragraph.txt to it.": {
+  "bn": "random_paragraph.docx নামে একটি নতুন Word ফাইল তৈরি করুন এবং random_paragraph.txt-এর বিষয়বস্তু এতে যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Convert student homework word documents to PDF and rename them into same name with .pdf suffix, convert to images with same name": {
+  "bn": "ছাত্রদের হোমওয়ার্ক Word ডকুমেন্টগুলোকে PDF-এ রূপান্তর করুন এবং সেগুলোকে একই নামে .pdf সাফিক্স দিয়ে রিনেম করুন, এবং একই নামে ইমেজ-এ রূপান্তর করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Create meeting agenda from Excel data and add it to my calendar": {
+  "bn": "Excel ডাটা থেকে মিটিং এজেন্ডা তৈরি করুন এবং এটি আমার ক্যালেন্ডারে যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Create a new word file called test.docx and add the sentence \"This is a test file for task 1-16-1.\".": {
+  "bn": "test.docx নামে একটি নতুন Word ফাইল তৈরি করুন এবং এতে \"This is a test file for task 1-16-1.\" বাক্যটি যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Create meeting agenda from Excel data and add it to my calendar and email to the participants emails as reminders, separately.": {
+  "bn": "Excel ডাটা থেকে মিটিং এজেন্ডা তৈরি করুন এবং এটি আমার ক্যালেন্ডারে যোগ করুন এবং অংশগ্রহণকারীদের ইমেইল অ্যাড্রেসগুলোতে রিমাইন্ডার হিসেবে আলাদা আলাদাভাবে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Do these calendar events have time conflicts? write confliction on schedule.docx, or combine all schedules in that docx file": {
+  "bn": "এই ক্যালেন্ডার ইভেন্টগুলোর কি সময়ের সংঘাত (time conflicts) আছে? schedule.docx-এ confliction লিখুন, অথবা ওই docx ফাইলে সব শিডিউল একত্রিত করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Does the submitted fellowship application PDF material satisfie the school policy?": {
+  "bn": "জমা দেওয়া fellowship application PDF ম্যাটেরিয়ালটি কি স্কুলের পলিসি মেনে চলে?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Does the reimbursement amount exceed the company budget? Yes or No?": {
+  "bn": "রিইম্বার্সমেন্টের পরিমাণ কি কোম্পানির বাজেটের বেশি? Yes or No?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract Bill's previous courses from Bill_course_list.xlsx, and put the course in classes_taken.docx. Each course should be on a seperate line.": {
+  "bn": "Bill_course_list.xlsx থেকে Bill-এর আগের কোর্সগুলো বের করুন, এবং কোর্সগুলো classes_taken.docx-এ লিখুন। প্রতিটি কোর্স আলাদা লাইনে হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract a student's previous courses from Excel, suggest four courses he should take this quarter and put it in classes.docx, email classes.docx to student. The email file should have the name thomas.eml.": {
+  "bn": "Excel থেকে একজন ছাত্রের আগের কোর্সগুলো বের করুন, এই কোয়ার্টারে তার কোন চারটি কোর্স নেওয়া উচিত তার পরামর্শ দিন এবং তা classes.docx-এ লিখুন, তারপর classes.docx ফাইলটি ছাত্রটিকে ইমেইল করুন। ইমেইল ফাইলটির নাম thomas.eml হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract admitted applicant's name and email, write Graduate Program Admission Letter with applicant's name in admission.pdf, and send it to applicant's email admission.eml under folder using their last name": {
+  "bn": "গৃহীত আবেদনকারীর নাম এবং ইমেইল বের করুন, আবেদনকারীর নামসহ একটি Graduate Program Admission Letter লিখে admission.pdf-এ সেভ করুন, এবং এটি আবেদনকারীর ইমেইলে admission.eml হিসেবে তাদের শেষ নাম (last name) ব্যবহার করে ফোল্ডারের অধীনে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract data from PDF invoice (Invoice.pdf) and put the total due in file costs.xlsx": {
+  "bn": "PDF ইনভয়েস (Invoice.pdf) থেকে ডেটা বের করুন এবং মোট বকেয়া (total due) costs.xlsx ফাইলে লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract data from a PDF financial report, analyze it in report.xlsx, and create a summary in summary.docx": {
+  "bn": "একটি PDF ফিন্যান্সিয়াল রিপোর্ট থেকে ডেটা বের করুন, report.xlsx-এ সেটি অ্যানালাইজ করুন, এবং summary.docx-এ একটি সামারি তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract data from PDF invoices from sales and sum all the costs in file costs.xlsx, if cost in larger than 1300$, email to Bob with subject 'Costs'": {
+  "bn": "sales-এর PDF ইনভয়েসগুলো থেকে ডেটা বের করুন এবং সব খরচ costs.xlsx ফাইলে যোগ করুন, যদি খরচ 1300$-এর বেশি হয়, তবে 'Costs' সাবজেক্ট লিখে Bob-কে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract key points from PDF research papers, summarize them in abstract.docx, and save it for reference, schedule a meeting saved in meeting.ics with professor Dan at 5/31/2024 at 11:00 a.m to talk about paper": {
+  "bn": "PDF রিসার্চ পেপারগুলো থেকে মূল পয়েন্টগুলো বের করুন, সেগুলো abstract.docx-এ সামারাইজ করুন এবং রেফারেন্সের জন্য সেভ করুন, এবং পেপারটি নিয়ে আলোচনা করার জন্য professor Dan-এর সাথে meeting.ics-এ সেভ করা মিটিংটি 5/31/2024 সকাল 11:00 টায় শিডিউল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract key points from PDF research papers, summarize them in abstract.docx, and save it in email to professor Dan named paper.eml": {
+  "bn": "PDF রিসার্চ পেপারগুলো থেকে মূল পয়েন্টগুলো বের করুন, সেগুলোকে abstract.docx-এ সামারাইজ করুন, এবং এটি professor Dan-এর ইমেইলে paper.eml নামে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract key points from PDF research papers, summarize them in paper.docx, and save it for reference": {
+  "bn": "PDF রিসার্চ পেপারগুলো থেকে মূল পয়েন্টগুলো বের করুন, সেগুলোকে paper.docx-এ সামারাইজ করুন, এবং রেফারেন্সের জন্য এটি সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract schedule from PDF and add it to a text file meeting_agenda.txt, also save it in folder named meetings": {
+  "bn": "PDF থেকে শিডিউলটি বের করুন এবং এটি meeting_agenda.txt নামক একটি টেক্সট ফাইলে যোগ করুন, সেই সাথে এটি meetings নামক ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract schedule from PDF and add it to a calendar meeting_agenda.ics, also save it as agenda.jpg": {
+  "bn": "PDF থেকে শিডিউলটি বের করুন এবং এটি একটি ক্যালেন্ডার meeting_agenda.ics-এ যোগ করুন, সেই সাথে এটি agenda.jpg হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract text from PDF and insert it to a new Word file of the same name.": {
+  "bn": "PDF থেকে টেক্সট বের করুন এবং একই নামের একটি নতুন Word ফাইলে সেটি ইনসার্ট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract schedule from PDF and add it to my calendar.": {
+  "bn": "PDF থেকে শিডিউলটি বের করুন এবং এটি আমার ক্যালেন্ডারে যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract text from invitation_letter.pdf and put it in a new word file invitation_letter.docx.": {
+  "bn": "invitation_letter.pdf থেকে টেক্সট বের করুন এবং সেটি একটি নতুন Word ফাইল invitation_letter.docx-এ রাখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract the courses Bill has previously taken from the Excel sheet Bill_course_lists.xlsx and transfer them to classes_taken.docx. Each course should be on a seperate line.": {
+  "bn": "Excel শিট Bill_course_lists.xlsx থেকে Bill-এর আগে নেওয়া কোর্সগুলো বের করুন এবং সেগুলো classes_taken.docx-এ স্থানান্তর করুন। প্রতিটি কোর্স আলাদা লাইনে হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract the score and name then calculate the average score in excel score.xlsx": {
+  "bn": "score.xlsx নামক Excel ফাইল থেকে স্কোর এবং নাম বের করুন এবং তারপর গড় স্কোর গণনা করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract the student ID from docx then rename this docx file to {ID}.docx where the ID is the student ID.": {
+  "bn": "docx থেকে student ID বের করুন তারপর এই docx ফাইলটির নাম পরিবর্তন করে {ID}.docx করুন যেখানে ID হলো student ID।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract the score and name from pdf then calculate the score in excel score.xlsx, convert to score.docx": {
+  "bn": "PDF থেকে স্কোর এবং নাম বের করুন তারপর Excel score.xlsx-এ স্কোরটি গণনা করুন, এবং score.docx-এ রূপান্তর করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Extract the student name from docx then rename this pdf to {name}.pdf in shell, email teacher Alice with pdf file": {
+  "bn": "docx থেকে ছাত্রের নাম বের করুন তারপর shell-এ এই pdf-টির নাম পরিবর্তন করে {name}.pdf করুন, এবং শিক্ষক Alice-কে pdf ফাইলটি ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Find a common time for Bob and Tom to have an one hour zoom meeting on 5/1/2024": {
+  "bn": "5/1/2024 তারিখে Bob এবং Tom-এর জন্য এক ঘণ্টার একটি zoom মিটিং করার জন্য একটি কমন সময় খুঁজে বের করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Find all students from CS161_roster.csv who are CS major, and put their name and Student ID in cs_class_2024.docx. Each student should be on seperate lines, with the format `Student ID, name`.": {
+  "bn": "CS161_roster.csv থেকে সেই সব ছাত্রছাত্রীদের খুঁজে বের করুন যারা CS major, এবং তাদের নাম এবং Student ID cs_class_2024.docx-এ লিখুন। প্রতিটি ছাত্রছাত্রীকে আলাদা লাইনে `Student ID, name` ফরম্যাটে লিখতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Find all students who are taking CS161 and put the name and Student ID of students into students.docx. Each student should be on seperate lines, with the format `Student ID, name`.": {
+  "bn": "যারা CS161 নিচ্ছেন এমন সব ছাত্রছাত্রীদের খুঁজে বের করুন এবং তাদের নাম এবং Student ID students.docx-এ লিখুন। প্রতিটি ছাত্রছাত্রীকে আলাদা লাইনে `Student ID, name` ফরম্যাটে লিখতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Find all students from CS161_roster.csv whose final_exam is 100, and put their name and student id in makeup_exam_list.docx. Each student should be on seperate lines, with the format `student id, name`.": {
+  "bn": "CS161_roster.csv থেকে সেই সব ছাত্রছাত্রীদের খুঁজে বের করুন যাদের final_exam 100, এবং তাদের নাম ও student id makeup_exam_list.docx-এ লিখুন। প্রতিটি ছাত্রছাত্রীকে আলাদা লাইনে `student id, name` ফরম্যাটে লিখতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Find all students who are taking CS161 and put the name and student ID of students into students.docx, save in folder CS161": {
+  "bn": "যেসব ছাত্র CS161 কোর্সটি করছে তাদের সবাইকে খুঁজে বের করুন এবং ছাত্রদের নাম এবং student ID students.docx-এ লিখুন, এবং এটি CS161 ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "For students in each class seperately, create calendar events for them, create different folders by class numbers (folder name should have the format class_x) and save the student name as a file [NAME].txt in the corresponding folder": {
+  "bn": "প্রতিটি ক্লাসের শিক্ষার্থীদের জন্য আলাদাভাবে, তাদের জন্য ক্যালেন্ডার ইভেন্ট তৈরি করুন, ক্লাস নম্বর অনুযায়ী আলাদা ফোল্ডার তৈরি করুন (ফোল্ডারের নাম class_x ফরম্যাটে হতে হবে) এবং সংশ্লিষ্ট ফোল্ডারে শিক্ষার্থীর নাম [NAME].txt ফাইল হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Generate a file report.docx based on midterm1 and midterm2 scores, convert to report.pdf": {
+  "bn": "midterm1 এবং midterm2 স্কোর-এর উপর ভিত্তি করে একটি ফাইল report.docx তৈরি করুন, এবং এটিকে report.pdf-এ কনভার্ট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Generate a file report.docx based on midterm1 and midterm2 scores, save in folder named report": {
+  "bn": "midterm1 এবং midterm2 স্কোর-এর উপর ভিত্তি করে একটি ফাইল report.docx তৈরি করুন, এবং report নামের ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Given an Excel containing student's previous courses and GPA, does he satisfy the graduate requirement if student needs to take at least 8 CS courses and 5 math courses? Answer should be Yes or No.": {
+  "bn": "ছাত্রের আগের কোর্স এবং GPA সম্বলিত একটি Excel দেওয়া আছে, যদি ছাত্রের অন্তত 8 CS কোর্স এবং 5 math কোর্স করার প্রয়োজন হয়, তবে সে কি গ্রাজুয়েট রিকোয়ারমেন্ট পূরণ করেছে? উত্তর Yes অথবা No হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Given an Excel containing student's previous courses, does he/she satisfy the prerequiste of CS161 if prerequiste classes are CS101, CS 102, Math 151, and Math 152? Answer should be Yes or No.": {
+  "bn": "ছাত্রের আগের কোর্সগুলোর একটি Excel দেওয়া আছে, যদি প্রিরিকুইজিট ক্লাসগুলো CS101, CS 102, Math 151, এবং Math 152 হয়, তবে সে কি CS161-এর প্রিরিকুইজিট পূরণ করেছে? উত্তর Yes অথবা No হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Generate a word report based on midterm1 and midterm2 scores, the filename is 'midterm_report.docx'.": {
+  "bn": "midterm1 এবং midterm2 স্কোর-এর উপর ভিত্তি করে একটি Word রিপোর্ট তৈরি করুন, ফাইলটির নাম হবে 'midterm_report.docx'।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Given an Excel containing student's previous courses, is he/she qualified for transfering major to CS if student need to take at least 5 CS courses for transfering to CS major? Answer should be 'Yes' or 'No'.": {
+  "bn": "ছাত্রছাত্রীর আগের কোর্সগুলোর একটি Excel দেওয়া আছে, যদি CS মেজরে ট্রান্সফার করার জন্য অন্তত 5 টি CS কোর্স নেওয়ার প্রয়োজন হয়, তবে সে কি CS-এ মেজর ট্রান্সফার করার জন্য যোগ্য? উত্তর 'Yes' অথবা 'No' হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "I have to workout at 5/16/2024 5:00 p.m to 6:00 p.m, notify me on calendar": {
+  "bn": "আমার 5/16/2024 বিকেল 5:00 থেকে 6:00 পর্যন্ত ওয়ার্কআউট করতে হবে, ক্যালেন্ডারে আমাকে নোটিফাই করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Identify whether the reimbursement amount exceeds the company budget, schedule a meeting as meeting.ics for staff to talk about reimbursement": {
+  "bn": "রিইম্বার্সমেন্টের পরিমাণ কোম্পানির বাজেটের বেশি কি না তা চিহ্নিত করুন, এবং রিইম্বার্সমেন্ট নিয়ে কর্মীদের আলোচনার জন্য meeting.ics নামে একটি মিটিং শিডিউল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Identify whether the reimbursement amount exceeds the company budget, report to manager Tom about reimbursement": {
+  "bn": "রিইম্বার্সমেন্টের পরিমাণ কোম্পানির বাজেটের বেশি কি না তা চিহ্নিত করুন, এবং রিইম্বার্সমেন্ট সম্পর্কে ম্যানেজার Tom-কে রিপোর্ট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "In which season does Bob receive most emails?": {
+  "bn": "কোন ঋতুতে Bob সবচেয়ে বেশি ইমেইল পান?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Obtain Bill's earlier course data from the Excel document Bill_course_lists.xlsx and input it into classes_taken.docx. Each course should be on a seperate line.": {
+  "bn": "Excel ডকুমেন্ট Bill_course_lists.xlsx থেকে Bill-এর আগের কোর্সের ডেটা সংগ্রহ করুন এবং তা classes_taken.docx-এ ইনপুট করুন। প্রতিটি কোর্স আলাদা লাইনে হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Predict house price index in year 2030 based on house price index image, write your answer in prediction.docx": {
+  "bn": "house price index ইমেজ-এর ওপর ভিত্তি করে 2030 সালে house price index-এর পূর্বাভাস দিন, এবং আপনার উত্তর prediction.docx-এ লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Print the top 3 students in midterm1 into a file named top3.txt.": {
+  "bn": "midterm1-এর সেরা 3 জন ছাত্রের তালিকা top3.txt নামের একটি ফাইলে প্রিন্ট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Pull Bill's course history from the Excel file Bill_course_lists.xlsx and document it in classes_taken.docx. Each course should be on a seperate line.": {
+  "bn": "Excel ফাইল Bill_course_lists.xlsx থেকে Bill-এর কোর্সের ইতিহাস সংগ্রহ করুন এবং classes_taken.docx-এ তা নথিভুক্ত করুন। প্রতিটি কোর্স আলাদা লাইনে হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Put first 5 student scores from scanned PDF file to score.xlsx": {
+  "bn": "স্ক্যান করা PDF ফাইল থেকে প্রথম 5 জন ছাত্রের স্কোর score.xlsx-এ লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Put student scores from scanned PDF file to scores.xlsx, save it in folder scores": {
+  "bn": "স্ক্যান করা PDF ফাইল থেকে স্টুডেন্ট স্কোরগুলো scores.xlsx-এ লিখুন, এবং এটি scores ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Put student scores from scanned PDF file to scores.xlsx, email student with highest score for reward named reward.eml": {
+  "bn": "স্ক্যান করা PDF ফাইল থেকে স্টুডেন্টদের স্কোরগুলো scores.xlsx-এ লিখুন, এবং সর্বোচ্চ স্কোর পাওয়া স্টুডেন্টকে reward.eml নামের রিওয়ার্ডের জন্য ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Read grade in transcripts and generate a grade report called transcripts_report.docx, also save the report as transcripts_report_pdf_version.pdf": {
+  "bn": "transcripts-এ গ্রেডগুলো পড়ুন এবং transcripts_report.docx নামে একটি গ্রেড রিপোর্ট তৈরি করুন, সেই সাথে রিপোর্টটি transcripts_report_pdf_version.pdf হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Put student scores from scanned PDF file to scores.xlsx, schedule a meeting meeting.ics with student who has the lowest score at 6/1/2024 10:30 a.m": {
+  "bn": "স্ক্যান করা PDF ফাইল থেকে স্টুডেন্টদের স্কোর scores.xlsx-এ লিখুন, এবং যার স্কোর সবচেয়ে কম সেই স্টুডেন্টের সাথে 6/1/2024 সকাল 10:30 টায় একটি meeting.ics মিটিং শিডিউল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Read grade in transcripts and generate a grade report report.docx": {
+  "bn": "transcripts-এ গ্রেডগুলো পড়ুন এবং একটি গ্রেড রিপোর্ট report.docx তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Rename the PDF file to match the name of the DOCX file": {
+  "bn": "PDF ফাইলটির নাম পরিবর্তন করে DOCX ফাইলটির নামের সাথে মিলিয়ে দিন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Retrieve Bill's past courses from the Excel file Bill_course_lists.xlsx and save them into classes_taken.docx. Each course should be on a seperate line.": {
+  "bn": "Excel ফাইল Bill_course_lists.xlsx থেকে Bill-এর আগের কোর্সগুলো সংগ্রহ করুন এবং সেগুলো classes_taken.docx-এ সেভ করুন। প্রতিটি কোর্স আলাদা লাইনে হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Retrieve academic integrity for research from academic_integrity.docx and add it to the end of the syllabus sample_syllabus.docx.": {
+  "bn": "academic_integrity.docx থেকে research-এর জন্য academic integrity অংশটি সংগ্রহ করুন এবং সেটি syllabus sample_syllabus.docx-এর শেষে যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Retrieve reference text from reference.txt and add it to the end of word file project_report.docx.": {
+  "bn": "reference.txt থেকে রেফারেন্স টেক্সটটি সংগ্রহ করুন এবং সেটি project_report.docx নামক Word ফাইলের শেষে যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Retrieve the text from market_analysis.pdf and insert it into a newly created market_analysis.docx file": {
+  "bn": "market_analysis.pdf থেকে টেক্সটটি সংগ্রহ করুন এবং এটি একটি নতুন তৈরি করা market_analysis.docx ফাইলে ইনসার্ট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan Conference Invitation PDF and search for conference date (If no time is specified, use 6:00 am as default start time), add event to that date on calender, save as invitation.ics, make an invitation post named invitation.jpg": {
+  "bn": "Conference Invitation PDF স্ক্যান করুন এবং কনফারেন্সের তারিখটি খুঁজুন (যদি কোনো সময় উল্লেখ না থাকে, তবে ডিফল্ট শুরুর সময় হিসেবে 6:00 am ব্যবহার করুন), ক্যালেন্ডারে ওই তারিখে ইভেন্টটি যোগ করুন, invitation.ics হিসেবে সেভ করুন, এবং invitation.jpg নামে একটি ইনভিটেশন পোস্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan Conference Invitation PDF and search for conference date, add event to that date on calender, save as invitation.ics, record date, location, conference name, etc. in excel conference.xlsx": {
+  "bn": "Conference Invitation PDF স্ক্যান করুন এবং কনফারেন্সের তারিখ খুঁজুন, ক্যালেন্ডারে ওই তারিখে ইভেন্টটি যোগ করুন, invitation.ics হিসেবে সেভ করুন, এবং তারিখ, লোকেশন, কনফারেন্সের নাম ইত্যাদি Excel conference.xlsx-এ রেকর্ড করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan PDF homework and save as homework.docx for editing, save homework file into folder named homework": {
+  "bn": "PDF হোমওয়ার্কটি OCR করুন এবং এডিট করার জন্য homework.docx হিসেবে সেভ করুন, হোমওয়ার্ক ফাইলটি homework নামের ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan Conference Invitation PDF and search for conference date, add event to that date on calender, save in my calendar.": {
+  "bn": "Conference Invitation PDF স্ক্যান করুন এবং কনফারেন্সের তারিখটি খুঁজুন, ক্যালেন্ডারে ওই তারিখে ইভেন্টটি যোগ করুন, এবং আমার ক্যালেন্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan PDF homework to homework.docx for editing": {
+  "bn": "এডিটিং করার জন্য PDF হোমওয়ার্কটি স্ক্যান করে homework.docx-এ নিয়ে আসুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan PDF homework to homework.docx for editing, make a calendar event due.ics to remind that homework is due on 5/31/2024 at 11:59 p.m": {
+  "bn": "এডিটিং-এর জন্য PDF হোমওয়ার্কটি স্ক্যান করে homework.docx-এ রূপান্তর করুন, এবং 5/31/2024 রাত 11:59 টায় হোমওয়ার্ক জমা দেওয়ার কথা মনে করিয়ে দিতে due.ics নামে একটি ক্যালেন্ডার ইভেন্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan handwritten notes from a meeting agenda, convert them to text using OCR, and add them to a calendar file meeting.ics, email it to Alice for record": {
+  "bn": "একটি মিটিং এজেন্ডার হাতে লেখা নোটগুলো স্ক্যান করুন, OCR ব্যবহার করে সেগুলোকে টেক্সটে রূপান্তর করুন, এবং সেগুলো একটি ক্যালেন্ডার ফাইল meeting.ics-এ যোগ করুন, তারপর রেকর্ডের জন্য এটি Alice-কে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan PDF homework to homework.docx for editing, save homework word file to new_homework.pdf": {
+  "bn": "এডিটিং-এর জন্য PDF হোমওয়ার্কটি OCR করে homework.docx-এ রূপান্তর করুন, এবং হোমওয়ার্ক Word ফাইলটি new_homework.pdf হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan handwritten notes from a meeting agenda, convert them to text, and add them to a calendar file meeting.ics": {
+  "bn": "একটি মিটিং এজেন্ডার হাতে লেখা নোটগুলো স্ক্যান করুন, সেগুলোকে টেক্সটে রূপান্তর করুন, এবং সেগুলো একটি ক্যালেন্ডার ফাইল meeting.ics-এ যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan printed car inventory lists from PDF, convert them to Excel file car_inventory.xlsx using OCR, save in folder named cars": {
+  "bn": "PDF থেকে প্রিন্ট করা কার ইনভেন্টরি লিস্টগুলো স্ক্যান করুন, OCR ব্যবহার করে সেগুলোকে Excel ফাইল car_inventory.xlsx-এ রূপান্তর করুন, এবং cars নামের ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan printed car inventory lists from PDF, convert them to Excel file car_inventory.xlsx, create a meeting.ics to schedule meeting for Bob with the first driver in car_inventory.xlsx at 6/1/2024 10:00 a.m": {
+  "bn": "PDF থেকে প্রিন্ট করা কার ইনভেন্টরি লিস্টগুলো স্ক্যান করুন, সেগুলোকে Excel ফাইল car_inventory.xlsx-এ রূপান্তর করুন, এবং car_inventory.xlsx-এর প্রথম ড্রাইভারের সাথে Bob-এর মিটিং শিডিউল করার জন্য 6/1/2024 সকাল 10:00 টায় একটি meeting.ics তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Scan printed car inventory lists from PDF, save cars that milage is lower than 40000 to Excel file good_car.xlsx using OCR, create a meeting.ics to schedule meeting for Bob with the first driver in good_car.xlsx at 6/1/2024 10:00 a.m": {
+  "bn": "PDF থেকে প্রিন্টেড কার ইনভেন্টরি লিস্টগুলো স্ক্যান করুন, যে সব গাড়ির মাইলেজ 40000-এর কম সেগুলো OCR ব্যবহার করে Excel ফাইল good_car.xlsx-এ সেভ করুন, এবং good_car.xlsx-এর প্রথম ড্রাইভারের সাথে Bob-এর মিটিং শিডিউল করার জন্য 6/1/2024 সকাল 10:00 টায় একটি meeting.ics তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Schedule a team training as calendar event training.ics for next week and send out emails training.eml to all team members from an excel file": {
+  "bn": "আগামী সপ্তাহের জন্য একটি টিম ট্রেনিং training.ics ক্যালেন্ডার ইভেন্ট হিসেবে শিডিউল করুন এবং একটি Excel ফাইল থেকে সমস্ত টিম মেম্বারদের কাছে training.eml ইমেইলগুলো পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Schedule a team training as calendar event training.ics for next week and send out emails training.eml to only members in Section A from an excel file": {
+  "bn": "আগামী সপ্তাহের জন্য একটি টিম ট্রেনিং training.ics ক্যালেন্ডার ইভেন্ট হিসেবে শিডিউল করুন এবং একটি Excel ফাইল থেকে শুধুমাত্র Section A-এর সদস্যদের কাছে training.eml ইমেইলগুলো পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Schedule a team training session for all participants from excel file, create calendar events for each member in their name": {
+  "bn": "Excel ফাইল থেকে সকল অংশগ্রহণকারীদের জন্য একটি টিম ট্রেনিং সেশনের শিডিউল করুন, এবং প্রতিটি মেম্বারের নামে তাদের জন্য ক্যালেন্ডার ইভেন্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Schedule meetings for students in each class seperately, create calendar events for them": {
+  "bn": "প্রতিটি ক্লাসের শিক্ষার্থীদের জন্য আলাদাভাবে মিটিং শিডিউল করুন, এবং তাদের জন্য ক্যালেন্ডার ইভেন্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Schedule a team training session for members in section A from excel file, create calendar events file for each member in their name": {
+  "bn": "Excel ফাইল থেকে section A-এর সদস্যদের জন্য একটি টিম ট্রেনিং সেশন শিডিউল করুন, এবং প্রতিটি সদস্যের নামে তাদের জন্য ক্যালেন্ডার ইভেন্ট ফাইল তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Swap row of Alice and row of Bob in score excel file": {
+  "bn": "score Excel ফাইলে Alice-এর রো এবং Bob-এর রো অদলবদল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Take the list of courses Bill has completed from the Excel file Bill_course_lists.xlsx and place it into classes_taken.docx. Each course should be on a seperate line.": {
+  "bn": "Excel ফাইল Bill_course_lists.xlsx থেকে Bill-এর সম্পন্ন করা কোর্সের তালিকাটি নিন এবং সেটি classes_taken.docx-এ বসান। প্রতিটি কোর্স আলাদা লাইনে হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Take the text from market_analysis.pdf and place it into a new file called market_analysis.docx": {
+  "bn": "market_analysis.pdf থেকে টেক্সটটি নিন এবং market_analysis.docx নামের একটি নতুন ফাইলে তা রাখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Update the company budget Excel file to include a new header 'Increase Percentage Per Year', increase base salaries by 5%/yr, reduce computer expenses 10%/yr, and increase entertainment expenses 10%/yr.": {
+  "bn": "কোম্পানির বাজেট Excel ফাইলটি আপডেট করুন যাতে একটি নতুন হেডার 'Increase Percentage Per Year' অন্তর্ভুক্ত থাকে, বেস স্যালারি প্রতি বছর 5% বৃদ্ধি করুন, কম্পিউটার খরচ প্রতি বছর 10% হ্রাস করুন, এবং বিনোদনের খরচ প্রতি বছর 10% বৃদ্ধি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Use OCR to extract text from Bob's card and convert them into contact.xlsx with contact information, email excel file to manager Alice named Bob.eml to introduce contact information about Bob": {
+  "bn": "OCR ব্যবহার করে Bob-এর কার্ড থেকে টেক্সট বের করুন এবং সেগুলো কন্টাক্ট ইনফরমেশনসহ contact.xlsx-এ রূপান্তর করুন, এবং Bob-এর কন্টাক্ট ইনফরমেশন পরিচিত করানোর জন্য manager Alice-কে Bob.eml ইমেইল ফাইলটি পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Use OCR to extract text from Bob's card and convert them into contact.xlsx with contact information, schedule a meeting with manager Alice at 1:00 p.m 5/21/2024 named meeting.ics": {
+  "bn": "OCR ব্যবহার করে Bob-এর কার্ড থেকে টেক্সট বের করুন এবং সেগুলোকে কন্টাক্ট ইনফরমেশনসহ contact.xlsx-এ রূপান্তর করুন, এবং ম্যানেজার Alice-এর সাথে 5/21/2024 দুপুর 1:00 টায় meeting.ics নামে একটি মিটিং শিডিউল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Use OCR to extract text from business cards and convert them into an Excel sheet with contact information, called 'contacts.xlsx'.": {
+  "bn": "বিজনেস কার্ড থেকে টেক্সট বের করতে OCR ব্যবহার করুন এবং সেগুলোকে কন্টাক্ট ইনফরমেশনসহ একটি Excel শিটে রূপান্তর করুন, যার নাম হবে 'contacts.xlsx'।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What are Bob's emails for last three months? List the contents as answer.": {
+  "bn": "গত তিন মাসের Bob-এর ইমেইলগুলো কী কী? বিষয়বস্তুগুলো উত্তর হিসেবে তালিকাভুক্ত করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What is Xihozun's HW2 score?": {
+  "bn": "Xihozun-এর HW2 স্কোর কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What is the average score and variance for student scores shown in the image": {
+  "bn": "ছবিতে দেখানো ছাত্রছাত্রীদের স্কোরের গড় (average score) এবং ভ্যারিয়েন্স (variance) কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What are conflicts in my calendar events? Tell me the conflict events.": {
+  "bn": "আমার ক্যালেন্ডার ইভেন্টগুলোতে কী কী কনফ্লিক্ট আছে? কনফ্লিক্ট ইভেন্টগুলো আমাকে জানান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What is the earliest email to Bob about? Read the contents as the answer.": {
+  "bn": "Bob-কে পাঠানো সবচেয়ে শুরুর ইমেইলটি কী সম্পর্কে? উত্তর হিসেবে ইমেইলের বিষয়বস্তু লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What is the fewest amount of bought item in shopping list excel file?": {
+  "bn": "shopping list Excel ফাইলে কেনা আইটেমের সর্বনিম্ন পরিমাণ কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What is the latest email to Bob about? Read the contents as the answer.": {
+  "bn": "Bob-কে পাঠানো সর্বশেষ ইমেইলটি কী সম্পর্কে? উত্তর হিসেবে ইমেইলের বিষয়বস্তু পড়ুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What is the maximum prices of the cars sold in March, send it via email to the buyer Tom": {
+  "bn": "March মাসে বিক্রি হওয়া গাড়িগুলোর সর্বোচ্চ দাম কত তা বের করুন, এবং এটি ইমেইলের মাধ্যমে ক্রেতা Tom-এর কাছে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What is the maximum prices of the cars sold in March?": {
+  "bn": "March মাসে বিক্রি হওয়া কারগুলোর সর্বোচ্চ দাম কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Which class has the least student?": {
+  "bn": "কোন ক্লাসে সবচেয়ে কম ছাত্র আছে?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "What is the maximum prices of the cars sold over all time?": {
+  "bn": "সব সময়ের মধ্যে বিক্রি হওয়া গাড়িগুলোর সর্বোচ্চ দাম কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Which students have lower score in midterm2 than midterm1 in score excel file?": {
+  "bn": "score Excel ফাইলে কোন ছাত্রছাত্রীদের midterm2-এর স্কোর midterm1-এর চেয়ে কম?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Which event has hightest frequency, save results in events.docx": {
+  "bn": "কোন ইভেন্টটির ফ্রিকোয়েন্সি সবচেয়ে বেশি, ফলাফলগুলো events.docx-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Who gets up earlier? Bob or Tom": {
+  "bn": "কে আগে ঘুম থেকে ওঠে? Bob নাকি Tom?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Write a statement in reward.docx to the student who got the best midterm1 score in the class, make a post reward.jpg": {
+  "bn": "ক্লাসে midterm1-এ সবচেয়ে ভালো স্কোর করা ছাত্রের জন্য reward.docx-এ একটি স্টেটমেন্ট লিখুন, এবং একটি post reward.jpg তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Write a statement in docx file to the student with the highest score in the class, use the student's name as filename": {
+  "bn": "ক্লাসের সর্বোচ্চ স্কোর পাওয়া ছাত্র/ছাত্রীর জন্য একটি docx ফাইলে একটি স্টেটমেন্ট লিখুন, এবং ফাইলের নাম হিসেবে ওই ছাত্র/ছাত্রীর নাম ব্যবহার করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "Write a statement in reward.docx to the student who got the highest score on midterm1, email this to student's parents (the name of the email file is student_name.eml). Student's parents' email have the form student_name@mail.com.": {
+  "bn": "midterm1-এ সর্বোচ্চ স্কোর পাওয়া ছাত্রের জন্য reward.docx-এ একটি স্টেটমেন্ট লিখুন, এবং এটি ছাত্রের অভিভাবকদের ইমেইল করুন (ইমেইল ফাইলটির নাম student_name.eml)। ছাত্রের অভিভাবকদের ইমেইলের ফরম্যাট হবে student_name@mail.com।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "add a new header 'Cost' in shopping list excel file, supposing apple is 2$/pound, others are 1.5$/pound": {
+  "bn": "shopping list Excel ফাইলে একটি নতুন হেডার 'Cost' যোগ করুন, ধরে নিন apple-এর দাম 2$/pound, বাকিগুলোর 1.5$/pound।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "add 'average salary' for each day to the last row in salary excel file, round down with no decimal": {
+  "bn": "salary Excel ফাইলে শেষ সারিতে প্রতিদিনের জন্য 'average salary' যোগ করুন, কোনো দশমিক ছাড়াই রাউন্ড ডাউন করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "add a new header Class, randomly assign each student to class 1 to class 5 in class member excel file": {
+  "bn": "class member Excel ফাইলে Class নামে একটি নতুন হেডার যোগ করুন, এবং প্রতিটি ছাত্রকে randomly class 1 থেকে class 5-এর মধ্যে অ্যাসাইন করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "add all incoming in the salery excel file. This is the annual income. So what is the monthly income?": {
+  "bn": "salery Excel ফাইলে সমস্ত incoming যোগ করুন। এটি বার্ষিক আয়। তাহলে মাসিক আয় কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "add annual bonus $50000 to salary excel file": {
+  "bn": "salary Excel ফাইলে annual bonus $50000 যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "add utilities fee $300 to budget excel file": {
+  "bn": "budget Excel ফাইলে utilities fee $300 যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "all students attend class today, record it under new header 'Attendance' in class member excel file with value 'Y'": {
+  "bn": "সব ছাত্রছাত্রীরা আজ ক্লাসে উপস্থিত ছিল, class member Excel ফাইলে 'Attendance' নামে একটি নতুন হেডার তৈরি করে তার নিচে 'Y' ভ্যালু দিয়ে এটি রেকর্ড করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "assign each students in Class 1 10 min to have a meeting with doctor in a row, start from 8:00, record the start time under new header 'Meeting' in class_member.xlsx excel file": {
+  "bn": "Class 1-এর প্রতিটি ছাত্রের জন্য পর পর doctor-এর সাথে মিটিং করার জন্য 10 min সময় বরাদ্দ করুন, যা 8:00 থেকে শুরু হবে, এবং class_member.xlsx Excel ফাইলে 'Meeting' নামে একটি নতুন হেডার তৈরি করে তার নিচে শুরুর সময়টি রেকর্ড করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "assign homework \"\"read book and write essay\"\" in docx file for students, called homework.docx": {
+  "bn": "ছাত্রদের জন্য homework.docx নামের একটি docx ফাইলে \"\"read book and write essay\"\" হোমওয়ার্ক অ্যাসাইন করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "assign homework \"read book and write essay\" in hw1.docx for students in class 1, email hw1.docx to Carol and Anna in class1": {
+  "bn": "class 1-এর ছাত্রছাত্রীদের জন্য hw1.docx-এ \"read book and write essay\" হোমওয়ার্ক অ্যাসাইন করুন, এবং class1-এর Carol এবং Anna-কে hw1.docx ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "assign homework \"read book and write essay\" in hw1.docx for students in class 1.": {
+  "bn": "class 1-এর শিক্ষার্থীদের জন্য hw1.docx-এ \"read book and write essay\" হোমওয়ার্ক অ্যাসাইন করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "at 5/15/2024 4:00 p.m to 6:00 p.m at Mathematic Science 4000A, Bob needs to have a class": {
+  "bn": "5/15/2024 বিকেল 4:00 থেকে সন্ধ্যা 6:00 পর্যন্ত Mathematic Science 4000A-তে Bob-এর একটি ক্লাস থাকা প্রয়োজন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "buy two yogurt and add to shopping list excel file": {
+  "bn": "দুটি yogurt কিনুন এবং shopping list Excel ফাইলে যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "calculate item average weight, write in the bottom row in shopping list excel file with header 'Average'": {
+  "bn": "আইটেমগুলোর গড় ওজন গণনা করুন, এবং shopping list Excel ফাইলে 'Average' হেডার দিয়ে একদম নিচের সারিতে লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "calculate the average of two midterm scores, write in the bottom row of the score excel file with header 'Average'": {
+  "bn": "দুটি মিডটার্ম স্কোরের গড় হিসাব করুন, এবং score Excel ফাইলের একদম নিচের সারিতে 'Average' হেডার দিয়ে লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "calculate the total weights for total's shopping, append a row with header 'Total' after the bottom of the file": {
+  "bn": "total-এর শপিংয়ের মোট ওজন গণনা করুন, এবং ফাইলের একদম নিচে 'Total' হেডার দিয়ে একটি রো যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "calculate total cost listed in budget excel file, append a row with header 'Total' after the bottom of the file": {
+  "bn": "budget Excel ফাইলটিতে তালিকাভুক্ত মোট খরচ গণনা করুন, এবং ফাইলের একদম নিচে 'Total' হেডার দিয়ে একটি রো যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "calculate total salary for one year and add it after the bottom row with header 'Total' in salary excel file": {
+  "bn": "এক বছরের মোট বেতন হিসাব করুন এবং salary Excel ফাইলে 'Total' হেডারসহ একদম নিচের সারির পরে সেটি যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "change Bob's midterm1 score 100 to score.xlsx excel file": {
+  "bn": "score.xlsx Excel ফাইলে Bob-এর midterm1 স্কোর 100-এ পরিবর্তন করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "change Carol's midterm1 score to 98 in score excel file": {
+  "bn": "score Excel ফাইলে Carol-এর midterm1 স্কোর পরিবর্তন করে 98 করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "change the docx file name to test_file1.docx": {
+  "bn": "docx ফাইলটির নাম পরিবর্তন করে test_file1.docx করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "collect company trading and save in company_trading.xlsx, email it to president": {
+  "bn": "কোম্পানির ট্রেডিং তথ্য সংগ্রহ করুন এবং company_trading.xlsx-এ সেভ করুন, তারপর এটি president-কে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "collect company trading and save in company_trading.xlsx, save it in folder trading": {
+  "bn": "কোম্পানির ট্রেডিং তথ্য সংগ্রহ করুন এবং company_trading.xlsx-এ সেভ করুন, এটি trading ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "collect company trading and save the items about `sold` in company_trading.xlsx": {
+  "bn": "কোম্পানির ট্রেডিং সংগ্রহ করুন এবং `sold` সংক্রান্ত আইটেমগুলো company_trading.xlsx-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "company don't need to replace computers, so delete corresponding line in company budget excel file": {
+  "bn": "কোম্পানির কম্পিউটার পরিবর্তন করার প্রয়োজন নেই, তাই company budget Excel ফাইল থেকে সংশ্লিষ্ট লাইনটি মুছে ফেলুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "company increases base by 5%/yr, stock by 10%/yr, bonus by 10%/yr, show this in salary excel file with new header 'amount after 1 year'": {
+  "bn": "কোম্পানি বেস 5%/yr, স্টক 10%/yr এবং বোনাস 10%/yr বৃদ্ধি করে, এটি salary Excel ফাইলে 'amount after 1 year' নামক নতুন হেডার দিয়ে দেখান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "delete all amounts in salary excel file": {
+  "bn": "salary Excel ফাইল থেকে সব amount মুছে ফেলুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "delete all students' score and the header in score excel file": {
+  "bn": "score Excel ফাইল থেকে সব ছাত্রের স্কোর এবং হেডার মুছে ফেলুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "delete all amounts in shopping list excel file": {
+  "bn": "shopping list Excel ফাইল থেকে সব amount মুছে ফেলুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "delete file3.xlsx": {
+  "bn": "file3.xlsx ফাইলটি ডিলিট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "delete student Alice and her score in score excel file": {
+  "bn": "score Excel ফাইল থেকে স্টুডেন্ট Alice এবং তার স্কোর ডিলিট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "delete everything in company budget excel file": {
+  "bn": "company budget Excel ফাইল-এর সবকিছু ডিলিট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "delete the first three students and their scores in score excel file": {
+  "bn": "score Excel ফাইল থেকে প্রথম তিন জন ছাত্র এবং তাদের স্কোর ডিলিট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "delete the stock and its line in salary excel file": {
+  "bn": "salary Excel ফাইল থেকে stock এবং তার লাইনটি ডিলিট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "does Bob receive emails in last month? Answer yes or no.": {
+  "bn": "Bob কি গত মাসে ইমেইল পেয়েছেন? Answer yes or no.",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "does Bob receive emails in last month? if does, how many? Answer with yes or no and a arabic number.": {
+  "bn": "Bob কি গত মাসে ইমেইল পেয়েছেন? যদি পেয়ে থাকেন, তবে কতটি? Yes or no এবং একটি arabic number দিয়ে উত্তর দিন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "duplicate the excel file and name temp.xlsx": {
+  "bn": "Excel ফাইলটি ডুপ্লিকেট করুন এবং নাম দিন temp.xlsx।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract Bob's and Tom's calendar and count their sleeping time, class time length, saved to excel file named events.xlsx, write summarization in daily_event.pdf": {
+  "bn": "Bob-এর এবং Tom-এর ক্যালেন্ডার এক্সট্রাক্ট করুন এবং তাদের ঘুমের সময় ও ক্লাসের সময়ের দৈর্ঘ্য গণনা করুন, যা events.xlsx নামের Excel ফাইলে সেভ করুন, এবং daily_event.pdf-এ সারসংক্ষেপ লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract Bob's and Tom's calendar and count their sleeping time, saved to excel file named events.xlsx, first row is Bob, second row is Tom": {
+  "bn": "Bob-এর এবং Tom-এর ক্যালেন্ডার থেকে তথ্য বের করুন এবং তাদের ঘুমের সময় গণনা করুন, যা events.xlsx নামের Excel ফাইলে সেভ করুন; প্রথম রো হবে Bob, দ্বিতীয় রো হবে Tom।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract class canceling notification from email, save it into a doc file and convert the doc file into a pdf named class_canceling.pdf": {
+  "bn": "ইমেইল থেকে ক্লাস বাতিল করার নোটিফিকেশনটি বের করুন, এটি একটি doc ফাইলে সেভ করুন এবং doc ফাইলটিকে class_canceling.pdf নামে একটি PDF-এ রূপান্তর করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract concert post from pdf file and save as image named 'concert_post.jpg'": {
+  "bn": "PDF ফাইল থেকে কনসার্টের পোস্টটি বের করুন এবং 'concert_post.jpg' নামে ইমেজ হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract concert post and summarize it in a new pdf file named concert_invitation.pdf": {
+  "bn": "কনসার্টের পোস্টটি এক্সট্রাক্ট করুন এবং এটি concert_invitation.pdf নামের একটি নতুন PDF ফাইলে সামারাইজ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract notification from business traveling image and send emails bussiness_travel.eml to Bob and Tom": {
+  "bn": "business traveling ইমেজ থেকে নোটিফিকেশনটি বের করুন এবং bussiness_travel.eml ইমেইলটি Bob এবং Tom-এর কাছে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract paper abstract and save as an image file called 'abstract.png'": {
+  "bn": "পেপার অ্যাবস্ট্রাক্টটি বের করুন এবং 'abstract.png' নামে একটি ইমেজ ফাইল হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract paper's abstract and save in word file for review. The word file should be named as 'abstract.docx'": {
+  "bn": "পেপার-এর abstract বের করুন এবং রিভিউ করার জন্য একটি word ফাইলে সেভ করুন। word ফাইলটির নাম 'abstract.docx' হতে হবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract revenue data and save as a table in excel file revenues.xlsx, write statements in revenues.docx": {
+  "bn": "রেভিনিউ ডাটা এক্সট্রাক্ট করুন এবং Excel ফাইল revenues.xlsx-এ একটি টেবিল হিসেবে সেভ করুন, এবং revenues.docx-এ স্টেটমেন্টগুলো লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract revenue data from my email and save it as a table in excel file revenues.xlsx, headers are year and revenues": {
+  "bn": "আমার ইমেইল থেকে revenue data বের করুন এবং তা revenues.xlsx নামক Excel ফাইলে একটি টেবিল হিসেবে সেভ করুন, হেডার হবে year এবং revenues।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract revenue numbers and save as a table in excel file revenues.xlsx, email the info to manager Tom (Tom@gmail.com)": {
+  "bn": "রেভিনিউ নম্বরগুলো বের করুন এবং revenues.xlsx নামক Excel ফাইলে একটি টেবিল হিসেবে সেভ করুন, এবং এই তথ্যগুলো ম্যানেজার Tom (Tom@gmail.com)-কে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract score table from email, save as excel file score.xlsx": {
+  "bn": "ইমেইল থেকে score table-টি বের করুন, এবং score.xlsx নামে Excel ফাইল হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract score table from email, save as excel file score.xlsx, save excel file in folder named score": {
+  "bn": "ইমেইল থেকে score table-টি বের করুন, score.xlsx নামে Excel ফাইল হিসেবে সেভ করুন, এবং Excel ফাইলটি score নামের ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract students and their IDs, collect in excel file SIDs.xlsx, save in folder IDs": {
+  "bn": "ছাত্র এবং তাদের ID-গুলো বের করুন, Excel ফাইল SIDs.xlsx-এ সংগ্রহ করুন, এবং IDs ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract students and their IDs, split them in two excel files SID_Class_1.xlsx and SID_Class_2.xlsx, save in two folders Class1 and Class2 respectively": {
+  "bn": "ছাত্র এবং তাদের ID-গুলো বের করুন, সেগুলোকে দুটি Excel ফাইল SID_Class_1.xlsx এবং SID_Class_2.xlsx-এ ভাগ করুন, এবং যথাক্রমে Class1 এবং Class2 নামক দুটি ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract terms from agreement pdf file, with all participated parties into summary.docx": {
+  "bn": "agreement PDF ফাইল থেকে শর্তাবলী এবং অংশগ্রহণকারী সকল পক্ষ বের করে summary.docx-এ লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract text from combined notification image and split into two pdf files, named party.pdf and meeting.pdf": {
+  "bn": "combined notification image থেকে টেক্সট extract করুন এবং সেটিকে party.pdf এবং meeting.pdf নামে দুটি PDF ফাইলে ভাগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract text from combined notification image and split into two pdf files, named party.pdf and meeting.pdf, Bob and Alice held party and meeting respectively, create calendar event meeting.ics and party.ics for them": {
+  "bn": "combined notification image থেকে টেক্সট বের করুন এবং সেটিকে দুটি PDF ফাইলে ভাগ করুন, যাদের নাম party.pdf এবং meeting.pdf; Bob এবং Alice যথাক্রমে party এবং meeting আয়োজন করেছেন, তাদের জন্য meeting.ics এবং party.ics নামে ক্যালেন্ডার ইভেন্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract text from combined notification image and split into two pdf files, named party.pdf and meeting.pdf, save them in two folders named activaties and schedule": {
+  "bn": "combined notification image থেকে টেক্সট বের করুন এবং সেটিকে দুটি PDF ফাইলে ভাগ করুন, যেগুলোর নাম party.pdf এবং meeting.pdf হবে, এবং সেগুলোকে activaties এবং schedule নামে দুটি ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract text from power failure notification image and save in power_failure.pdf": {
+  "bn": "power failure notification ইমেজ থেকে টেক্সট এক্সট্রাক্ট করুন এবং power_failure.pdf-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract text from power failure notification image, save in power_failure.pdf, send email power_failure.eml to notify workers Bob and Tom": {
+  "bn": "power failure notification ইমেজ থেকে টেক্সট বের করুন, power_failure.pdf-এ সেভ করুন, এবং কর্মী Bob এবং Tom-কে জানানোর জন্য power_failure.eml ইমেইলটি পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract the first 3 students and their IDs, collect them into excel file SIDs.xlsx": {
+  "bn": "প্রথম 3 জন ছাত্র এবং তাদের ID-গুলো বের করুন, এবং সেগুলো Excel ফাইল SIDs.xlsx-এ সংগ্রহ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract title and authors of the paper from pdf file and save in word file named 'paper.docx'": {
+  "bn": "PDF ফাইল থেকে পেপারটির টাইটেল এবং অথরদের বের করুন এবং 'paper.docx' নামের Word ফাইলে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "extract today's schedule from image, send email schedules.eml containg all events in schedule to Bob": {
+  "bn": "ছবি থেকে আজকের শিডিউলটি বের করুন, এবং শিডিউলের সব ইভেন্ট সম্বলিত schedules.eml ইমেইলটি Bob-এর কাছে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "find Bob's earliest email, save it in earliest.docx": {
+  "bn": "Bob-এর সবচেয়ে পুরনো ইমেইলটি খুঁজুন, এবং সেটি earliest.docx-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "find Bob's latest email, save it in latest.docx": {
+  "bn": "Bob-এর সর্বশেষ ইমেইলটি খুঁজুন, এবং এটি latest.docx-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "find Bob's emails in January, save it in Jan_emails.pdf": {
+  "bn": "জানুয়ারি মাসের Bob-এর ইমেইলগুলো খুঁজুন, এবং সেগুলো Jan_emails.pdf-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "find all Bob's emails in this year, save them in emails.docx by ascending order": {
+  "bn": "এই বছরের Bob-এর সব ইমেইল খুঁজে বের করুন, এবং সেগুলো ascending order-এ emails.docx-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "find all Bob's emails in this year, save in a doc file and convert the doc file into emails.pdf": {
+  "bn": "এই বছরের Bob-এর সব ইমেইল খুঁজুন, একটি doc ফাইলে সেভ করুন এবং doc ফাইলটিকে emails.pdf-এ কনভার্ট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "find the highest incoming in salary excel file, duplicate it at bottom": {
+  "bn": "salary Excel ফাইলটিতে সর্বোচ্চ ইনকামটি খুঁজে বের করুন, এবং সেটিকে নিচে ডুপ্লিকেট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "find the lowest cost in budget item, add to highest cost in budget excel file": {
+  "bn": "budget item-এ সবচেয়ে কম খরচটি খুঁজে বের করুন, এবং সেটি budget excel ফাইলে সবচেয়ে বেশি খরচের সাথে যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "find the lowest score and highest score of midterm 1, what is their difference?": {
+  "bn": "midterm 1-এর সর্বনিম্ন স্কোর এবং সর্বোচ্চ স্কোর খুঁজে বের করুন, তাদের পার্থক্য কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "find the student whose midterm1 score is closest to the average in score excel file, duplicate the line at bottom": {
+  "bn": "score Excel ফাইলে সেই ছাত্রটিকে খুঁজে বের করুন যার midterm1 স্কোর গড় স্কোরের সবচেয়ে কাছাকাছি, এবং লাইনটি নিচে ডুপ্লিকেট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "for calendar data, find frequency of meeting, generate a file report.pdf about meeting frequency": {
+  "bn": "ক্যালেন্ডার ডেটার জন্য, মিটিং-এর ফ্রিকোয়েন্সি খুঁজে বের করুন, এবং মিটিং ফ্রিকোয়েন্সি সম্পর্কে একটি report.pdf ফাইল তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "give some instruction and prediction in file house_price.docx based on house price index, convert to a post housing.jpg": {
+  "bn": "house_price.docx ফাইলে house price index-এর উপর ভিত্তি করে কিছু নির্দেশাবলী এবং প্রেডিকশন দিন, এবং এটিকে একটি পোস্ট housing.jpg-এ রূপান্তর করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "for calendar data, which event has longest total time?": {
+  "bn": "ক্যালেন্ডার ডেটার জন্য, কোন ইভেন্টটির মোট সময় সবচেয়ে বেশি?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "give some instruction and prediction in file house_price.docx based on house price index, email to Bob for reference. The subject of email should be Housing_Instruction": {
+  "bn": "house price index-এর উপর ভিত্তি করে house_price.docx ফাইলে কিছু নির্দেশাবলী এবং প্রেডিকশন লিখুন, এবং রেফারেন্সের জন্য Bob-কে ইমেইল করুন। ইমেইলের সাবজেক্ট হবে \"Housing_Instruction\"।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "give some instruction and prediction in word file based on house_price_index.xlsx, and save the word file in the same filename": {
+  "bn": "house_price_index.xlsx-এর ওপর ভিত্তি করে একটি Word ফাইলে কিছু নির্দেশাবলী এবং প্রেডিকশন দিন, এবং Word ফাইলটি একই ফাইলেমিতে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "how many students in CS161 class got 60 or more in final": {
+  "bn": "CS161 ক্লাসের কতজন ছাত্র ফাইনাল পরীক্ষায় 60 বা তার বেশি পেয়েছে?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "how many students in CS161 is freshman?": {
+  "bn": "CS161-এ কতজন ছাত্র freshman?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "if Dean's list requires term average gpa to be higher than 3.9, how many terms can this students be awarded on Dean's list?": {
+  "bn": "যদি Dean's list-এর জন্য টার্ম গড় gpa 3.9-এর বেশি হতে হয়, তবে এই ছাত্রটি কতটি টার্মে Dean's list-এ পুরস্কৃত হতে পারে?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "if Dean's list requires term average gpa to be higher than 3.9, how many terms can this students be awarded on Dean's list? Email to student about this result": {
+  "bn": "যদি Dean's list-এর জন্য টার্ম গড় gpa 3.9-এর বেশি হতে হয়, তবে এই ছাত্রটি কতটি টার্মে Dean's list-এ পুরস্কৃত হতে পারে? এই ফলাফল সম্পর্কে ছাত্রটিকে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "make a table email_counting.xlsx to show how many emails for each people in the email list, first row is Alice, second row is Bob": {
+  "bn": "একটি table email_counting.xlsx তৈরি করুন যাতে ইমেইল লিস্টের প্রতিটি ব্যক্তির জন্য কতটি ইমেইল আছে তা দেখানো হয়, প্রথম row হবে Alice, দ্বিতীয় row হবে Bob।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "if budget grow 10% per year, add 'predicted budget' for 3 years later to the last row in budget excel file": {
+  "bn": "যদি বাজেট প্রতি বছর 10% বৃদ্ধি পায়, তবে budget Excel ফাইলের শেষ সারিতে 3 বছর পরের জন্য 'predicted budget' যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "make a table email_counting.xlsx to show how many emails for each people in the email list, summarize it in email_stat.pdf": {
+  "bn": "একটি table email_counting.xlsx তৈরি করুন যাতে ইমেইল লিস্টের প্রতিটি ব্যক্তির জন্য কতটি ইমেইল আছে তা দেখানো হয়, এবং এটি email_stat.pdf-এ summarize করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "make a table in emails.xlsx for each Bob's email with date, sender email account as header": {
+  "bn": "emails.xlsx-এ Bob-এর প্রতিটি ইমেইলের জন্য একটি টেবিল তৈরি করুন যেখানে date এবং sender email account হেডার হিসেবে থাকবে।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "move all docx, pdf, and image files to a new subdirectory named new_dir, create this directory if does not exist": {
+  "bn": "সব docx, pdf, এবং image ফাইলগুলো new_dir নামের একটি নতুন সাবডিরেক্টরিতে মুভ করুন, যদি এই ডিরেক্টরিটি না থাকে তবে এটি তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read Bob's and Tom's calendars, find their common events and send email to them, make a post common_events.jpg": {
+  "bn": "Bob-এর এবং Tom-এর ক্যালেন্ডারগুলো পড়ুন, তাদের কমন ইভেন্টগুলো খুঁজে বের করুন এবং তাদের ইমেইল পাঠান, একটি common_events.jpg পোস্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read Bob's and Tom's calendars, find their common events and send email using event names to them separately": {
+  "bn": "Bob-এর এবং Tom-এর ক্যালেন্ডারগুলো পড়ুন, তাদের কমন ইভেন্টগুলো খুঁজে বের করুন এবং ইভেন্টের নাম ব্যবহার করে তাদের আলাদাভাবে ইমেইল পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read Bob's calendar event and send email to Bob for all events in calendar, save all events in event.pdf": {
+  "bn": "Bob-এর ক্যালেন্ডার ইভেন্টগুলো পড়ুন এবং ক্যালেন্ডারের সব ইভেন্টের জন্য Bob-কে ইমেইল পাঠান, সব ইভেন্ট event.pdf-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read Bob's calendar event and send email to Bob using event names for every event except sleeping": {
+  "bn": "Bob-এর ক্যালেন্ডার ইভেন্টগুলো পড়ুন এবং 'sleeping' বাদে বাকি প্রতিটি ইভেন্টের নাম ব্যবহার করে Bob-কে ইমেইল পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read Bob's calendar event and send email using event names to Bob for all events in calendar": {
+  "bn": "Bob-এর ক্যালেন্ডার ইভেন্টগুলো পড়ুন এবং ক্যালেন্ডারের সব ইভেন্টের নাম ব্যবহার করে Bob-কে ইমেইল পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read Bob's calendar event and send email using event names to Bob only for class": {
+  "bn": "Bob-এর ক্যালেন্ডার ইভেন্ট পড়ুন এবং শুধুমাত্র class-এর জন্য ইভেন্টের নাম ব্যবহার করে Bob-কে ইমেইল পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read a pdf file google_form.pdf, make an image post welcome.jpg": {
+  "bn": "google_form.pdf নামক একটি PDF ফাইল পড়ুন, এবং welcome.jpg নামে একটি ইমেজ পোস্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read all emails, create folders for each recipients using their names and save their emails in pdf file using original names into their own folders": {
+  "bn": "সবগুলো ইমেইল পড়ুন, প্রতিটি প্রাপকের নামের মাধ্যমে তাদের জন্য ফোল্ডার তৈরি করুন এবং তাদের ইমেইলগুলো মূল নাম ব্যবহার করে PDF ফাইলে তাদের নিজস্ব ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read business traveling image, send emails bussiness_travel.eml to corresponding staff": {
+  "bn": "business traveling ইমেজটি পড়ুন, এবং সংশ্লিষ্ট স্টাফদের কাছে bussiness_travel.eml ইমেইলটি পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues and send a email revenues.eml containing all years' revenues to Bob for reporting": {
+  "bn": "কোম্পানির রেভিনিউগুলো পড়ুন এবং রিপোর্টিং-এর জন্য সব বছরের রেভিনিউ সম্বলিত একটি ইমেইল revenues.eml Bob-এর কাছে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues and send a email revenues.eml containing data to Bob for reporting, also write a revenue.docx to summarize it": {
+  "bn": "কোম্পানির রেভিনিউ পড়ুন এবং রিপোর্টিং-এর জন্য ডেটা সম্বলিত একটি revenues.eml ইমেইল Bob-এর কাছে পাঠান, সেই সাথে এটি সারসংক্ষেপ করতে একটি revenue.docx লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues, calculate the revenue difference of the first year and last year in the table, save the result in improvement.txt, and generate a short report in reports.docx": {
+  "bn": "company revenues পড়ুন, টেবিলের প্রথম বছর এবং শেষ বছরের রেভিনিউ-র পার্থক্য গণনা করুন, ফলাফলটি improvement.txt-এ সেভ করুন, এবং reports.docx-এ একটি সংক্ষিপ্ত রিপোর্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues, calculate the revenue difference of this year and last year, save the result in improvement.txt, and generate a short report in reports.docx": {
+  "bn": "কোম্পানির রেভিনিউগুলো পড়ুন, এই বছর এবং গত বছরের রেভিনিউয়ের পার্থক্য গণনা করুন, ফলাফলটি improvement.txt-এ সেভ করুন, এবং reports.docx-এ একটি সংক্ষিপ্ত রিপোর্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues, delete years that revenues are lower than $2000000 and save in new.xlsx, generate reports report.docx": {
+  "bn": "company revenues পড়ুন, যে বছরগুলোতে রাজস্ব $2000000-এর কম ছিল সেই বছরগুলো মুছে ফেলুন এবং new.xlsx-এ সেভ করুন, report.docx-এ রিপোর্ট জেনারেট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues, describe revenues in a report. I want the report converted into an image named report.jpg": {
+  "bn": "কোম্পানির রেভিনিউগুলো পড়ুন, একটি রিপোর্টে রেভিনিউগুলোর বর্ণনা দিন। আমি চাই রিপোর্টটি report.jpg নামে একটি ইমেজে কনভার্ট করা হোক।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues, extract years that revenues are higher than 4000000$, save in good.xlsx, generate reports report.pdf": {
+  "bn": "company revenues পড়ুন, যে বছরগুলোতে রাজস্ব 4000000$ এর বেশি ছিল সেগুলো বের করুন, good.xlsx-এ সেভ করুন, এবং report.pdf রিপোর্ট জেনারেট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues, how many years of revenues are higher than 4000000$, save results in an image revenues.jpg": {
+  "bn": "company revenues পড়ুন, কত বছরের রেভিনিউ 4000000$ এর বেশি, ফলাফলগুলো revenues.jpg নামক একটি ইমেজে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues, save the top 2 in top2.xlsx, generate reports.docx": {
+  "bn": "কোম্পানির রেভিনিউগুলো পড়ুন, শীর্ষ 2টি top2.xlsx-এ সেভ করুন, এবং reports.docx জেনারেট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read company revenues, send a email revenues.eml to Bob containing first 10 years of revenues, and send a email to Tom containing rest of data": {
+  "bn": "company revenues পড়ুন, Bob-এর কাছে প্রথম 10 বছরের রেভিনিউ সম্বলিত একটি revenues.eml ইমেইল পাঠান, এবং Tom-এর কাছে বাকি ডেটা সম্বলিত একটি ইমেইল পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read my body test email, save as recipients' calendar event using their names as file names": {
+  "bn": "আমার body test ইমেইলটি পড়ুন, এবং প্রাপকদের নাম ফাইল নাম হিসেবে ব্যবহার করে তাদের ক্যালেন্ডার ইভেন্ট হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read my email, assign tasks mentioned in the multi-task email to and create the corresponding events for the recipients.": {
+  "bn": "আমার ইমেইল পড়ুন, multi-task ইমেইলে উল্লেখিত টাস্কগুলো অ্যাসাইন করুন এবং প্রাপকদের জন্য সংশ্লিষ্ট ইভেন্টগুলো তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read daily schedule from image, save all events in file daily_schedule.txt, save it in folder daily_schedule": {
+  "bn": "ছবি থেকে daily schedule পড়ুন, সব ইভেন্ট daily_schedule.txt ফাইলে সেভ করুন, এবং ফাইলটি daily_schedule ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read notification pdf file and send email notification.eml to Alice": {
+  "bn": "notification PDF ফাইলটি পড়ুন এবং notification.eml ইমেইলটি Alice-কে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read notification word file and send email notification.eml to people mentioned on post": {
+  "bn": "notification word ফাইলটি পড়ুন এবং পোস্টে উল্লেখিত ব্যক্তিদের কাছে notification.eml ইমেইলটি পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read notification, send email to people mentioned in post, create folders using their own names for each person and save email notification.eml in it": {
+  "bn": "নোটিফিকেশনটি পড়ুন, পোস্টে উল্লেখিত ব্যক্তিদের ইমেইল পাঠান, প্রতিটি ব্যক্তির জন্য তাদের নিজস্ব নামে ফোল্ডার তৈরি করুন এবং তার মধ্যে email notification.eml সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read pdf google form file, make an image post welcome.jpg, email corresponding person with welcome image in welcome.eml": {
+  "bn": "PDF google form ফাইলটি পড়ুন, welcome.jpg নামে একটি ইমেজ পোস্ট তৈরি করুন, এবং welcome.eml-এ ওয়েলকাম ইমেজসহ সংশ্লিষ্ট ব্যক্তিকে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read score for midterm1 and midterm2, find number of students who make progress, write the answer in a word file, progress.docx": {
+  "bn": "midterm1 এবং midterm2-এর score পড়ুন, কতজন ছাত্র উন্নতি করেছে তা খুঁজে বের করুন, এবং উত্তরটি একটি word ফাইল, progress.docx-এ লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read score for midterm1 and midterm2, how many students score 90 or higher for midterm1 and midterm2 seperately, write numbers saved in file exams.docx, and exams.pdf": {
+  "bn": "midterm1 এবং midterm2-এর স্কোরগুলো পড়ুন, midterm1 এবং midterm2-এর জন্য আলাদাভাবে কতজন ছাত্র 90 বা তার বেশি স্কোর করেছে তা বের করুন, এবং সংখ্যাগুলো exams.docx এবং exams.pdf ফাইলে সেভ করে লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read score for midterm1 and midterm2, which students made progress? find out these students and email them with the score and the email title is congratulations": {
+  "bn": "midterm1 এবং midterm2-এর score পড়ুন, কোন ছাত্রছাত্রীরা উন্নতি করেছে? এই ছাত্রছাত্রীদের খুঁজে বের করুন এবং তাদের score সহ একটি ইমেইল করুন এবং ইমেইলের টাইটেল হবে \"congratulations\"।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "read work overtime email, save as recipient's calendar event using their names as file names": {
+  "bn": "work overtime ইমেইলটি পড়ুন, এবং প্রাপকদের নাম ফাইল নাম হিসেবে ব্যবহার করে তাদের ক্যালেন্ডার ইভেন্ট হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "reduce half amount of apple in shopping list excel file": {
+  "bn": "shopping list Excel ফাইলে apple-এর পরিমাণ অর্ধেক করে দিন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "remove all students' class and the header in class member excel file": {
+  "bn": "class member Excel ফাইল থেকে সব ছাত্রছাত্রীর ক্লাস এবং হেডারটি মুছে ফেলুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "remove the third student and his/her score in score excel file": {
+  "bn": "score Excel ফাইল থেকে তৃতীয় ছাত্র এবং তার স্কোরটি মুছে ফেলুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "scan Concert Announcement pdf file, extract name and address saved it as contact card in doc file named contact.docx": {
+  "bn": "Concert Announcement PDF ফাইলটি scan করুন, নাম এবং ঠিকানা extract করুন এবং contact.docx নামের একটি doc ফাইলে contact card হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "remind Bob that he has a dinner at 5/18/2024 7:00 p.m": {
+  "bn": "Bob-কে মনে করিয়ে দিন যে 5/18/2024 সন্ধ্যা 7:00 টায় তার একটি dinner আছে।",
+  "problems": [],
+  "attempts": 2,
+  "digits_autofixed": false
+ },
+ "scan Concert Announcement pdf file, extract name and date saved it as contact card in doc file named contact.docx": {
+  "bn": "Concert Announcement PDF ফাইলটি scan করুন, নাম এবং তারিখ extract করুন এবং contact.docx নামের একটি doc ফাইলে contact card হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "scan concert post file, save as notification image named notification.jpg, convert image into a concert_activaty.docx file": {
+  "bn": "কনসার্ট পোস্ট ফাইলটি scan করুন, notification.jpg নামে notification image হিসেবে save করুন, এবং image-টিকে একটি concert_activaty.docx ফাইলে convert করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "scan resume pdf file, extract name and contact information saved it as contact card in image file named contact.jpg, save basic information in cotact.xlsx": {
+  "bn": "resume PDF ফাইলটি scan করুন, নাম এবং contact information বের করুন এবং সেটি contact.jpg নামের একটি image ফাইলে contact card হিসেবে সেভ করুন, এবং basic information cotact.xlsx-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "scan resume pdf file, extract name and contact information saved it as contact card in image file named contact.jpg, email contact.eml containing contact information to manager Bob": {
+  "bn": "resume PDF ফাইলটি scan করুন, নাম এবং contact information বের করে contact.jpg নামের একটি image ফাইলে contact card হিসেবে সেভ করুন, এবং contact information সহ contact.eml ইমেইলটি manager Bob-এর কাছে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "schedule a reward meeting for the top-three students in score excel file and create calendar events for each of them.": {
+  "bn": "score Excel ফাইলে থাকা শীর্ষ তিন শিক্ষার্থীর জন্য একটি reward meeting শিডিউল করুন এবং তাদের প্রত্যেকের জন্য ক্যালেন্ডার ইভেন্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "schedule a helping section, pair one student whose score is in section A/B and one student in section C, create calendar events for each of them using their names, email those students for notification": {
+  "bn": "একটি হেল্পিং সেকশন শিডিউল করুন, একজন ছাত্র যাকে score সেকশন A/B-তে আছে এবং সেকশন C-এর একজন ছাত্রকে জোড়া করুন, তাদের নামের মাধ্যমে প্রত্যেকের জন্য ক্যালেন্ডার ইভেন্ট তৈরি করুন, এবং নোটিফিকেশনের জন্য ওই ছাত্রদের ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "schedule a reward meeting to the top-three students in midterm 2, create calendar event reward for them with their score in midterm 2. email to top-three students separately with the same details in the calendar event.": {
+  "bn": "midterm 2-এর শীর্ষ তিন ছাত্র-ছাত্রীর জন্য একটি reward মিটিং শিডিউল করুন, তাদের জন্য midterm 2-এর স্কোরসহ একটি reward ক্যালেন্ডার ইভেন্ট তৈরি করুন। ক্যালেন্ডার ইভেন্টের একই বিবরণসহ শীর্ষ তিন ছাত্র-ছাত্রীকে আলাদাভাবে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "sort items in budget descently in budget excel file": {
+  "bn": "budget Excel ফাইলে budget-এর আইটেমগুলো descending অর্ডারে সাজান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "schedule a reward meeting to the top-three students, write reward statement in statement.pdf": {
+  "bn": "শীর্ষ তিন জন ছাত্রের জন্য একটি reward মিটিং শিডিউল করুন, এবং reward statement-টি statement.pdf-এ লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "sort students score descently by midterm1, save as a new excel file as sorted_score.xlsx": {
+  "bn": "midterm1 অনুযায়ী স্টুডেন্টদের স্কোর descending-লি সর্ট করুন, এবং sorted_score.xlsx নামে একটি নতুন Excel ফাইল হিসেবে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "split midterm1 and midterm2 scores in score excel file into two excel files, name them as midterm1.xlsx and midterm2.xlsx": {
+  "bn": "score Excel ফাইল থেকে midterm1 এবং midterm2 স্কোরগুলো দুটি আলাদা Excel ফাইলে ভাগ করুন, এবং সেগুলোর নাম midterm1.xlsx এবং midterm2.xlsx রাখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "suggest cars and save in cars.docx for people whose budget is 50000$ based on car trading excel file, convert to suggesting.pdf": {
+  "bn": "car trading Excel ফাইল-এর উপর ভিত্তি করে যাদের বাজেট 50000$ তাদের জন্য গাড়ির পরামর্শ দিন এবং cars.docx-এ সেভ করুন, তারপর এটিকে suggesting.pdf-এ কনভার্ট করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "suggest cars and save in cars.docx for people whose budget is 50000$ based on car trading excel file, email to Tom for reference with subject 'Cars for you'": {
+  "bn": "car trading Excel ফাইল-এর উপর ভিত্তি করে যাদের বাজেট 50000$ তাদের জন্য গাড়ির পরামর্শ দিন এবং cars.docx-এ সেভ করুন, রেফারেন্সের জন্য 'Cars for you' সাবজেক্ট লিখে Tom-কে ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "summarize content from combined notification image into one notification pdf file named two_notification.pdf": {
+  "bn": "combined notification image-এর কন্টেন্ট সামারাইজ করে two_notification.pdf নামে একটি notification PDF ফাইলে রাখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "summarize content from combined notification image into one pdf file named two_notifications.pdf, party need to be prepared by Bob, meeting need to be prepared by Alice, email them using party.eml and meeting.eml": {
+  "bn": "combined notification image-এর কন্টেন্ট সামারাইজ করে two_notifications.pdf নামে একটি PDF ফাইলে রাখুন, party-র প্রস্তুতি Bob-এর করতে হবে, meeting-এর প্রস্তুতি Alice-এর করতে হবে, party.eml এবং meeting.eml ব্যবহার করে তাদের ইমেইল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "summarize content from meeting notification image and save in meeting.pdf": {
+  "bn": "মিটিং নোটিফিকেশন ইমেজ থেকে কন্টেন্ট সামারাইজ করুন এবং meeting.pdf-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "summarize content from meeting notification image and save in meeting.pdf, create calendar event Bob.ics and Tom.ics about meeting for Bob and Tom": {
+  "bn": "মিটিং নোটিফিকেশন ইমেজ থেকে বিষয়বস্তু সারসংক্ষেপ করুন এবং meeting.pdf-এ সেভ করুন, এবং Bob এবং Tom-এর মিটিংয়ের জন্য Bob.ics এবং Tom.ics ক্যালেন্ডার ইভেন্ট তৈরি করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "summarize content from meeting notification image and save in meeting.pdf, save pdf file in folder named schedule": {
+  "bn": "মিটিং নোটিফিকেশন ইমেজ থেকে কন্টেন্ট সামারাইজ করুন এবং meeting.pdf-এ সেভ করুন, PDF ফাইলটি schedule নামের ফোল্ডারে সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "summarize content from meeting notification image and save in meeting.pdf, send meeting.eml to Alice with meeting agenda": {
+  "bn": "মিটিং নোটিফিকেশন ইমেজ থেকে বিষয়বস্তু সারসংক্ষেপ করুন এবং meeting.pdf-এ সেভ করুন, এবং মিটিং এজেন্ডাসহ meeting.eml ফাইলটি Alice-কে পাঠান।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "swap column of midterm1 and midterm2 in score excel file": {
+  "bn": "score Excel ফাইলে midterm1 এবং midterm2 কলাম দুটি অদলবদল (swap) করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "swap the fewest and second fewest shopping item in shopping list excel file": {
+  "bn": "shopping list Excel ফাইলে সবচেয়ে কম এবং দ্বিতীয় সবচেয়ে কম কেনাকাটার আইটেমগুলোর স্থান অদলবদল করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "swap the highest and second highest item in budget excel file": {
+  "bn": "budget Excel ফাইলে সর্বোচ্চ এবং দ্বিতীয় সর্বোচ্চ আইটেম দুটি অদলবদল (swap) করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "we already have onion at home, remove this entry from the shopping list excel file": {
+  "bn": "আমাদের বাড়িতে ইতিমধ্যে পেঁয়াজ আছে, শপিং লিস্ট Excel ফাইল থেকে এই এন্ট্রিটি মুছে ফেলুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "swap the lowest and highest incoming item in salary excel file": {
+  "bn": "salary Excel ফাইলটিতে সবচেয়ে কম এবং সবচেয়ে বেশি ইনকামিং আইটেম দুটি অদলবদল (swap) করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what is 2024 total revenue from annual financial report?": {
+  "bn": "annual financial report থেকে 2024-এর মোট রেভিনিউ কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what is median house price index based on house price index image? answer the question!": {
+  "bn": "house price index ইমেজ-এর ওপর ভিত্তি করে median house price index কত? প্রশ্নটির উত্তর দিন!",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what is median score for student scores in image?": {
+  "bn": "ছবিতে থাকা স্টুডেন্ট স্কোরগুলোর median score কত?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what is the effective date from agreement pdf file?": {
+  "bn": "agreement PDF ফাইল থেকে effective date-টি কী?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what is the subject of the earliest email that send to Bob?": {
+  "bn": "Bob-কে পাঠানো সবচেয়ে শুরুর ইমেইলটির subject কী?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what is the subject of the email I sent to Bob?": {
+  "bn": "Bob-কে আমি যে ইমেইল পাঠিয়েছি তার subject কী?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what is the subject of the latest email that send to Bob?": {
+  "bn": "Bob-কে পাঠানো সর্বশেষ ইমেইলটির subject কী?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what is total hw score of Cixarim? Add his hw1, hw2, and hw3 together.": {
+  "bn": "Cixarim-এর মোট hw score কত? তার hw1, hw2, এবং hw3 একসাথে যোগ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what is total number of students in class CS161, and how many of them are senior?": {
+  "bn": "CS161 ক্লাসে মোট কতজন ছাত্র আছে, এবং তাদের মধ্যে কতজন senior?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "what the maximum sales revenue entry from sales report": {
+  "bn": "sales report থেকে সর্বোচ্চ sales revenue এন্ট্রিটি কী?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "which class has the least students, save all students' names in this class in Class_member.pdf": {
+  "bn": "কোন ক্লাসে সবচেয়ে কম ছাত্র আছে, সেই ক্লাসের সব ছাত্রের নাম Class_member.pdf-এ সেভ করুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "write all shopping item in docx file (shopping_list.docx) from shopping list (shopping_list.xlsx)": {
+  "bn": "shopping list (shopping_list.xlsx) থেকে সব শপিং আইটেম একটি docx ফাইলে (shopping_list.docx) লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "who has more commitments on 5/1/2024? Tom or Bob": {
+  "bn": "5/1/2024 তারিখে কার বেশি কমিটমেন্ট আছে? Tom নাকি Bob?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "who sent the most email to Bob?": {
+  "bn": "Bob-কে সবচেয়ে বেশি ইমেইল কে পাঠিয়েছেন?",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ },
+ "write all shopping item in shopping.docx from shopping list": {
+  "bn": "shopping list থেকে সব shopping item shopping.docx-এ লিখুন।",
+  "problems": [],
+  "attempts": 1,
+  "digits_autofixed": false
+ }
+}

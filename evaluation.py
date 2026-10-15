@@ -13,6 +13,7 @@ from utils.evaluate import (
     evaluate_exact_match,
     evaluate_calendar_no_overlap
 )
+from utils.llm import load_env_file, safe_model_name
 
 def evaluate_output(task_id, subtask_id, output_dir):
     print(f"Evaluating {task_id} {subtask_id} {output_dir}...")
@@ -27,7 +28,9 @@ def evaluate_output(task_id, subtask_id, output_dir):
             return False
     return True
 
-def main(model_name='gpt-4o-2024-05-13', tag_name='test', result_dir='./results', output_subdir='outputs'):
+def main(model_name=None, tag_name='test', result_dir='./results', output_subdir='outputs'):
+    if model_name is None:
+        model_name = load_env_file().get('model', 'gpt-4o-2024-05-13')
     results_dict = {
         "1": [],
         "2": [],
@@ -38,12 +41,13 @@ def main(model_name='gpt-4o-2024-05-13', tag_name='test', result_dir='./results'
     
     all_tasks_info = []
     unfound_result_cases = []
-    result_path = f'{result_dir}/{model_name.replace("/", "_")}_{tag_name}_result.jsonl'
+    result_path = f'{result_dir}/{safe_model_name(model_name)}_{tag_name}_result.jsonl'
     
     f_result = open(result_path, 'w')
 
     all_config_filepaths = glob.glob(f"./tasks/*/subtasks/*.json")
     for config_filepath in all_config_filepaths:
+        config_filepath = config_filepath.replace(os.sep, "/")
         # ./tasks/1-1/subtasks/0.json
         task_id = config_filepath.split('/')[2]
         subtask_id = config_filepath.split('/')[4].split('.')[0]
@@ -54,7 +58,7 @@ def main(model_name='gpt-4o-2024-05-13', tag_name='test', result_dir='./results'
     for task_id, subtask_id in all_tasks_info:
         num_app_tag = task_id[0]
         # ./tasks/3-42/outputs/0/gemini-1.5-pro_jun11-gemini/testbed/
-        result_testbed_dir = f"./tasks/{task_id}/{output_subdir}/{subtask_id}/{model_name.replace("/", "_")}_{tag_name}/testbed"
+        result_testbed_dir = f"./tasks/{task_id}/{output_subdir}/{subtask_id}/{safe_model_name(model_name)}_{tag_name}/testbed"
         if os.path.exists(result_testbed_dir):
             print(f"Found {result_testbed_dir}")
             try:

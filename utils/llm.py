@@ -1,7 +1,30 @@
+import os
+import json
 from openai import OpenAI
 import time
 import numpy as np
 import google.generativeai as genai
+
+
+def load_env_file():
+    # read `key = "value"` lines from .env in OfficeBench/ or its parent directory
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    for path in [os.path.join(root, '.env'), os.path.join(os.path.dirname(root), '.env')]:
+        if os.path.exists(path):
+            values = {}
+            for line in open(path, encoding='utf-8'):
+                line = line.strip()
+                if not line or line.startswith('#') or '=' not in line:
+                    continue
+                key, value = line.split('=', 1)
+                values[key.strip()] = value.strip().strip('"').strip("'")
+            return values
+    return {}
+
+
+def safe_model_name(model_name):
+    # model names like `gemma4:31b` or `Qwen/Qwen2.5-7B` are used in paths
+    return model_name.replace('/', '_').replace(':', '_')
 
 
 class ChatGPT:
@@ -121,18 +144,21 @@ class vLLM:
     def __init__(self, model_name, system_message=None):
         self.model_name = model_name
         self.system_message = system_message
+        env = load_env_file()
         self.client = OpenAI(
-            base_url="http://localhost:8000/v1",
-            api_key="token-abc123",
+            base_url=os.environ.get("VLLM_BASE_URL", env.get("base_url", "http://localhost:8000/v1")),
+            api_key=os.environ.get("VLLM_API_KEY", env.get("api_key", "token-abc123")),
         )
     
     def get_model_options(
         self,
         temperature=0,
-        per_example_max_decode_steps=512,
+        per_example_max_decode_steps=2048,
         per_example_top_p=1,
         n_sample=1,
     ):
+        # reasoning models (e.g. gpt-oss) spend many tokens on their reasoning channel
+        # before emitting the action, so the budget must be generous or content comes back empty
         return dict(
             temperature=temperature,
             n=n_sample,
@@ -151,7 +177,21 @@ class vLLM:
                 ],
                 **options,
             )
-            return completion.choices[0].message.content
+            message = completion.choices[0].message
+            content = message.content or ''
+            if not content and message.tool_calls:
+                # Ollama may parse the JSON action as a native tool call named
+                # `app:action`, leaving content empty; rebuild the action text
+                call = message.tool_calls[0].function
+                app, _, action = call.name.partition(':')
+                args = json.loads(call.arguments or '{}')
+                return json.dumps({'app': app, 'action': action, **args})
+            # reasoning models return their thinking in a separate `reasoning` field; fold it
+            # into the Thought/Command format so the thinking is logged and the action still parses
+            reasoning = getattr(message, 'reasoning', None) or ''
+            if reasoning and '##Command:' not in content:
+                return f"##Thought: {reasoning.strip()}\n##Command: {content.strip()}"
+            return content
         except Exception as e:
             print("Generation Error:", e)
             return "None"

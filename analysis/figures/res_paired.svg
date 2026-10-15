@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" role="img" font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" aria-label="Paired outcome of gemma4:31b English against Bangla. Overall 109 subtasks pass in both, 42 only in English, 18 only in Bangla and 131 fail in both.">
+<rect width="860" height="330" fill="#ffffff"/>
+<rect x="120" y="14" width="14" height="14" rx="0" fill="#c9d6ea"/>
+<text x="140" y="26" font-size="13" text-anchor="start" fill="#1b2330">both pass</text>
+<rect x="280" y="14" width="14" height="14" rx="0" fill="#d97706"/>
+<text x="300" y="26" font-size="13" text-anchor="start" fill="#1b2330">English only passes</text>
+<rect x="440" y="14" width="14" height="14" rx="0" fill="#1f8a8a"/>
+<text x="460" y="26" font-size="13" text-anchor="start" fill="#1b2330">Bangla only passes</text>
+<rect x="600" y="14" width="14" height="14" rx="0" fill="#dcdfe5"/>
+<text x="620" y="26" font-size="13" text-anchor="start" fill="#1b2330">both fail</text>
+<text x="108" y="80" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">All 300</text>
+<text x="108" y="96" font-size="11" text-anchor="end" fill="#5e6675">n = 300</text>
+<rect x="120" y="56" width="247.067" height="34" rx="0" fill="#c9d6ea"/>
+<text x="243.533" y="78" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">109</text>
+<rect x="367.067" y="56" width="95.2" height="34" rx="0" fill="#d97706"/>
+<text x="414.667" y="78" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">42</text>
+<rect x="462.267" y="56" width="40.8" height="34" rx="0" fill="#1f8a8a"/>
+<text x="482.667" y="78" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">18</text>
+<rect x="503.067" y="56" width="296.933" height="34" rx="0" fill="#dcdfe5"/>
+<text x="651.533" y="78" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">131</text>
+<text x="108" y="138" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">Single-app</text>
+<text x="108" y="154" font-size="11" text-anchor="end" fill="#5e6675">n = 93</text>
+<rect x="120" y="114" width="329.032" height="34" rx="0" fill="#c9d6ea"/>
+<text x="284.516" y="136" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">45</text>
+<rect x="449.032" y="114" width="131.613" height="34" rx="0" fill="#d97706"/>
+<text x="514.839" y="136" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">18</text>
+<rect x="580.645" y="114" width="21.9355" height="34" rx="0" fill="#1f8a8a"/>
+<text x="591.613" y="110" font-size="12" text-anchor="middle" fill="#1b2330" font-weight="700">3</text>
+<rect x="602.581" y="114" width="197.419" height="34" rx="0" fill="#dcdfe5"/>
+<text x="701.29" y="136" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">27</text>
+<text x="108" y="196" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">Two-app</text>
+<text x="108" y="212" font-size="11" text-anchor="end" fill="#5e6675">n = 95</text>
+<rect x="120" y="172" width="314.947" height="34" rx="0" fill="#c9d6ea"/>
+<text x="277.474" y="194" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">44</text>
+<rect x="434.947" y="172" width="114.526" height="34" rx="0" fill="#d97706"/>
+<text x="492.211" y="194" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">16</text>
+<rect x="549.474" y="172" width="50.1053" height="34" rx="0" fill="#1f8a8a"/>
+<text x="574.526" y="194" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">7</text>
+<rect x="599.579" y="172" width="200.421" height="34" rx="0" fill="#dcdfe5"/>
+<text x="699.789" y="194" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">28</text>
+<text x="108" y="254" font-size="14" text-anchor="end" fill="#1b2330" font-weight="700">Three-app</text>
+<text x="108" y="270" font-size="11" text-anchor="end" fill="#5e6675">n = 112</text>
+<rect x="120" y="230" width="121.429" height="34" rx="0" fill="#c9d6ea"/>
+<text x="180.714" y="252" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">20</text>
+<rect x="241.429" y="230" width="48.5714" height="34" rx="0" fill="#d97706"/>
+<text x="265.714" y="252" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">8</text>
+<rect x="290" y="230" width="48.5714" height="34" rx="0" fill="#1f8a8a"/>
+<text x="314.286" y="252" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">8</text>
+<rect x="338.571" y="230" width="461.429" height="34" rx="0" fill="#dcdfe5"/>
+<text x="569.286" y="252" font-size="14" text-anchor="middle" fill="#1b2330" font-weight="700">76</text>
+<text x="120" y="306" font-size="12" text-anchor="start" fill="#5e6675">Amber is English-only passes, teal is Bangla-only passes.</text>
+</svg>
